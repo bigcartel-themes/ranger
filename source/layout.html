@@ -77,7 +77,6 @@
             <li class="cart">
               <a href="/cart" title="Cart">
                 <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 9c.553 0 1-.447 1-1V1c0-.55-.45-1-1-1H1C.448 0 0 .447 0 1c0 .553.448 1 1 1h1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1 0-.583-.447-1-1-1H4V9h11zM4 2h10v5H4V2z"/><circle cx="4.5" cy="14.5" r="1.5"/><circle cx="13.5" cy="14.5" r="1.5"/></svg>
-                  
                 <span class="cart-num-items">{{ cart.item_count | pluralize: 'Item', 'Items' }}</span>
               </a>
             </li>
@@ -159,7 +158,6 @@
         {% endif %}
       {% endif %}
       <canvas id="repeating-pattern">
-
     </div>
     <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' %} hide-featured{% endif %}">
       {% if page.category == 'custom' %}
@@ -171,7 +169,6 @@
         {{ page_content }}
       {% endif %}
     </section>
-    
     <footer class="footer">
       <div class="wrapper">
         <nav class="footernav">
@@ -182,7 +179,6 @@
             {% endfor %}
           </ul>
         </nav>
-        
         <nav class="footernav">
           <h4>Pages</h4>
           <ul>
@@ -195,7 +191,6 @@
             {% endif %}
           </ul>
         </nav>
-        
         {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank or theme.pinterest_url != blank %}
           <nav class="footernav">
             <h4>Social</h4>
@@ -239,10 +234,10 @@
     <script type="text/javascript" charset="utf-8">
       $(function() {
         Store.init('{{ page.permalink }}', {
-          primary_color: '{{ theme.accent_background_color }}',
-          secondary_color: '{{ theme.accent_pattern_color }}',
-          pattern_style: '{{ theme.pattern_style }}',
-          store_name: '{{ store.name | escape }}',
+          primary_color: "{{ theme.accent_background_color }}",
+          secondary_color: "{{ theme.accent_pattern_color }}",
+          pattern_style: "{{ theme.pattern_style }}",
+          store_name: "{{ store.name | escape }}"
         });
       });
     </script>

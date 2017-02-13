@@ -21,7 +21,6 @@
             	{% when 'coming-soon' %}
             		{% assign product_status = 'Coming soon' %}
             {% endcase %}
-            
             <li class="product-card {{ product.css_class }}">
               <a class="product-link" href="{{ product.url }}">
                 <div class="product-image">
@@ -48,7 +47,6 @@
       {% endif %}
     {% endpaginate %}
   {% else %}
-
     {% if categories.active != blank %}
       <ul class="product-list collection-list{% if paginate.items < 4 %} justify-center{% endif %}">
         {% for category in categories.active %}

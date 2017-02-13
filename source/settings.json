@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "images": [
     {
       "variable": "logo",
@@ -82,7 +82,7 @@
     },
     {
       "variable": "pattern_style",
-      "label": "Pattern Style",
+      "label": "Accent Pattern Style",
       "type": "select",
       "options": [
         ["Small Triangles", "small-triangles"],
