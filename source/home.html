@@ -1,0 +1,60 @@
+<div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank %} has-welcome{% endif %}">
+  {% if theme.featured_items_type == 'Categories' %}
+    {% if categories.active != blank and theme.featured_items > 0 %}
+      {% for category in categories.active limit:theme.featured_items %}{% assign num_categories = forloop.length %}{% endfor %}
+      <ul class="product-list collection-list{% if num_categories < 4 %} justify-center{% endif %}">
+        {% for category in categories.active limit:theme.featured_items %}
+          <li class="product-card {{ product.css_class }}">
+            <a class="category-link product-link" href="{{ category.url }}">
+              <div class="category-info product-info">
+                <div class="product-name category-name">{{ category.name }}</div>
+              </div>
+              <div class="product-image">
+                {% for product in category.products limit:1 %}
+                  <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '1000','1000' }}">
+                  <div class="hover-message">Shop Now</div>
+                {% endfor %}
+              </div>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% else %}
+    {% if theme.featured_items > 0 %}
+      {% get products from products.all limit:theme.featured_items %}
+        {% if products != blank %}
+          {% for product in products limit:theme.featured_items %}{% assign num_products = forloop.length %}{% endfor %}
+          <ul class="product-list{% if num_products < 4 %} justify-center{% endif %}">
+            {% for product in products %}
+              {% assign product_status = '' %}
+              {% case product.status %}
+              	{% when 'active' %}
+              		{% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+              	{% when 'sold-out' %}
+              		{% assign product_status = 'Sold out' %}
+              	{% when 'coming-soon' %}
+              		{% assign product_status = 'Coming soon' %}
+              {% endcase %}
+              <li class="product-card {{ product.css_class }}">
+                <a class="product-link" href="{{ product.url }}">
+                  <div class="product-image">
+                    <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '1000','1000' }}">
+                    <div class="hover-message">Shop Now</div>
+                  </div>
+                  <div class="product-info">
+                    <div class="product-price">{{ product.default_price | money_with_sign }}</div>
+                    <div class="product-name">{{ product.name }}</div>
+                  </div>
+                  {% if product_status != blank %}
+                    <div class="product-status"><div class="status-text">{{ product_status }}</div></div>
+                  {% endif %}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endget %}
+    {% endif %}
+  {% endif %}
+</div>

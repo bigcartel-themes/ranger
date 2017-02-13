@@ -1,0 +1,246 @@
+{
+  "name": "Ranger",
+  "version": "1.0.0",
+  "images": [
+    {
+      "variable": "logo",
+      "label": "Header logo",
+      "description": "Good for an image up to 300 x 100 pixels"
+    },
+    {
+      "variable": "welcome_image",
+      "label": "Welcome image",
+      "description": "1200px by 800px images recommended"
+    }
+  ],
+  "fonts": [
+    {
+      "variable": "primary_font",
+      "label": "Primary Font",
+      "default": "Montserrat"
+    },
+    {
+      "variable": "secondary_font",
+      "label": "Secondary Font",
+      "default": "Montserrat"
+    }
+  ],
+  "colors": [
+    {
+      "variable": "background_color",
+      "label": "Background",
+      "default": "#EEEEEE"
+    },
+    {
+      "variable": "content_background_color",
+      "label": "Content background",
+      "default": "#FFFFFF"
+    },
+    {
+      "variable": "accent_background_color",
+      "label": "Accent background",
+      "default": "#000000"
+    },
+    {
+      "variable": "accent_text_color",
+      "label": "Accent text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "variable": "accent_pattern_color",
+      "label": "Accent pattern color",
+      "default": "#555555"
+    },
+    {
+      "variable": "primary_text_color",
+      "label": "Primary text color",
+      "default": "#222222"
+    },
+    {
+      "variable": "button_background_color",
+      "label": "Button background color",
+      "default": "#00B7EF"
+    },
+    {
+      "variable": "links_color",
+      "label": "Links color",
+      "default": "#FF642A"
+    }
+  ],
+  "options": [
+    {
+      "variable": "welcome_header",
+      "label": "Welcome header",
+      "type": "text",
+      "description": "Welcome header for homepage"
+    },
+    {
+      "variable": "welcome_subheader",
+      "label": "Welcome subheader",
+      "type": "text",
+      "description": "Welcome subheader for homepage"
+    },
+    {
+      "variable": "pattern_style",
+      "label": "Pattern Style",
+      "type": "select",
+      "options": [
+        ["Small Triangles", "small-triangles"],
+        ["Large Triangles", "large-triangles"],
+        ["Autumn", "autumn"],
+        ["Bank Note", "bank-note"],
+        ["Bathroom Floor", "bathroom-floor"],
+        ["Bubbles", "bubbles"],
+        ["Diagonal Lines", "diagonal-lines"],
+        ["Kiwi", "kiwi"],
+        ["Random Shapes", "random-shapes"],
+        ["Wiggle", "wiggle"],
+        ["No Pattern", "no-pattern"]
+      ],
+      "default": "small-triangles",
+      "description": "Pattern style for the accent background"
+    },
+    {
+      "variable": "show_search",
+      "label": "Show search",
+      "type": "boolean",
+      "default": false,
+      "description": "Shows a search field"
+    },
+    {
+      "variable": "collections",
+      "label": "Enable collections",
+      "type": "boolean",
+      "default": false,
+      "description": "Use category collections instead of the traditional product listing page"
+    },
+    {
+      "variable": "nav_items",
+      "label": "Navigation items",
+      "type": "select",
+      "options": "0..2",
+      "default": 0,
+      "description": "The number of custom page links show in the main navigation."
+    },
+    {
+      "variable": "featured_items_type",
+      "label": "Featured items type",
+      "type": "select",
+      "options": ["Categories", "Products"],
+      "default": "Products",
+      "description": "Display featured products or categories on the Home page"
+    },
+    {
+      "variable": "featured_items",
+      "label": "Featured items",
+      "type": "select",
+      "options": "0..12",
+      "default": 6,
+      "description": "The number of items featured on the Home page"
+    },
+    {
+      "variable": "products_per_page",
+      "label": "Products per page",
+      "type": "select",
+      "options": "1..100",
+      "default": 12,
+      "description": "The number of products shown per page"
+    },
+    {
+      "variable": "twitter_url",
+      "label": "Twitter URL",
+      "type": "text",
+      "description": "Ex: http://twitter.com/bigcartel"
+    },
+    {
+      "variable": "facebook_url",
+      "label": "Facebook URL",
+      "type": "text",
+      "description": "Ex: http://facebook.com/bigcartel"
+    },
+    {
+      "variable": "tumblr_url",
+      "label": "Tumblr URL",
+      "type": "text",
+      "description": "Ex: http://bigcartel.tumblr.com"
+    },
+    {
+      "variable": "instagram_url",
+      "label": "Instagram URL",
+      "type": "text",
+      "description": "Ex: http://instagram.com/bigcartel"
+    },
+    {
+      "variable": "pinterest_url",
+      "label": "Pinterest URL",
+      "type": "text",
+      "description": "Ex: http://pinterest.com/bigcartel"
+    }
+  ],
+  "checkout": {
+    "header_image": "{{ logo }}",
+    "header_image_max_width": "300px",
+    "header_image_max_height": "100px",
+    "title_font": "{{ primary_font }}",
+    "title_font_weight": "normal",
+    "title_font_size": "22px",
+    "title_color": "{{ primary_text_color }}",
+    "title_background_color": "{{ content_background_color }}",
+    "title_vertical_padding": "27px",
+    "background_color": "{{ background_color }}",
+    "body_font": "{{ secondary_font }}",
+    "body_font_size": "14px",
+    "step_border_color": "{{ background_color }}",
+    "step_header_color": "{{ primary_text_color }}",
+    "step_border_width": "4px",
+    "step_border_style": "solid",
+    "step_border_radius": "0px",
+    "step_inactive_header_color": " {{ primary_text_color }}",
+    "step_header_font": "{{ primary_font }}",
+    "step_background_color": "{{ content_background_color }}",
+    "content_background_color": "{{ content_background_color }}",
+    "content_header_background_color": "{{ content_background_color }}",
+    "content_header_color": "{{ primary_text_color }}",
+    "content_color": "{{ primary_text_color }}",
+    "content_header_font_size": "18px",
+    "content_border_color": "transparent", 
+    "content_border_radius": "0px",
+    "error_background_color": "#ea4859",
+    "error_color": "#ffffff",
+    "error_border_radius": "0px",
+    "error_border_color": "#ea4859",
+    "input_focus_color": "#000000",
+    "input_focus_background_color": "#ffffff",
+    "input_focus_border_color": "#777777",
+    "input_error_border_color": "#ea4859",
+    "input_color": "#000000",
+    "input_error_color": "#000000",
+    "input_border_color": "#bfbfbf",
+    "input_background_color": "#ffffff",
+    "input_error_background_color": "#ffffff",
+    "input_border_radius": "0px",
+    "input_border_width": "2px",
+    "input_font": "{{ secondary_font }}",
+    "button_color": "{{ background_color }}",
+    "button_border_width": "0px",
+    "button_border_radius": "0px",
+    "button_font": "{{ secondary_font }}",
+    "button_hover_color": "{{ background_color }}",
+    "button_background_color": "{{ button_background_color }}",
+    "button_hover_background_color": "{{ button_background_color }}",
+    "button_border_color": "{{ button_background_color }}",
+    "button_hover_border_color": "{{ button_background_color }}",
+    "button_text_transform": "none",
+    "link_color": "{{ primary_text_color }}",
+    "link_hover_color": "{{ links_color }}",
+    "step_header_color": "{{ primary_text_color }}",
+    "step_header_font_size": "18px",
+    "summary_color": "{{ primary_text_color }}",
+    "summary_secondary_color": "{{ primary_text_color }}",
+    "summary_item_border_color": "{{ background_color }}",
+    "summary_item_list_border_color": "{{ background_color }}",
+    "summary_submit_background_color": "{{ content_background_color }}",
+    "summary_submit_border_color": "{{ background_color }}",
+    "summary_submit_border_width": "4px"
+  }
+}

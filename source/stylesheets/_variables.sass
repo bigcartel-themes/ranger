@@ -1,0 +1,67 @@
+@import 'compass/css3'
+@import 'compass'
+@import 'flexbox'
+
+$primary-font: #{"{{ theme.primary_font }}"}
+$secondary-font: #{"{{ theme.secondary_font }}"}
+
+$background-color: #{"{{ theme.background_color }}"}
+$content-background-color: #{"{{ theme.content_background_color }}"}
+
+$accent-background-color: #{"{{ theme.accent_background_color }}"}
+$accent-text-color: #{"{{ theme.accent_text_color }}"}
+
+$accent-pattern-color: #{"{{ theme.accent_pattern_color }}"}
+
+$primary-text-color: #{"{{ theme.primary_text_color }}"}
+
+$button-background-color: #{"{{ theme.button_background_color }}"}
+
+$links-color: #{"{{ theme.links_color }}"}
+
+$header-height: 160px
+$header-height-tablet: 120px
+$header-height-mobile: 64px
+
+$break-extra-large: 1200px
+$break-large: 1024px
+$break-medium: 800px
+$break-small: 668px
+$break-extra-small: 500px
+
+@mixin all-transitions
+  +transition(.2s linear)
+  
+@mixin vertical-align
+  +transform(translateY(-50%))
+  position: relative
+  top: 50%
+  
+@mixin keyframes($animation)
+  @-webkit-keyframes #{$animation}
+    @content
+
+  @keyframes #{$animation}
+    @content
+    
+@mixin animation($str...)
+  -webkit-animation: $str
+  animation: $str
+
+@mixin transform($str...)
+  -webkit-transform: $str
+  transform: $str
+  
+@mixin transition($transition...)
+  -webkit-transition: $transition
+  transition: $transition
+
+@mixin appearance($str)
+  -webkit-appearance: none
+  appearance: none
+  
+@mixin pie-clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both

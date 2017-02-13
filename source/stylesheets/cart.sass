@@ -1,0 +1,396 @@
+@import 'variables'
+
+section.content 
+  .cart-page
+    max-width: 828px
+    
+    &.empty-cart
+      height: 240px
+      
+      @media screen and (max-width: $break-small)
+        height: 120px
+        min-height: 120px
+    
+.cart-form
+  +pie-clearfix
+  margin: 0 auto
+  width: 100%
+  
+.cart-items
+  list-style: none
+  margin: 0
+  padding: 0
+  width: 100%
+  
+  @media screen and (max-width: $break-small)
+    border-top: none
+  
+  .cart-item
+    +pie-clearfix
+    border-bottom: 2px solid $background-color
+    font-size: 14px
+    height: 162px
+    line-height: 15px
+    padding: 0
+    position: relative
+    text-transform: uppercase
+    
+    @media screen and (max-width: $break-small)
+      display: flex
+    
+  .item-image-details
+    +pie-clearfix
+    +vertical-align
+    height: 160px
+    max-width: 65%
+    float: left
+    width: 100%
+    
+    @media screen and (max-width: $break-medium)
+      max-width: 70%
+    
+    @media screen and (max-width: $break-small)
+      +transform(none)
+      float: none
+      max-width: 100%
+      top: 0
+      
+  .item-image
+    background-position: 50%
+    background-repeat: no-repeat
+    background-size: cover
+    border-right: 2px solid $background-color
+    float: left
+    height: 100%
+    max-width: 160px
+    position: relative
+    text-align: center
+    width: 100%
+    
+    @media screen and (max-width: $break-small)
+      max-width: 40%
+    
+    .item-delete
+      background: $accent-background-color
+      cursor: pointer
+      height: 32px
+      left: 20px
+      line-height: 32px
+      position: absolute
+      text-align: center
+      top: 20px
+      width: 32px
+      
+      svg
+        +vertical-align
+        display: block
+        fill: $accent-text-color
+        height: 10px
+        margin: 0 auto
+        width: 10px
+      
+  .item-details
+    +vertical-align
+    float: left
+    font-family: $primary-font  
+    max-width: calc(100% - 160px)
+    padding: 0 48px
+    width: 100%
+    
+    @media screen and (max-width: $break-medium)
+      padding: 0 32px
+      
+    @media screen and (max-width: $break-small)
+      max-width: 60%
+      padding: 0 16px
+    
+  .item-product-link
+    color: $primary-text-color
+    display: block
+    font-size: 18px
+    
+    @media screen and (max-width: $break-medium)
+      font-size: 20px
+      
+  .item-details-name
+    line-height: 20px
+    
+    @media screen and (max-width: $break-small)
+      font-size: 14px
+      line-height: 20px
+
+  .item-details-option
+    color: $primary-text-color
+    display: block
+    font-family: $secondary-font
+    font-size: 13px
+    line-height: 17px
+    margin-top: 6px
+    opacity: .7
+    
+    @media screen and (max-width: $break-small)
+      font-size: 12px
+    
+  .item-details-price
+    color: $links-color
+    display: block
+    font-family: $secondary-font
+    font-size: 18px
+    line-height: 17px
+    margin-bottom: 10px
+    
+    @media screen and (max-width: $break-medium)
+      display: block
+      
+    @media screen and (max-width: $break-small)
+      font-size: 14px
+      margin-bottom: 6px
+
+  .item-quantity-holder
+    +vertical-align
+    +pie-clearfix
+    border: 2px solid $background-color
+    float: right
+    height: 64px
+    margin-right: 48px
+    padding: 5px 16px
+    padding-right: 10px
+    width: 128px
+
+    @media screen and (max-width: $break-small)
+      +transform(none)
+      border: 0
+      border-left: 2px solid $background-color
+      clear: both
+      float: none
+      height: 100%
+      margin-right: 0
+      padding-top: 18px
+      top: 0
+      width: 25%
+    
+    .item-quantity-inner
+      +pie-clearfix
+      +vertical-align
+        
+    .quantity-label
+      float: left
+      font-size: 14px
+      line-height: 40px
+      opacity: .6
+      width: 50%
+      
+      @media screen and (max-width: $break-small)
+        display: block
+        float: none
+        line-height: 20px
+        text-align: center
+        width: 100%
+      
+    .option-quantity
+      background: none
+      border: none
+      color: $primary-text-color
+      float: right
+      font-size: 14px
+      height: 40px
+      padding: 10px
+      text-align: right
+      width: 50%
+      
+      @media screen and (max-width: $break-small)
+        float: none
+        font-size: 14px
+        padding: 0
+        position: relative
+        text-align: center
+        width: 100%
+      
+      &:focus
+        box-shadow: none
+        outline: none
+          
+  .price
+    +vertical-align
+    color: $primary-text-color
+    float: right
+    font-family: $secondary-font
+    font-size: 18px
+    padding-left: 20px
+    text-align: right
+    
+    @media screen and (max-width: $break-medium)
+      display: none
+
+  &:last-child
+    margin-bottom: 0
+
+.cart-footer
+  +pie-clearfix
+  background: $accent-background-color
+  color: $accent-text-color
+  padding: 48px 32px
+  position: relative
+  
+  &.fixed-cart-footer
+    @media screen and (max-width: $break-small)
+      bottom: 64px
+      padding: 32px
+      position: fixed
+      width: 100%
+      
+  .cart-adjustments
+    bottom: 48px
+    color: $accent-text-color
+    position: absolute
+    right: 32px
+    
+    @media screen and (max-width: $break-medium)
+      bottom: auto
+      position: relative
+      right: auto
+    
+  h4.cart-adjustment
+    color: $accent-text-color
+    margin-bottom: 20px
+    opacity: .7
+    text-align: left
+    
+  h3.cart-total
+    color: $accent-text-color
+    font-size: 22px
+    text-align: center
+    text-transform: uppercase
+
+    @media screen and (max-width: $break-medium)
+      font-size: 18px
+      text-align: left
+      
+      &.centered-total
+        text-align: center
+        
+        @media screen and (max-width: $break-small)
+          font-size: 16px
+
+  .cart-amount
+    display: inline-block
+    text-align: right
+    width: 200px
+    
+    @media screen and (max-width: $break-medium)
+      float: right
+      width: auto
+        
+  button, .button
+    max-width: 100%
+    
+    @media screen and (max-width: $break-medium)
+      display: none
+      font-size: 16px
+    
+    @media screen and (max-width: $break-small)
+      font-size: 18px
+
+a.continue-shopping, .checkout-btn
+  display: inline-block
+  float: left
+  text-align: center
+  text-transform: uppercase
+  width: 50%
+  
+  @media screen and (max-width: $break-medium)
+    display: none
+  
+a.continue-shopping
+  background: $accent-background-color
+  color: $accent-text-color
+  opacity: .2
+  
+.cart-discounts-shipping
+  float: left
+  max-width: 320px
+  width: 100%
+  
+  @media screen and (max-width: $break-medium)
+    float: none
+    margin-bottom: 32px
+    max-width: 100%
+
+  .cart-shipping
+    .select
+      background: $content-background-color
+      max-width: 100%
+      
+.cart-discounts
+  background: $content-background-color
+  border: 2px solid $background-color
+  color: $primary-text-color
+  font-family: $secondary-font
+  font-size: 14px
+  height: 60px
+  line-height: 58px
+  padding: 0 20px
+  position: relative
+  text-align: left
+  
+  input
+    background: none
+    border: none
+    color: $primary-text-color
+    font-size: 14px
+    height: 58px
+    line-height: 58px
+    padding: 0
+    text-align: left
+    width: 220px
+    
+    &::-ms-clear
+      height: 0
+      width: 0
+    
+    &:active, &:focus
+      outline: none
+      
+  a.cancel-discount
+    +vertical-align
+    border-left: 2px solid $background-color
+    height: 56px
+    position: absolute
+    right: 0
+    width: 56px
+    
+    svg
+      +vertical-align
+      display: block
+      fill: $primary-text-color
+      height: 20px
+      margin: 0 auto
+      width: 20px
+      
+  a.apply-discount
+    +vertical-align
+    border-left: 2px solid $background-color
+    height: 56px
+    position: absolute
+    right: 0
+    width: 56px
+    
+    svg
+      +vertical-align
+      display: block
+      fill: $primary-text-color
+      height: 13px
+      margin: 0 auto
+      width: 13px
+      
+.cart-empty-message
+  text-align: center
+  
+  p
+    margin: 80px 0
+    
+  .button
+    display: inline-block
+    
+  &.hidden-message
+    display: none

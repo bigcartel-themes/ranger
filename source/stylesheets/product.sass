@@ -1,0 +1,377 @@
+@import 'variables'
+
+section.content 
+  .product-page
+    margin-top: 80px
+    max-width: 1600px
+    
+    @media screen and (max-width: $break-small)
+      margin-top: 0
+  
+.product-images
+  +pie-clearfix
+  border-right: 2px solid $background-color
+  float: left
+  max-width: 66.66%
+  padding: 48px
+  position: relative
+  width: 100%
+  
+  @media screen and (max-width: $break-extra-large)
+    padding: 32px
+  
+  @media screen and (max-width: $break-large)
+    border: 0
+    float: none
+    max-width: 100%
+    overflow: hidden
+    padding: 0 32px
+  
+  @media screen and (max-width: $break-small)
+    border-top: 2px solid $background-color
+    padding: 0
+
+  .primary-image
+    float: left
+    display: block
+    padding-right: 48px
+    width: 80%
+    
+    @media screen and (max-width: $break-extra-large)
+      padding-right: 32px
+      
+    @media screen and (max-width: $break-large)
+      float: none
+      padding: 0
+      width: 100%
+    
+    img
+      display: block
+      width: 100%
+      
+    &.solo
+      padding-right: 0
+      width: 100%
+
+  .product-thumbnails
+    +pie-clearfix
+    float: right
+    list-style: none
+    margin: 0
+    padding: 0
+    text-align: center
+    width: 20%
+    
+    @media screen and (max-width: $break-large)
+      float: none
+      display: flex
+      justify-content: center
+      left: -2px
+      margin-top: 2px
+      overflow: hidden
+      position: relative
+      width: calc(100% + 4px)
+      
+    @media screen and (max-width: $break-small)
+      background: $background-color
+      border: 2px solid $background-color
+      border-left: 0
+      border-right: 0
+      margin-top: 0
+    
+    li
+      +all-transitions
+      background: $content-background-color
+      margin-bottom: 8px
+      padding-bottom: 100%
+      position: relative
+      vertical-align: top
+      width: 100%
+      
+      @media screen and (max-width: $break-large)
+        border-left: 2px solid $content-background-color
+        display: inline-block
+        height: 20%
+        margin: 0
+        padding-bottom: 20%
+        position: relative
+        vertical-align: top
+        width: 20%
+      
+      @media screen and (max-width: $break-small)
+        border-left: 2px solid $background-color
+
+      &:last-child
+        margin-bottom: 0
+        
+        @media screen and (max-width: $break-small)
+          border-right: 2px solid $background-color
+        
+      &.active a
+        opacity: 1
+        
+      a
+        background-position: 50% 50%
+        background-size: cover
+        display: block
+        height: 100%
+        opacity: .8
+        overflow: hidden
+        position: absolute
+        width: 100%
+        
+      img
+        display: block
+        width: 100%
+        
+        @media screen and (max-width: $break-large)
+          position: relative
+          left: 50%
+          width: auto
+          height: auto
+          top: 50%
+          transform: translateY(-50%) translateX(-50%)
+        
+  .product-status
+    background: $links-color
+    font-size: 0.75rem
+    color: $content-background-color
+    display: block
+    font-style: normal
+    height: 72px
+    left: 32px
+    line-height: 16px
+    min-width: 72px
+    max-width: 72px
+    padding: 0 10px
+    position: absolute
+    text-align: center
+    text-transform: uppercase
+    top: 32px
+    
+    @media screen and (max-width: $break-extra-large)
+      left: 24px
+      top: 24px
+      
+    @media screen and (max-width: $break-large)
+      left: 48px
+      top: 24px
+      
+    @media screen and (max-width: $break-medium)
+      left: 56px
+      top: 24px
+    
+    @media screen and (max-width: $break-small)
+      left: 24px
+      top: 24px
+    
+    .status-text
+      +vertical-align
+
+.product-price-title, .product-details
+  float: right
+  max-width: 33.33%
+  padding: 48px
+  width: 100%
+  
+  @media screen and (max-width: $break-extra-large)
+    padding: 32px
+
+  @media screen and (max-width: $break-large)
+    float: none
+    max-width: 100%
+    
+  @media screen and (max-width: $break-small)
+    padding: 16px
+  
+.product-price-title
+  padding-bottom: 0
+
+  h1
+    color: $primary-text-color
+    display: block !important
+    font-size: 24px
+    line-height: 28px
+    margin: 0 auto 44px
+    text-align: left
+    text-transform: uppercase
+    
+    @media screen and (max-width: $break-large)
+      margin-bottom: 0
+      
+    @media screen and (max-width: $break-medium)
+      font-size: 18px
+      
+  h2
+    color: $links-color
+    font-family: $secondary-font
+    font-size: 24px
+    line-height: 28px
+    margin-bottom: 10px
+    text-transform: uppercase
+    
+    @media screen and (max-width: $break-medium)
+      font-size: 18px
+      margin-bottom: 0
+      
+  h4
+    border-bottom: none
+    font-size: 20px
+    margin: 0
+    padding: 0 0 6px
+
+  @media screen and (max-width: $break-large)
+    padding: 32px
+
+.product-images:after, .product-details:after
+  display: block
+  position: absolute
+  height: 100%
+  content: ""
+  background-color: $background-color
+  top: 0
+  
+  @media screen and (max-width: $break-large)
+    display: none
+
+.product-images:after
+  right: -2px
+  width: 2px
+
+.product-details:after 
+  left: -2px
+  width: 2px
+
+.product-details
+  padding-bottom: 96px
+  padding-top: 0
+  position: relative
+  
+  @media screen and (max-width: $break-large)
+    padding-top: 24px
+
+  @media screen and (max-width: $break-small)
+    padding: 0 0 96px 0
+
+  .product-description
+    font-size: 14px
+    line-height: 1.7em
+    margin: 0 auto
+    
+    @media screen and (max-width: $break-small)
+      padding: 0 32px
+      
+    img
+      max-width: 100%
+
+    a
+      color: $links-color
+      font-weight: 600
+
+  .product-form
+    margin-bottom: 40px
+    
+    .select
+      margin-bottom: 24px
+      max-width: 100%
+      
+      @media screen and (max-width: $break-small)
+        border: 0
+        height: 64px
+        margin-bottom: 0
+        
+        select
+          padding-left: 32px
+        
+        .arrow-holder
+          height: 64px
+          width: 64px
+      
+    button
+      width: 100%
+
+.share-buttons
+  +pie-clearfix
+  border-top: 2px solid $background-color
+  bottom: 0
+  list-style: none
+  margin: 0
+  max-width: 33.33%
+  padding: 0
+  position: absolute
+  right: 0
+  width: 100%
+  
+  @media screen and (max-width: $break-large)
+    border-bottom: 2px solid $background-color
+    max-width: 100%
+
+  li
+    border-left: 2px solid $background-color
+    float: left
+    position: relative
+    width: 33.33%
+    
+    &:first-child
+      border-left: 0px
+    
+    a
+      cursor: pointer
+      display: block
+      padding: 24px 0
+      text-align: center
+      width: 100%
+      
+      svg
+        +all-transitions
+        fill: $primary-text-color
+        height: 20px
+        opacity: .7
+        width: 20px
+
+      &:hover
+        svg
+          fill: $links-color
+          opacity: 1
+          
+    &.social-pinterest
+    
+      a
+        display: inline-block
+        position: relative
+        
+        &:after
+          content: ""
+          position: absolute
+          top: 0
+          right: 0
+          bottom: 0
+          left: 0
+
+.facebook-popup-holder
+  +transform(translateX(-50%))
+  bottom: 100%
+  display: none
+  left: 50%
+  position: absolute
+  z-index: 1
+  
+.facebook-popup
+  background-color: $content-background-color
+  box-shadow: 0px 0px 2px 2px $background-color
+  padding: 10px
+  position: relative
+
+.facebook-popup:after
+  +transform(rotate(-45deg))
+  transform-origin: 0 0
+  border: 10px solid black
+  border-color: transparent transparent $content-background-color $content-background-color
+  box-shadow: -2px 2px 2px 0 $background-color
+  bottom: -20px
+  content: ""
+  height: 0
+  left: 44%
+  margin-left: -7px
+  position: absolute
+  width: 0
