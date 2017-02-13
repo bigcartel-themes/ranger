@@ -1,4 +1,4 @@
-<div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank %} has-welcome{% endif %}">
+<div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} has-welcome{% endif %}">
   {% if theme.featured_items_type == 'Categories' %}
     {% if categories.active != blank and theme.featured_items > 0 %}
       {% for category in categories.active limit:theme.featured_items %}{% assign num_categories = forloop.length %}{% endfor %}

@@ -66,7 +66,7 @@
             {% endif %}
             
             {% if theme.logo != blank %}
-              <a class="store-link" href="/" title="{{ store.name | escape }}"><img alt="{{ store.name | escape }}" src="{{ theme.images.logo.url | constrain: 400, 100 }}"></a>
+              <a class="store-link" href="/" title="{{ store.name | escape }}"><img alt="{{ store.name | escape }}" src="{{ theme.images.logo.url | constrain: 600, 200 }}"></a>
             {% else %}
               <a class="store-link" href="/" title="{{ store.name | escape }}">{{ store.name }}</a>
             {% endif %}
@@ -148,7 +148,7 @@
         </ul>
       </div>
     </header>
-    <div id="pattern" class="pattern{% if page.permalink == 'home' %}{% if theme.welcome_header != blank or theme.welcome_subheader != blank %} welcome-pattern {% if theme.welcome_image != blank %} welcome-image{%endif %}{% endif %}{% if theme.featured_items == 0 %} hide-featured{% endif %}{% endif %} {{ theme.pattern_style }}">
+    <div id="pattern" class="pattern{% if page.permalink == 'home' %}{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} welcome-pattern{%endif %} {% if theme.welcome_image != blank %} welcome-image{% endif %}{% if theme.featured_items == 0 %} hide-featured{% endif %}{% endif %} {{ theme.pattern_style }}">
       {% if page.permalink == 'home' %}
         {% if theme.welcome_header != blank or theme.welcome_subheader != blank %}
           <div class="welcome-text">
