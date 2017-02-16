@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "images": [
     {
       "variable": "logo",
@@ -134,7 +134,7 @@
       "variable": "featured_items",
       "label": "Featured items",
       "type": "select",
-      "options": "0..12",
+      "options": "0..100",
       "default": 6,
       "description": "The number of items featured on the Home page"
     },
