@@ -106,7 +106,7 @@ var Store = {
       }
     });
     $(window).on("load resize", function() {
-      if (window.outerWidth <= '668') { 
+      if ($(window).width() <= '668') { 
         if ($('.footer-cart').is(":visible")) { 
           var footer_padding = 76;
         }
