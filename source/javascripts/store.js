@@ -6,7 +6,7 @@ var Store = {
     options = $.extend(this.defaults, options);
     if (options.pattern_style == 'small-triangles' || options.pattern_style == 'large-triangles') {
       var store_name_length = options.store_name.length;
-      var pattern_width = screen.width;
+      var pattern_width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
       var canvas_element = document.getElementById('repeating-pattern');
       $(canvas_element).width(pattern_width+'px');
       if (inPreview && page == 'home') {
