@@ -96,15 +96,6 @@ var Store = {
       $(this).parent().addClass('active'); 
       return false;
     });
-    $('.social-facebook').click(function() { 
-      $('.facebook-popup-holder').fadeToggle('fast');
-      return false;
-    });
-    $('body').click(function() { 
-      if (!$(event.target).closest('.social-facebook').length) {
-        $('.facebook-popup-holder').fadeOut('fast');
-      }
-    });
     $(window).on("load resize", function() {
       if ($(window).width() <= '668') { 
         if ($('.footer-cart').is(":visible")) { 
