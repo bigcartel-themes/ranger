@@ -56,10 +56,10 @@ $break-extra-small: 500px
   -webkit-transition: $transition
   transition: $transition
 
-@mixin appearance($str)
-  -webkit-appearance: none
-  -moz-appearance: none
-  appearance: none
+@mixin appearance($str...)
+  -webkit-appearance: $str
+  -moz-appearance: $str
+  appearance: $str
   
 @mixin pie-clearfix
   &:after
