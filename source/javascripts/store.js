@@ -3,34 +3,7 @@ var Store = {
     var path_name = top.location.pathname;
     var admin_path = new RegExp("/admin/design");
     var inPreview = admin_path.test(path_name);
-    options = $.extend(this.defaults, options);
-    if (options.pattern_style == 'small-triangles' || options.pattern_style == 'large-triangles') {
-      var store_name_length = options.store_name.length;
-      var pattern_width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-      var canvas_element = document.getElementById('repeating-pattern');
-      $(canvas_element).width(pattern_width+'px');
-      if (inPreview && page == 'home') {
-        var pattern_height = 700;
-      }
-      else { 
-        var pattern_height = $('#pattern').height();
-      }
-      if (options.pattern_style == 'small-triangles') { 
-        var cell_size = store_name_length * 5;
-      }
-      if (options.pattern_style == 'large-triangles') { 
-        var cell_size = store_name_length * 35;
-      }
-      var pattern = Trianglify({
-        width: pattern_width,
-        height: pattern_height,
-        cell_size: cell_size,
-        seed: 1,
-        variance: 1,
-        x_colors: [options.primary_color, options.secondary_color, options.primary_color]
-      });
-      pattern.canvas(canvas_element);
-    }
+    var options = $.extend(this.defaults, options);
     $('.category-nav').hover(function() {
       $(this).toggleClass('dropdown-open');
     });
@@ -109,6 +82,39 @@ var Store = {
         var footer_padding = $('footer').outerHeight();
       }
       $('body').css('padding-bottom', footer_padding);
+      if (options.pattern_style == 'small-triangles' || options.pattern_style == 'large-triangles') {
+        var pattern_style = options.pattern_style;
+        var store_name_length = options.store_name.length;
+        var pattern_width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+        var canvas_element = document.getElementById('repeating-pattern');
+        var primary_color = options.primary_color;
+        var secondary_color = options.secondary_color;
+        if (inPreview && page == 'home') {
+          var pattern_height = 700;
+        }
+        else { 
+          var pattern_height = $('#pattern').height();
+        }
+        Store.draw_pattern(pattern_style, store_name_length, pattern_width, canvas_element, primary_color, secondary_color, pattern_height);
+      }
     });
+  },
+  draw_pattern: function(pattern_style, store_name_length, pattern_width, canvas_element, primary_color, secondary_color, pattern_height) {
+    $(canvas_element).width(pattern_width+'px');
+    if (pattern_style == 'small-triangles') { 
+      var cell_size = store_name_length * 5;
+    }
+    if (pattern_style == 'large-triangles') { 
+      var cell_size = store_name_length * 35;
+    }
+    var pattern = Trianglify({
+      width: pattern_width,
+      height: pattern_height,
+      cell_size: cell_size,
+      seed: 1,
+      variance: 1,
+      x_colors: [primary_color, secondary_color, primary_color]
+    });
+    pattern.canvas(canvas_element);
   }
 }
