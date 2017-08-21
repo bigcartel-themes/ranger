@@ -10,9 +10,13 @@ var Store = {
     $('.dropdown-list a').click(function(e) {
       $(this).closest('.category-nav').removeClass('dropdown-open');
     });
-    $('.category-nav').bind('touchstart', function(e) {
-      if (!$(e.target).closest('a').length) { return false; }
-      $(this).toggleClass('dropdown-open');
+    $('.category-nav > a').bind('touchstart', function(e) {
+      if ($('.category-dropdown').length) { 
+        $(this).parent().toggleClass('dropdown-open');
+        if ($(this).parent().hasClass('dropdown-open')) { 
+          e.preventDefault();
+        }
+      }
     });
     $('.option-quantity').blur(function(e) {
       $(this).closest('form').submit();
