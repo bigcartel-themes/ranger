@@ -106,7 +106,10 @@ h1, h2, h3, h4, h5, h6
   padding: 0
   text-align: left
   text-transform: uppercase
-  
+
+::-webkit-input-placeholder
+  color: $primary-text-color
+   
 header
   +transition(height .4s)
   background: $content-background-color
@@ -453,6 +456,7 @@ header
             border-right: 2px solid $background-color
               
         svg
+          fill: $primary-text-color
           height: 16px
           width: 16px
             
