@@ -41,17 +41,17 @@ section.content
     height: 56px
     
   textarea  
-    border: 2px solid $background-color
     height: 140px
     resize: vertical
     
   input, textarea
     background: $content-background-color
-    border: 2px solid $background-color
+    border: 2px solid $primary-text-color
+    opacity: .6
     width: 100%
     
     &:active, &:focus
-      border: 2px solid $primary-text-color
+      opacity: 1
       outline: none
         
   .captcha-instructions
