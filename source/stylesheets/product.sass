@@ -261,12 +261,28 @@ section.content
     @media screen and (max-width: $break-small)
       padding: 0 32px
       
-    img
-      max-width: 100%
-
     a
+      +all-transitions
       color: $links-color
-      font-weight: 600
+      
+      &:hover
+        opacity: .6
+        
+    img, iframe
+      display: block
+      max-width: 100%
+    
+    ol, ul
+      margin: 1em 0
+      padding: 0
+      
+    ul
+      list-style: disc
+      list-style-position: inside
+    
+    ol
+      list-style: decimal
+      list-style-position: inside
 
   .product-form
     margin-bottom: 40px
