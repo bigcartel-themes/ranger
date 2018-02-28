@@ -20,7 +20,7 @@
               </a>
               <div class="item-details">
                 <a class="item-product-link" title="View {{ item.product.name | escape }}" href="{{ item.product.url }}">
-                  <span class="item-details-price">{{ item.unit_price | money_with_sign }}</span>
+                  <span class="item-details-price">{{ item.unit_price | money: theme.money_format_with_sign }}</span>
                   <span class="item-details-name">{{ item.product.name }}</span>
                   {% unless item.product.has_default_option %}
                     <span class="item-details-option">{{ item.option.name }}</span>
@@ -38,7 +38,7 @@
         {% endfor %}
       </ul>
       <div class="cart-footer fixed-cart-footer">
-        <h3 class="cart-total centered-total">Subtotal {{ cart.total | money_with_sign }}</h3>
+        <h3 class="cart-total centered-total">Subtotal {{ cart.total | money: theme.money_format_with_sign }}</h3>
       </div>
       <a class="button continue-shopping" href="/products">Continue shopping</a>
       <button type="submit" name="checkout" title="Checkout" class="button checkout-btn">Checkout</button>
