@@ -9,7 +9,7 @@
 {% endcase %}
 <div class="page-content product-page">
   <div class="product-price-title">
-    <h2 class="product-price">{{ product.default_price | money_with_sign }}</h2>
+    <h2 class="product-price">{{ product.default_price | money: theme.money_format }}</h2>
     <h1 class="page-title product-title">{{ page.name }}</h1>
   </div>
   <div class="product-images">
