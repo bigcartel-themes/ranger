@@ -11,23 +11,23 @@ var Store = {
       $(this).closest('.category-nav').removeClass('dropdown-open');
     });
     $('.category-nav > a').bind('touchstart', function(e) {
-      if ($('.category-dropdown').length) { 
+      if ($('.category-dropdown').length) {
         $(this).parent().toggleClass('dropdown-open');
-        if ($(this).parent().hasClass('dropdown-open')) { 
+        if ($(this).parent().hasClass('dropdown-open')) {
           e.preventDefault();
         }
       }
     });
-    $('.option-quantity').blur(function(e) {
+    $('.option-quantity').change(function(e) {
       $(this).closest('form').submit();
       return false;
     });
-    $('.open-dropdown').click(function() { 
+    $('.open-dropdown').click(function() {
       $(this).toggleClass('dropdown-visible');
       if ($('.hide-header').length) {
         if ($('.hide-header').css('display') == 'block') {
           $('.hide-header').fadeOut(200, function() {
-            $('.mobile-navigation').fadeToggle(200); 
+            $('.mobile-navigation').fadeToggle(200);
             $('.store-link').fadeIn(200);
           });
         }
@@ -38,7 +38,7 @@ var Store = {
           });
         }
       }
-      else { 
+      else {
         $('.mobile-navigation').fadeToggle(200);
       }
       return false;
@@ -60,7 +60,7 @@ var Store = {
       $('.cart-form').submit();
       return false;
     });
-    $('[name="cart[discount_code]"]').on('keyup',function(e) { 
+    $('[name="cart[discount_code]"]').on('keyup',function(e) {
       if (e.keyCode == 13) {
         $(this).closest('.checkout-btn').attr('name','update');
         $('.cart-form').submit();
@@ -70,19 +70,19 @@ var Store = {
     $('.product-thumbnails li a').click(function(e) {
       $('.primary-image img').attr('src',$(this).attr('href'));
       $('.product-thumbnails li').removeClass('active');
-      $(this).parent().addClass('active'); 
+      $(this).parent().addClass('active');
       return false;
     });
     $(window).on("load resize", function() {
-      if ($(window).width() <= '668') { 
-        if ($('.footer-cart').is(":visible")) { 
+      if ($(window).width() <= '668') {
+        if ($('.footer-cart').is(":visible")) {
           var footer_padding = 76;
         }
-        else { 
+        else {
           var footer_padding = 0;
         }
       }
-      else { 
+      else {
         var footer_padding = $('footer').outerHeight();
       }
       $('body').css('padding-bottom', footer_padding);
@@ -96,7 +96,7 @@ var Store = {
         if (inPreview && page == 'home') {
           var pattern_height = 700;
         }
-        else { 
+        else {
           var pattern_height = $('#pattern').height();
         }
         Store.draw_pattern(pattern_style, store_name_length, pattern_width, canvas_element, primary_color, secondary_color, pattern_height);
@@ -106,12 +106,12 @@ var Store = {
   draw_pattern: function(pattern_style, store_name_length, pattern_width, canvas_element, primary_color, secondary_color, pattern_height) {
     if (primary_color != 'transparent' && secondary_color != 'transparent') {
       $(canvas_element).width(pattern_width+'px');
-      if (pattern_style == 'small-triangles') { 
+      if (pattern_style == 'small-triangles') {
         var cell_size = store_name_length * 5;
       }
-      if (pattern_style == 'large-triangles') { 
+      if (pattern_style == 'large-triangles') {
         var cell_size = store_name_length * 35;
-      } 
+      }
       var pattern = Trianglify({
         width: pattern_width,
         height: pattern_height,
