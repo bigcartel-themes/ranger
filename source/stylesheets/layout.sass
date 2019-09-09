@@ -511,6 +511,9 @@ header
       background-color: #FFF
       color: #000
 
+      &:disabled
+        color: graytext
+
     &:focus
       box-shadow: none
       outline: none
@@ -533,6 +536,9 @@ header
 
     select
       color: $primary-text-color
+
+      option:disabled
+        color: graytext
 
     .arrow-holder
       border-left: 2px solid $primary-text-color
@@ -569,6 +575,10 @@ button, a.button
 
   &:hover, &:active, &:focus
     opacity: .8
+
+  &:disabled, &.disabled
+    cursor: not-allowed
+    opacity: .3
 
 input, textarea
   +all-transitions
