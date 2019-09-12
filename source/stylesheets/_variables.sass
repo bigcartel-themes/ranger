@@ -2,8 +2,8 @@
 @import 'compass'
 @import 'flexbox'
 
-$primary-font: #{"{{ theme.primary_font }}"}
-$secondary-font: #{"{{ theme.secondary_font }}"}
+$primary-font: #{"{{ theme.primary_font | font_family }}"}
+$secondary-font: #{"{{ theme.secondary_font | font_family }}"}
 
 $background-color: #{"{{ theme.background_color }}"}
 $content-background-color: #{"{{ theme.content_background_color }}"}
@@ -31,19 +31,19 @@ $break-extra-small: 500px
 
 @mixin all-transitions
   +transition(.2s linear)
-  
+
 @mixin vertical-align
   +transform(translateY(-50%))
   position: relative
   top: 50%
-  
+
 @mixin keyframes($animation)
   @-webkit-keyframes #{$animation}
     @content
 
   @keyframes #{$animation}
     @content
-    
+
 @mixin animation($str...)
   -webkit-animation: $str
   animation: $str
@@ -51,7 +51,7 @@ $break-extra-small: 500px
 @mixin transform($str...)
   -webkit-transform: $str
   transform: $str
-  
+
 @mixin transition($transition...)
   -webkit-transition: $transition
   transition: $transition
@@ -60,7 +60,7 @@ $break-extra-small: 500px
   -webkit-appearance: $str
   -moz-appearance: $str
   appearance: $str
-  
+
 @mixin pie-clearfix
   &:after
     content: ""
