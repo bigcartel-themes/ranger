@@ -573,7 +573,19 @@ button, a.button
   text-transform: uppercase
   width: 100%
 
-  &:hover, &:active, &:focus
+  &.minimal-button
+    background: none
+    color: $primary-text-color
+    border: none
+    font-size: 13px
+    padding: 0
+    width: auto
+
+    &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
+      +transform(none)
+      text-decoration: underline
+
+  &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
     opacity: .8
 
   &:disabled, &.disabled
