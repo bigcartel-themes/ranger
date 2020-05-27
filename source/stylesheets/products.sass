@@ -180,7 +180,7 @@ section.content .products-page
     +all-transitions
     +transform(translateX(-50%) translateY(-50%))
     background-color: $button-background-color
-    color: $content-background-color
+    color: $button-text-color
     left: 50%
     min-width: 180px
     opacity: 0
@@ -203,14 +203,14 @@ section.content .products-page
 .pagination
   float: left
   font-family: $secondary-font
-  font-size: 12px
+  font-size: 16px
   margin-top: 48px
   text-align: left
 
   @media screen and (max-width: $break-small)
     margin: 48px 32px
 
-  > a, .current
+  > a, .current, .gap
     display: none
 
   .previous, .next
@@ -225,13 +225,13 @@ section.content .products-page
 
     svg
       +vertical-align
-      fill: $content-background-color
+      fill: $button-text-color
       height: 16px
       width: 16px
 
 .paginate-info
   float: left
-  font-size: 12px
+  font-size: 16px
   line-height: 64px
   margin-left: 32px
   margin-top: 48px
