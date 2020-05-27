@@ -1,46 +1,46 @@
 @import 'variables'
 
-section.content 
+section.content
   .cart-page
     max-width: 828px
-    
+
     &.empty-cart
       height: 240px
-      
+
       @media screen and (max-width: $break-small)
         height: 120px
         min-height: 120px
-    
+
 .cart-form
   +pie-clearfix
   margin: 0 auto
   width: 100%
-  
+
   @media screen and (max-width: $break-small)
     padding-bottom: 184px
-  
+
 .cart-items
   list-style: none
   margin: 0
   padding: 0
   width: 100%
-  
+
   @media screen and (max-width: $break-small)
     border-top: none
-  
+
   .cart-item
     +pie-clearfix
     border-bottom: 2px solid $background-color
-    font-size: 14px
+    font-size: 16px
     height: 162px
     line-height: 15px
     padding: 0
     position: relative
     text-transform: uppercase
-    
+
     @media screen and (max-width: $break-small)
       display: flex
-    
+
   .item-image-details
     +pie-clearfix
     +vertical-align
@@ -48,16 +48,16 @@ section.content
     max-width: 65%
     float: left
     width: 100%
-    
+
     @media screen and (max-width: $break-medium)
       max-width: 70%
-    
+
     @media screen and (max-width: $break-small)
       +transform(none)
       float: none
       max-width: 100%
       top: 0
-      
+
   .item-image
     background-position: 50%
     background-repeat: no-repeat
@@ -69,10 +69,10 @@ section.content
     position: relative
     text-align: center
     width: 100%
-    
+
     @media screen and (max-width: $break-small)
       max-width: 40%
-    
+
     .item-delete
       background: $accent-background-color
       cursor: pointer
@@ -83,7 +83,7 @@ section.content
       text-align: center
       top: 20px
       width: 32px
-      
+
       svg
         +vertical-align
         display: block
@@ -91,33 +91,33 @@ section.content
         height: 10px
         margin: 0 auto
         width: 10px
-      
+
   .item-details
     +vertical-align
     float: left
-    font-family: $primary-font  
+    font-family: $primary-font
     max-width: calc(100% - 160px)
     padding: 0 48px
     width: 100%
-    
+
     @media screen and (max-width: $break-medium)
       padding: 0 32px
-      
+
     @media screen and (max-width: $break-small)
       max-width: 60%
       padding: 0 16px
-    
+
   .item-product-link
     color: $primary-text-color
     display: block
     font-size: 18px
-    
+
     @media screen and (max-width: $break-medium)
       font-size: 20px
-      
+
   .item-details-name
     line-height: 20px
-    
+
     @media screen and (max-width: $break-small)
       font-size: 14px
       line-height: 20px
@@ -130,10 +130,10 @@ section.content
     line-height: 17px
     margin-top: 6px
     opacity: .7
-    
+
     @media screen and (max-width: $break-small)
       font-size: 12px
-    
+
   .item-details-price
     color: $links-color
     display: block
@@ -141,10 +141,10 @@ section.content
     font-size: 18px
     line-height: 17px
     margin-bottom: 10px
-    
+
     @media screen and (max-width: $break-medium)
       display: block
-      
+
     @media screen and (max-width: $break-small)
       font-size: 14px
       margin-bottom: 6px
@@ -171,48 +171,47 @@ section.content
       padding-top: 18px
       top: 0
       width: 25%
-    
+
     .item-quantity-inner
       +pie-clearfix
       +vertical-align
-        
+
     .quantity-label
       float: left
       font-size: 14px
       line-height: 40px
       opacity: .6
       width: 50%
-      
+
       @media screen and (max-width: $break-small)
         display: block
         float: none
         line-height: 20px
         text-align: center
         width: 100%
-      
+
     .option-quantity
       background: none
       border: none
       color: $primary-text-color
       float: right
-      font-size: 14px
+      font-size: 16px
       height: 40px
       padding: 10px
       text-align: right
       width: 50%
-      
+
       @media screen and (max-width: $break-small)
         float: none
-        font-size: 14px
         padding: 0
         position: relative
         text-align: center
         width: 100%
-      
+
       &:focus
         box-shadow: none
         outline: none
-          
+
   .price
     +vertical-align
     color: $primary-text-color
@@ -221,7 +220,7 @@ section.content
     font-size: 18px
     padding-left: 20px
     text-align: right
-    
+
     @media screen and (max-width: $break-medium)
       display: none
 
@@ -234,31 +233,31 @@ section.content
   color: $accent-text-color
   padding: 48px 32px
   position: relative
-  
+
   &.fixed-cart-footer
     @media screen and (max-width: $break-small)
       bottom: 64px
       padding: 32px
       position: fixed
       width: 100%
-      
+
   .cart-adjustments
     bottom: 48px
     color: $accent-text-color
     position: absolute
     right: 32px
-    
+
     @media screen and (max-width: $break-medium)
       bottom: auto
       position: relative
       right: auto
-    
+
   h4.cart-adjustment
     color: $accent-text-color
     margin-bottom: 20px
     opacity: .7
     text-align: left
-    
+
   h3.cart-total
     color: $accent-text-color
     font-size: 22px
@@ -268,10 +267,10 @@ section.content
     @media screen and (max-width: $break-medium)
       font-size: 18px
       text-align: left
-      
+
       &.centered-total
         text-align: center
-        
+
         @media screen and (max-width: $break-small)
           font-size: 16px
 
@@ -279,18 +278,18 @@ section.content
     display: inline-block
     text-align: right
     width: 200px
-    
+
     @media screen and (max-width: $break-medium)
       float: right
       width: auto
-        
+
   button, .button
     max-width: 100%
-    
+
     @media screen and (max-width: $break-medium)
       display: none
       font-size: 16px
-    
+
     @media screen and (max-width: $break-small)
       font-size: 18px
 
@@ -300,23 +299,23 @@ a.continue-shopping, .checkout-btn
   text-align: center
   text-transform: uppercase
   width: 50%
-  
+
   @media screen and (max-width: $break-medium)
     display: none
-  
+
 a.continue-shopping
   background: $accent-background-color
   color: $accent-text-color
-  opacity: .2
-  
+  opacity: .8
+
 .cart-empty-message
   text-align: center
-  
+
   p
     margin: 80px 0
-    
+
   .button
     display: inline-block
-    
+
   &.hidden-message
     display: none

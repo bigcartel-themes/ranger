@@ -254,8 +254,8 @@ section.content
     padding: 0 0 96px 0
 
   .product-description
-    font-size: 14px
-    line-height: 1.7em
+    font-size: 16px
+    line-height: 1.5em
     margin: 0 auto
 
     @media screen and (max-width: $break-small)
@@ -264,9 +264,10 @@ section.content
     a
       +all-transitions
       color: $links-color
+      text-decoration: underline
 
       &:hover
-        opacity: .6
+        opacity: .8
 
     img, iframe
       display: block
@@ -293,8 +294,12 @@ section.content
 
       @media screen and (max-width: $break-small)
         border: 0
+        border-bottom: 2px solid $background-color
         height: 64px
         margin-bottom: 0
+
+        &:last-child
+          border: 0
 
         select
           padding-left: 32px

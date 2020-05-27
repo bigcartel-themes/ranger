@@ -11,7 +11,7 @@ body
   background-color: $background-color
   color: $primary-text-color
   font-family: $primary-font
-  font-size: 14px
+  font-size: 16px
   line-height: 1
   padding-top: $header-height
   padding-bottom: 288px
@@ -146,7 +146,7 @@ header
     +flex(1)
     +flex-basis(33%)
     display: inline-block
-    font-size: 12px
+    font-size: 14px
     max-width: 33%
     text-align: left
     text-transform: uppercase
@@ -228,7 +228,7 @@ header
     +transform(translateZ(0))
     color: $primary-text-color
     display: inline-block
-    font-size: 22px
+    font-size: 26px
     height: 160px
     max-width: 33%
     text-align: center
@@ -239,7 +239,7 @@ header
 
     @media screen and (max-width: $break-small)
       height: $header-height-mobile
-      font-size: 14px
+      font-size: 16px
 
     &.image
       height: calc(#{$header-height} / 1.5)
@@ -282,7 +282,7 @@ header
     +flex-basis(33%)
     +pie-clearfix
     display: inline-block
-    font-size: 12px
+    font-size: 14px
     max-width: 33%
     position: relative
     text-align: right
@@ -336,7 +336,7 @@ header
       width: 4em
       position: absolute
       right: 110px
-      top: -13px
+      top: -17px
 
       &:hover
         width: 224px
@@ -498,7 +498,7 @@ header
     border: 0
     color: $primary-text-color
     font-family: $secondary-font
-    font-size: 14px
+    font-size: 16px
     height: 100%
     line-height: 2em
     padding: 0 66px 0 20px
@@ -530,7 +530,7 @@ header
     width: 13px
     z-index: 1
 
-  &:hover, &:focus
+  &:hover, &:focus-within
     color: $primary-text-color
     border-color: $primary-text-color
 
@@ -565,7 +565,7 @@ button, a.button
   cursor: pointer
   display: block
   font-family: $secondary-font
-  font-size: 14px
+  font-size: 16px
   line-height: 1
   max-width: 100%
   outline: none
@@ -805,13 +805,14 @@ footer
         +all-transitions
         color: $accent-text-color
         display: block
-        font-size: 12px
-        line-height: 18px
-        opacity: .6
+        font-size: 15px
+        line-height: 1.25em
+        opacity: .9
         padding: 9px 8px
 
-        &:hover
+        &:hover, &:focus
           opacity: 1
+          text-decoration: underline
 
     &.social-icons
       list-style: none
@@ -842,9 +843,9 @@ footer
           &:hover svg
             opacity: 1
 
-.custom-page, .success-page
-  font-size: 14px
-  line-height: 24px
+.custom-page
+  font-size: 16px
+  line-height: 1.5em
   max-width: 828px
   padding: 64px
   width: 100%
@@ -852,6 +853,7 @@ footer
   a
     +all-transitions
     color: $links-color
+    text-decoration: underline
 
     &:hover
       opacity: .6
@@ -949,7 +951,7 @@ footer
     +flex
     +flex-grow(1)
     float: left
-    font-size: 12px
+    font-size: 14px
     line-height: 64px
     text-align: center
     text-transform: uppercase
