@@ -385,23 +385,27 @@ header
   .open-dropdown
     +transition(200)
     display: none
+    height: 44px
     padding: 8px
     position: absolute
     right: 16px
     top: 50%
     transform: translateY(-50%)
+    width: 44px
 
     svg
       +all-transitions
       display: block
       height: 10px
-      width: 12px
+      width: 16px
 
     &.dropdown-visible svg
       +transform(rotate(180deg))
 
     @media screen and (max-width: $break-medium)
-      display: block
+      display: flex
+      align-items: center
+      justify-content: center
       fill: $primary-text-color
 
 .mobile-navigation
