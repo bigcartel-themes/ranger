@@ -20,7 +20,7 @@
         <div class="header-item header-nav">
           <ul class="header-nav-pages">
             <li class="category-nav">
-              <a href="/products" title="{% if theme.collections %}Collections{% else %}Products{% endif %}">{% if theme.collections %}Collections{% else %}Products{% endif %}</a>
+              <a href="/products">{% if theme.collections %}Collections{% else %}Products{% endif %}</a>
               {% if theme.collections == false %}
                 {% if categories.active != blank or artists.active != blank %}
                   <ul class="category-dropdown">
@@ -48,7 +48,7 @@
           <div class="store-title">
             {% if page.permalink == 'cart' %}
               <div class="header-cart hide-header">
-                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 9c.553 0 1-.447 1-1V1c0-.55-.45-1-1-1H1C.448 0 0 .447 0 1c0 .553.448 1 1 1h1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1 0-.583-.447-1-1-1H4V9h11zM4 2h10v5H4V2z"/><circle cx="4.5" cy="14.5" r="1.5"/><circle cx="13.5" cy="14.5" r="1.5"/></svg>
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 9c.553 0 1-.447 1-1V1c0-.55-.45-1-1-1H1C.448 0 0 .447 0 1c0 .553.448 1 1 1h1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1 0-.583-.447-1-1-1H4V9h11zM4 2h10v5H4V2z"/><circle cx="4.5" cy="14.5" r="1.5"/><circle cx="13.5" cy="14.5" r="1.5"/></svg>
                 <span class="cart-num-items">{{ cart.item_count | pluralize: 'Item', 'Items' }}</span>
               </div>
             {% elsif page.permalink == 'product' %}
@@ -68,7 +68,7 @@
           <ul class="search-cart-nav">
             <li class="cart">
               <a href="/cart" title="Cart">
-                <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 9c.553 0 1-.447 1-1V1c0-.55-.45-1-1-1H1C.448 0 0 .447 0 1c0 .553.448 1 1 1h1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1 0-.583-.447-1-1-1H4V9h11zM4 2h10v5H4V2z"/><circle cx="4.5" cy="14.5" r="1.5"/><circle cx="13.5" cy="14.5" r="1.5"/></svg>
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 9c.553 0 1-.447 1-1V1c0-.55-.45-1-1-1H1C.448 0 0 .447 0 1c0 .553.448 1 1 1h1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1 0-.583-.447-1-1-1H4V9h11zM4 2h10v5H4V2z"/><circle cx="4.5" cy="14.5" r="1.5"/><circle cx="13.5" cy="14.5" r="1.5"/></svg>
                 <span class="cart-num-items">{{ cart.item_count | pluralize: 'Item', 'Items' }}</span>
               </a>
             </li>
@@ -83,7 +83,8 @@
             {% endif %}
           </ul>
         </div>
-        <a href="#" class="open-dropdown"><svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><path d="M9.852 1.536c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.463 1.582.142c-.2-.19-.52-.19-.717 0L.148.825c-.197.188-.197.494 0 .684l4.508 4.35c.2.187.52.187.717 0l4.48-4.324z" /></svg></a>
+        <a href="#" class="open-dropdown" aria-label="Open mobile navigation">
+          <svg width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><path d="M9.852 1.536c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.463 1.582.142c-.2-.19-.52-.19-.717 0L.148.825c-.197.188-.197.494 0 .684l4.508 4.35c.2.187.52.187.717 0l4.48-4.324z" /></svg></a>
       </div>
       <div class="mobile-navigation">
         <ul class="mobile-navigation-list">
@@ -95,7 +96,7 @@
               </form>
             </li>
           {% endif %}
-          <li><a href="/products" title="{% if theme.collections %}Collections{% else %}Products{% endif %}">{% if theme.collections %}Collections{% else %}Products{% endif %}</a></li>
+          <li><a href="/products">{% if theme.collections %}Collections{% else %}All Products{% endif %}</a></li>
           {% if theme.collections == false %}
             {% if categories.active != blank or artists.active != blank %}
               {% if categories.active != blank %}
