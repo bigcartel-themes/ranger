@@ -12,19 +12,36 @@
       {% if products != blank %}
         <ul class="product-list{% if paginate.items < 4 %} justify-center{% endif %}">
           {% for product in products %}
+            {% assign product_image_constrain_width = 432 %}
+            {% assign product_image_constrain_height = 432 %}
+            {% assign product_image_constrain_width_large = product_image_constrain_width | times: 2 %}
+            {% assign product_image_constrain_height_large = product_image_constrain_height | times: 2 %}
+
+            {% assign thumb_constrain_width = 30 %}
+            {% assign thumb_constrain_height = 30 %}
+
             {% assign product_status = '' %}
             {% case product.status %}
-            	{% when 'active' %}
-            		{% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
-            	{% when 'sold-out' %}
-            		{% assign product_status = 'Sold out' %}
-            	{% when 'coming-soon' %}
-            		{% assign product_status = 'Coming soon' %}
+              {% when 'active' %}
+                {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+              {% when 'sold-out' %}
+                {% assign product_status = 'Sold out' %}
+              {% when 'coming-soon' %}
+                {% assign product_status = 'Coming soon' %}
             {% endcase %}
+            {% capture image_class %}
+              {% if product.image.height > product.image.width %}
+                image-tall
+              {% elsif product.image.height < product.image.width %}
+                image-wide
+              {% else %}
+                image-square
+              {% endif %}
+            {% endcapture %}
             <li class="product-card {{ product.css_class }}">
-              <a class="product-link" href="{{ product.url }}">
+              <a class="product-link" href="{{ product.url }}" title="View {{ product.name | escape }}">
                 <div class="product-image">
-                  <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '1000','1000' }}">
+                  <img alt="" class="lazy product-list-image {{ image_class }}" src="{{ product.image | product_image_url | constrain: thumb_constrain_width,thumb_constrain_height }}" data-src="{{ product.image | product_image_url | constrain: product_image_constrain_width, product_image_constrain_height }}" data-srcset="{{ product.image | product_image_url | constrain: product_image_constrain_width_large, product_image_constrain_height_large }} 2x, {{ product.image | product_image_url | constrain: product_image_constrain_width, product_image_constrain_height }} 1x">
                   <div class="hover-message">Shop Now</div>
                 </div>
                 <div class="product-info">
@@ -51,13 +68,20 @@
       <ul class="product-list collection-list{% if paginate.items < 4 %} justify-center{% endif %}">
         {% for category in categories.active %}
           <li class="product-card {{ product.css_class }}">
-            <a class="category-link product-link" href="{{ category.url }}">
+            <a class="category-link product-link" href="{{ category.url }}" title="View {{ category.name | escape }}">
               <div class="category-info product-info">
                 <div class="product-name category-name">{{ category.name }}</div>
               </div>
               <div class="product-image">
                 {% for product in category.products limit:1 %}
-                  <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '1000','1000' }}">
+                  {% assign product_image_constrain_width = 432 %}
+                  {% assign product_image_constrain_height = 432 %}
+                  {% assign product_image_constrain_width_large = product_image_constrain_width | times: 2 %}
+                  {% assign product_image_constrain_height_large = product_image_constrain_height | times: 2 %}
+
+                  {% assign thumb_constrain_width = 30 %}
+                  {% assign thumb_constrain_height = 30 %}
+                  <img alt="" class="lazy product-list-image" src="{{ product.image | product_image_url | constrain: thumb_constrain_width,thumb_constrain_height }}" data-src="{{ product.image | product_image_url | constrain: product_image_constrain_width, product_image_constrain_height }}" data-srcset="{{ product.image | product_image_url | constrain: product_image_constrain_width_large, product_image_constrain_height_large }} 2x, {{ product.image | product_image_url | constrain: product_image_constrain_width, product_image_constrain_height }} 1x">
                 {% endfor %}
                 <div class="hover-message">Shop Now</div>
               </div>
