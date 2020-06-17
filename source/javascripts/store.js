@@ -47,28 +47,14 @@ var Store = {
       $(this).closest('li').find('input.option-quantity').val(0).closest('form').submit();
       return false;
     });
-    $('[name="cart[shipping_country_id]"]').on('change',function() {
-      $('.cart-form').submit();
-    });
-    $('.cancel-discount').click(function(e) {
-      $('.cart-form').append('<input name="cart[discount_code]" type="hidden" value="">');
-      $('.cart-form').submit();
-      return false;
-    });
-    $('.apply-discount').click(function(e) {
-      $(this).closest('.checkout-btn').attr('name','update');
-      $('.cart-form').submit();
-      return false;
-    });
-    $('[name="cart[discount_code]"]').on('keyup',function(e) {
-      if (e.keyCode == 13) {
-        $(this).closest('.checkout-btn').attr('name','update');
-        $('.cart-form').submit();
-        return false;
-      }
-    });
     $('.product-thumbnails li a').click(function(e) {
-      $('.primary-image img').attr('src',$(this).attr('href'));
+
+      var data_url = $(this).attr('href')
+      var data_srcset = $(this).data('srcset');
+
+      $('.primary-product-image').attr('src',data_url);
+      $('.primary-product-image').attr('data-srcset',data_srcset);
+
       $('.product-thumbnails li').removeClass('active');
       $(this).parent().addClass('active');
       return false;
