@@ -95,9 +95,12 @@ body
   position: relative
   width: 100%
 
-a, a:visited
+a
   color: $primary-text-color
   text-decoration: none
+
+  &:hover, &:focus
+    color: $links-color
 
 h1, h2, h3, h4, h5, h6
   color: $primary-text-color
@@ -143,94 +146,23 @@ header
       padding: 0
 
   .header-nav
-    +flex(1)
     +flex-basis(33%)
-    display: inline-block
     font-size: 14px
-    max-width: 33%
     text-align: left
     text-transform: uppercase
 
     @media screen and (max-width: $break-medium)
       display: none
 
-    .header-nav-pages
-      list-style: none
-      margin: 0
-      padding: 0
-
-      > li
-        display: inline-block
-        position: relative
-
-        &.dropdown-open
-          +all-transitions
-
-          .category-dropdown
-            +all-transitions
-            display: inline-block
-            opacity: 1
-            visibility: visible
-
-        > a
-          display: block
-          line-height: 20px
-          padding: 0 8px
-
-          &:after
-            content: ''
-            display: block
-            height: 2px
-            width: 100%
-            margin: 0 auto
-            opacity: 0
-            background: $links-color
-
-          &:hover
-            +all-transitions
-            color: $links-color
-
-            &:after
-              +all-transitions
-              opacity: 1
-
-
-      .category-dropdown
-        +all-transitions
-        background: $content-background-color
-        left: -17px
-        list-style: none
-        margin: 0
-        min-width: 250px
-        opacity: 0
-        padding: 10px 24px
-        position: absolute
-        text-align: left
-        visibility: hidden
-        z-index: 3
-
-        li
-          display: block
-
-          a
-            +all-transitions
-            color: $primary-text-color
-            display: block
-            line-height: 20px
-            padding: 8px 2px
-
-            &:hover
-              color: $links-color
-
   .header-store-name
-    +flex(2)
+    +flexbox
     +flex-basis(33%)
-    +transform(translateZ(0))
+    +justify-content(center)
+    +align-items(center)
+
     color: $primary-text-color
-    display: inline-block
+    padding: 0 64px
     font-size: 26px
-    height: 160px
-    max-width: 33%
     text-align: center
 
     @media screen and (max-width: $break-medium)
@@ -265,8 +197,6 @@ header
           max-height: 40px
 
     .store-title
-      +vertical-align
-      display: inline-block
       line-height: 1.2em
 
       @media screen and (max-width: $break-medium)
@@ -277,12 +207,9 @@ header
         color: $links-color
 
   .header-search-cart
-    +flex(3)
     +flex-basis(33%)
     +pie-clearfix
-    display: inline-block
     font-size: 14px
-    max-width: 33%
     position: relative
     text-align: right
     text-transform: uppercase
@@ -382,7 +309,7 @@ header
         border: 0 !important
 
   .open-dropdown
-    +transition(200)
+    +all-transitions
     display: none
     height: 44px
     padding: 8px
@@ -393,7 +320,6 @@ header
     width: 44px
 
     svg
-      +all-transitions
       display: block
       height: 10px
       width: 16px

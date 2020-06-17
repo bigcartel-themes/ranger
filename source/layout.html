@@ -18,31 +18,35 @@
     <header class="header">
       <div class="wrapper">
         <div class="header-item header-nav">
-          <ul class="header-nav-pages">
-            <li class="category-nav">
-              <a href="/products">{% if theme.collections %}Collections{% else %}Products{% endif %}</a>
-              {% if theme.collections == false %}
-                {% if categories.active != blank or artists.active != blank %}
-                  <ul class="category-dropdown">
+          <nav class="header-nav-container">
+            <ul class="nav" role="menubar" aria-hidden="false">
+              <li class="nav-menu-item" role="menuitem" aria-haspopup="{% if categories.active == blank %}false{% else%}true{% endif %}">
+                {% if categories.active != blank or artists.active != blank or theme.collections == false %}
+                  <a href="#" aria-label="Browse by category">Products</a>
+                  <ul aria-hidden="true" role="menu" class="horizontal-nav-links">
+                    <li class="horizontal-nav-link" role="menuitem"><a href="/products" tabindex="-1">All</a></li>
                     {% if categories.active != blank %}
                       {% for category in categories.active %}
-                        <li>{{ category | link_to }}</li>
+                        <li class="horizontal-nav-link"><a href="{{ category.url }}" tabindex="-1">{{ category.name }}</a></li>
                       {% endfor %}
                     {% endif %}
+
                     {% if artists.active != blank %}
                       {% for artist in artists.active %}
-                        <li>{{ artist | link_to }}</li>
+                        <li class="horizontal-nav-link"><a href="{{ artist.url }}" tabindex="-1">{{ artist.name }}</a></li>
                       {% endfor %}
                     {% endif %}
                   </ul>
+                {% else %}
+                  <a href="/products">{% if theme.collections %}Collections{% else %}Products{% endif %}</a>
                 {% endif %}
-              {% endif %}
-            </li>
-            {% for page in pages.all limit: theme.nav_items %}
-              <li>{{ page | link_to }}</li>
-            {% endfor %}
-            <li><a href="/contact">Contact</a></li>
-          </ul>
+              </li>
+              {% for page in pages.all limit: theme.nav_items %}
+                <li class="nav-menu-item" role="menuitem" aria-haspopup="false">{{ page | link_to }}</li>
+              {% endfor %}
+              <li class="nav-menu-item" role="menuitem" aria-haspopup="false"><a href="/contact">Contact</a></li>
+            </ul>
+          </nav>
         </div>
         <div class="header-item header-store-name{% if theme.logo != blank %} image{% else %} text{% endif %}">
           <div class="store-title">
