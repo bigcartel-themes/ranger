@@ -74,23 +74,25 @@ section.content
       max-width: 40%
 
     .item-delete
+      +flexbox
+      +align-items(center)
+      +justify-content(center)
       background: $accent-background-color
       cursor: pointer
-      height: 32px
+      height: 34px
       left: 20px
-      line-height: 32px
+      padding: 0
       position: absolute
       text-align: center
       top: 20px
-      width: 32px
+      width: 34px
 
       svg
-        +vertical-align
         display: block
         fill: $accent-text-color
-        height: 10px
+        height: 12px
         margin: 0 auto
-        width: 10px
+        width: 12px
 
   .item-details
     +vertical-align
