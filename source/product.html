@@ -19,7 +19,24 @@
     <h1 class="page-title product-title">{{ page.name }}</h1>
   </div>
   <div class="product-images">
-  	<div class="primary-image{% if product.images.size < 2 %} solo{% endif %}"><img src="{{ product.image | product_image_url | constrain: 1500 }}" alt="Image of {{ product.name | escape }}"></div>
+  	<div class="primary-image{% if product.images.size < 2 %} solo{% endif %}">
+      <img
+        alt="{{ product.name | escape }}"
+        class="blur-up primary-product-image lazyload"
+        src="{{ product.image | product_image_url | constrain: 100 }}"
+        data-srcset="
+          {{ product.image | product_image_url | constrain: 400 }} 400w,
+          {{ product.image | product_image_url | constrain: 460 }} 460w,
+          {{ product.image | product_image_url | constrain: 530 }} 530w,
+          {{ product.image | product_image_url | constrain: 800 }} 800w,
+          {{ product.image | product_image_url | constrain: 1050 }} 1050w,
+          {{ product.image | product_image_url | constrain: 1300 }} 1300w,
+          {{ product.image | product_image_url | constrain: 1500 }} 1500w,
+          {{ product.image | product_image_url | constrain: 1800 }} 1800w
+        "
+        data-sizes="auto"
+      >
+    </div>
   	{% if product.images.size > 1 %}
     	<ul class="product-thumbnails">{% for image in product.images %}<li{% if forloop.index == 1%} class="active"{% endif %}><a title="Image of {{ product.name | escape }}" href="{{ image | product_image_url | constrain: 1500 }}" style="background-image: url('{{ image | product_image_url | constrain: 300 }}');"></a></li>{% endfor %}</ul>
   	{% endif %}

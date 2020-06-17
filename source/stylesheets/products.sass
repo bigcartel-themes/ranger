@@ -1,245 +1,182 @@
 @import 'variables'
 
-section.content .products-page
-  +pie-clearfix
-  background: none
+.product-list-container
+  margin: 0 auto
   max-width: 1600px
-
-  .empty-products
-    background: $content-background-color
-    height: 240px
-
-    @media screen and (max-width: $break-small)
-      height: 120px
-      min-height: 120px
 
 .product-list
   +flexbox
   +flex-wrap(wrap)
-  +flex(flex-grow)
-  +flex-direction(row)
-  list-style: none
-  justify-content: flex-start
+  +justify-content(flex-start)
   margin: 0
-  padding: 0
 
   &.justify-center
-    justify-content: center
+    +justify-content(center)
 
-  @media screen and (max-width: $break-small)
-    margin: 0
-
-.product-card
-  +flexbox
-  background: $background-color
-  border: 1px solid $background-color
-  height: 674px
-  padding-bottom: 42%
-  position: relative
-  text-align: center
-  width: 33.333%
-
-  @media screen and (max-width: 1450px)
-    height: 530px
-    padding-bottom: 44%
-
-  @media screen and (max-width: $break-extra-large)
-    height: 460px
-    padding-bottom: 46%
-
-  @media screen and (max-width: $break-large)
-    padding-bottom: 60%
-    width: 50%
-
-  @media screen and (max-width: $break-medium)
-    height: 400px
-    padding-bottom: 68%
-
-  @media screen and (max-width: $break-small)
-    border-width: 1px 0px
-    height: auto
-    padding: 0
-    width: 100%
-
-.product-link
-  +all-transitions
+.product-list-thumb
   background: $content-background-color
+  border: 1px solid $background-color
   color: $primary-text-color
   display: block
-  height: 100%
-  left: -2px
-  margin: 2px
-  padding: 48px
-  position: absolute
-  top: -2px
-  width: 100%
+  font-size: 0
+  padding: 1px
+  position: relative
+  text-align: center
+  vertical-align: middle
+  width: calc(100% / 3)
+  word-break: break-word
+
+  @media screen and (max-width: $break-medium)
+    padding: 16px 16px
+    width: calc(100% / 2)
 
   @media screen and (max-width: $break-small)
-    left: 0
-    margin: 2px 0
-    position: relative
+    width: 100%
 
-  .product-image
-    display: block
-    height: 76%
-    position: relative
+_:-ms-fullscreen, :root .product-list-thumb
+  width: calc(100% / 3 - .1px)
 
-    @media screen and (max-width: 1450px)
-      height: 73%
+  @media screen and (max-width: $break-medium)
+    width: calc(100% / 2 - .1px)
 
-    @media screen and (max-width: $break-extra-large)
-      height: 66%
+  @media screen and (max-width: $break-small)
+    padding: 16px
+    width: 100%
 
-    @media screen and (max-width: $break-large)
-      height: 75%
-
-    @media screen and (max-width: $break-medium)
-      height: 66%
-
-    @media screen and (max-width: $break-small)
-      height: auto
-
-    img
-      +vertical-align
-      display: block
-      margin: 0 auto
-      text-align: center
-      max-width: 100%
-      max-height: 100%
-      width: 100%
-
-      &.lazy
-        filter: blur(5px)
-
-      @media screen and (max-width: $break-small)
-        +transform(none)
-        top: auto
-        width: 100%
-
-  .product-info
-    +all-transitions
-    +transform(translateZ(0))
-    padding: 48px 0 0
-
-    @media screen and (max-width: 1450px)
-      padding-top: 32px
-
-    .product-name
-      color: $primary-text-color
-      line-height: 1.25em
-      text-transform: uppercase
-
-    .category-name
-      font-size: 18px
-
-      &:after
-        display: block
-        content: ''
-        background: $background-color
-        height: 2px
-        margin: 12px auto 16px
-        width: 28px
-
-    .product-price
-      font-family: $secondary-font
-      font-size: 21px
-      line-height: 15px
-      opacity: .7
-
-      &:after
-        display: block
-        content: ''
-        background: $background-color
-        height: 2px
-        margin: 12px auto 16px
-        width: 26px
-
-  .category-info
-    padding: 0 0 48px
-
-    @media screen and (max-width: 1450px)
-      padding-bottom: 32px
-
-  .product-status
-    background: $links-color
-    font-size: 0.75rem
-    color: $content-background-color
-    display: block
-    font-style: normal
-    height: 72px
-    left: 32px
-    line-height: 16px
-    min-width: 72px
-    max-width: 72px
-    padding: 0 10px
-    position: absolute
-    text-align: center
-    text-transform: uppercase
-    top: 32px
-
-    .status-text
-      +vertical-align
-
-  .hover-message
-    +all-transitions
-    +transform(translateX(-50%) translateY(-50%))
-    background-color: $button-background-color
-    color: $button-text-color
-    left: 50%
-    min-width: 180px
-    opacity: 0
-    padding: 24px
-    position: absolute
-    text-align: center
-    text-transform: uppercase
-    top: 50%
-
-    @media screen and (max-width: $break-medium)
-      display: none !important
+.product-list-link
+  color: $primary-text-color
+  background: $content-background-color
+  display: block
+  padding: 48px
+  text-decoration: none
 
   &:hover, &:focus
-    .hover-message
-      opacity: 1
+    color: $primary-text-color
+    text-decoration: none
 
-.no-products-message
+    .product-list-thumb-name, .product-list-thumb-price
+      color: $primary-text-color
+
+.product-list-image-container
+  overflow: hidden
+  position: relative
+
+  &:before
+    display: block
+    width: 100%
+    content: ""
+    padding-bottom: 100%
+    height: 0
+
+.product-list-image
+  position: absolute
+  display: block
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+
+  &.grid-cover
+    object-fit: cover
+
+  &.grid-contain
+    object-fit: contain
+
+.product-list-thumb-info
+  font-size: 16px
+  line-height: 1.25em
+  padding: 48px 16px 0
+  position: relative
+  text-transform: uppercase
+
+.product-list-thumb-name
+  +transition(color .2s ease)
+  overflow-wrap: break-word
+  position: relative
+
+.product-list-thumb-price
+  +transition(color .2s ease)
+  color: $primary-text-color
+  font-size: 20px
+  position: relative
+
+  &:after
+    display: block
+    content: ''
+    background: $background-color
+    height: 2px
+    margin: 12px auto
+    width: 26px
+
+.product-list-thumb-status
+  +flexbox
+  +align-items(center)
+  +justify-content(center)
+  background: $links-color
+  font-size: 0.75rem
+  color: $content-background-color
+  font-style: normal
+  height: 72px
+  left: 32px
+  line-height: 16px
+  padding: 0 10px
+  position: absolute
   text-align: center
+  text-transform: uppercase
+  top: 32px
+  width: 72px
+  word-break: keep-all
+
+.no-results
+  +flexbox
+  +align-items(center)
+  +justify-content(center)
+  background: $content-background-color
+  text-align: center
+  min-height: 240px
+  margin-bottom: 128px
+  max-width: 1600px
+  margin: 0 auto
 
 .pagination
-  float: left
-  font-family: $secondary-font
-  font-size: 16px
-  margin-top: 48px
-  text-align: left
-
-  @media screen and (max-width: $break-small)
-    margin: 48px 32px
-
-  > a, .current, .gap
-    display: none
-
-  .previous, .next
-    background: $button-background-color
-    display: inline-block
-    height: 64px
-    text-align: center
-    width: 64px
-
-    &.disabled
-      opacity: .5
-
-    svg
-      +vertical-align
-      fill: $button-text-color
-      height: 16px
-      width: 16px
-
-.paginate-info
-  float: left
-  font-size: 16px
-  line-height: 64px
-  margin-left: 32px
+  +flexbox
+  +flex-direction(row)
+  +align-items(center)
   margin-top: 48px
   text-transform: uppercase
 
-  @media screen and (max-width: $break-small)
-    margin-left: 8px
+.page-link
+  +flexbox
+  +align-items(center)
+  +justify-content(center)
+  background: $button-background-color
+  text-align: center
+  height: 64px
+  padding: 0
+  position: relative
+  text-decoration: none
+  width: 64px
+
+  &:not(.disabled):hover, &:not(.disabled):focus
+    background: $button-background-color
+
+    svg
+      fill: $button-text-color
+
+  &.next-page-link
+    margin-left: 2px
+
+  &.previous-page-link
+
+  &.disabled
+    cursor: not-allowed
+    opacity: .7
+
+  svg
+    display: block
+    fill: $button-text-color
+    height: 16px
+    width: 16px
+
+.pagination-caption
+  margin-left: 32px

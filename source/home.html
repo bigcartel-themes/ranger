@@ -22,56 +22,70 @@
     {% endif %}
   {% else %}
     {% if theme.featured_items > 0 %}
-      {% get products from products.all limit:theme.featured_items %}
+      {% paginate products from products.all by theme.featured_items order:theme.featured_order %}
         {% if products != blank %}
-          {% for product in products limit:theme.featured_items %}{% assign num_products = forloop.length %}{% endfor %}
-          <ul class="product-list{% if num_products < 4 %} justify-center{% endif %}">
-            {% for product in products %}
-              {% assign product_image_constrain_width = 432 %}
-              {% assign product_image_constrain_height = 432 %}
-              {% assign product_image_constrain_width_large = product_image_constrain_width | times: 2 %}
-              {% assign product_image_constrain_height_large = product_image_constrain_height | times: 2 %}
-
-              {% assign thumb_constrain_width = 30 %}
-              {% assign thumb_constrain_height = 30 %}
-
-              {% assign product_status = '' %}
-              {% case product.status %}
-                {% when 'active' %}
-                  {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
-                {% when 'sold-out' %}
-                  {% assign product_status = 'Sold out' %}
-                {% when 'coming-soon' %}
-                  {% assign product_status = 'Coming soon' %}
-              {% endcase %}
-              {% capture image_class %}
-                {% if product.image.height > product.image.width %}
-                  image-tall
-                {% elsif product.image.height < product.image.width %}
-                  image-wide
-                {% else %}
-                  image-square
-                {% endif %}
-              {% endcapture %}
-              <li class="product-card {{ product.css_class }}">
-                <a class="product-link" href="{{ product.url }}" title="View {{ product.name | escape }}">
-                  <div class="product-image">
-                    <img alt="" class="lazy product-list-image {{ image_class }}" src="{{ product.image | product_image_url | constrain: thumb_constrain_width,thumb_constrain_height }}" data-src="{{ product.image | product_image_url | constrain: product_image_constrain_width, product_image_constrain_height }}" data-srcset="{{ product.image | product_image_url | constrain: product_image_constrain_width_large, product_image_constrain_height_large }} 2x, {{ product.image | product_image_url | constrain: product_image_constrain_width, product_image_constrain_height }} 1x">
-                    <div class="hover-message">Shop Now</div>
-                  </div>
-                  <div class="product-info">
-                    <div class="product-price">{{ product.default_price | money: theme.money_format }}</div>
-                    <div class="product-name">{{ product.name }}</div>
-                  </div>
-                  {% if product_status != blank %}
-                    <div class="product-status"><div class="status-text">{{ product_status }}</div></div>
+          <div class="product-list-container">
+            <div class="product-list {% if paginate.page_size < 4 %} justify-center{% endif %}">
+              {% for product in products %}
+                {% assign image_width = product.image.width | times: 1.0 %}
+                {% assign image_height = product.image.height | times: 1.0 %}
+                {% assign aspect_ratio = image_width | divided_by: image_height %}
+                {% assign product_status = '' %}
+                {% case product.status %}
+                  {% when 'active' %}
+                    {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+                  {% when 'sold-out' %}
+                    {% assign product_status = 'Sold out' %}
+                  {% when 'coming-soon' %}
+                    {% assign product_status = 'Coming soon' %}
+                {% endcase %}
+                {% capture image_class %}
+                  {% if product.image.height > product.image.width %}
+                    image-tall
+                  {% elsif product.image.height < product.image.width %}
+                    image-wide
+                  {% else %}
+                    image-square
                   {% endif %}
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
+                {% endcapture %}
+                <div class="product-list-thumb {{ product.css_class }}">
+                  <a class="product-list-link" href="{{ product.url }}" title="View {{ product.name | escape }}">
+                    <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}">
+                      <img
+                        alt=""
+                        class="blur-up product-list-image lazyload grid-{{ theme.grid_image_style }}"
+                        src="{{ product.image | product_image_url | constrain: 20 }}"
+                        data-aspectratio="{{ aspect_ratio }}"
+                        data-srcset="
+                          {{ product.image | product_image_url | constrain: 240 }} 240w,
+                          {{ product.image | product_image_url | constrain: 320 }} 320w,
+                          {{ product.image | product_image_url | constrain: 400 }} 400w,
+                          {{ product.image | product_image_url | constrain: 540 }} 540w,
+                          {{ product.image | product_image_url | constrain: 600 }} 600w,
+                          {{ product.image | product_image_url | constrain: 800 }} 800w,
+                          {{ product.image | product_image_url | constrain: 960 }} 960w,
+                          {{ product.image | product_image_url | constrain: 960 }} 1280w
+                        "
+                        data-sizes="auto"
+                      >
+                    </div>
+                    <div class="product-list-thumb-info">
+                      <div class="product-list-thumb-price">
+                        {{ product.default_price | money: theme.money_format }}
+                      </div>
+                      <div class="product-list-thumb-name">{{ product.name }}</div>
+                    </div>
+                    {% if product_status != blank %}
+                      <div class="product-list-thumb-status">{{ product_status }}</div>
+                    {% endif %}
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+        {% else %}
+          <p class="no-results">No products found.</p>
         {% endif %}
-      {% endget %}
+      {% endpaginate %}
     {% endif %}
   {% endif %}
 </div>
