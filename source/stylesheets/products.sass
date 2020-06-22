@@ -66,6 +66,9 @@ _:-ms-fullscreen, :root .product-list-thumb
   padding: 48px
   text-decoration: none
 
+  @media screen and (max-width: $break-small)
+    padding: 24px
+
   &:hover, &:focus
     color: $primary-text-color
     text-decoration: none
@@ -73,9 +76,10 @@ _:-ms-fullscreen, :root .product-list-thumb
     .product-list-thumb-name, .product-list-thumb-price
       color: $primary-text-color
 
-    .hover-message
-      opacity: 1
-      visibility: visible
+    @media (hover: hover)
+      .hover-message
+        opacity: 1
+        visibility: visible
 
 .product-list-image-container
   overflow: hidden
@@ -148,6 +152,10 @@ _:-ms-fullscreen, :root .product-list-thumb
   width: 72px
   word-break: keep-all
 
+  @media screen and (max-width: $break-small)
+    left: 16px
+    top: 16px
+
 .no-results
   +flexbox
   +align-items(center)
@@ -195,8 +203,6 @@ _:-ms-fullscreen, :root .product-list-thumb
 
   &.next-page-link
     margin-left: 2px
-
-  &.previous-page-link
 
   &.disabled
     cursor: not-allowed
