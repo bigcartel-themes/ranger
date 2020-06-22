@@ -52,18 +52,7 @@ var Store = {
       return false;
     });
     $(window).on("load resize", function() {
-      if ($(window).width() <= '668') {
-        if ($('.footer-cart').is(":visible")) {
-          var footer_padding = 76;
-        }
-        else {
-          var footer_padding = 0;
-        }
-      }
-      else {
-        var footer_padding = $('footer').outerHeight();
-      }
-      $('body').css('padding-bottom', footer_padding);
+
       if (options.pattern_style == 'small-triangles' || options.pattern_style == 'large-triangles') {
         var pattern_style = options.pattern_style;
         var store_name_length = options.store_name.length;
