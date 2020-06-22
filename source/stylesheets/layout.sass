@@ -98,6 +98,7 @@ body
   width: 100%
 
 a
+  +transition(color .1s linear)
   color: $primary-text-color
   text-decoration: none
 
@@ -206,9 +207,6 @@ header
 
     @media screen and (max-width: $break-medium)
       max-width: 70%
-
-    &:hover
-      color: $links-color
 
 .header-search-cart
   +flex-basis(33%)
@@ -758,11 +756,10 @@ footer
 
   a
     +all-transitions
-    color: $links-color
     text-decoration: underline
 
-    &:hover
-      opacity: .8
+    &:hover, &:focus
+      color: $links-color
 
   img, iframe
     display: block

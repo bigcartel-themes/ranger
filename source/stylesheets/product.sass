@@ -251,11 +251,10 @@ section.content
 
     a
       +all-transitions
-      color: $links-color
       text-decoration: underline
 
-      &:hover
-        opacity: .8
+      &:hover, &:focus
+        color: $links-color
 
     img, iframe
       display: block

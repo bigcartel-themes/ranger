@@ -45,7 +45,7 @@ _:-ms-fullscreen, :root .product-list-thumb
 
 .hover-message
   +transform(translateY(-50%) translateX(-50%))
-  +transition(opacity .25s ease-in-out)
+  +transition(opacity .25s linear, visibility .25s linear)
   background: $button-background-color
   color: $button-text-color
   font-size: 14px
@@ -160,7 +160,6 @@ _:-ms-fullscreen, :root .product-list-thumb
   padding: 0 40px
 
   a
-    color: $links-color
     text-decoration: underline
 
 .pagination
