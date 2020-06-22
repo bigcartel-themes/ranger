@@ -9,13 +9,13 @@
 {% endcase %}
 <div class="page-content product-page">
   <div class="product-price-title">
-    <h2 class="product-price">
+    <div class="product-price">
       {% if product.variable_pricing %}
         {{ product.min_price | money: theme.money_format }} - {{ product.max_price | money: theme.money_format }}
       {% else %}
         {{ product.default_price | money: theme.money_format }}
       {% endif %}
-    </h2>
+    </div>
     <h1 class="page-title product-title">{{ page.name }}</h1>
   </div>
   <div class="product-images">

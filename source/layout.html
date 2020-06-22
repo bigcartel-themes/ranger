@@ -74,14 +74,15 @@
               <li class="search-container">
                 <form class="search-form" name="search" action="/products" method="get" accept-charset="utf8">
                   <input type="hidden" name="utf8" value='✓'>
+                  <label class="visually-hidden" for="desktop-search">Search products</label>
                   <input class="search-input" id="desktop-search" name="search" placeholder="Search..." type="text" autocomplete="off" />
-                  <button class="search-button" type="submit"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15.707 14.293L12.595 11.2c-.002 0-.004 0-.006-.003C13.47 10.025 14 8.575 14 7c0-3.86-3.14-7-7-7S0 3.14 0 7s3.14 7 7 7c1.575 0 3.025-.53 4.196-1.41l.004.006 3.093 3.11c.195.196.45.294.707.294.256 0 .512-.098.707-.293.39-.39.39-1.023 0-1.414zM7 12c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"/></svg></a>
+                  <button class="search-button" type="button" aria-label="Search button"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15.707 14.293L12.595 11.2c-.002 0-.004 0-.006-.003C13.47 10.025 14 8.575 14 7c0-3.86-3.14-7-7-7S0 3.14 0 7s3.14 7 7 7c1.575 0 3.025-.53 4.196-1.41l.004.006 3.093 3.11c.195.196.45.294.707.294.256 0 .512-.098.707-.293.39-.39.39-1.023 0-1.414zM7 12c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"/></svg></a>
                 </form>
               </li>
             {% endif %}
             <li class="cart">
               <a class="desktop-view-cart" href="/cart" title="View cart">
-                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 9c.553 0 1-.447 1-1V1c0-.55-.45-1-1-1H1C.448 0 0 .447 0 1c0 .553.448 1 1 1h1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1 0-.583-.447-1-1-1H4V9h11zM4 2h10v5H4V2z"/><circle cx="4.5" cy="14.5" r="1.5"/><circle cx="13.5" cy="14.5" r="1.5"/></svg>
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M15 9c.553 0 1-.447 1-1V1c0-.55-.45-1-1-1H1C.448 0 0 .447 0 1c0 .553.448 1 1 1h1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1 0-.583-.447-1-1-1H4V9h11zM4 2h10v5H4V2z"/><circle cx="4.5" cy="14.5" r="1.5"/><circle cx="13.5" cy="14.5" r="1.5"/></svg>
                 <span class="cart-num-items">{{ cart.item_count | pluralize: 'Item', 'Items' }}</span>
               </a>
             </li>
@@ -146,39 +147,41 @@
         </ul>
       </div>
     </header>
-    <div id="pattern" class="pattern{% if page.permalink == 'home' %}{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} welcome-pattern{%endif %} {% if theme.welcome_image != blank %} welcome-image{% endif %}{% if theme.featured_items == 0 %} hide-featured{% endif %}{% endif %} {{ theme.pattern_style }}">
-      {% if page.permalink == 'home' %}
-        {% if theme.welcome_header != blank or theme.welcome_subheader != blank %}
-          <div class="welcome-text">
-            {% if theme.welcome_header != blank %}<h1 class="welcome-header">{{ theme.welcome_header }}</h1>{% endif %}
-            {% if theme.welcome_subheader != blank %}<h2 class="welcome-subheader">{{ theme.welcome_subheader }}</h2>{% endif %}
-          </div>
+    <main id="main">
+      <div id="pattern" class="pattern{% if page.permalink == 'home' %}{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} welcome-pattern{%endif %} {% if theme.welcome_image != blank %} welcome-image{% endif %}{% if theme.featured_items == 0 %} hide-featured{% endif %}{% endif %} {{ theme.pattern_style }}">
+        {% if page.permalink == 'home' %}
+          {% if theme.welcome_header != blank or theme.welcome_subheader != blank %}
+            <div class="welcome-text">
+              {% if theme.welcome_header != blank %}<h1 class="welcome-header">{{ theme.welcome_header }}</h1>{% endif %}
+              {% if theme.welcome_subheader != blank %}<h2 class="welcome-subheader">{{ theme.welcome_subheader }}</h2>{% endif %}
+            </div>
+          {% endif %}
         {% endif %}
-      {% endif %}
-      <canvas id="repeating-pattern">
-    </div>
-    <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' %} hide-featured{% endif %}">
-      {% if page.category == 'custom' %}
-        <h1 class="page-title">{{ page.name }}</h1>
-        <div class="page-content custom-page">
-          {{ page_content | paragraphs }}
-        </div>
-      {% else %}
-        {{ page_content }}
-      {% endif %}
-    </section>
+        <canvas id="repeating-pattern">
+      </div>
+      <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' %} hide-featured{% endif %}">
+        {% if page.category == 'custom' %}
+          <h1 class="page-title">{{ page.name }}</h1>
+          <div class="page-content custom-page">
+            {{ page_content | paragraphs }}
+          </div>
+        {% else %}
+          {{ page_content }}
+        {% endif %}
+      </section>
+    </main>
     <footer class="footer">
       <div class="wrapper">
-        <nav class="footernav">
-          <h4><a href="/products" title="{% if theme.collections %}Collections{% else %}Products{% endif %}">{% if theme.collections %}Collections{% else %}Products{% endif %}</a></h4>
+        <nav class="footernav" aria-label="Footer category navigation">
+          <div class="footer-nav-title"><a href="/products" title="{% if theme.collections %}Collections{% else %}Products{% endif %}">{% if theme.collections %}Collections{% else %}Products{% endif %}</a></div>
           <ul>
             {% for category in categories.active %}
               <li>{{ category | link_to }}</li>
             {% endfor %}
           </ul>
         </nav>
-        <nav class="footernav">
-          <h4>Pages</h4>
+        <nav class="footernav" aria-label="Footer page navigation">
+          <div class="footer-nav-title">Pages</div>
           <ul>
             {% for page in pages.all %}
               <li>{{ page | link_to }}</li>
@@ -190,8 +193,8 @@
           </ul>
         </nav>
         {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank or theme.pinterest_url != blank %}
-          <nav class="footernav">
-            <h4>Social</h4>
+          <nav class="footernav"aria-label="Footer social media navigation">
+            <div class="footer-nav-title">Social</div>
             <ul class="social-icons">
               {% if theme.instagram_url != blank %}
                 <li><a title="Instagram" href="{{ theme.instagram_url }}"><svg height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M23.9 7.1c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0S8.3 0 7.1.1C2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9zM12 18.2c-3.4 0-6.2-2.8-6.2-6.2S8.6 5.8 12 5.8s6.2 2.8 6.2 6.2c0 3.4-2.8 6.2-6.2 6.2zM18.4 7c-.8 0-1.4-.6-1.4-1.4 0-.8.6-1.4 1.4-1.4.8 0 1.4.6 1.4 1.4 0 .8-.6 1.4-1.4 1.4z"/></svg><span>Instagram</span></a></li>

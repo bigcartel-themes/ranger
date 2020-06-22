@@ -206,7 +206,6 @@ header
       max-width: 70%
 
     &:hover
-      +all-transitions
       color: $links-color
 
 .header-search-cart
@@ -227,23 +226,21 @@ header
   padding: 0
 
 .desktop-view-cart
-  +all-transitions
   +flexbox
   +align-items(center)
-  padding: 0 8px
+  padding: 4px 8px
 
   svg
-    +all-transitions
     fill: $primary-text-color
     height: 16px
     margin: 0 10px
     position: relative
     width: 16px
 
-  &:hover
+  &:hover, &:focus
     color: $links-color
 
-    > svg
+    svg
       fill: $links-color
 
 .search-container
@@ -263,12 +260,11 @@ header
       border: 0
       background: none
       color: $primary-text-color
-      font-weight: 600
       padding: 6px
       width: 0
 
       &.active, &:focus
-        width: 300px
+        width: 200px
 
     .search-button
       +flexbox
@@ -278,6 +274,10 @@ header
       height: 24px
       padding: 0
       width: 24px
+
+      &:hover, &:focus
+        svg
+          fill: $links-color
 
       svg
         display: block
@@ -364,8 +364,8 @@ header
 
         svg
           fill: $primary-text-color
-          height: 16px
-          width: 16px
+          height: 20px
+          width: 20px
 
       &.bigcartel-credit
         padding: 24px
@@ -690,12 +690,12 @@ footer
   vertical-align: top
   width: 25%
 
-  h4, h4 a
+  .footer-nav-title, .footer-nav-title a
     color: $accent-text-color
     margin-bottom: 24px
     text-transform: uppercase
 
-  h4
+  .footer-nav-title
     padding: 0 8px
 
   ul
@@ -898,3 +898,13 @@ footer
 
   &.lazyloaded
     filter: blur(0)
+
+.visually-hidden
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
