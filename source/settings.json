@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "1.4.0",
+  "version": "1.4.26",
   "images": [
     {
       "variable": "logo",
@@ -57,8 +57,13 @@
       "default": "#222222"
     },
     {
+      "variable": "secondary_text_color",
+      "label": "Secondary text color",
+      "default": "#555555"
+    },
+    {
       "variable": "button_text_color",
-      "label": "Button background color",
+      "label": "Button & status text color",
       "default": "#FFFFFF"
     },
     {
@@ -67,8 +72,13 @@
       "default": "#0b799a"
     },
     {
+      "variable": "status_background_color",
+      "label": "Product status background color",
+      "default": "#FF642A"
+    },
+    {
       "variable": "links_color",
-      "label": "Links color",
+      "label": "Link hover color",
       "default": "#FF642A"
     }
   ],
@@ -148,8 +158,19 @@
       "label": "Featured items",
       "type": "select",
       "options": "0..100",
-      "default": 6,
+      "default": 12,
       "description": "The number of items featured on the Home page"
+    },
+    {
+      "variable": "grid_image_style",
+      "label": "Product grid image style",
+      "type": "select",
+      "options": [
+        ["Fit to square", "contain"],
+        ["Crop to square", "cover"]
+      ],
+      "default": "cover",
+      "description": "Sets the display of images in the product grid"
     },
     {
       "variable": "products_per_page",
@@ -229,14 +250,15 @@
     "content_header_font_size": "18px",
     "content_border_color": "transparent",
     "content_border_radius": "0px",
-    "error_background_color": "#ea4859",
+    "error_background_color": "#950f1e",
+    "error_font_size": "14px",
     "error_color": "#ffffff",
     "error_border_radius": "0px",
-    "error_border_color": "#ea4859",
+    "error_border_color": "#950f1e",
     "input_focus_color": "#000000",
     "input_focus_background_color": "#ffffff",
     "input_focus_border_color": "#777777",
-    "input_error_border_color": "#ea4859",
+    "input_error_border_color": "#950f1e",
     "input_color": "#000000",
     "input_error_color": "#000000",
     "input_border_color": "#bfbfbf",
@@ -245,15 +267,15 @@
     "input_border_radius": "0px",
     "input_border_width": "2px",
     "input_font": "{{ secondary_font }}",
-    "button_color": "{{ content_background_color }}",
+    "button_color": "{{ button_text_color }}",
     "button_border_width": "0px",
     "button_border_radius": "0px",
     "button_font": "{{ secondary_font }}",
-    "button_hover_color": "{{ content_background_color }}",
+    "button_hover_color": "{{ button_text_color }}",
     "button_background_color": "{{ button_background_color }}",
     "button_hover_background_color": "opacify({{ button_background_color }}, 0.8)",
     "button_text_transform": "none",
-    "link_color": "{{ primary_text_color }}",
+    "link_color": "{{ secondary_text_color }}",
     "link_hover_color": "{{ links_color }}",
     "step_header_color": "{{ primary_text_color }}",
     "step_header_font_size": "18px",

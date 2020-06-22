@@ -57,6 +57,7 @@ _:-ms-fullscreen, :root .product-list-thumb
   left: 50%
   text-align: center
   visibility: hidden
+  white-space: nowrap
 
 .product-list-link
   color: $primary-text-color
@@ -110,6 +111,7 @@ _:-ms-fullscreen, :root .product-list-thumb
 
 .product-list-thumb-name
   +transition(color .2s ease)
+  color: $secondary-text-color
   overflow-wrap: break-word
   position: relative
 
@@ -131,9 +133,9 @@ _:-ms-fullscreen, :root .product-list-thumb
   +flexbox
   +align-items(center)
   +justify-content(center)
-  background: $links-color
+  background: $status-background-color
   font-size: 0.75rem
-  color: $content-background-color
+  color: $button-text-color
   font-style: normal
   height: 72px
   left: 32px

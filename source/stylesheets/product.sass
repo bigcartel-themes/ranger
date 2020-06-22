@@ -127,40 +127,30 @@ section.content
         width: 100%
 
   .product-status
-    background: $links-color
-    font-size: 0.75rem
-    color: $content-background-color
-    display: block
+    +flexbox
+    +align-items(center)
+    +justify-content(center)
+    background: $status-background-color
+    font-size: 0.9rem
+    color: $button-text-color
     font-style: normal
-    height: 72px
+    height: 80px
     left: 32px
     line-height: 16px
-    min-width: 72px
-    max-width: 72px
     padding: 0 10px
     position: absolute
     text-align: center
     text-transform: uppercase
     top: 32px
-
-    @media screen and (max-width: $break-extra-large)
-      left: 24px
-      top: 24px
-
-    @media screen and (max-width: $break-large)
-      left: 48px
-      top: 24px
+    width: 80px
+    word-break: keep-all
 
     @media screen and (max-width: $break-medium)
-      left: 56px
-      top: 24px
-
-    @media screen and (max-width: $break-small)
+      font-size: .75rem
+      height: 72px
       left: 24px
       top: 24px
-
-    .status-text
-      +vertical-align
+      width: 72px
 
 .product-price-title, .product-details
   float: right
@@ -197,7 +187,7 @@ section.content
       font-size: 18px
 
   .product-price
-    color: $links-color
+    color: $secondary-text-color
     font-family: $secondary-font
     font-size: 24px
     line-height: 28px
