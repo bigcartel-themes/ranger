@@ -70,34 +70,34 @@
         </div>
         <div class="header-item header-search-cart">
           <ul class="search-cart-nav">
-            <li class="cart">
-              <a href="/cart" title="Cart">
-                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 9c.553 0 1-.447 1-1V1c0-.55-.45-1-1-1H1C.448 0 0 .447 0 1c0 .553.448 1 1 1h1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1 0-.583-.447-1-1-1H4V9h11zM4 2h10v5H4V2z"/><circle cx="4.5" cy="14.5" r="1.5"/><circle cx="13.5" cy="14.5" r="1.5"/></svg>
-                <span class="cart-num-items">{{ cart.item_count | pluralize: 'Item', 'Items' }}</span>
-              </a>
-            </li>
             {% if theme.show_search %}
               <li class="search-container">
                 <form class="search-form" name="search" action="/products" method="get" accept-charset="utf8">
                   <input type="hidden" name="utf8" value='✓'>
-                  <input class="search-input" id="search" name="search" placeholder="Search..." type="text" autocomplete="off" />
-                  <a class="search-button"><svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15.707 14.293L12.595 11.2c-.002 0-.004 0-.006-.003C13.47 10.025 14 8.575 14 7c0-3.86-3.14-7-7-7S0 3.14 0 7s3.14 7 7 7c1.575 0 3.025-.53 4.196-1.41l.004.006 3.093 3.11c.195.196.45.294.707.294.256 0 .512-.098.707-.293.39-.39.39-1.023 0-1.414zM7 12c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"/></svg></a>
+                  <input class="search-input" id="desktop-search" name="search" placeholder="Search..." type="text" autocomplete="off" />
+                  <button class="search-button" type="submit"><svg width="16" height="16" aria-hidden="true" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15.707 14.293L12.595 11.2c-.002 0-.004 0-.006-.003C13.47 10.025 14 8.575 14 7c0-3.86-3.14-7-7-7S0 3.14 0 7s3.14 7 7 7c1.575 0 3.025-.53 4.196-1.41l.004.006 3.093 3.11c.195.196.45.294.707.294.256 0 .512-.098.707-.293.39-.39.39-1.023 0-1.414zM7 12c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"/></svg></a>
                 </form>
               </li>
             {% endif %}
+            <li class="cart">
+              <a class="desktop-view-cart" href="/cart" title="View cart">
+                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 9c.553 0 1-.447 1-1V1c0-.55-.45-1-1-1H1C.448 0 0 .447 0 1c0 .553.448 1 1 1h1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1 0-.583-.447-1-1-1H4V9h11zM4 2h10v5H4V2z"/><circle cx="4.5" cy="14.5" r="1.5"/><circle cx="13.5" cy="14.5" r="1.5"/></svg>
+                <span class="cart-num-items">{{ cart.item_count | pluralize: 'Item', 'Items' }}</span>
+              </a>
+            </li>
           </ul>
         </div>
-        <a href="#" class="open-dropdown" aria-label="Open mobile navigation">
+        <button id="open-mobile-navigation" class="open-dropdown" aria-label="Open mobile navigation" aria-haspopup="true" aria-controls="mobile-navigation">
           <svg aria-hidden="true" width="10" height="6" viewBox="0 0 10 6" xmlns="http://www.w3.org/2000/svg"><path d="M9.852 1.536c.2-.19.2-.496 0-.684L9.135.17c-.197-.19-.518-.19-.715 0L5.016 3.463 1.582.142c-.2-.19-.52-.19-.717 0L.148.825c-.197.188-.197.494 0 .684l4.508 4.35c.2.187.52.187.717 0l4.48-4.324z" /></svg>
-        </a>
+        </button>
       </div>
       <div class="mobile-navigation">
-        <ul class="mobile-navigation-list">
+        <ul class="mobile-navigation-list" id="mobile-navigation" role="menu" aria-labelledby="open-mobile-navigation">
           {% if theme.show_search %}
             <li class="dropdown-search">
               <form class="search-form" name="search" action="/products" method="get" accept-charset="utf8">
                 <input type="hidden" name="utf8" value='✓'>
-                <input class="search-input" id="search" name="search" placeholder="Search..." type="text" autocomplete="off" />
+                <input class="search-input" id="mobile-search" name="search" placeholder="Search..." type="text" autocomplete="off" />
               </form>
             </li>
           {% endif %}
