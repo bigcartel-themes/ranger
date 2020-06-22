@@ -1,31 +1,65 @@
 <div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} has-welcome{% endif %}">
   {% if theme.featured_items_type == 'Categories' %}
     {% if categories.active != blank and theme.featured_items > 0 %}
-      {% for category in categories.active limit:theme.featured_items %}{% assign num_categories = forloop.length %}{% endfor %}
-      <ul class="product-list collection-list{% if num_categories < 4 %} justify-center{% endif %}">
+      <div class="product-list category-list {% if categories.active.size < 4 %} justify-center{% endif %}">
         {% for category in categories.active limit:theme.featured_items %}
-          <li class="product-card {{ product.css_class }}">
-            <a class="category-link product-link" href="{{ category.url }}">
-              <div class="category-info product-info">
-                <div class="product-name category-name">{{ category.name }}</div>
-              </div>
-              <div class="product-image">
-                {% for product in category.products limit:1 %}
-                  <img alt="Image of {{ product.name | escape }}" src="{{ product.image | product_image_url | constrain: '1000','1000' }}">
-                  <div class="hover-message">Shop Now</div>
-                {% endfor %}
-              </div>
+          <div class="product-list-thumb">
+            <a class="product-list-link" href="{{ category.url }}" title="View {{ category.name | escape }}">
+              {% for product in category.products limit:1 %}
+                {% assign image_width = product.image.width | times: 1.0 %}
+                {% assign image_height = product.image.height | times: 1.0 %}
+                {% assign aspect_ratio = image_width | divided_by: image_height %}
+                {% assign product_status = '' %}
+                {% case product.status %}
+                  {% when 'active' %}
+                    {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+                  {% when 'sold-out' %}
+                    {% assign product_status = 'Sold out' %}
+                  {% when 'coming-soon' %}
+                    {% assign product_status = 'Coming soon' %}
+                {% endcase %}
+                {% capture image_class %}
+                  {% if product.image.height > product.image.width %}
+                    image-tall
+                  {% elsif product.image.height < product.image.width %}
+                    image-wide
+                  {% else %}
+                    image-square
+                  {% endif %}
+                {% endcapture %}
+                <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}">
+                  <img
+                    alt=""
+                    class="blur-up product-list-image lazyload grid-{{ theme.grid_image_style }}"
+                    src="{{ product.image | product_image_url | constrain: 20 }}"
+                    data-aspectratio="{{ aspect_ratio }}"
+                    data-srcset="
+                      {{ product.image | product_image_url | constrain: 240 }} 240w,
+                      {{ product.image | product_image_url | constrain: 320 }} 320w,
+                      {{ product.image | product_image_url | constrain: 400 }} 400w,
+                      {{ product.image | product_image_url | constrain: 540 }} 540w,
+                      {{ product.image | product_image_url | constrain: 600 }} 600w,
+                      {{ product.image | product_image_url | constrain: 800 }} 800w,
+                      {{ product.image | product_image_url | constrain: 960 }} 960w
+                    "
+                    data-sizes="auto"
+                  >
+                </div>
+                <div class="product-list-thumb-info">
+                  <div class="product-list-thumb-name">{{ category.name }}</div>
+                </div>
+              {% endfor %}
             </a>
-          </li>
+          </div>
         {% endfor %}
-      </ul>
+      </div>
     {% endif %}
   {% else %}
     {% if theme.featured_items > 0 %}
       {% paginate products from products.all by theme.featured_items order:theme.featured_order %}
         {% if products != blank %}
           <div class="product-list-container">
-            <div class="product-list {% if paginate.page_size < 4 %} justify-center{% endif %}">
+            <div class="product-list {% if products.size < 4 %} justify-center{% endif %}">
               {% for product in products %}
                 {% assign image_width = product.image.width | times: 1.0 %}
                 {% assign image_height = product.image.height | times: 1.0 %}

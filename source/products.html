@@ -11,7 +11,7 @@
   {% if page.full_url contains "search=" or theme.collections != true or page.full_url contains '/category' %}
     {% paginate products from products.current by theme.products_per_page %}
       {% if products != blank %}
-        <div class="product-list {% if paginate.page_size < 4 %} justify-center{% endif %}">
+        <div class="product-list {% if products.size < 4 %} justify-center{% endif %}">
           {% for product in products %}
             {% assign image_width = product.image.width | times: 1.0 %}
             {% assign image_height = product.image.height | times: 1.0 %}
@@ -97,7 +97,7 @@
     {% endpaginate %}
   {% else %}
     {% if categories.active != blank %}
-      <div class="product-list category-list">
+      <div class="product-list category-list {% if categories.active.size < 4 %} justify-center{% endif %}">
         {% for category in categories.active %}
           <div class="product-list-thumb">
             <a class="product-list-link" href="{{ category.url }}" title="View {{ category.name | escape }}">
