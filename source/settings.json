@@ -74,7 +74,7 @@
     {
       "variable": "status_background_color",
       "label": "Product status background color",
-      "default": "#FF642A"
+      "default": "#C43F06"
     },
     {
       "variable": "links_color",
