@@ -43,6 +43,21 @@ _:-ms-fullscreen, :root .product-list-thumb
     padding: 16px
     width: 100%
 
+.hover-message
+  +transform(translateY(-50%) translateX(-50%))
+  +transition(opacity .25s ease-in-out)
+  background: $button-background-color
+  color: $button-text-color
+  font-size: 14px
+  opacity: 0
+  padding: 24px 32px
+  position: absolute
+  text-transform: uppercase
+  top: 50%
+  left: 50%
+  text-align: center
+  visibility: hidden
+
 .product-list-link
   color: $primary-text-color
   background: $content-background-color
@@ -56,6 +71,10 @@ _:-ms-fullscreen, :root .product-list-thumb
 
     .product-list-thumb-name, .product-list-thumb-price
       color: $primary-text-color
+
+    .hover-message
+      opacity: 1
+      visibility: visible
 
 .product-list-image-container
   overflow: hidden
