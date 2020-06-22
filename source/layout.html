@@ -20,27 +20,31 @@
         <div class="header-item header-nav">
           <nav class="header-nav-container">
             <ul class="nav" role="menubar" aria-hidden="false">
-              <li class="nav-menu-item" role="menuitem" aria-haspopup="{% if categories.active == blank %}false{% else%}true{% endif %}">
-                {% if categories.active != blank or artists.active != blank or theme.collections == false %}
-                  <a href="#" aria-label="Browse by category">Products</a>
-                  <ul aria-hidden="true" role="menu" class="horizontal-nav-links">
-                    <li class="horizontal-nav-link" role="menuitem"><a href="/products" tabindex="-1">All</a></li>
-                    {% if categories.active != blank %}
-                      {% for category in categories.active %}
-                        <li class="horizontal-nav-link"><a href="{{ category.url }}" tabindex="-1">{{ category.name }}</a></li>
-                      {% endfor %}
-                    {% endif %}
+              {% if theme.collections %}
+                <li class="nav-menu-item" role="menuitem" aria-haspopup="false"><a href="/products">Collections</a></li>
+              {% else %}
+                <li class="nav-menu-item" role="menuitem" aria-haspopup="{% if categories.active == blank or artists.active == blank %}false{% else%}true{% endif %}">
+                  {% if categories.active != blank or artists.active != blank %}
+                    <a href="#" aria-label="Browse by category">Products</a>
+                    <ul aria-hidden="true" role="menu" class="horizontal-nav-links">
+                      <li class="horizontal-nav-link" role="menuitem"><a href="/products" tabindex="-1">All</a></li>
+                      {% if categories.active != blank %}
+                        {% for category in categories.active %}
+                          <li class="horizontal-nav-link"><a href="{{ category.url }}" tabindex="-1">{{ category.name }}</a></li>
+                        {% endfor %}
+                      {% endif %}
 
-                    {% if artists.active != blank %}
-                      {% for artist in artists.active %}
-                        <li class="horizontal-nav-link"><a href="{{ artist.url }}" tabindex="-1">{{ artist.name }}</a></li>
-                      {% endfor %}
-                    {% endif %}
-                  </ul>
-                {% else %}
-                  <a href="/products">{% if theme.collections %}Collections{% else %}Products{% endif %}</a>
-                {% endif %}
-              </li>
+                      {% if artists.active != blank %}
+                        {% for artist in artists.active %}
+                          <li class="horizontal-nav-link"><a href="{{ artist.url }}" tabindex="-1">{{ artist.name }}</a></li>
+                        {% endfor %}
+                      {% endif %}
+                    </ul>
+                  {% else %}
+                    <a href="/products">Products</a>
+                  {% endif %}
+                </li>
+              {% endif %}
               {% for page in pages.all limit: theme.nav_items %}
                 <li class="nav-menu-item" role="menuitem" aria-haspopup="false">{{ page | link_to }}</li>
               {% endfor %}
