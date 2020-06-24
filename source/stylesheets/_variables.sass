@@ -2,8 +2,8 @@
 @import 'compass'
 @import 'flexbox'
 
-$primary-font: #{"{{ theme.primary_font }}"}
-$secondary-font: #{"{{ theme.secondary_font }}"}
+$primary-font: #{"{{ theme.primary_font | font_family }}"}
+$secondary-font: #{"{{ theme.secondary_font | font_family }}"}
 
 $background-color: #{"{{ theme.background_color }}"}
 $content-background-color: #{"{{ theme.content_background_color }}"}
