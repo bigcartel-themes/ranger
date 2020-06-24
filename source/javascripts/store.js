@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function() {
   $(window).resize(function() {
     draw_pattern();
     bit = mn.outerHeight();
-    hdr = $('.announcement-message.visible').outerHeight();
+    hdr = ($('.announcement-message.visible').outerHeight() > 0) ? $('.announcement-message.visible').outerHeight() : 0;
   })
   .resize().scroll(function() {
     if ($(this).scrollTop() > hdr) {
