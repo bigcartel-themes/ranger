@@ -186,8 +186,27 @@
               {% if theme.welcome_subheader != blank %}<h2 class="welcome-subheader">{{ theme.welcome_subheader }}</h2>{% endif %}
             </div>
           {% endif %}
+          {% if theme.welcome_image != blank %}
+            <img
+              alt="Welcome image"
+              class="lazyload blur-up"
+              src="{{ theme.welcome_image.url | constrain: 900 }}"
+              data-srcset="
+                {{ theme.welcome_image.url | constrain: 450 }} 450w,
+                {{ theme.welcome_image.url | constrain: 600 }} 600w,
+                {{ theme.welcome_image.url | constrain: 900 }} 900w,
+                {{ theme.welcome_image.url | constrain: 1200 }} 1200w,
+                {{ theme.welcome_image.url | constrain: 1500 }} 1500w,
+                {{ theme.welcome_image.url | constrain: 1900 }} 1800w,
+                {{ theme.welcome_image.url | constrain: 1900 }} 2100w,
+                {{ theme.welcome_image.url | constrain: 1900 }} 2400w,
+                {{ theme.welcome_image.url | constrain: 1900 }} 2700w
+              "
+              data-sizes="auto"
+            >
+          {% endif %}
         {% endif %}
-        <canvas id="repeating-pattern">
+        <canvas id="repeating-pattern"></canvas>
       </div>
       <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' %} hide-featured{% endif %}">
         {% if page.category == 'custom' %}
