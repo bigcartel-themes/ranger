@@ -1,7 +1,7 @@
 // Flexbox Mixins
 // http://philipwalton.github.io/solved-by-flexbox/
 // https://github.com/philipwalton/solved-by-flexbox
-// 
+//
 // Copyright (c) 2013 Brian Franco
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -41,8 +41,8 @@
   -webkit-flex-wrap: $value
   @if $value == nowrap
     -ms-flex-wrap: none
-  @else 
-    -ms-flex-wrap: $value 
+  @else
+    -ms-flex-wrap: $value
   flex-wrap: $value
 
 @mixin flex-flow($values: (row nowrap))
@@ -83,7 +83,7 @@
   @else if $value == space-between
     -ms-flex-pack: justify
   @else if $value == space-around
-    -ms-flex-pack: distribute		
+    -ms-flex-pack: distribute
   @else
     -ms-flex-pack: $value
   -webkit-justify-content: $value

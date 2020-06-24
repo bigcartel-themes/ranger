@@ -122,51 +122,35 @@ section.content
 
       img
         display: block
+        height: 100%
+        object-fit: cover
         width: 100%
 
-        @media screen and (max-width: $break-large)
-          position: relative
-          left: 50%
-          width: auto
-          height: auto
-          top: 50%
-          transform: translateY(-50%) translateX(-50%)
-
   .product-status
-    background: $links-color
-    font-size: 0.75rem
-    color: $content-background-color
-    display: block
+    +flexbox
+    +align-items(center)
+    +justify-content(center)
+    background: $status-background-color
+    font-size: 0.9rem
+    color: $button-text-color
     font-style: normal
-    height: 72px
+    height: 80px
     left: 32px
     line-height: 16px
-    min-width: 72px
-    max-width: 72px
     padding: 0 10px
     position: absolute
     text-align: center
     text-transform: uppercase
     top: 32px
-
-    @media screen and (max-width: $break-extra-large)
-      left: 24px
-      top: 24px
-
-    @media screen and (max-width: $break-large)
-      left: 48px
-      top: 24px
+    width: 80px
+    word-break: keep-all
 
     @media screen and (max-width: $break-medium)
-      left: 56px
-      top: 24px
-
-    @media screen and (max-width: $break-small)
+      font-size: .75rem
+      height: 72px
       left: 24px
       top: 24px
-
-    .status-text
-      +vertical-align
+      width: 72px
 
 .product-price-title, .product-details
   float: right
@@ -202,8 +186,8 @@ section.content
     @media screen and (max-width: $break-medium)
       font-size: 18px
 
-  h2
-    color: $links-color
+  .product-price
+    color: $secondary-text-color
     font-family: $secondary-font
     font-size: 24px
     line-height: 28px
@@ -213,12 +197,6 @@ section.content
     @media screen and (max-width: $break-medium)
       font-size: 18px
       margin-bottom: 0
-
-  h4
-    border-bottom: none
-    font-size: 20px
-    margin: 0
-    padding: 0 0 6px
 
   @media screen and (max-width: $break-large)
     padding: 32px
@@ -254,8 +232,8 @@ section.content
     padding: 0 0 96px 0
 
   .product-description
-    font-size: 14px
-    line-height: 1.7em
+    font-size: 16px
+    line-height: 1.5em
     margin: 0 auto
 
     @media screen and (max-width: $break-small)
@@ -263,10 +241,10 @@ section.content
 
     a
       +all-transitions
-      color: $links-color
+      text-decoration: underline
 
-      &:hover
-        opacity: .6
+      &:hover, &:focus
+        color: $links-color
 
     img, iframe
       display: block
@@ -293,8 +271,12 @@ section.content
 
       @media screen and (max-width: $break-small)
         border: 0
+        border-bottom: 2px solid $background-color
         height: 64px
         margin-bottom: 0
+
+        &:last-child
+          border: 0
 
         select
           padding-left: 32px

@@ -1,0 +1,90 @@
+@import 'variables'
+
+.main-nav
+  position: relative
+
+.nav, .horizontal-nav-links
+  margin: 0
+  padding: 0
+  list-style: none
+
+.nav
+  +inline-flex
+  +align-items(center)
+  +justify-content(flex-start)
+  font-size: 14px
+
+  @media screen and (max-width: $break-small)
+    +justify-content(space-evenly)
+
+.nav-menu-item
+  margin: 0 8px
+  position: relative
+
+  @media screen and (max-width: $break-small)
+    margin: 0
+
+  > a
+    color: $primary-text-color
+    display: block
+    padding: 6px
+    position: relative
+    text-align: center
+    text-decoration: none
+
+    &:after
+      +all-transitions
+      background: $links-color
+      bottom: 0px
+      content: ''
+      height: 2px
+      width: calc(100% - 12px)
+      position: absolute
+      left: 6px
+      opacity: 0
+
+    &:hover, &:focus
+      color: $links-color
+
+    &:hover
+      &:after
+        opacity: 1
+
+.horizontal-nav-links
+  background: $content-background-color
+  left: -12px
+  line-height: 1.25em
+  min-width: 300px
+  max-height: 500px
+  opacity: 0
+  overflow-y: scroll
+  padding: 6px 12px 12px
+  position: absolute
+  top: 100%
+  z-index: 0
+  visibility: hidden
+
+.horizontal-nav-link
+  position: static
+
+  a
+    color: $primary-text-color
+    display: block
+    padding: 12px 10px
+    position: relative
+    text-decoration: none
+
+    &:hover, &:focus
+      color: $links-color
+      text-decoration: underline
+
+.nav li:focus > a,
+.nav li:hover > a,
+.nav li:focus-within > a
+  color: $links-color
+
+ul.show-menu
+  visibility: visible
+  opacity: 1
+  transition-delay: 0s
+  z-index: 100
