@@ -80,9 +80,25 @@
       "variable": "links_color",
       "label": "Link hover color",
       "default": "#FF642A"
+    },
+    {
+      "variable": "announcement_text_color",
+      "label": "Announcement Message Text",
+      "default": "#FFFFFF"
+    },
+    {
+      "variable": "announcement_background_color",
+      "label": "Announcement Message Background",
+      "default": "#000000"
     }
   ],
   "options": [
+    {
+      "variable": "announcement_message_text",
+      "label": "Announcement text",
+      "type": "text",
+      "description": "Displays an announcement message on the top of every page"
+    },
     {
       "variable": "welcome_header",
       "label": "Welcome header",

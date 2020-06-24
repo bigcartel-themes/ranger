@@ -15,6 +15,16 @@
     {{ head_content }}
   </head>
   <body id="{{ page.permalink }}" class="{{ page.category }}">
+    {% if theme.announcement_message_text != blank %}
+      <aside role="complementary" aria-label="Announcement message" class="announcement-message {% if page.permalink =='home' %}home{% if theme.welcome_header == blank and theme.welcome_subheader == blank and theme.image_sets.slideshow_images.size == 0 %} overlay {% else %} has_featured{% endif %}{% else %}page{% endif %}" id="announce-message">
+        <div class="announcement-wrapper">
+          <div class="announcement-message-text">{{ theme.announcement_message_text }}</div>
+        </div>
+        <button aria-label="Close announcement" class="button announcement-message-close" title="Close announcement message">
+          <svg aria-hidden="true" class="close-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 8 8"><path d="M7.924 6.51l-2.474-2.475 2.475-2.475c.196-.195.196-.512 0-.707l-.708-.753c-.195-.195-.512-.195-.707 0l-2.474 2.521-2.475-2.475c-.195-.195-.512-.195-.707 0l-.707.754c-.196.195-.196.5 0 .707l2.475 2.475-2.475 2.428c-.196.195-.196.5 0 .707l.707.7c.195.2.5.2.7 0l2.475-2.475 2.481 2.482c.195.2.5.2.7 0l.707-.707c.204-.217.183-.517-.017-.707z"/></svg>
+        </button>
+      </aside>
+    {% endif %}
     <header class="header">
       <div class="wrapper">
         <div class="header-item header-nav">
@@ -152,7 +162,23 @@
       </div>
     </header>
     <main id="main">
-      <div id="pattern" class="pattern{% if page.permalink == 'home' %}{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} welcome-pattern{%endif %} {% if theme.welcome_image != blank %} welcome-image{% endif %}{% if theme.featured_items == 0 %} hide-featured{% endif %}{% endif %} {{ theme.pattern_style }}">
+      <div
+        id="pattern"
+        class="
+          pattern
+          {% if page.permalink == 'home' %}
+            {% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %}
+              welcome-pattern
+            {%endif %}
+            {% if theme.welcome_image != blank %}
+              welcome-image
+            {% endif %}
+            {% if theme.featured_items == 0 %}
+              hide-featured
+            {% endif %}
+          {% endif %}
+          {{ theme.pattern_style }}
+        ">
         {% if page.permalink == 'home' %}
           {% if theme.welcome_header != blank or theme.welcome_subheader != blank %}
             <div class="welcome-text">
@@ -234,18 +260,70 @@
         </div>
       {% endif %}
     {% endif %}
+    <script>
+      var path_name = top.location.pathname;
+      var admin_path = new RegExp("/admin/design");
+      var inPreview = admin_path.test(path_name);
+      var themeOptions = {
+        hasAnnouncement: {% if theme.announcement_message_text %}true{%else %}false{%endif %},
+        primary_color: "{{ theme.accent_background_color }}",
+        secondary_color: "{{ theme.accent_pattern_color }}",
+        pattern_style: "{{ theme.pattern_style }}",
+        store_name: "{{ store.name | escape }}",
+        page: "{{ page.permalink }}",
+        in_preview: inPreview
+      }
+      function setCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+          var date = new Date();
+          date.setTime(date.getTime() + (days*24*60*60*1000));
+          expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+      }
+      function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1,c.length);
+          if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+      }
+      function eraseCookie(name) {
+        document.cookie = name+'=; Max-Age=-99999999;';
+      }
+      String.prototype.hashCode = function() {
+        var hash = 0, i, chr;
+        if (this.length === 0) return hash;
+        for (i = 0; i < this.length; i++) {
+          chr   = this.charCodeAt(i);
+          hash  = ((hash << 5) - hash) + chr;
+          hash |= 0;
+        }
+        return hash;
+      };
+      if (themeOptions.hasAnnouncement) {
+        announceDiv = document.getElementById("announce-message");
+        if (announceDiv) {
+          announcementMessage =document.querySelector(".announcement-message-text").innerHTML;
+          hashedMessage = announcementMessage.hashCode();
+          cookieValue = getCookie("hide-announcement-message");
+          if (cookieValue) {
+            if (cookieValue != hashedMessage) {
+              announceDiv.classList.add('visible');
+            }
+          }
+          else {
+            announceDiv.classList.add('visible');
+          }
+        }
+      }
+    </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ 'api' | theme_js_url }}"></script>
-    <script>
-      $(function() {
-        Store.init('{{ page.permalink }}', {
-          primary_color: "{{ theme.accent_background_color }}",
-          secondary_color: "{{ theme.accent_pattern_color }}",
-          pattern_style: "{{ theme.pattern_style }}",
-          store_name: "{{ store.name | escape }}"
-        });
-      });
-    </script>
     <script src="{{ theme | theme_js_url }}"></script>
     {% if page.full_url contains '/product/' %}
       <script>

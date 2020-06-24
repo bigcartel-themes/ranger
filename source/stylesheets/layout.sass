@@ -17,14 +17,6 @@ body
   font-size: 16px
   line-height: 1
   margin: 0
-  padding-top: $header-height
-
-  @media screen and (max-width: $break-medium)
-    padding-top: $header-height-tablet
-
-  @media screen and (max-width: $break-small)
-    background: $content-background-color
-    padding-top: $header-height-mobile
 
   &.standalone-page
     padding: 140px 60px
@@ -118,18 +110,20 @@ h1, h2, h3, h4, h5, h6
 
 header
   +transition(height .4s)
+  +flex-shrink(0)
   background: $content-background-color
   border-bottom: 2px solid $background-color
   height: $header-height
   font-size: 14px
-  position: fixed
-  top: 0
   width: 100%
   z-index: 5
 
+  &.page-head-scrolled
+    position: fixed
+    top: 0
+
   @media screen and (max-width: $break-medium)
     height: $header-height-tablet
-    position: absolute
 
   @media screen and (max-width: $break-small)
     height: $header-height-mobile
@@ -529,7 +523,7 @@ h1.page-title
 
 section.content
   +pie-clearfix
-  margin: 0 auto 160px
+  margin: 0 auto $header-height
   padding: 0 64px
   position: relative
   width: 100%
@@ -540,7 +534,7 @@ section.content
 
   @media screen and (max-width: $break-small)
     margin-bottom: 0
-    padding: 0
+    padding: 0 0 64px
 
   &.hide-featured
     display: none
@@ -558,10 +552,8 @@ section.content
 .pattern
   background-color: $accent-background-color
   height: 360px
-  left: 0
   overflow: hidden
   position: absolute
-  top: 160px
   width: 100%
   z-index: 1
 
@@ -593,23 +585,21 @@ section.content
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='68' height='88' viewBox='0 0 34 44'%3E%3Cg fill='#{"{{ theme.accent_pattern_color | replace: '#', '%23' }}"}' fill-opacity='0.4'%3E%3Cpath fill-rule='evenodd' d='M1 6.2C.72 5.55.38 4.94 0 4.36v13.28c.38-.58.72-1.2 1-1.84A12.04 12.04 0 0 0 7.2 22 12.04 12.04 0 0 0 1 28.2c-.28-.65-.62-1.26-1-1.84v13.28c.38-.58.72-1.2 1-1.84A12.04 12.04 0 0 0 7.2 44h21.6a12.05 12.05 0 0 0 5.2-4.36V26.36A12.05 12.05 0 0 0 28.8 22a12.05 12.05 0 0 0 5.2-4.36V4.36A12.05 12.05 0 0 0 28.8 0H7.2A12.04 12.04 0 0 0 1 6.2zM17.36 23H12a10 10 0 1 0 0 20h5.36a11.99 11.99 0 0 1 0-20zm1.28-2H24a10 10 0 1 0 0-20h-5.36a11.99 11.99 0 0 1 0 20zM12 1a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 14a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3.46-2a2 2 0 1 0-3.47 2 2 2 0 0 0 3.47-2zm0-4a2 2 0 1 0-3.47-2 2 2 0 0 0 3.47 2zM12 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3.46 2a2 2 0 1 0 3.47-2 2 2 0 0 0-3.47 2zm0 4a2 2 0 1 0 3.47 2 2 2 0 0 0-3.47-2zM24 43a10 10 0 1 0 0-20 10 10 0 0 0 0 20zm0-14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3.46 2a2 2 0 1 0 3.47-2 2 2 0 0 0-3.47 2zm0 4a2 2 0 1 0 3.47 2 2 2 0 0 0-3.47-2zM24 37a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3.46-2a2 2 0 1 0-3.47 2 2 2 0 0 0 3.47-2zm0-4a2 2 0 1 0-3.47-2 2 2 0 0 0 3.47 2z'/%3E%3C/g%3E%3C/svg%3E")
 
   &.welcome-pattern
+    display: block
     height: 700px
     overflow: hidden
+    position: relative
 
     canvas, .welcome-text
       +animation(fade-in-load ease-in 900ms forwards)
 
-    @media screen and (max-width: $break-medium)
-      position: relative
-      top: 0
-
-    @media screen and (max-width: $break-small)
-      display: block
-      height: calc(100vh - 64px)
-
   &.no-pattern
     background-color: $accent-background-color
     background-image: none
+
+  &.hide-featured
+    height: 100%
+    position: relative
 
   &.welcome-image
     +animation(fade-in-load ease-in 900ms forwards)
@@ -621,35 +611,17 @@ section.content
     canvas
       display: none !important
 
-  &.hide-featured
-    height: calc(100vh - 160px)
-    position: relative
-    top: 0
-
-    @media screen and (max-width: $break-medium)
-      height: calc(100vh - #{$header-height-tablet})
-
-    @media screen and (max-width: $break-small)
-      height: calc(100vh - #{$header-height-mobile})
-
   canvas
     height: 100%
     margin: 0 auto
+    max-width: 100%
     position: absolute
     top: 0
     z-index: -1
 
-  @media screen and (max-width: $break-medium)
-    top: $header-height-tablet
-
-  @media screen and (max-width: $break-small)
-    top: $header-height-mobile
-
 #main
   +flex(1)
-
-  @media screen and (max-width: $break-medium)
-    padding-bottom: 72px
+  padding-top: 0
 
 _:-ms-fullscreen, :root #main
   +flex(1 0 auto)
@@ -909,3 +881,49 @@ footer
   padding: 0
   position: absolute
   width: 1px
+
+.announcement-message
+  background-color: $announcement-background-color
+  color: $announcement-text-color
+  display: none
+  padding: 20px 144px
+  position: relative
+  text-align: center
+  width: 100%
+  z-index: 1
+
+  @media screen and (max-width: $break-medium)
+    padding: 20px 64px
+
+  &.visible
+    display: block
+
+.button.announcement-message-close
+  +transform(translateY(-50%))
+  +transition(none)
+  +flexbox
+  +align-items(center)
+  +justify-content(center)
+  background: none
+  height: 32px
+  padding: 0
+  position: absolute
+  right: 16px
+  top: 50%
+  width: 32px
+
+  @media screen and (max-width: $break-small)
+    right: 4px
+
+  &:hover, &:focus
+    background: none !important
+    opacity: .7
+
+    svg
+      fill: $announcement-text-color
+
+  svg
+    display: block
+    fill: $announcement-text-color
+    height: 14px
+    width: 14px
