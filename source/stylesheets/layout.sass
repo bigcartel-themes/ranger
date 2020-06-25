@@ -18,6 +18,9 @@ body
   line-height: 1
   margin: 0
 
+  &.no-scroll
+    overflow: hidden
+
   &.standalone-page
     padding: 140px 60px
     text-align: center
@@ -309,8 +312,18 @@ header
   background: $content-background-color
   border-top: 2px solid $background-color
   display: none
-  overflow: hidden
+  overflow: scroll
+  padding-bottom: 128px
   text-align: center
+
+  @media screen and (max-width: $break-medium)
+    height: calc(100vh - 120px)
+
+  @media screen and (max-width: $break-small)
+    height: calc(100vh - 64px)
+
+  &.visible
+    display: block
 
   .dropdown-search
     padding: 12px 24px

@@ -26,24 +26,22 @@ $('html').click(function(event) {
 });
 $('.open-dropdown').click(function() {
   $(this).toggleClass('dropdown-visible');
+  $('body').toggleClass('no-scroll');
+  $('.mobile-navigation').toggleClass('visible');
+
+
   if ($('.hide-header').length) {
     if ($('.hide-header').css('display') == 'block') {
       $('.hide-header').fadeOut(100, function() {
-        $('.mobile-navigation').fadeToggle(100);
         $('.store-link').fadeIn(100);
       });
     }
     else {
-      $('.store-link').fadeOut(100, function() {
-        $('.mobile-navigation').fadeToggle(100);
-        $('.hide-header').fadeIn(100);
+      $('.store-link').fadeToggle(100, function() {
+        $('.hide-header').fadeToggle(100);
       });
     }
   }
-  else {
-    $('.mobile-navigation').fadeToggle(100);
-  }
-  return false;
 });
 var isGreaterThanZero = function(currentValue) {
   return currentValue > 0;
