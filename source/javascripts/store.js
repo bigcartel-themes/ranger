@@ -251,6 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
   .resize().scroll(function() {
     if ($(this).scrollTop() > hdr) {
       mn.addClass(mns);
+      bit = mn.outerHeight();
       core.css('margin-top', bit);
     } else {
       mn.removeClass(mns);
