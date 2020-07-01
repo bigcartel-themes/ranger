@@ -60,15 +60,19 @@ section.content
       max-width: 100%
 
   .item-image
-    background-position: 50%
-    background-repeat: no-repeat
-    background-size: cover
     border-right: 2px solid $background-color
     height: 100%
     max-width: 160px
     position: relative
     text-align: center
     width: 100%
+
+    img
+      height: 100%
+      object-fit: cover
+      position: relative
+      width: 100%
+      z-index: 1
 
     @media screen and (max-width: $break-small)
       max-width: 40%
@@ -86,6 +90,7 @@ section.content
       text-align: center
       top: 20px
       width: 34px
+      z-index: 2
 
       svg
         display: block
@@ -157,8 +162,7 @@ section.content
     height: 64px
     margin-left: auto
     margin-right: 48px
-    padding: 5px 16px
-    padding-right: 10px
+    padding: 5px 10px
     width: 128px
 
     @media screen and (max-width: $break-small)

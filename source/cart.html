@@ -16,8 +16,19 @@
         {% for item in cart.items %}
           <li class="cart-item" data-item-id="{{ item.id }}">
             <div class="item-image-details">
-              <a class="item-image" href="{{ item.product.url }}" title="View {{ item.product.name | escape }}" style="background-image:url('{{ item.product.image | product_image_url | constrain: 576, 576 }}');">
+              <a class="item-image" href="{{ item.product.url }}" title="View {{ item.product.name | escape }}">
                 <button title="Remove item from cart" class="item-delete" data-item-id="{{ item.id }}" type="button"><svg aria-hidden="true" height="12" width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.071 8.07"><path d="M7.924 6.51L5.45 4.035 7.925 1.56c.196-.195.196-.512 0-.707L7.217.146c-.195-.195-.512-.195-.707 0L4.036 2.62 1.56.147c-.194-.195-.51-.195-.706 0L.147.854c-.196.195-.196.512 0 .707l2.475 2.476L.147 6.51c-.196.195-.196.512 0 .707l.707.707c.195.195.512.195.707 0L4.037 5.45 6.51 7.923c.195.195.512.195.707 0l.707-.707c.197-.196.197-.512 0-.707z"/></svg></button>
+                <img
+                  alt=""
+                  class="blur-up lazyload"
+                  src="{{ item.product.image | product_image_url | constrain: 20 }}"
+                  data-srcset="
+                    {{ item.product.image | product_image_url | constrain: 120 }} 120w,
+                    {{ item.product.image | product_image_url | constrain: 240 }} 240w,
+                    {{ item.product.image | product_image_url | constrain: 320 }} 320w,
+                  "
+                  data-sizes="auto"
+                >
               </a>
               <div class="item-details">
                 <a class="item-product-link" title="View {{ item.product.name | escape }}" href="{{ item.product.url }}">

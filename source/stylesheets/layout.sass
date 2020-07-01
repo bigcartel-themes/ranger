@@ -112,7 +112,7 @@ h1, h2, h3, h4, h5, h6
   color: $primary-text-color
 
 header
-  +transition(height .4s)
+  +transition(height .5s)
   +flex-shrink(0)
   background: $content-background-color
   border-bottom: 2px solid $background-color
@@ -124,6 +124,9 @@ header
   &.page-head-scrolled
     position: fixed
     top: 0
+
+    @media screen and (min-width: $break-medium + 1)
+      height: $header-height-tablet
 
   @media screen and (max-width: $break-medium)
     height: $header-height-tablet
@@ -177,22 +180,19 @@ header
     font-size: 16px
 
   &.image
-    height: calc(#{$header-height} / 1.5)
-
-    @media screen and (max-width: $break-medium)
-      height: calc(#{$header-height-tablet} / 1.5)
-
-    @media screen and (max-width: $break-small)
-      height: calc(#{$header-height-mobile} / 1.5)
+    height: 100%
+    padding: 10px 0
 
     .store-title
-      height: auto
+      +flexbox
+      +align-items(center)
+      height: 100%
 
     img
       display: block
       height: auto
       margin: 0 auto
-      max-height: 100px
+      max-height: 100%
       max-width: 100%
       width: auto
 
@@ -423,7 +423,6 @@ header
     z-index: 2
 
     option
-      background-color: #FFF
       color: #000
 
       &:disabled
