@@ -33,15 +33,11 @@
         <label for="message">Message</label>
         <div class="input-holder">
           {{ contact | contact_input: 'message' }}
+          <div class="recaptcha-note">{{ contact.recaptcha }}</div>
         </div>
       </div>
-      <div class="contact-form-block contact-spam">
-        <label for="captcha">Spam check</label>
-        <div class="input-holder captcha-holder">
-          {{ contact | contact_input: 'captcha' }} {{ contact.captcha }}
-          <div class="captcha-instructions">Please enter the characters from the image.</div>
-        </div>
-      </div>
+
+
       <div class="contact-form-block contact-send">
         <button class="button" type="submit" name="submit" title="Send message" tabindex="6">Send message</button>
       </div>
