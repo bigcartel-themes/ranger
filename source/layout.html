@@ -280,9 +280,7 @@
       {% endif %}
     {% endif %}
     <script>
-      var path_name = top.location.pathname;
-      var admin_path = new RegExp("/admin/design");
-      var inPreview = admin_path.test(path_name);
+      var inPreview = (/http(s?):\/\/draft-+\w+\.bigcartel\.(test|biz|com)/.test(window.origin)||(/\/admin\/design/.test(top.location.pathname)));
       var themeOptions = {
         hasAnnouncement: {% if theme.announcement_message_text %}true{%else %}false{%endif %},
         primary_color: "{{ theme.accent_background_color }}",
