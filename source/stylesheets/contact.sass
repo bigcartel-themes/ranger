@@ -2,40 +2,30 @@
 
 section.content
   .contact-page
-    max-width: 828px
+    max-width: 768px
 
 .contact-form-block
-  +pie-clearfix
   border-bottom: 4px solid $background-color
   padding: 32px 48px
   position: relative
   text-align: left
 
   @media screen and (max-width: $break-medium)
-    padding: 8px 32px 32px
+    padding: 32px
 
   @media screen and (max-width: $break-small)
     border-bottom: 0
     padding-bottom: 0
 
   label
-    display: inline-block
+    display: block
     font-size: 16px
-    line-height: 56px
+    margin-bottom: 12px
     text-transform: uppercase
-    width: 180px
-
-    @media screen and (max-width: $break-medium)
-      display: block
-      width: 100%
+    width: 100%
 
   .input-holder
-    float: right
-    width: calc(100% - 180px)
-
-    @media screen and (max-width: $break-medium)
-      float: none
-      width: 100%
+    width: 100%
 
   input
     height: 56px

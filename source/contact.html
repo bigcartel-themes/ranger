@@ -12,34 +12,34 @@
   {% else %}
     <form method="post" action="/contact" class="contact-form">
       <div class="contact-form-block contact-name">
-        <label for="name">Name</label>
+        <label for="name-input">Name</label>
         <div class="input-holder">
-          {{ contact | contact_input: 'name' }}
+          <input id="name-input" name="name" type="text">
         </div>
       </div>
       <div class="contact-form-block contact-email">
-        <label for="email">Email</label>
+        <label for="email-input">Email</label>
         <div class="input-holder">
-          {{ contact | contact_input: 'email' }}
+          <input id="email-input" name="email" type="email">
         </div>
       </div>
       <div class="contact-form-block contact-subject">
-        <label for="subject">Subject</label>
+        <label for="subject-input">Subject</label>
         <div class="input-holder">
-          {{ contact | contact_input: 'subject' }}
+          <input id="subject-input" name="subject" type="text">
         </div>
       </div>
       <div class="contact-form-block contact-message">
-        <label for="message">Message</label>
+        <label for="message-textarea">Message</label>
         <div class="input-holder">
-          {{ contact | contact_input: 'message' }}
+          <textarea id="message-textarea" name="message"></textarea>
           <div class="recaptcha-note">{{ contact.recaptcha }}</div>
         </div>
       </div>
 
 
       <div class="contact-form-block contact-send">
-        <button class="button" type="submit" name="submit" title="Send message" tabindex="6">Send message</button>
+        <button class="button" type="submit" name="submit">Send message</button>
       </div>
     </form>
   {% endif %}
