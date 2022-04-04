@@ -21,53 +21,20 @@ body
   &.no-scroll
     overflow: hidden
 
-  &.standalone-page
-    padding: 140px 60px
-    text-align: center
+a.skip-link
+  +transition(all .3s)
+  background: $background-color
+  border: 1px solid $primary-text-color
+  color: $primary-text-color
+  left: 25px
+  padding: 15px 20px
+  position: absolute
+  text-decoration: underline
+  top: -150px
+  z-index: 100
 
-    @media screen and (max-width: $break-medium)
-      padding: 80px 20px
-
-    .message-holder
-      background: $content-background-color
-      margin: 0 auto
-      max-width: 800px
-      padding: 64px 32px
-      width: 100%
-
-    h1
-      color: $primary-text-color
-      font-size: 22px
-      line-height: 1.6em
-      margin: 0
-      text-align: center
-
-      &.checkout-header
-        margin-bottom: 0
-
-.maintenance-icons
-  display: block
-  margin: 72px 0 0
-  padding: 0
-
-  li
-    display: inline-block
-
-    a
-      display: block
-      padding: 0 15px
-
-      @media screen and (max-width: $break-small)
-        padding: 0 12px
-
-      svg
-        +all-transitions
-        fill: $primary-text-color
-        height: 22px
-        width: 22px
-
-      &:hover svg
-        fill: $links-color
+  &:focus
+    top: 20px
 
 .errors
   background: #950f1e
@@ -231,6 +198,7 @@ header
   padding: 4px 8px
 
   svg
+    +transition(fill .1s linear)
     fill: $primary-text-color
     height: 16px
     margin: 0 10px
@@ -286,7 +254,7 @@ header
         width: 16px
 
 .open-dropdown
-  +all-transitions
+  +transition(transform .2s ease-in-out)
   background: none
   display: none
   height: 44px
@@ -321,7 +289,7 @@ header
   text-align: center
 
   @media screen and (max-width: $break-medium)
-    height: calc(100vh - 120px)
+    height: calc(100vh - 94px)
 
   @media screen and (max-width: $break-small)
     height: calc(100vh - 64px)
@@ -397,8 +365,7 @@ header
             opacity: .6
 
 .select
-  +all-transitions
-  border: 2px solid $background-color
+  border: 2px solid $primary-text-color
   color: $primary-text-color
   font-family: $secondary-font
   height: 64px
@@ -410,10 +377,10 @@ header
   width: 100%
 
   select
-    +all-transitions
     +appearance(none)
     background: none
     border: 0
+    border-radius: 0
     color: $primary-text-color
     font-family: $secondary-font
     font-size: 16px
@@ -433,13 +400,11 @@ header
 
     &:focus
       box-shadow: none
-      outline: none
 
     &::-ms-expand
       display: none
 
   svg
-    +all-transitions
     +vertical-align
     fill: $primary-text-color
     height: 13px
@@ -447,34 +412,18 @@ header
     width: 13px
     z-index: 1
 
-  &:hover, &:focus-within
-    color: $primary-text-color
-    border-color: $primary-text-color
-
-    select
-      color: $primary-text-color
-
-      option:disabled
-        color: graytext
-
-    .arrow-holder
-      border-left: 2px solid $primary-text-color
-
-    svg
-      fill: $primary-text-color
-
   .arrow-holder
-    +all-transitions
     position: absolute
     right: 0
     width: 60px
     height: 60px
-    border-left: 2px solid $background-color
     text-align: center
     top: 0
 
+  &:focus-within
+    outline: -webkit-focus-ring-color auto 1px
+
 button, a.button
-  +all-transitions
   +transform(translateZ(0))
   border: 0px
   background: $button-background-color
@@ -700,7 +649,7 @@ footer
       display: block
 
       a
-        +all-transitions
+        +transition(opacity .2s ease-in-out)
         color: $accent-text-color
         display: block
         font-size: 15px
@@ -729,7 +678,7 @@ footer
             margin-left: 8px
 
           svg
-            +all-transitions
+            +transition(opacity .2s ease-in-out)
             display: inline-block
             fill: $accent-text-color
             height: 16px
@@ -744,12 +693,13 @@ footer
 .custom-page
   font-size: 16px
   line-height: 1.5em
-  max-width: 828px
+  max-width: 768px
   padding: 64px
   width: 100%
 
   a
-    +all-transitions
+    +transition(color .2s linear)
+    color: $secondary-text-color
     text-decoration: underline
 
     &:hover, &:focus

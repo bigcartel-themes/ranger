@@ -1,0 +1,39 @@
+@import 'variables'
+
+#maintenance
+  padding: 100px 15px
+
+  @media screen and (max-width: $break-medium)
+    padding: 60px 20px
+
+  .message-container
+    +flexbox
+    +align-items(center)
+    +justify-content(center)
+    +flex-direction(column)
+    background: $content-background-color
+    color: $primary-text-color
+    font-size: 1.25em
+    margin: 0 auto
+    max-width: 600px
+    padding: 40px
+    text-align: center
+    width: 100%
+
+    > * + *
+      margin-top: 40px
+
+    .store-name
+      font-size: 1.75em
+
+    .social_icons
+      +flexbox
+
+      a
+        +flexbox
+        margin: 0 12px
+
+        svg
+          display: block
+          height: 26px
+          width: 26px

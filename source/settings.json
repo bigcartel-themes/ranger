@@ -59,7 +59,7 @@
     {
       "variable": "secondary_text_color",
       "label": "Secondary text color",
-      "default": "#555555"
+      "default": "#0b639a"
     },
     {
       "variable": "button_text_color",
@@ -69,7 +69,7 @@
     {
       "variable": "button_background_color",
       "label": "Button background color",
-      "default": "#0b799a"
+      "default": "#0b639a"
     },
     {
       "variable": "status_background_color",
@@ -93,6 +93,13 @@
     }
   ],
   "options": [
+   {
+      "variable": "maintenance_message",
+      "label": "Maintenance mode message",
+      "type": "text",
+      "description": "A message visitors see when your shop is in Maintenance Mode",
+      "default": "We're working on our shop right now.<br /><br />Please check back soon."
+    },
     {
       "variable": "announcement_message_text",
       "label": "Announcement text",
@@ -158,7 +165,7 @@
       "label": "Navigation items",
       "type": "select",
       "options": "0..2",
-      "default": 0,
+      "default": 1,
       "description": "The number of custom page links show in the main navigation."
     },
     {
@@ -193,7 +200,7 @@
       "label": "Products per page",
       "type": "select",
       "options": "1..100",
-      "default": 36,
+      "default": 48,
       "description": "The number of products shown per page"
     },
     {

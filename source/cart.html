@@ -50,7 +50,7 @@
         {% endfor %}
       </ul>
       <div class="cart-footer fixed-cart-footer" aria-live="polite" aria-atomic="true">
-        <h3 class="cart-total centered-total">Subtotal <span class="cart-subtotal-amount">{{ cart.total | money: theme.money_format }}</span></h3>
+        <div class="cart-total centered-total">Subtotal <span class="cart-subtotal-amount">{{ cart.total | money: theme.money_format }}</span></div>
       </div>
       <div class="cart-footer-buttons">
         <a class="button continue-shopping" href="/products">Continue shopping</a>
