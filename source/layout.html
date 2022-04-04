@@ -15,6 +15,7 @@
     {{ head_content }}
   </head>
   <body id="{{ page.permalink }}" class="{{ page.category }}">
+    <a class="skip-link" href="#main">Skip to main content</a>
     {% if theme.announcement_message_text != blank %}
       <aside role="complementary" aria-label="Announcement message" class="announcement-message {% if page.permalink =='home' %}home{% if theme.welcome_header == blank and theme.welcome_subheader == blank and theme.image_sets.slideshow_images.size == 0 %} overlay {% else %} has_featured{% endif %}{% else %}page{% endif %}" id="announce-message">
         <div class="announcement-wrapper">
@@ -67,7 +68,7 @@
             {% if page.permalink == 'cart' %}
               <div class="header-cart hide-header">
                 <svg aria-hidden="true" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 9c.553 0 1-.447 1-1V1c0-.55-.45-1-1-1H1C.448 0 0 .447 0 1c0 .553.448 1 1 1h1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1 0-.583-.447-1-1-1H4V9h11zM4 2h10v5H4V2z"/><circle cx="4.5" cy="14.5" r="1.5"/><circle cx="13.5" cy="14.5" r="1.5"/></svg>
-                <span class="cart-num-items">{{ cart.item_count | pluralize: 'Item', 'Items' }}</span>
+                Cart - <span class="cart-num-items">{{ cart.item_count | pluralize: 'Item', 'Items' }}</span>
               </div>
             {% elsif page.permalink == 'product' %}
               <h1 class="header-title hide-header">{% if theme.collections %}Collections{% else %}Products{% endif %}</h1>
@@ -221,7 +222,7 @@
     </main>
     <footer class="footer">
       <div class="wrapper">
-        <nav class="footernav" aria-label="Footer category navigation">
+        <nav class="footernav" aria-label="Browse categories">
           <div class="footer-nav-title"><a href="/products" title="{% if theme.collections %}Collections{% else %}Products{% endif %}">{% if theme.collections %}Collections{% else %}Products{% endif %}</a></div>
           <ul>
             {% for category in categories.active %}
@@ -229,7 +230,7 @@
             {% endfor %}
           </ul>
         </nav>
-        <nav class="footernav" aria-label="Footer page navigation">
+        <nav class="footernav" aria-label="Pages">
           <div class="footer-nav-title">Pages</div>
           <ul>
             {% for page in pages.all %}
