@@ -59,6 +59,28 @@ section.content
     @media screen and (max-width: $break-small)
       max-width: 100%
 
+  .item-delete
+    +flexbox
+    +align-items(center)
+    +justify-content(center)
+    background: $accent-background-color
+    cursor: pointer
+    height: 34px
+    left: 20px
+    padding: 0
+    position: absolute
+    text-align: center
+    top: 20px
+    width: 34px
+    z-index: 2
+
+    svg
+      display: block
+      fill: $accent-text-color
+      height: 12px
+      margin: 0 auto
+      width: 12px
+
   .item-image
     border-right: 2px solid $background-color
     height: 100%
@@ -76,28 +98,6 @@ section.content
 
     @media screen and (max-width: $break-small)
       max-width: 40%
-
-    .item-delete
-      +flexbox
-      +align-items(center)
-      +justify-content(center)
-      background: $accent-background-color
-      cursor: pointer
-      height: 34px
-      left: 20px
-      padding: 0
-      position: absolute
-      text-align: center
-      top: 20px
-      width: 34px
-      z-index: 2
-
-      svg
-        display: block
-        fill: $accent-text-color
-        height: 12px
-        margin: 0 auto
-        width: 12px
 
   .item-details
     font-family: $primary-font

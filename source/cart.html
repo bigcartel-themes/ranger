@@ -17,7 +17,6 @@
           <li class="cart-item" data-item-id="{{ item.id }}">
             <div class="item-image-details">
               <a class="item-image" href="{{ item.product.url }}" title="View {{ item.product.name | escape }}">
-                <button title="Remove item from cart" class="item-delete" data-item-id="{{ item.id }}" type="button"><svg aria-hidden="true" height="12" width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.071 8.07"><path d="M7.924 6.51L5.45 4.035 7.925 1.56c.196-.195.196-.512 0-.707L7.217.146c-.195-.195-.512-.195-.707 0L4.036 2.62 1.56.147c-.194-.195-.51-.195-.706 0L.147.854c-.196.195-.196.512 0 .707l2.475 2.476L.147 6.51c-.196.195-.196.512 0 .707l.707.707c.195.195.512.195.707 0L4.037 5.45 6.51 7.923c.195.195.512.195.707 0l.707-.707c.197-.196.197-.512 0-.707z"/></svg></button>
                 <img
                   alt=""
                   class="blur-up lazyload"
@@ -30,6 +29,7 @@
                   data-sizes="auto"
                 >
               </a>
+              <button title="Remove {{ item.product.name | escape }} from cart" class="item-delete" data-item-id="{{ item.id }}" type="button"><svg aria-hidden="true" height="12" width="12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.071 8.07"><path d="M7.924 6.51L5.45 4.035 7.925 1.56c.196-.195.196-.512 0-.707L7.217.146c-.195-.195-.512-.195-.707 0L4.036 2.62 1.56.147c-.194-.195-.51-.195-.706 0L.147.854c-.196.195-.196.512 0 .707l2.475 2.476L.147 6.51c-.196.195-.196.512 0 .707l.707.707c.195.195.512.195.707 0L4.037 5.45 6.51 7.923c.195.195.512.195.707 0l.707-.707c.197-.196.197-.512 0-.707z"/></svg></button>
               <div class="item-details">
                 <a class="item-product-link" title="View {{ item.product.name | escape }}" href="{{ item.product.url }}">
                   <span class="item-details-price">{{ item.unit_price | money: theme.money_format }}</span>
