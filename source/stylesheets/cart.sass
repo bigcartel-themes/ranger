@@ -39,176 +39,110 @@ section.content
     +flexbox
     +align-items(center)
     border-bottom: 2px solid $background-color
-    font-size: 16px
-    height: 162px
-    padding: 0
+    font-size: 18px
+    padding: 16px
     position: relative
     text-transform: uppercase
 
-  .item-image-details
-    +flexbox
-    +align-items(center)
+    @media (max-width: $break-small)
+      align-items: start
+      display: grid
+      grid-template: repeat(2,auto) / repeat(4,1fr)
+      padding-right: 16px
+
+  .item-image-link
     height: 160px
-    max-width: 65%
-    width: 100%
+    width: 160px
 
-    @media screen and (max-width: $break-medium)
-      max-width: 70%
-
-    @media screen and (max-width: $break-small)
-      max-width: 100%
-
-  .item-delete
-    +flexbox
-    +align-items(center)
-    +justify-content(center)
-    background: $accent-background-color
-    cursor: pointer
-    height: 34px
-    left: 20px
-    padding: 0
-    position: absolute
-    text-align: center
-    top: 20px
-    width: 34px
-    z-index: 2
-
-    svg
-      display: block
-      fill: $accent-text-color
-      height: 12px
-      margin: 0 auto
-      width: 12px
+    @media (max-width: $break-small)
+      height: 100px
+      grid-row: 1 / 2
+      width: auto
 
   .item-image
-    border-right: 2px solid $background-color
+    display: block
     height: 100%
-    max-width: 160px
-    position: relative
-    text-align: center
+    object-fit: cover
     width: 100%
-
-    img
-      height: 100%
-      object-fit: cover
-      position: relative
-      width: 100%
-      z-index: 1
-
-    @media screen and (max-width: $break-small)
-      max-width: 40%
 
   .item-details
+    +flexbox
+    +align-items(center)
     font-family: $primary-font
-    max-width: calc(100% - 160px)
-    padding: 0 48px
-    width: 100%
+    font-size: 1em
+    line-height: 1.5
+    padding: 0 48px 0 16px
 
-    @media screen and (max-width: $break-medium)
-      padding: 0 32px
-
-    @media screen and (max-width: $break-small)
-      max-width: 60%
-      padding: 0 16px
+    @media (max-width: $break-small)
+      grid-column: 2 / 4
+      font-size: .975em
+      padding-right: 16px
 
   .item-product-link
     color: $primary-text-color
     display: block
-    font-size: 18px
-
-    @media screen and (max-width: $break-medium)
-      font-size: 20px
-
-  .item-details-name
-    line-height: 20px
-
-    @media screen and (max-width: $break-small)
-      font-size: 14px
-      line-height: 20px
 
   .item-details-option
     color: $primary-text-color
     display: block
     font-family: $secondary-font
-    font-size: 13px
-    line-height: 17px
+    font-size: .825em
     margin-top: 6px
 
   .item-details-price
     color: $secondary-text-color
     display: block
     font-family: $secondary-font
-    font-size: 18px
     margin-bottom: 10px
-
-    @media screen and (max-width: $break-medium)
-      display: block
-
-    @media screen and (max-width: $break-small)
-      font-size: 14px
-      margin-bottom: 6px
 
   .item-quantity-holder
     +flexbox
     +align-items(center)
-    border: 2px solid $background-color
-    cursor: pointer
-    height: 64px
+    +flex-direction(column)
+    font-size: .925em
     margin-left: auto
-    margin-right: 48px
-    padding: 5px 10px
-    width: 128px
 
-    @media screen and (max-width: $break-small)
-      .item-quantity-inner
-        +flexbox
-        +align-items(center)
-        +justify-content(center)
-        +flex-direction(column)
-        height: 100%
+    @media (max-width: $break-small)
+      grid-column: 4/4
+      margin: 0
 
-    @media screen and (min-width: $break-small+1)
-      &:hover, &:focus, &:focus-within
-        border: 2px solid $primary-text-color
+  .item-quantity-inner
+    +flexbox
+    +align-items(center)
+    border: 2px solid $background-color
+    padding: 16px
 
-    @media screen and (max-width: $break-small)
-      border: 0
-      border-left: 2px solid $background-color
-      height: 100%
-      margin-right: 0
-      width: 25%
+    @media (max-width: $break-small)
+      +flex-direction(column)
+      padding: 8px 16px
 
-    .quantity-label
-      font-size: 16px
-      line-height: 40px
-      opacity: .8
-      width: 50%
+    label
+      display: block
+      padding: 8px
 
-      @media screen and (max-width: $break-small)
-        display: block
-        line-height: 20px
-        text-align: center
-        width: 100%
-
-    .option-quantity
+    input
+      +appearance(none)
       background: none
-      border: none
-      color: $primary-text-color
-      font-size: 16px
-      height: 40px
-      padding: 10px
-      text-align: right
-      width: 50%
+      border: 0
+      margin-left: auto
+      padding: 8px
+      text-align: center
+      outline: none
+      width: 64px
 
-      @media screen and (max-width: $break-small)
-        padding: 0
-        position: relative
-        text-align: center
-        width: 100%
+    &:hover, &:focus, &:focus-within
+      outline: 2px auto
+      border-radius: 0
 
-      &:focus
-        box-shadow: none
-        outline: none
+  .item-delete
+    +appearance(none)
+    background: none
+    color: $secondary-text-color
+    cursor: pointer
+    font-size: 14px
+    padding: 8px
+    text-decoration: underline
+    margin-top: 8px
 
 .cart-footer
   +flexbox
