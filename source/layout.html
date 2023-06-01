@@ -34,9 +34,15 @@
               {% if theme.collections %}
                 <li class="nav-menu-item" role="menuitem" aria-haspopup="false"><a href="/products">Collections</a></li>
               {% else %}
-                <li class="nav-menu-item" role="menuitem" aria-haspopup="{% if categories.active == blank or artists.active == blank %}false{% else%}true{% endif %}">
+                <li class="nav-menu-item" role="menuitem" aria-haspopup="{% if categories.active != blank or artists.active != blank %}true{% else %}false{% endif %}">
                   {% if categories.active != blank or artists.active != blank %}
-                    <a href="#" aria-label="Browse by category">Products</a>
+                    <a href="#" aria-label="Browse by category">
+                      <span>Products</span>
+                      <svg aria-hidden="true" class="dropdown-arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z">
+                      </path>
+                      </svg>
+                    </a>
                     <ul aria-hidden="true" role="menu" class="horizontal-nav-links">
                       <li class="horizontal-nav-link" role="menuitem"><a href="/products" tabindex="-1">All</a></li>
                       {% if categories.active != blank %}
@@ -158,7 +164,7 @@
                 <a title="Tumblr" href="{{ theme.tumblr_url }}"><svg height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16"><path d="M10 15.127c-.692.322-1.32.55-1.883.68-.562.128-1.172.193-1.823.193-.742 0-1.4-.093-1.97-.277-.57-.186-1.057-.448-1.46-.79-.402-.342-.46-.59-.614-.975C2.094 13.573 2 12.73 2 12V7H0V4c3 0 3-3 3-4h3v4.045L9 4v3H6v4c0 .928-.11 1.625.315 2.076.287.305.77.318 1.233.318.822 0 1.64-.264 2.45-.79v2.523z"/></svg></a>
               {% endif %}
           {% endif %}
-          <li class="bigcartel-credit"><span class="badge">{{ bigcartel_credit }}</span></li>
+          <li class="credit-container">{{ powered_by_big_cartel }}</li>
         </ul>
       </div>
     </header>
@@ -264,7 +270,7 @@
             </ul>
           </nav>
         {% endif %}
-        <cite class="bigcartel-credit"><span class="badge">{{ bigcartel_credit }}</span></cite>
+        <div class="credit-container">{{ powered_by_big_cartel }}</div>
       </div>
     </footer>
     {% if page.permalink != 'cart' %}

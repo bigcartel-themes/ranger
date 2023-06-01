@@ -351,23 +351,31 @@ header
           height: 20px
           width: 20px
 
-      &.bigcartel-credit
+      &.credit-container
+        border-bottom: none
         padding: 24px
+        display: flex
+        align-items: center
 
-        .badge
-          width: 100%
+        .bigcartel-credit
+          line-height: 1em
+          font-size: 14px
+          display: flex
+          align-items: center
+          gap: 8px
+          margin: 0 auto
+          outline-offset: 4px
+          padding: 2px 0
+          text-decoration: none
 
-          a
-            text-indent: -119988px
-            overflow: hidden
-            text-align: left
-            background: url(#{'{{ "bc_badge.svg" | theme_image_url }}'}) no-repeat
-            border: none
+          &__text
+            position: relative
+
+          &__lockup
             display: block
-            height: 24px
-            width: 80px
-            margin: 0 auto
-            opacity: .6
+            fill: currentColor
+            padding-top: 1px
+            width: 86px
 
 .select
   border: 2px solid $primary-text-color
@@ -611,24 +619,29 @@ footer
   @media screen and (max-width: $break-small)
     display: none
 
-  .bigcartel-credit
+  .credit-container
     float: right
     margin-right: 8px
 
-    .badge
-      width: 100%
+    .bigcartel-credit
+      line-height: 1em
+      font-size: 15px
+      display: flex
+      color: $accent-text-color
+      align-items: center
+      gap: 8px
+      outline-offset: 4px
+      padding: 2px 0
+      text-decoration: none
 
-      a
-        text-indent: -119988px
-        overflow: hidden
-        text-align: left
-        background: url(#{'{{ "bc_badge.svg" | theme_image_url }}'}) no-repeat
-        border: none
+      &__text
+        position: relative
+
+      &__lockup
         display: block
-        height: 24px
-        width: 80px
-        margin: 0 auto
-        opacity: .6
+        fill: currentColor
+        padding-top: 1px
+        width: 86px
 
 .footernav
   display: inline-block
