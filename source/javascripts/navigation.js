@@ -75,7 +75,6 @@ $.fn.setup_navigation = function(settings) {
 
   // Set tabIndex to -1 so that top_level_links can't receive focus until menu is open
   $(top_level_links).next('ul')
-    .attr('data-test', 'true')
     .attr({
       'aria-hidden': 'true',
       'role': 'menu'
@@ -167,12 +166,14 @@ $.fn.setup_navigation = function(settings) {
       }
     } else if (e.keyCode == 13 || e.keyCode == 32) {
       // If submenu is hidden, open it
-      e.preventDefault();
-      $(this).parent('li').find('ul[aria-hidden=true]')
-        .attr('aria-hidden', 'false')
-        .addClass(settings.menuHoverClass)
-        .find('a').attr('tabIndex', 0)
-        .first().focus();
+      if ($(this).parent().attr("aria-haspopup") == "true") {
+        e.preventDefault();
+        $(this).parent('li').find('ul[aria-hidden=true]')
+          .attr('aria-hidden', 'false')
+          .addClass(settings.menuHoverClass)
+          .find('a').attr('tabIndex', 0)
+          .first().focus();
+      }
     } else if (e.keyCode == 27) {
       e.preventDefault();
       $('.' + settings.menuHoverClass)

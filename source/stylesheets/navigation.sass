@@ -9,10 +9,14 @@
   list-style: none
 
 .nav
-  +inline-flex
-  +align-items(center)
-  +justify-content(flex-start)
-  font-size: 14px
+  display: inline-flex
+  align-items: center
+  justify-content: flex-start
+  flex-wrap: wrap
+  font-size: 15px
+  font-weight: 500
+  line-height: 1.25
+  column-gap: 16px
 
   @media screen and (max-width: $break-small)
     +justify-content(space-evenly)
@@ -33,7 +37,7 @@
     text-decoration: none
 
     &:after
-      +transition(color .2s linear)
+      transition: color .2s ease, opacity .2s ease
       background: $links-color
       bottom: 0px
       content: ''
@@ -50,15 +54,23 @@
       &:after
         opacity: 1
 
+.dropdown-arrow
+  fill: currentColor
+  height: 10px
+  width: 14px
+  margin-left: 4px
+  position: relative
+  top: 0
+
 .horizontal-nav-links
   background: $content-background-color
   left: -12px
   line-height: 1.25em
   min-width: 300px
-  max-height: 500px
+  max-height: 600px
   opacity: 0
   overflow-y: scroll
-  padding: 6px 12px 12px
+  padding-top: 16px
   position: absolute
   top: 100%
   z-index: 0
@@ -70,7 +82,7 @@
   a
     color: $primary-text-color
     display: block
-    padding: 12px 10px
+    padding: 12px 20px
     position: relative
     text-decoration: none
 
