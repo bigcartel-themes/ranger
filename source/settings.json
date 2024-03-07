@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "1.7.0",
+  "version": "1.7.1",
   "images": [
     {
       "variable": "logo",
@@ -13,6 +13,207 @@
       "description": "1200px by 800px images recommended"
     }
   ],
+  "preset_styles": {
+    "preview": {
+      "title_font": "primary_font",
+      "body_font": "secondary_font",
+      "text_color": "primary_text_color",
+      "background_color": "content_background_color"
+    },
+    "presets": [
+      {
+        "group_name": "Classic",
+        "styles": [
+          {
+            "style_name": "Classic #1",
+            "fonts": {
+              "primary_font": "Montserrat",
+              "secondary_font": "Montserrat"
+            },
+            "colors": {
+              "background_color": "#EEEEEE",
+              "content_background_color": "#FFFFFF",
+              "accent_background_color": "#000000",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#555555",
+              "primary_text_color": "#222222",
+              "secondary_text_color": "#0B639A",
+              "button_text_color": "#FFFFFF",
+              "button_background_color": "#0B639A",
+              "status_background_color": "#C43F06",
+              "links_color": "#FF642A",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#000000"
+            }
+          },
+          {
+            "style_name": "Classic #2",
+            "fonts": {
+              "primary_font": "Chivo",
+              "secondary_font": "Chivo"
+            },
+            "colors": {
+              "background_color": "#141415",
+              "content_background_color": "#141415",
+              "accent_background_color": "#141415",
+              "accent_text_color": "#F8F8F8",
+              "accent_pattern_color": "#4A4A4E",
+              "primary_text_color": "#F8F8F8",
+              "secondary_text_color": "#F8F8F8",
+              "button_text_color": "#141415",
+              "button_background_color": "#F8F8F8",
+              "status_background_color": "#F8F8F8",
+              "links_color": "#AEAEAE",
+              "announcement_text_color": "#141415",
+              "announcement_background_color": "#F8F8F8"
+            }
+          },
+          {
+            "style_name": "Classic #3",
+            "fonts": {
+              "primary_font": "Cabin",
+              "secondary_font": "Cabin"
+            },
+            "colors": {
+              "background_color": "#F8F8FA",
+              "content_background_color": "#FCFCFC",
+              "accent_background_color": "#F8F8FA",
+              "accent_text_color": "#2A2A2C",
+              "accent_pattern_color": "#E3E4EA",
+              "primary_text_color": "#2A2A2C",
+              "secondary_text_color": "#2A2A2C",
+              "button_text_color": "#FFFFFF",
+              "button_background_color": "#2A2A2C",
+              "status_background_color": "#203BE1",
+              "links_color": "#203BE1",
+              "announcement_text_color": "#2A2A2C",
+              "announcement_background_color": "#E3E4EA"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Natural",
+        "styles": [
+          {
+            "style_name": "Natural #1",
+            "fonts": {
+              "primary_font": "Lato",
+              "secondary_font": "Lato"
+            },
+            "colors": {
+              "background_color": "#F5F4EE",
+              "content_background_color": "#FDFDF8",
+              "accent_background_color": "#F5F4EE",
+              "accent_text_color": "#262522",
+              "accent_pattern_color": "#C3BE98",
+              "primary_text_color": "#262522",
+              "secondary_text_color": "#8A4942",
+              "button_text_color": "#F5F4EE",
+              "button_background_color": "#8A4942",
+              "status_background_color": "#898952",
+              "links_color": "#8A4942",
+              "announcement_text_color": "#262522",
+              "announcement_background_color": "#F1DBCE"
+            }
+          },
+          {
+            "style_name": "Natural #2",
+            "fonts": {
+              "primary_font": "Cutive Mono",
+              "secondary_font": "Cutive Mono"
+            },
+            "colors": {
+              "background_color": "#FEF5EF",
+              "content_background_color": "#FFFDFC",
+              "accent_background_color": "#FEF5EF",
+              "accent_text_color": "#584B53",
+              "accent_pattern_color": "#E4BB97",
+              "primary_text_color": "#584B53",
+              "secondary_text_color": "#584B53",
+              "button_text_color": "#FFFDFC",
+              "button_background_color": "#584B53",
+              "status_background_color": "#9D5C63",
+              "links_color": "#9D5C63",
+              "announcement_text_color": "#584B53",
+              "announcement_background_color": "#D6E3F8"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Playful",
+        "styles": [
+          {
+            "style_name": "Playful #1",
+            "fonts": {
+              "primary_font": "Arvo",
+              "secondary_font": "Courier New"
+            },
+            "colors": {
+              "background_color": "#E2E8CE",
+              "content_background_color": "#F6F7F2",
+              "accent_background_color": "#E2E8CE",
+              "accent_text_color": "#262626",
+              "accent_pattern_color": "#ACBFA4",
+              "primary_text_color": "#262626",
+              "secondary_text_color": "#262626",
+              "button_text_color": "#F6F7F2",
+              "button_background_color": "#C90304",
+              "status_background_color": "#F35900",
+              "links_color": "#C90304",
+              "announcement_text_color": "#F6F7F2",
+              "announcement_background_color": "#F35900"
+            }
+          },
+          {
+            "style_name": "Playful #2",
+            "fonts": {
+              "primary_font": "Syne",
+              "secondary_font": "Inter"
+            },
+            "colors": {
+              "background_color": "#FFFFFF",
+              "content_background_color": "#FFFFFF",
+              "accent_background_color": "#FFE500",
+              "accent_text_color": "#0000FF",
+              "accent_pattern_color": "#FFFFFF",
+              "primary_text_color": "#0000FF",
+              "secondary_text_color": "#0000FF",
+              "button_text_color": "#FFFFFF",
+              "button_background_color": "#0000FF",
+              "status_background_color": "#FF0000",
+              "links_color": "#0000FF",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#0000FF"
+            }
+          },
+          {
+            "style_name": "Playful #3",
+            "fonts": {
+              "primary_font": "Quicksand",
+              "secondary_font": "Quicksand"
+            },
+            "colors": {
+              "background_color": "#FFE9F4",
+              "content_background_color": "#FFFBFD",
+              "accent_background_color": "#FFB4D9",
+              "accent_text_color": "#243588",
+              "accent_pattern_color": "#FFE9F4",
+              "primary_text_color": "#243588",
+              "secondary_text_color": "#243588",
+              "button_text_color": "#243588",
+              "button_background_color": "#ECD8FF",
+              "status_background_color": "#FFFA8D",
+              "links_color": "#F6248C",
+              "announcement_text_color": "#243588",
+              "announcement_background_color": "#FFFA8D"
+            }
+          }
+        ]
+      }
+    ]
+  },
   "fonts": [
     {
       "variable": "primary_font",
