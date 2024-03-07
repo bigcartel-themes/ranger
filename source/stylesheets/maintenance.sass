@@ -26,14 +26,20 @@
     .store-name
       font-size: 1.75em
 
-    .social_icons
+    .social-icons
       +flexbox
+      flex-wrap: wrap
+      align-items: center
+      justify-content: center
+      list-style: none
+      gap: 24px
 
       a
         +flexbox
-        margin: 0 12px
+        outline-offset: 4px
 
         svg
           display: block
-          height: 26px
-          width: 26px
+          fill: currentColor
+          height: 24px
+          width: 24px
