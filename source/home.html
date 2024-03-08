@@ -44,7 +44,7 @@
                     "
                     data-sizes="auto"
                   >
-                  <div class="hover-message">Shop Now</div>
+
                 </div>
                 <div class="product-list-thumb-info">
                   <div class="product-list-thumb-name">{{ category.name }}</div>
@@ -103,13 +103,10 @@
                         "
                         data-sizes="auto"
                       >
-                      <div class="hover-message">Shop Now</div>
                     </div>
                     <div class="product-list-thumb-info">
-                      <div class="product-list-thumb-price">
-                        {{ product.default_price | money: theme.money_format }}
-                      </div>
                       <div class="product-list-thumb-name">{{ product.name }}</div>
+                      <div class="product-list-thumb-price">{{ product.default_price | money: theme.money_format }}</div>
                     </div>
                     {% if product_status != blank %}
                       <div class="product-list-thumb-status">{{ product_status }}</div>

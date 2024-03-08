@@ -44,13 +44,11 @@ a.skip-link
 .errors
   background: #950f1e
   color: #FFFFFF
-  font-size: 16px
   line-height: 1.5em
   list-style: none
   margin-bottom: 0
   padding: 24px 32px
   text-align: center
-  text-transform: uppercase
   width: 100%
 
   &.cart-errors
@@ -73,7 +71,7 @@ a
 
 h1, h2, h3, h4, h5, h6
   color: var(--primary-text-color)
-  font-weight: normal
+  font-weight: 500
   margin: 0
   padding: 0
   text-align: left
@@ -87,7 +85,8 @@ header
   background: var(--content-background-color)
   border-bottom: 2px solid var(--background-color)
   height: $header-height
-  font-size: 14px
+  font-weight: 500
+  font-size: .925em
   width: 100%
   z-index: 5
 
@@ -366,8 +365,6 @@ header
             width: 86px
 
 .select
-  border-radius: var(--border-radius)
-  border: 2px solid var(--primary-text-color)
   font-family: var(--secondary-font)
   height: 60px
   padding: 0
@@ -375,6 +372,7 @@ header
   width: 100%
 
   select
+    border: 2px solid var(--primary-text-color)
     height: 100%
     padding: 0 50px 0 20px
     position: relative
@@ -405,48 +403,53 @@ header
     width: 13px
     z-index: 1
 
-button.button, a.button
-  +transform(translateZ(0))
-  border: 0px
+.button, a.button
+  transition: background .1s linear
   background: var(--button-background-color)
+  border-radius: var(--border-radius)
   color: var(--button-text-color)
-  cursor: pointer
-  display: block
-  font-family: var(--secondary-font)
-  font-size: 16px
-  line-height: 1
-  max-width: 100%
-  padding: 25px
-  text-transform: uppercase
+  min-height: 60px
+  font-weight: 500
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 20px
+  text-align: center
+  white-space: pre-wrap
   width: 100%
 
   &.minimal-button
     background: none
     color: var(--primary-text-color)
     border: none
-    font-size: 13px
-    padding: 0
-    width: auto
+    height: auto
+    min-height: 0
+    text-decoration: underline
+    transition: color .1s linear
+    text-underline-offset: 4px
 
-    &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
-      +transform(none)
-      text-decoration: underline
-
-  &:not(:disabled):hover, &:not(:disabled):active, &:not(:disabled):focus
-    opacity: .8
+    &:not(:disabled):hover, &:not(:disabled):active
+      box-shadow: none
+      background: none
+      color: var(--secondary-text-color)
+      opacity: 1
 
   &:disabled, &.disabled
     cursor: not-allowed
-    opacity: .3
+
+  &.centered-button
+    margin: 60px auto
+
+  &:not(:disabled):hover, &:not(:disabled):active
+    background: var(--button-hover-background-color)
+    color: var(--button-text-color)
 
 input, textarea
   +appearance(none)
   background: var(--background-color)
   border: 1px solid var(--background-color)
-  border-radius: 0
   color: var(--primary-text-color)
   font-family: var(--secondary-font)
-  font-size: 16px
   max-width: 100%
   padding: 14px
 

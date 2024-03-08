@@ -16,7 +16,6 @@
   border: 1px solid var(--background-color)
   color: var(--primary-text-color)
   display: block
-  font-size: 0
   padding: 1px
   position: relative
   text-align: center
@@ -30,32 +29,6 @@
 
   @media screen and (max-width: $break-small)
     width: 100%
-
-_:-ms-fullscreen, :root .product-list-thumb
-  width: calc(100% / 3 - .1px)
-
-  @media screen and (max-width: $break-large)
-    width: calc(100% / 2 - .1px)
-
-  @media screen and (max-width: $break-small)
-    padding: 16px
-    width: 100%
-
-.hover-message
-  +transform(translateY(-50%) translateX(-50%))
-  +transition(opacity .25s linear, visibility .25s linear)
-  background: var(--button-background-color)
-  color: var(--button-text-color)
-  font-size: 14px
-  opacity: 0
-  padding: 24px 32px
-  position: absolute
-  text-transform: uppercase
-  top: 50%
-  left: 50%
-  text-align: center
-  visibility: hidden
-  white-space: nowrap
 
 .product-list-link
   color: var(--primary-text-color)
@@ -71,13 +44,8 @@ _:-ms-fullscreen, :root .product-list-thumb
     color: var(--primary-text-color)
     text-decoration: none
 
-    .product-list-thumb-name, .product-list-thumb-price
-      color: var(--primary-text-color)
-
-    @media (hover: hover)
-      .hover-message
-        opacity: 1
-        visibility: visible
+    .product-list-thumb-name
+      text-decoration: underline
 
 .product-list-image-container
   overflow: hidden
@@ -106,29 +74,20 @@ _:-ms-fullscreen, :root .product-list-thumb
 
 .product-list-thumb-info
   color: var(--primary-text-color)
-  font-size: 16px
-  line-height: 1.25em
-  padding: 32px 16px 0
+  padding-top: 24px
   position: relative
-  text-transform: uppercase
+  display: grid
+  gap: 4px
 
 .product-list-thumb-name
-  +transition(color .2s ease)
+  font-weight: 500
+  font-size: 1.1em
   overflow-wrap: break-word
   position: relative
 
 .product-list-thumb-price
-  +transition(color .2s ease)
-  font-size: 20px
+  font-size: 1.1em
   position: relative
-
-  &:after
-    display: block
-    content: ''
-    background: var(--background-color)
-    height: 2px
-    margin: 12px auto
-    width: 26px
 
 .product-list-thumb-status
   +flexbox
@@ -138,6 +97,7 @@ _:-ms-fullscreen, :root .product-list-thumb
   font-size: 0.75rem
   color: var(--button-text-color)
   font-style: normal
+  font-weight: 500
   height: 72px
   left: 32px
   line-height: 16px
@@ -174,7 +134,6 @@ _:-ms-fullscreen, :root .product-list-thumb
   +flex-direction(row)
   +align-items(center)
   margin-top: 48px
-  text-transform: uppercase
 
   @media screen and (max-width: $break-small)
     margin-bottom: 48px
