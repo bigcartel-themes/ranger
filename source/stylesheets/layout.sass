@@ -466,9 +466,6 @@ h1.page-title
   text-align: center
 
   @media screen and (max-width: $break-small)
-    color: var(--primary-text-color)
-    font-size: 24px
-    line-height: 30px
     margin: 24px auto
 
 section.content
@@ -799,25 +796,6 @@ footer
 
   a
     color: var(--links-color)
-
-#contact, #products, #product, .custom, #cart
-  .hide-header
-    display: none
-
-@media screen and (max-width: $break-small)
-  .header-title
-    display: none
-
-  #contact, #products, #product, .custom, #cart
-    .store-link, h1.page-title
-      display: none
-
-    .hide-header
-      display: block
-      font-size: inherit
-      line-height: inherit
-      margin: inherit
-      text-align: center
 
 .blur-up
   +transition(filter .2s ease)
