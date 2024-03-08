@@ -27,6 +27,9 @@
     padding: 16px
     width: calc(100% / 2)
 
+  @media screen and (max-width: $break-small)
+    width: calc(100% / 2)
+
 .product-list-link
   color: var(--primary-text-color)
   background: var(--content-background-color)
@@ -35,7 +38,7 @@
   text-decoration: none
 
   @media screen and (max-width: $break-large)
-    padding: 24px
+    padding: 0
 
   &:hover, &:focus
     color: var(--primary-text-color)
@@ -72,18 +75,18 @@
 .product-list-thumb-info
   color: var(--primary-text-color)
   padding-top: 24px
+  font-size: 1.1em
   position: relative
   display: grid
   gap: 4px
 
+  @media screen and (max-width: $break-large)
+    padding-top: 12px
+    font-size: 1em
+
 .product-list-thumb-name
   font-weight: 500
-  font-size: 1.1em
   overflow-wrap: break-word
-  position: relative
-
-.product-list-thumb-price
-  font-size: 1.1em
   position: relative
 
 .product-list-thumb-status

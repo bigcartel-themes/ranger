@@ -130,7 +130,7 @@ header
   justify-content: center
 
   @media screen and (max-width: $break-small)
-    font-size: 1.5em
+    font-size: 1.3em
 
   a
     display: flex
@@ -210,6 +210,8 @@ header
   @media screen and (max-width: $break-large)
     display: flex
     align-items: center
+    left: -4px
+    position: relative
 
 .header-navigation
   @media screen and (max-width: $break-large)
@@ -240,8 +242,8 @@ header
         text-decoration: underline
 
 .open-search
-  height: 40px
-  width: 40px
+  height: 36px
+  width: 36px
   display: flex
   align-items: center
   justify-content: center
@@ -255,9 +257,13 @@ header
     width: 24px
     height: 24px
 
+    @media screen and (max-width: $break-small)
+      width: 20px
+      height: 20px
+
 .cart-link
-  height: 40px
-  width: 40px
+  height: 36px
+  width: 36px
   display: flex
   align-items: center
   justify-content: center
@@ -265,6 +271,10 @@ header
   svg
     width: 24px
     height: 24px
+
+    @media screen and (max-width: $break-small)
+      width: 20px
+      height: 20px
 
 .cart-num-items
   background: var(--button-background-color)

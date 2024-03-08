@@ -166,6 +166,7 @@ h1.page-title
   text-align: center
 
   @media screen and (max-width: $break-small)
+    color: var(--primary-text-color)
     margin: 24px auto
 
 section.content
@@ -271,14 +272,17 @@ section.content
   +flex(1)
   padding-top: 0
 
-_:-ms-fullscreen, :root #main
-  +flex(1 0 auto)
+  @media screen and (max-width: $break-small)
+    background: var(--content-background-color)
 
 footer
   background: var(--accent-background-color)
   color: var(--accent-text-color)
   padding: 64px 0
   width: 100%
+
+  @media screen and (max-width: $break-medium)
+    padding: 32px 0
 
   .wrapper
     display: flex
@@ -287,16 +291,17 @@ footer
     justify-content: flex-start
     flex-wrap: wrap
 
-  @media screen and (max-width: $break-medium)
-    padding-bottom: 96px
+    @media screen and (max-width: $break-medium)
+      padding: 0 32px
 
-  @media screen and (max-width: $break-small)
-    display: none
+    @media screen and (max-width: $break-small)
+      flex-direction: column
+      padding: 0 16px
 
   .credit-container
     margin-left: auto
 
-    @media screen and (max-width: $break-large)
+    @media screen and (max-width: $break-medium)
       margin: 0
 
     .bigcartel-credit
@@ -326,9 +331,11 @@ footer
   max-width: 300px
   width: 100%
 
+  @media screen and (max-width: $break-small)
+    max-width: fit-content
+
   .footer-nav-title
     color: var(--accent-text-color)
-    padding: 0 8px
     font-weight: 500
     font-size: 1.2em
     margin-bottom: 16px
@@ -337,44 +344,45 @@ footer
       color: inherit
 
   ul
-    list-style: none
-    margin: 0
-    padding: 0
+    display: flex
+    flex-direction: column
+    gap: 12px
+
+    @media screen and (max-width: $break-small)
+      display: block
+      column-gap: 32px
+      column-count: 2
 
     li
-      display: block
+      display: flex
+      align-items: flex-start
+      justify-content: flex-start
+
+      @media screen and (max-width: $break-small)
+        padding-bottom: 16px
 
       a
         +transition(opacity .2s ease-in-out)
         color: var(--accent-text-color)
         display: block
         font-size: 15px
-        line-height: 1.25em
-        padding: 9px 8px
 
         &:hover, &:focus
           text-decoration: underline
 
     &.social-icons
-      list-style: none
-      margin: 0
-      padding: 0
+      a
+        color: var(--accent-text-color)
+        display: flex
+        align-items: center
+        gap: 12px
 
-      li
-        display: block
-
-        a
-          color: var(--accent-text-color)
-          display: flex
-          align-items: center
-          gap: 12px
-
-          svg
-            flex-shrink: 0
-            fill: currentColor
-            height: 16px
-            position: relative
-            width: 16px
+        svg
+          flex-shrink: 0
+          fill: currentColor
+          height: 16px
+          position: relative
+          width: 16px
 
 .custom-page
   font-size: 16px
@@ -406,6 +414,9 @@ footer
 
   @media screen and (max-width: $break-medium)
     padding: 32px
+
+  @media screen and (max-width: $break-medium)
+    padding: 16px
 
 .no-products-message
   +vertical-align
