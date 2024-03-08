@@ -2,352 +2,117 @@ section.content
   .product-page
     margin-top: 80px
     max-width: 1400px
+    padding: 48px
 
     @media screen and (max-width: $break-small)
       margin-top: 0
 
-.product-images
-  +pie-clearfix
-  border-right: 2px solid $background-color
-  float: left
-  max-width: 66.66%
-  padding: 48px
-  position: relative
-  width: 100%
+.product-breadcrumb
+  margin-bottom: 12px
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  gap: 12px
+  font-size: .925em
 
-  @media screen and (max-width: $break-extra-large)
-    padding: 32px
+  .next-arrow
+    width: 5px
+    fill: $primary-text-color
+    opacity: .8
 
-  @media screen and (max-width: $break-large)
-    border: 0
-    float: none
-    max-width: 100%
-    overflow: hidden
-    padding: 0 32px
+  a
+    text-decoration: none
 
-  @media screen and (max-width: $break-small)
-    border-top: 2px solid $background-color
-    padding: 0
-
-  .primary-image
-    float: left
-    display: block
-    padding-right: 24px
-    width: 80%
-
-    @media screen and (max-width: $break-large)
-      float: none
-      padding: 0
-      width: 100%
-
-    img
-      display: block
-      width: 100%
-
-    &.solo
-      padding-right: 0
-      width: 100%
-
-  .product-thumbnails
-    +pie-clearfix
-    float: right
-    list-style: none
-    margin: 0
-    padding: 0
-    text-align: center
-    width: 20%
-
-    @media screen and (max-width: $break-large)
-      float: none
-      display: flex
-      justify-content: center
-      left: -2px
-      margin-top: 2px
-      overflow: hidden
-      position: relative
-      width: calc(100% + 4px)
-
-    @media screen and (max-width: $break-small)
-      background: $background-color
-      border: 2px solid $background-color
-      border-left: 0
-      border-right: 0
-      margin-top: 0
-
-    li
-      background: $content-background-color
-      margin-bottom: 24px
-      padding-bottom: 100%
-      position: relative
-      vertical-align: top
-      width: 100%
-
-      @media screen and (max-width: $break-large)
-        border-left: 2px solid $content-background-color
-        display: inline-block
-        height: 20%
-        margin: 0
-        padding-bottom: 20%
-        position: relative
-        vertical-align: top
-        width: 20%
-
-      @media screen and (max-width: $break-small)
-        border-left: 2px solid $background-color
-
-      &:last-child
-        margin-bottom: 0
-
-        @media screen and (max-width: $break-small)
-          border-right: 2px solid $background-color
-
-      &.active a
-        opacity: 1
-
-      a
-        background-position: 50% 50%
-        background-size: cover
-        display: block
-        height: 100%
-        opacity: .8
-        overflow: hidden
-        position: absolute
-        width: 100%
-
-        &:hover
-          opacity: 1
-
-      img
-        display: block
-        height: 100%
-        object-fit: cover
-        width: 100%
-
-  .product-status
-    +flexbox
-    +align-items(center)
-    +justify-content(center)
-    background: $status-background-color
-    font-size: 0.9rem
-    color: $button-text-color
-    font-style: normal
-    height: 80px
-    left: 32px
-    line-height: 16px
-    padding: 0 10px
-    position: absolute
-    text-align: center
-    text-transform: uppercase
-    top: 32px
-    width: 80px
-    word-break: keep-all
-
-    @media screen and (max-width: $break-medium)
-      font-size: .75rem
-      height: 72px
-      left: 24px
-      top: 24px
-      width: 72px
-
-.product-price-title, .product-details
-  float: right
-  max-width: 33.33%
-  padding: 48px
-  width: 100%
-
-  @media screen and (max-width: $break-extra-large)
-    padding: 32px
-
-  @media screen and (max-width: $break-large)
-    float: none
-    max-width: 100%
-
-  @media screen and (max-width: $break-small)
-    padding: 16px
-
-.product-price-title
-  padding-bottom: 0
-
-  h1
-    color: $primary-text-color
-    display: block !important
-    font-size: 24px
-    line-height: 28px
-    margin: 0 auto 44px
-    text-align: left
-    text-transform: uppercase
-
-    @media screen and (max-width: $break-large)
-      margin-bottom: 0
-
-    @media screen and (max-width: $break-medium)
-      font-size: 20px
-
-  .product-price
-    color: $secondary-text-color
-    font-family: $secondary-font
-    font-size: 24px
-    line-height: 28px
-    margin-bottom: 10px
-    text-transform: uppercase
-
-    @media screen and (max-width: $break-medium)
-      font-size: 18px
-      margin-bottom: 0
-
-  @media screen and (max-width: $break-large)
-    padding: 32px
-
-  @media screen and (max-width: $break-small)
-    padding: 32px 16px
-
-.product-images:after, .product-details:after
-  display: block
-  position: absolute
-  height: 100%
-  content: ""
-  background-color: $background-color
-  top: 0
-
-  @media screen and (max-width: $break-large)
-    display: none
-
-.product-images:after
-  right: -2px
-  width: 2px
-
-.product-details:after
-  left: -2px
-  width: 2px
-
-.product-details
-  padding-bottom: 96px
-  padding-top: 0
-  position: relative
-
-  @media screen and (max-width: $break-large)
-    padding-top: 24px
-
-  @media screen and (max-width: $break-small)
-    padding: 0 16px 96px
-
-  .product-description
-    font-size: 16px
-    line-height: 1.5em
-    margin: 0 auto
-
-    a
-      +transition(color .2s linear)
-      color: $secondary-text-color
+    &:hover
       text-decoration: underline
 
-      &:hover, &:focus
-        color: $links-color
+.product-container
+  display: grid
+  grid-template-columns: 1fr 400px
+  column-gap: 60px
+  row-gap: 40px
 
-    img, iframe
-      display: block
-      max-width: 100%
+  @media screen and (max-width: $break-large)
+    column-gap: 40px
+    grid-template-columns: 1fr 360px
 
-    ol, ul
-      margin: 1em 0
-      padding: 0
-
-    ul
-      list-style: disc
-      list-style-position: inside
-
-    ol
-      list-style: decimal
-      list-style-position: inside
-
-  .product-form
-    margin-bottom: 40px
-
-    @media screen and (max-width: $break-small)
-      margin-top: 24px
-
-    .select
-      margin-bottom: 24px
-      max-width: 100%
-
-      @media screen and (max-width: $break-small)
-        margin-bottom: 16px
-
-.product-form select span, .product-form select span option
-  display: none
-  opacity: 0
-  visibility: hidden
+  @media screen and (max-width: $break-medium)
+    grid-template-columns: 1fr
 
 .reset-selection-button-container
   text-align: center
   width: 100%
 
-button.reset-selection-button
-  display: none
-  height: auto
-  max-width: 100%
-  line-height: normal
-  margin: 20px auto 0
-  padding: 4px
-  width: auto
+  button.reset-selection-button
+    display: none
 
-.share-buttons
-  +pie-clearfix
-  border-top: 2px solid $background-color
-  bottom: 0
-  list-style: none
-  margin: 0
-  max-width: 33.33%
-  padding: 0
-  position: absolute
-  right: 0
+.product-form
   width: 100%
 
-  @media screen and (max-width: $break-large)
-    border-bottom: 2px solid $background-color
+  button
     max-width: 100%
 
-  li
-    border-left: 2px solid $background-color
-    float: left
-    position: relative
-    width: 33.33%
+  @media screen and (max-width: $break-large)
+    max-width: 100%
 
-    &:first-child
-      border-left: 0px
+.product-selects
+  margin-bottom: 20px
+
+.product-option-groups
+  display: flex
+  flex-direction: column
+  gap: 16px
+
+.product-detail
+  display: flex
+  flex-direction: column
+  row-gap: 36px
+
+  &__header
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+  &__status
+    font-size: .875em
+    line-height: normal
+    display: inline-block
+    margin-left: 8px
+
+  &__pricing
+    display: flex
+    align-items: center
+    font-size: 1.25em
+    color: $primary-text-color
+
+  &__description
+    p
+      margin: revert
+
+    &>:first-child
+      margin-top: 0
+
+    &>:last-child
+      margin-bottom: 0
+
+    ol, ul
+      margin: 1em
+
+    ul
+      list-style: disc
+
+    ol
+      list-style: decimal
 
     a
-      cursor: pointer
-      display: block
-      padding: 24px 0
-      text-align: center
-      width: 100%
+      text-decoration: underline
 
-      svg
-        +transition(opacity .2s linear, fill .2s linear)
-        fill: $primary-text-color
-        height: 20px
-        opacity: .7
-        width: 20px
-
-      &:hover
-        svg
-          fill: $links-color
-          opacity: 1
-
-    &.social-pinterest
-
-      a
-        display: inline-block
-        position: relative
-
-        &:after
-          content: ""
-          position: absolute
-          top: 0
-          right: 0
-          bottom: 0
-          left: 0
+  h1.page-title
+    color: $primary-text-color
+    display: block
+    font-size: 1.75em
+    margin: 0
+    text-align: left
 
 #instant-checkout-button
   margin-top: 12px

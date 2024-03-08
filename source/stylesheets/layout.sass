@@ -15,7 +15,7 @@ body
   color: $primary-text-color
   font-family: $primary-font
   font-size: 16px
-  line-height: 1
+  line-height: 1.5
   margin: 0
 
   &.no-scroll
@@ -58,7 +58,6 @@ a.skip-link
     max-width: 828px
 
 .wrapper
-  +pie-clearfix
   margin: 0 auto
   padding: 0 64px
   position: relative
@@ -78,7 +77,6 @@ h1, h2, h3, h4, h5, h6
   margin: 0
   padding: 0
   text-align: left
-  text-transform: uppercase
 
 ::-webkit-input-placeholder
   color: $primary-text-color
@@ -368,34 +366,23 @@ header
             width: 86px
 
 .select
+  border-radius: var(--border-radius)
   border: 2px solid $primary-text-color
-  color: $primary-text-color
   font-family: $secondary-font
-  height: 64px
-  margin-bottom: 20px
-  max-width: 100%
+  height: 60px
   padding: 0
   position: relative
-  text-transform: uppercase
   width: 100%
 
   select
-    +appearance(none)
-    background: none
-    border: 0
-    border-radius: 0
-    color: $primary-text-color
-    font-family: $secondary-font
-    font-size: 16px
     height: 100%
-    line-height: 2em
-    padding: 0 66px 0 20px
+    padding: 0 50px 0 20px
     position: relative
-    text-transform: uppercase
     width: 100%
     z-index: 2
 
     option
+      background-color: #FFF
       color: #000
 
       &:disabled
@@ -408,23 +395,15 @@ header
       display: none
 
   svg
-    +vertical-align
-    fill: $primary-text-color
-    height: 13px
-    margin: 0 auto
+    fill: currentColor
+    pointer-events: none
+    height: 8px
+    margin-top: -2px
+    position: absolute
+    right: 20px
+    top: 50%
     width: 13px
     z-index: 1
-
-  .arrow-holder
-    position: absolute
-    right: 0
-    width: 60px
-    height: 60px
-    text-align: center
-    top: 0
-
-  &:focus-within
-    outline: -webkit-focus-ring-color auto 1px
 
 button.button, a.button
   +transform(translateZ(0))
@@ -490,7 +469,6 @@ h1.page-title
     margin: 24px auto
 
 section.content
-  +pie-clearfix
   margin: 0 auto $header-height
   padding: 0 64px
   position: relative
@@ -508,7 +486,6 @@ section.content
     display: none
 
   .page-content
-    +pie-clearfix
     background: $content-background-color
     margin: 0 auto
     min-height: 240px

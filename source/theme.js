@@ -4,4 +4,5 @@
 //= require javascripts/store
 //= require javascripts/navigation.js
 //= require javascripts/product-option-groups.js
+//= require javascripts/product-carousel.js
 //= require javascripts/cart
