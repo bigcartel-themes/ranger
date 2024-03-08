@@ -225,20 +225,15 @@ function draw_pattern() {
   pattern_style = themeOptions.pattern_style;
   store_name_length = themeOptions.store_name.length;
   canvas_element = document.getElementById('repeating-pattern');
-  primary_color = themeOptions.primary_color.toLowerCase();
-  secondary_color = themeOptions.secondary_color.toLowerCase();
+  primary_color = themeColors.accentBackgroundColor.toLowerCase();
+  secondary_color = themeColors.accentPatternColor.toLowerCase();
   pattern_width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
   if (themeOptions.page == 'home') {
-    if (themeOptions.in_preview) {
-      $('#pattern').css('height','700px')
-    }
-    else {
-      if (pattern_width < 668 || $('#pattern').hasClass('hide-featured')) {
-        announce_height = ($('.announcement-message.visible').outerHeight() > 0) ? $('.announcement-message.visible').outerHeight() : 0;
-        pattern_calc = announce_height + $('.header').outerHeight();
-        $('#pattern').css('height','calc(100vh - ' + pattern_calc + 'px)')
-      }
+    if (pattern_width < 668 || $('#pattern').hasClass('hide-featured')) {
+      announce_height = ($('.announcement-message.visible').outerHeight() > 0) ? $('.announcement-message.visible').outerHeight() : 0;
+      pattern_calc = announce_height + $('.header').outerHeight();
+      $('#pattern').css('height','calc(100vh - ' + pattern_calc + 'px)')
     }
   }
 
@@ -264,14 +259,6 @@ function draw_pattern() {
     }
   }
 }
-
-$('.announcement-message-close').click(function(e) {
-  $('.announcement-message').slideUp('fast', function() {
-    $('.announcement-message').removeClass('visible');
-    setCookie('hide-announcement-message',hashedMessage,7);
-    $('.header').css('top',0);
-  });
-})
 
 document.addEventListener('DOMContentLoaded', function() {
   draw_pattern();

@@ -1,4 +1,4 @@
-@import 'variables'
+
 
 *
   box-sizing: border-box
@@ -426,7 +426,7 @@ header
   &:focus-within
     outline: -webkit-focus-ring-color auto 1px
 
-button, a.button
+button.button, a.button
   +transform(translateZ(0))
   border: 0px
   background: $button-background-color
@@ -858,49 +858,3 @@ footer
   padding: 0
   position: absolute
   width: 1px
-
-.announcement-message
-  background-color: $announcement-background-color
-  color: $announcement-text-color
-  display: none
-  padding: 20px 144px
-  position: relative
-  text-align: center
-  width: 100%
-  z-index: 1
-
-  @media screen and (max-width: $break-medium)
-    padding: 20px 64px
-
-  &.visible
-    display: block
-
-.button.announcement-message-close
-  +transform(translateY(-50%))
-  +transition(none)
-  +flexbox
-  +align-items(center)
-  +justify-content(center)
-  background: none
-  height: 32px
-  padding: 0
-  position: absolute
-  right: 16px
-  top: 50%
-  width: 32px
-
-  @media screen and (max-width: $break-small)
-    right: 4px
-
-  &:hover, &:focus
-    background: none !important
-    opacity: .7
-
-    svg
-      fill: $announcement-text-color
-
-  svg
-    display: block
-    fill: $announcement-text-color
-    height: 14px
-    width: 14px
