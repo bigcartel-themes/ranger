@@ -29,7 +29,7 @@
     margin: 0
 
   > a
-    color: $primary-text-color
+    color: var(--primary-text-color)
     display: flex
     align-items: center
     padding: 6px
@@ -40,7 +40,7 @@
 
     &:after
       transition: color .2s ease, opacity .2s ease
-      background: $links-color
+      background: var(--links-color)
       bottom: 0px
       content: ''
       height: 2px
@@ -50,7 +50,7 @@
       opacity: 0
 
     &:hover, &:focus
-      color: $links-color
+      color: var(--links-color)
 
     &:hover
       &:after
@@ -62,7 +62,7 @@
   width: 14px
 
 .horizontal-nav-links
-  background: $content-background-color
+  background: var(--content-background-color)
   left: -12px
   line-height: 1.25em
   min-width: 300px
@@ -79,20 +79,20 @@
   position: static
 
   a
-    color: $primary-text-color
+    color: var(--primary-text-color)
     display: block
     padding: 12px 20px
     position: relative
     text-decoration: none
 
     &:hover, &:focus
-      color: $links-color
+      color: var(--links-color)
       text-decoration: underline
 
 .nav li:focus > a,
 .nav li:hover > a,
 .nav li:focus-within > a
-  color: $links-color
+  color: var(--links-color)
 
 ul.show-menu
   visibility: visible
