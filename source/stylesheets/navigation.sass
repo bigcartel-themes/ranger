@@ -1,101 +1,282 @@
-
-
-.main-nav
-  position: relative
-
-.nav, .horizontal-nav-links
-  margin: 0
-  padding: 0
-  list-style: none
-
-.nav
-  display: inline-flex
-  align-items: center
-  justify-content: flex-start
-  flex-wrap: wrap
-  font-size: 15px
+header
+  +transition(height .4s)
+  +flex-shrink(0)
+  background: var(--content-background-color)
+  border-bottom: 2px solid var(--background-color)
+  height: $header-height
+  font-size: 1.1em
+  line-height: 1.2rem
   font-weight: 500
-  line-height: 1.25
-  column-gap: 16px
+  width: 100%
+  z-index: 10
+
+  &.page-head-scrolled
+    position: fixed
+    top: 0
+
+    @media screen and (min-width: $break-medium + 1)
+      height: $header-height-tablet
+
+  @media screen and (max-width: $break-medium)
+    height: $header-height-tablet
 
   @media screen and (max-width: $break-small)
-    +justify-content(space-evenly)
+    height: $header-height-mobile
 
-.nav-menu-item
-  margin: 0 8px
-  position: relative
-
-  @media screen and (max-width: $break-small)
-    margin: 0
-
-  > a
-    color: var(--primary-text-color)
-    display: flex
+  .wrapper
+    max-width: 100%
+    margin: 0 auto
+    padding: 0 64px
+    display: grid
+    min-height: 100%
     align-items: center
-    padding: 6px
+    grid-template-columns: 1fr 2fr 1fr
+    gap: 24px
+
+    @media screen and (max-width: $break-large)
+      padding: 0 16px
+
+.category-nav
+  cursor: pointer
+  position: relative
+  width: auto
+  z-index: 3
+
+  @media screen and (max-width: $break-medium)
+    display: none
+    font-size: 1.25em
+
+  @media screen and (max-width: $break-small)
+    font-size: 1em
+    max-width: 100%
+
+  .category-nav-heading
+    +flexbox
+    +align-items(center)
+    +justify-content(center)
     gap: 8px
-    position: relative
-    text-align: center
-    text-decoration: none
-
-    &:after
-      transition: color .2s ease, opacity .2s ease
-      background: var(--links-color)
-      bottom: 0px
-      content: ''
-      height: 2px
-      width: calc(100% - 12px)
-      position: absolute
-      left: 6px
-      opacity: 0
-
-    &:hover, &:focus
-      color: var(--links-color)
+    transition: color .1s linear
 
     &:hover
-      &:after
-        opacity: 1
+      @media (hover: hover)
+        .category-nav-page
+          text-decoration: underline
 
-.dropdown-arrow
-  fill: currentColor
-  height: 10px
-  width: 14px
+  .category-nav-page
+    text-underline-offset: 4px
 
-.horizontal-nav-links
-  background: var(--content-background-color)
-  left: -12px
-  line-height: 1.25em
-  min-width: 300px
-  max-height: 600px
-  opacity: 0
-  overflow-y: scroll
-  padding-top: 16px
-  position: absolute
-  top: 100%
-  z-index: 0
-  visibility: hidden
+  .category-nav-arrow
+    fill: currentColor
+    pointer-events: none
+    width: 12px
 
-.horizontal-nav-link
-  position: static
+  .category-dropdown
+    background: var(--content-background-color)
+    transition: opacity .2s linear, visibility .2s linear
+    border-radius: var(--border-radius)
+    border: 2px solid var(--background-color)
+    left: -20px
+    margin: 0 auto
+    min-width: 250px
+    opacity: 0
+    overflow-y: scroll
+    padding: 15px
+    position: absolute
+    text-align: left
+    visibility: hidden
+    height: auto
+    max-height: 50vh
+    top: calc(100% + 16px)
+    scrollbar-width: thin
+    scrollbar-color: #{"rgba(var(--primary-text-color-rgb),.5)"} transparent
+    scrollbar-gutter: stable
+
+    &[aria-hidden="false"]
+      opacity: 1
+      visibility: visible
+
+    &::-webkit-scrollbar
+      height: .375rem
+      width: .75rem
+
+    &::-webkit-scrollbar-track
+      background-color: transparent
+
+    &::-webkit-scrollbar-thumb
+      border-radius: .375rem
+      border: 3px solid transparent
+      background-color: #{"rgba(var(--primary-text-color-rgb),.5)"}
+      background-clip: content-box
+
+  .dropdown-list
+    display: flex
+    flex-direction: column
+    gap: 4px
+    position: relative
+
+    li
+      display: block
+
+      a
+        display: block
+        font-size: .925rem
+        padding: 8px
+
+.store-name
+  font-size: 2em
+  display: flex
+  align-items: center
+  text-align: center
+  justify-content: center
+
+  @media screen and (max-width: $break-small)
+    font-size: 1.5em
 
   a
-    color: var(--primary-text-color)
-    display: block
-    padding: 12px 20px
+    display: flex
+    line-height: 1.25em
+    align-items: center
+    max-width: 200px
+    padding: 8px 0
+    width: auto
+    outline-offset: 4px
+
+  &.image
+    img
+      max-height: 100%
+      max-width: 200px
+
+      @media screen and (max-width: $break-small)
+        max-width: 140px
+
+    a
+      height: 58px
+      max-width: 100%
+
+.header-cart
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  gap: 20px
+  position: relative
+
+  @media screen and (max-width: $break-small)
+    gap: 12px
+    right: -6px
+
+  li
     position: relative
-    text-decoration: none
 
-    &:hover, &:focus
-      color: var(--links-color)
-      text-decoration: underline
+    > *
+      cursor: pointer
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 40px
+      height: 40px
+      position: relative
+      padding: 0
 
-.nav li:focus > a,
-.nav li:hover > a,
-.nav li:focus-within > a
-  color: var(--links-color)
+      svg
+        fill: currentColor
+        height: 30px
+        width: 30px
 
-ul.show-menu
-  visibility: visible
-  opacity: 1
-  transition-delay: 0s
-  z-index: 100
+    &.open_search
+      svg
+        height: 28px
+        width: 28px
+        position: relative
+        top: 2px
+
+.header-mobile-nav
+  display: none
+
+  .menu-bars
+    +flexbox
+    +align-items(center)
+    +justify-content(center)
+    flex-shrink: 0
+    padding: 0
+    height: 36px
+    position: relative
+    width: 36px
+
+    svg
+      fill: currentColor
+      height: 24px
+      width: 24px
+
+  @media screen and (max-width: $break-large)
+    display: flex
+    align-items: center
+
+.header-navigation
+  @media screen and (max-width: $break-large)
+    display: none
+
+  .header-pages
+    display: flex
+    column-gap: 32px
+    row-gap: 4px
+    flex-wrap: wrap
+    list-style: none
+    margin: 0
+    padding: 0
+
+  .header-page-link
+    a, .category-nav-heading
+      display: flex
+      padding: 4px 0
+      position: relative
+      outline-offset: 4px
+      border-radius: 0
+
+      &:hover
+        color: var(--link-hover-color)
+
+    a:hover
+      @media (hover: hover)
+        text-decoration: underline
+
+.open-search
+  height: 40px
+  width: 40px
+  display: flex
+  align-items: center
+  justify-content: center
+  transition: color .1s linear
+
+  &:hover, &:focus
+    color: var(--link-hover-color)
+
+  svg
+    fill: currentColor
+    width: 24px
+    height: 24px
+
+.cart-link
+  height: 40px
+  width: 40px
+  display: flex
+  align-items: center
+  justify-content: center
+
+  svg
+    width: 24px
+    height: 24px
+
+.cart-num-items
+  background: var(--button-background-color)
+  border-radius: 100%
+  color: var(--button-text-color)
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 18px
+  width: 18px
+  position: absolute
+  text-align: center
+  font-size: 11px
+  right: 0
+  top: 0

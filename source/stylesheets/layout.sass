@@ -21,11 +21,6 @@ body
   &.no-scroll
     overflow: hidden
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button
-  -webkit-appearance: none
-  margin: 0
-
 a.skip-link
   +transition(all .3s)
   background: var(--background-color)
@@ -44,16 +39,10 @@ a.skip-link
 .errors
   background: #950f1e
   color: #FFFFFF
-  line-height: 1.5em
-  list-style: none
   margin-bottom: 0
   padding: 24px 32px
   text-align: center
   width: 100%
-
-  &.cart-errors
-    margin: 0 auto
-    max-width: 828px
 
 .wrapper
   margin: 0 auto
@@ -67,7 +56,7 @@ a
   text-decoration: none
 
   &:hover, &:focus
-    color: var(--links-color)
+    color: var(--link-hover-color)
 
 h1, h2, h3, h4, h5, h6
   color: var(--primary-text-color)
@@ -75,294 +64,6 @@ h1, h2, h3, h4, h5, h6
   margin: 0
   padding: 0
   text-align: left
-
-::-webkit-input-placeholder
-  color: var(--primary-text-color)
-
-header
-  +transition(height .5s)
-  +flex-shrink(0)
-  background: var(--content-background-color)
-  border-bottom: 2px solid var(--background-color)
-  height: $header-height
-  font-weight: 500
-  font-size: .925em
-  width: 100%
-  z-index: 5
-
-  &.page-head-scrolled
-    position: fixed
-    top: 0
-
-    @media screen and (min-width: $break-medium + 1)
-      height: $header-height-tablet
-
-  @media screen and (max-width: $break-medium)
-    height: $header-height-tablet
-
-  @media screen and (max-width: $break-small)
-    height: $header-height-mobile
-
-  .wrapper
-    +flexbox
-    +align-items(center)
-    +justify-content(space-between)
-    height: 100%
-    padding: 0 64px
-    position: relative
-    z-index: 5
-
-    @media screen and (max-width: $break-extra-large)
-      padding: 0 32px
-
-    @media screen and (max-width: $break-large)
-      padding: 0 16px
-
-    @media screen and (max-width: $break-small)
-      padding: 0
-
-.header-nav
-  +flex-basis(33%)
-  text-align: left
-  text-transform: uppercase
-
-  @media screen and (max-width: $break-medium)
-    display: none
-
-.header-store-name
-  +flexbox
-  +flex-basis(33%)
-  +justify-content(center)
-  +align-items(center)
-  color: var(--primary-text-color)
-  padding: 0 64px
-  font-size: 26px
-  text-align: center
-
-  @media screen and (max-width: $break-medium)
-    +flex-basis(100%)
-    height: $header-height-tablet
-    max-width: 100%
-
-  @media screen and (max-width: $break-small)
-    height: $header-height-mobile
-    font-size: 16px
-
-  &.image
-    height: 100%
-    padding: 10px 0
-
-    .store-title
-      +flexbox
-      +align-items(center)
-      height: 100%
-
-      .store-link
-        height: 100%
-
-    img
-      display: block
-      height: auto
-      margin: 0 auto
-      max-height: 100%
-      max-width: 100%
-      width: auto
-
-      @media screen and (max-width: $break-small)
-        max-height: 40px
-
-  .store-title
-    line-height: 1.2em
-
-    @media screen and (max-width: $break-medium)
-      max-width: 70%
-
-.header-search-cart
-  +flex-basis(33%)
-  position: relative
-  text-align: right
-  text-transform: uppercase
-
-  @media screen and (max-width: $break-medium)
-    display: none
-
-.search-cart-nav
-  +flexbox
-  +justify-content(flex-end)
-  +align-items(center)
-  list-style: none
-  margin: 0
-  padding: 0
-
-.desktop-view-cart
-  +flexbox
-  +align-items(center)
-  padding: 4px 8px
-
-  svg
-    +transition(fill .1s linear)
-    fill: var(--primary-text-color)
-    height: 16px
-    margin: 0 10px
-    position: relative
-    width: 16px
-
-  &:hover, &:focus
-    color: var(--links-color)
-
-    svg
-      fill: var(--links-color)
-
-.search-container
-  +transition(width 0.35s)
-  background: var(--content-background-color)
-  position: relative
-
-  .search-form
-    +flexbox
-    +align-items(center)
-    +justify-content(flex-end)
-    position: relative
-
-    .search-input
-      +transition(all 0.25s)
-      +appearance(none)
-      border: 0
-      background: none
-      color: var(--primary-text-color)
-      padding: 6px
-      width: 0
-
-      &.active, &:focus
-        width: 200px
-
-    .search-button
-      +flexbox
-      +align-items(center)
-      +justify-content(center)
-      background: transparent
-      height: 24px
-      padding: 0
-      width: 24px
-
-      &:hover, &:focus
-        svg
-          fill: var(--links-color)
-
-      svg
-        display: block
-        fill: var(--primary-text-color)
-        height: 16px
-        width: 16px
-
-.open-dropdown
-  +transition(transform .2s ease-in-out)
-  background: none
-  display: none
-  height: 44px
-  padding: 8px
-  position: absolute
-  right: 16px
-  top: 50%
-  transform: translateY(-50%)
-  width: 44px
-
-  svg
-    display: block
-    height: 10px
-    width: 16px
-
-  &.dropdown-visible svg
-    +transform(rotate(180deg))
-
-  @media screen and (max-width: $break-medium)
-    display: flex
-    align-items: center
-    justify-content: center
-    fill: var(--primary-text-color)
-
-.mobile-navigation
-  background: var(--content-background-color)
-  border-top: 2px solid var(--background-color)
-  display: none
-  overflow: hidden
-  overflow-y: scroll
-  padding-bottom: 128px
-  text-align: center
-
-  @media screen and (max-width: $break-medium)
-    height: calc(100vh - 94px)
-
-  @media screen and (max-width: $break-small)
-    height: calc(100vh - 64px)
-
-  &.visible
-    display: block
-
-  .dropdown-search
-    padding: 12px 24px
-
-    input
-      background: none
-      border: 0
-      font-size: 14px
-      padding: 12px 0
-      text-align: center
-      text-transform: uppercase
-
-  .mobile-navigation-list
-    list-style: none
-    margin: 0
-    padding: 0
-    width: 100%
-
-    li
-      border-bottom: 2px solid var(--background-color)
-      display: block
-
-      > a
-        display: block
-        font-size: 14px
-        line-height: 18px
-        padding: 22px
-        text-transform: uppercase
-
-      &.dropdown-icons
-        display: flex
-        justify-content: center
-        position: relative
-        width: 100%
-
-        svg
-          fill: var(--primary-text-color)
-          height: 20px
-          width: 20px
-
-      &.credit-container
-        border-bottom: none
-        padding: 24px
-        display: flex
-        align-items: center
-
-        .bigcartel-credit
-          line-height: 1em
-          font-size: 14px
-          display: flex
-          align-items: center
-          gap: 8px
-          margin: 0 auto
-          outline-offset: 4px
-          padding: 2px 0
-          text-decoration: none
-
-          &__text
-            position: relative
-
-          &__lockup
-            display: block
-            fill: currentColor
-            padding-top: 1px
-            width: 86px
 
 .select
   font-family: var(--secondary-font)
@@ -445,7 +146,6 @@ header
     color: var(--button-text-color)
 
 input, textarea
-  +appearance(none)
   background: var(--background-color)
   border: 1px solid var(--background-color)
   color: var(--primary-text-color)
@@ -469,7 +169,7 @@ h1.page-title
     margin: 24px auto
 
 section.content
-  margin: 0 auto $header-height
+  margin: 0 auto 64px
   padding: 0 64px
   position: relative
   width: 100%
@@ -626,14 +326,15 @@ footer
   max-width: 300px
   width: 100%
 
-  .footer-nav-title, .footer-nav-title a
-    color: var(--accent-text-color)
-    margin-bottom: 24px
-    text-transform: uppercase
-
   .footer-nav-title
+    color: var(--accent-text-color)
     padding: 0 8px
-    font-size: 1.1em
+    font-weight: 500
+    font-size: 1.2em
+    margin-bottom: 16px
+
+    a
+      color: inherit
 
   ul
     list-style: none
@@ -706,86 +407,6 @@ footer
   @media screen and (max-width: $break-medium)
     padding: 32px
 
-.footer-cart
-  background: var(--content-background-color)
-  border-top: 2px solid var(--background-color)
-  bottom: 0
-  color: var(--primary-text-color)
-  display: none
-  height: 64px
-  left: 0
-  position: fixed
-  text-align: center
-  width: 100%
-  z-index: 4
-
-  @media screen and (max-width: $break-medium)
-    display: block
-
-  .cart-num-items
-    color: var(--primary-text-color)
-    display: inline-block
-    line-height: 64px
-    text-transform: uppercase
-
-  svg
-    display: inline-block
-    fill: var(--primary-text-color)
-    height: 16px
-    margin: 0 10px
-    position: relative
-    top: 3px
-    width: 16px
-
-.header-cart
-  height: 64px
-  color: var(--primary-text-color)
-  display: inline-block
-  line-height: 64px !important
-  text-transform: uppercase
-
-  svg
-    display: inline-block
-    fill: var(--primary-text-color)
-    height: 16px
-    margin: 0 10px
-    position: relative
-    top: 3px
-    width: 16px
-
-.footer-cart-buttons
-  background: var(--content-background-color)
-  border-top: 2px solid var(--background-color)
-  bottom: 0
-  color: var(--primary-text-color)
-  display: none
-  height: 64px
-  left: 0
-  position: fixed
-  text-align: center
-  width: 100%
-  z-index: 4
-
-  &.no-border
-    border-top: 0
-
-  @media screen and (max-width: $break-medium)
-    display: block
-
-  a
-    +flex
-    +flex-grow(1)
-    float: left
-    font-size: 14px
-    line-height: 64px
-    text-align: center
-    text-transform: uppercase
-    width: 50%
-
-    &:last-child
-      background: var(--button-background-color)
-      color: var(--button-text-color)
-
 .no-products-message
   +vertical-align
   display: block
@@ -795,7 +416,7 @@ footer
   padding: 64px
 
   a
-    color: var(--links-color)
+    color: var(--link-hover-color)
 
 .blur-up
   +transition(filter .2s ease)
