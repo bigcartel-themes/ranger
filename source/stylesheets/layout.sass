@@ -682,29 +682,26 @@ footer
   padding: 64px
   width: 100%
 
-  a
-    +transition(color .2s linear)
-    color: var(--secondary-text-color)
-    text-decoration: underline
+  p
+    margin: revert
 
-    &:hover, &:focus
-      color: var(--links-color)
+  &>:first-child
+    margin-top: 0
 
-  img, iframe
-    display: block
-    max-width: 100%
+  &>:last-child
+    margin-bottom: 0
 
   ol, ul
-    margin: 1em 0
-    padding: 0
+    margin: 1em
 
   ul
     list-style: disc
-    list-style-position: inside
 
   ol
     list-style: decimal
-    list-style-position: inside
+
+  a
+    text-decoration: underline
 
   @media screen and (max-width: $break-medium)
     padding: 32px
