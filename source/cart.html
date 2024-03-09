@@ -8,16 +8,9 @@
     </ul>
   {% endif %}
   <div class="cart-container">
-    {% if errors != blank %}
-      <div class="errors">
-        {% for error in errors %}
-          <div>{{ error }}</div>
-        {% endfor %}
-      </div>
-    {% endif %}
     {% if cart.items == blank %}
       <div class="cart-empty">
-        <div class="message-banner message-banner--no-bg message-banner--centered message-banner--empty-cart">Your cart is empty! Sounds like a good time to start shopping.</div>
+        <div>Your cart is empty! Sounds like a good time to start shopping.</div>
         <a href="/products" class="button">Shop now</a>
       </div>
     {% else %}

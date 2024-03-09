@@ -350,7 +350,7 @@
       "variable": "collections",
       "label": "Enable collections",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "description": "Use category collections instead of the traditional product listing page"
     },
     {
@@ -434,6 +434,13 @@
       ],
       "default": "show-thumbnails",
       "description": "Choose to hide or show thumbnails on the mobile Product page carousel"
+    },
+    {
+      "variable": "share_buttons",
+      "label": "Show product share buttons",
+      "type": "boolean",
+      "default": true,
+      "description": "Adds Facebook, Twitter, and Pinterest buttons to Product pages"
     },
     {
       "variable": "money_format",

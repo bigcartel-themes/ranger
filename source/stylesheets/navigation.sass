@@ -30,7 +30,7 @@ header
     display: grid
     min-height: 100%
     align-items: center
-    grid-template-columns: 1fr 2fr 1fr
+    grid-template-columns: 1fr auto 1fr
     gap: 24px
 
     @media screen and (max-width: $break-large)
@@ -78,7 +78,7 @@ header
     background: var(--content-background-color)
     transition: opacity .2s linear, visibility .2s linear
     border-radius: var(--border-radius)
-    border: 2px solid var(--background-color)
+    border: 2px solid var(--border-color)
     left: -20px
     margin: 0 auto
     min-width: 250px
@@ -90,7 +90,7 @@ header
     visibility: hidden
     height: auto
     max-height: 50vh
-    top: calc(100% + 16px)
+    top: calc(100% + 8px)
     scrollbar-width: thin
     scrollbar-color: #{"rgba(var(--primary-text-color-rgb),.5)"} transparent
     scrollbar-gutter: stable
@@ -134,10 +134,16 @@ header
   align-items: center
   text-align: center
   justify-content: center
-  padding: 12px
+  padding: 16px
+  max-width: 600px
+  margin: 0 auto
+
+  @media screen and (max-width: $break-medium)
+    font-size: 1.4em
 
   @media screen and (max-width: $break-small)
-    font-size: 1.3em
+    font-size: 1.2em
+    padding: 12px
 
   a
     display: flex
@@ -234,8 +240,8 @@ header
 
   svg
     fill: currentColor
-    width: 24px
-    height: 24px
+    width: 22px
+    height: 22px
 
     @media screen and (max-width: $break-medium)
       width: 20px
@@ -249,14 +255,15 @@ header
   justify-content: center
 
   svg
-    width: 24px
-    height: 24px
+    fill: currentColor
+    width: 22px
+    height: 22px
 
     @media screen and (max-width: $break-medium)
       width: 20px
       height: 20px
 
-.cart-num-items
+.cart-num-items__circle
   background: var(--button-background-color)
   border-radius: 100%
   color: var(--button-text-color)
@@ -274,3 +281,49 @@ header
   @media screen and (max-width: $break-medium)
     right: -2px
     top: 0px
+
+#mobile-navigation
+  background: #{'rgba(var(--background-color-rgb), .8)'}
+  opacity: 0
+  visibility: hidden
+  width: 100%
+  height: calc(100vh - var(--header-bottom-position))
+  z-index: 10
+  top: var(--header-bottom-position)
+  left: 0
+  position: fixed
+  transition: opacity .1s ease, visibility .1s ease
+  overscroll-behavior: contain
+
+  @media screen and (max-width: $break-large)
+    &[aria-hidden="false"]
+      opacity: 1
+      visibility: visible
+
+      .mobile-navigation__wrapper
+        transform: translateX(0)
+
+.mobile-navigation
+  &__wrapper
+    max-width: 90%
+    background: var(--content-background-color)
+    border-right: 2px solid var(--background-color)
+    padding: 16px
+    height: 100%
+    width: 100%
+    transform: translateX(-100%)
+    transition: transform .1s linear
+    overflow-y: scroll
+    padding-bottom: var(--header-bottom-position)
+
+    nav
+      margin-bottom: 12px
+
+    ul
+      display: flex
+      flex-direction: column
+      gap: 12px
+
+      li a
+        padding: 4px 0
+        font-size: 1.1em

@@ -6,3 +6,4 @@
 //= require javascripts/product-option-groups.js
 //= require javascripts/product-carousel.js
 //= require javascripts/cart
+//= require javascripts/search

@@ -37,3 +37,37 @@ document.addEventListener('click', function(e) {
     });
   }
 });
+
+
+// Mobile nav should slide in from the left and make sure it's the appropriate height, and displayed after the header height
+
+function setHeaderBottomPosition() {
+  const headerBottomPosition = document.querySelector('header').getBoundingClientRect().bottom;
+  document.documentElement.style.setProperty('--header-bottom-position', `${headerBottomPosition}px`);
+}
+
+const toggleMenuButton = document.querySelector('.open-mobile-navigation');
+const sidebarNavigation = document.getElementById('mobile-navigation');
+
+function toggleSidebarNavigation() {
+  setHeaderBottomPosition();
+  document.body.classList.toggle('no-scroll');
+  const isButtonExpanded = toggleMenuButton.getAttribute('aria-expanded') === 'true';
+  const isMenuHidden = sidebarNavigation.getAttribute('aria-hidden') === 'true';
+  toggleMenuButton.setAttribute('aria-expanded', isButtonExpanded ? 'false' : 'true');
+  sidebarNavigation.setAttribute('aria-hidden', isMenuHidden ? 'false' : 'true');
+}
+
+toggleMenuButton.addEventListener('click', toggleSidebarNavigation);
+
+const adjustDropdownHeights = () => {
+  dropdowns.forEach((dropdown) => {
+    const dropdownRect = dropdown.getBoundingClientRect();
+    const availableSpace = window.innerHeight - dropdownRect.top - 20;
+    dropdown.style.maxHeight = `${availableSpace}px`;
+  });
+};
+
+adjustDropdownHeights();
+
+window.addEventListener('resize', adjustDropdownHeights);

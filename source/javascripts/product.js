@@ -95,22 +95,32 @@ function disableSelectOption(select_option, type) {
     }
   }
 }
-$(document).ready(function() {
-  if ($('.all-related-products').length) {
-    var elements = $('.all-related-products').children().toArray();
-    var num_to_display = $('.related-products-container').data('num-products');
-    for (var i=1; i<=num_to_display; i++) {
-      var randomIndex = getRandomIndex(elements);
-      $('.related-product-list').append($('.all-related-products').children().eq(randomIndex));
-      elements.splice(randomIndex, 1);
-    }
-    let total_inserted = $('.related-product-list').children().length;
-    if (total_inserted < num_to_display) {
-      $('.related-product-list').addClass('product-list--center');
-    }
-    $('.all-related-products').remove();
+
+const shareButton = document.querySelector(".product-share-launch");
+const handleWebShare = () => {
+  const title = document.title;
+  const url = window.location.href;
+  navigator
+    .share({ title, url })
+    .catch((error) => console.error("Sharing failed:", error));
+}
+
+const toggleShareLinks = () => {
+  const shareLinks = document.querySelector(".product-share-buttons");
+
+  if (shareLinks) {
+    const isHidden = shareLinks.getAttribute("aria-hidden") === "true";
+    shareLinks.setAttribute("aria-hidden", isHidden ? "false" : "true");
+    shareButton.setAttribute("aria-expanded", isHidden ? "true" : "false");
   }
-});
-function getRandomIndex(elements) {
-  return Math.floor(Math.random() * elements.length);
+}
+
+if (shareButton) {
+  shareButton.addEventListener("click", () => {
+    if (navigator.share) {
+      handleWebShare();
+    } else {
+      toggleShareLinks();
+    }
+  });
 }

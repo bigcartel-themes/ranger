@@ -19,7 +19,10 @@ body
   margin: 0
 
   &.no-scroll
+    height: 100vh
+    width: 100vw
     overflow: hidden
+    overscroll-behavior: none
 
 a.skip-link
   +transition(all .3s)
@@ -37,10 +40,10 @@ a.skip-link
     top: 20px
 
 .errors
-  background: #950f1e
-  color: #FFFFFF
-  margin-bottom: 0
-  padding: 24px 32px
+  background: var(--error-background-color)
+  color: var(--error-text-color)
+  margin-bottom: 32px
+  padding: 16px 32px
   text-align: center
   width: 100%
 
@@ -146,9 +149,6 @@ h1, h2, h3, h4, h5, h6
     color: var(--button-text-color)
 
 input, textarea
-  background: var(--background-color)
-  border: 1px solid var(--background-color)
-  color: var(--primary-text-color)
   font-family: var(--secondary-font)
   max-width: 100%
   padding: 14px
@@ -239,7 +239,7 @@ section.content
     position: relative
 
     canvas, .welcome-text
-      +animation(fade-in-load ease-in 900ms forwards)
+      +animation(fade-in-load ease-in 600ms forwards)
 
   &.no-pattern
     background-color: var(--accent-background-color)
@@ -251,7 +251,7 @@ section.content
 
   &.welcome-image
     img
-      +animation(fade-in-load ease-in 900ms forwards)
+      +animation(fade-in-load ease-in 600ms forwards)
       height: 100%
       object-fit: cover
       width: 100%
@@ -343,6 +343,9 @@ footer
     a
       color: inherit
 
+      &:hover
+        text-decoration: underline
+
   ul
     display: flex
     flex-direction: column
@@ -352,6 +355,7 @@ footer
       display: block
       column-gap: 32px
       column-count: 2
+      column-width: 40vw
 
     li
       display: flex
@@ -370,7 +374,7 @@ footer
         &:hover, &:focus
           text-decoration: underline
 
-    &.social-icons
+    &.social-links
       a
         color: var(--accent-text-color)
         display: flex

@@ -30,74 +30,107 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   `;
   headTag.appendChild(styleTag);
+
+  drawPattern();
+
+  const menu = document.querySelector('.header');
+  const mainContent = document.querySelector('#main');
+  const originalStyle = mainContent.getAttribute('style') || '';
+  const scrolledClass = 'page-head-scrolled';
+  let menuHeight, headerHeight;
+
+  const updateHeights = () => {
+    menuHeight = menu.offsetHeight;
+    const announcementMessage = document.querySelector('.announcement-message.visible');
+    headerHeight = (announcementMessage) ? announcementMessage.offsetHeight : 0;
+  }
+
+  const handleScroll = () => {
+    if (window.pageYOffset > headerHeight) {
+      menu.classList.add(scrolledClass);
+      menuHeight = menu.offsetHeight;
+      mainContent.style.marginTop = `${menuHeight}px`;
+    } else {
+      menu.classList.remove(scrolledClass);
+      mainContent.setAttribute('style', originalStyle);
+    }
+  }
+
+  window.addEventListener('resize', () => {
+    drawPattern();
+    updateHeights();
+  });
+
+  window.dispatchEvent(new Event('resize'));
+
+  window.addEventListener('scroll', handleScroll);
+
+  window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+  });
 });
 
 window.addEventListener("load", () => {
   document.body.classList.remove("transition-preloader");
 });
 
-function draw_pattern() {
-  pattern_style = themeOptions.pattern_style;
-  store_name_length = themeOptions.store_name.length;
-  canvas_element = document.getElementById('repeating-pattern');
-  primary_color = themeColors.accentBackgroundColor.toLowerCase();
-  secondary_color = themeColors.accentPatternColor.toLowerCase();
-  pattern_width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+function drawPattern() {
+  const patternStyle = themeOptions.pattern_style;
+  const storeNameLength = themeOptions.store_name.length;
+  const canvasElement = document.getElementById('repeating-pattern');
+  const primaryColor = themeColors.accentBackgroundColor.toLowerCase();
+  const secondaryColor = themeColors.accentPatternColor.toLowerCase();
+  let patternWidth = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
-  if (themeOptions.page == 'home') {
-    if (pattern_width < 668 || $('#pattern').hasClass('hide-featured')) {
-      announce_height = ($('.announcement-message.visible').outerHeight() > 0) ? $('.announcement-message.visible').outerHeight() : 0;
-      pattern_calc = announce_height + $('.header').outerHeight();
-      $('#pattern').css('height','calc(100vh - ' + pattern_calc + 'px)')
+  if (themeOptions.page === 'home') {
+    const patternElement = document.getElementById('pattern');
+    const headerElement = document.querySelector('.header');
+    const announcementMessage = document.querySelector('.announcement-message.visible');
+    const announceHeight = (announcementMessage) ? announcementMessage.offsetHeight : 0;
+    const patternCalc = announceHeight + headerElement.offsetHeight;
+
+    if (patternWidth < 668 || patternElement.classList.contains('hide-featured')) {
+      patternElement.style.height = `calc(100vh - ${patternCalc}px)`;
+    } else {
+      patternElement.style.height = null;
     }
   }
+  else {
+    // we only want a pattern when the page width is larger than 668px
+    if (patternWidth < 668) {
+      canvasElement.style.width = '100%';
+      return;
+    }
 
-  if (pattern_style == 'small-triangles' || pattern_style == 'large-triangles') {
-    pattern_height = $('#pattern').height();
-    if (primary_color != 'transparent' && secondary_color != 'transparent') {
-      $(canvas_element).width(pattern_width+'px');
-      if (pattern_style == 'small-triangles') {
-        var cell_size = store_name_length * 5;
+  }
+
+  // Draw pattern for small and large triangles
+  if (patternStyle === 'small-triangles' || patternStyle === 'large-triangles') {
+    const patternElement = document.getElementById('pattern');
+    const patternHeight = patternElement.offsetHeight;
+
+
+    if (primaryColor !== 'transparent' && secondaryColor !== 'transparent' && patternHeight > 0) {
+      canvasElement.style.width = `${patternWidth}px`;
+
+      let cellSize;
+      if (patternStyle === 'small-triangles') {
+        cellSize = storeNameLength * 5;
       }
-      if (pattern_style == 'large-triangles') {
-        var cell_size = store_name_length * 35;
+      if (patternStyle === 'large-triangles') {
+        cellSize = storeNameLength * 35;
       }
-      var pattern = Trianglify({
-        width: pattern_width,
-        height: pattern_height,
-        cell_size: cell_size,
+
+      const pattern = Trianglify({
+        width: patternWidth,
+        height: patternHeight,
+        cell_size: cellSize,
         seed: 1,
         variance: 1,
-        x_colors: [primary_color, secondary_color, primary_color]
+        x_colors: [primaryColor, secondaryColor, primaryColor]
       });
-      pattern.canvas(canvas_element);
+
+      pattern.canvas(canvasElement);
     }
   }
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-  draw_pattern();
-  var mn = $('.header'),
-  core = $('#main').eq(0),
-  fix = core.attr('style') || '',
-  mns = 'page-head-scrolled',
-  bit, hdr;
-  $(window).resize(function() {
-    draw_pattern();
-    bit = mn.outerHeight();
-    hdr = ($('.announcement-message.visible').outerHeight() > 0) ? $('.announcement-message.visible').outerHeight() : 0;
-  })
-  .resize().scroll(function() {
-    if ($(this).scrollTop() > hdr) {
-      mn.addClass(mns);
-      bit = mn.outerHeight();
-      core.css('margin-top', bit);
-    } else {
-      mn.removeClass(mns);
-      core.attr('style', fix);
-    }
-  })
-  .on('load', function() {
-    $(this).scroll();
-  });
-});
