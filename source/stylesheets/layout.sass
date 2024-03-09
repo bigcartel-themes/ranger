@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6
 
   &.minimal-button
     background: none
-    color: var(--primary-text-color)
+    color: var(--secondary-text-color)
     border: none
     height: auto
     min-height: 0
@@ -132,7 +132,7 @@ h1, h2, h3, h4, h5, h6
     &:not(:disabled):hover, &:not(:disabled):active
       box-shadow: none
       background: none
-      color: var(--secondary-text-color)
+      color: var(--link-hover-color)
       opacity: 1
 
   &:disabled, &.disabled
@@ -410,7 +410,11 @@ footer
     list-style: decimal
 
   a
+    color: var(--secondary-text-color)
     text-decoration: underline
+
+    &:hover, &:focus
+      color: var(--link-hover-color)
 
   @media screen and (max-width: $break-medium)
     padding: 32px
