@@ -7,7 +7,7 @@
 
   --border-radius: 0
 
-  --border-color: #{'rgba(var(--primary-text-color-rgb), .5)'}
+  --border-color: #{'rgba(var(--primary-text-color-rgb), .4)'}
 
   --background-color: #{"{{ theme.background_color }}"}
   --content-background-color: #{"{{ theme.content_background_color }}"}
@@ -31,6 +31,11 @@
   --header-height: 140px
   --header-height-tablet: 96px
   --header-height-mobile: 64px
+
+  --padding-value: 8px
+  --large-padding: calc(var(--padding-value) * 5)
+  --med-padding: calc(var(--padding-value) * 4)
+  --small-padding: calc(var(--padding-value) * 2)
 
 $break-extra-large: 1200px
 $break-large: 1024px

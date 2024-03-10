@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "images": [
     {
       "variable": "logo",
@@ -384,6 +384,22 @@
       "options": "0..100",
       "default": 12,
       "description": "The number of items featured on the Home page"
+    },
+    {
+      "variable": "max_products_per_row",
+      "label": "Maximum products per row",
+      "type": "select",
+      "options": "1..4",
+      "default": 3,
+      "description": "The maximum number of products displayed per row on larger screens"
+    },
+    {
+      "variable": "max_products_per_row_mobile",
+      "label": "Maximum products per row (mobile)",
+      "type": "select",
+      "options": "1..2",
+      "default": 2,
+      "description": "The number of products displayed per row on smaller screens"
     },
     {
       "variable": "grid_image_style",

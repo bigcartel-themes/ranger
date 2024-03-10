@@ -44,15 +44,29 @@ h2.welcome-subheader
     width: 100px
 
 section.content .home-page
-  background: none
   margin-top: 80px
   max-width: 1600px
+  padding: var(--large-padding)
+
+  @media screen and (max-width: $break-medium)
+    padding: var(--med-padding)
 
   @media screen and (max-width: $break-small)
     margin-top: 0
+    padding: var(--small-padding)
 
   &.has-welcome
     margin-top: -80px
 
     @media screen and (max-width: $break-small)
       margin-top: 0
+
+section.content .products-page
+  max-width: 1600px
+  padding: var(--large-padding)
+
+  @media screen and (max-width: $break-medium)
+    padding: var(--med-padding)
+
+  @media screen and (max-width: $break-small)
+    padding: var(--small-padding)

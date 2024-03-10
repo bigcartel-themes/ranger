@@ -46,6 +46,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   const handleScroll = () => {
+    if (window.innerWidth < 668) {
+      return;
+    }
     if (window.pageYOffset > headerHeight) {
       menu.classList.add(scrolledClass);
       menuHeight = menu.offsetHeight;
@@ -64,10 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.dispatchEvent(new Event('resize'));
 
   window.addEventListener('scroll', handleScroll);
-
-  window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
-  });
 });
 
 window.addEventListener("load", () => {

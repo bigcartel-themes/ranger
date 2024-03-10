@@ -3,42 +3,38 @@
   max-width: 1600px
 
 .product-list
-  +flexbox
-  +flex-wrap(wrap)
-  +justify-content(flex-start)
+  --gap: var(--large-padding)
+  --row-gap: 48px
+  --columns: #{"{{ theme.max_products_per_row }}"}
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
   margin: 0
+  gap: var(--gap)
+  row-gap: var(--row-gap)
 
   &.justify-center
-    +justify-content(center)
-
-.product-list-thumb
-  background: var(--content-background-color)
-  border: 1px solid var(--background-color)
-  color: var(--primary-text-color)
-  display: block
-  padding: 1px
-  position: relative
-  text-align: center
-  vertical-align: middle
-  width: calc(100% / 3)
-  word-break: break-word
+    justify-content: center
 
   @media screen and (max-width: $break-large)
-    padding: 16px
-    width: calc(100% / 2)
+    --gap: var(--med-padding)
+    --columns: calc(#{"{{ theme.max_products_per_row }}"} - 1)
 
   @media screen and (max-width: $break-small)
-    width: calc(100% / 2)
+    --columns: #{"{{ theme.max_products_per_row_mobile }}"}
+    --gap: var(--small-padding)
+    justify-content: flex-start
+
+.product-list-thumb
+  position: relative
+  text-decoration: none
+  width: calc((100% / var(--columns)) - var(--gap) + (var(--gap) / var(--columns)))
 
 .product-list-link
   color: var(--primary-text-color)
   background: var(--content-background-color)
   display: block
-  padding: 48px
   text-decoration: none
-
-  @media screen and (max-width: $break-large)
-    padding: 0
 
   &:hover, &:focus
     color: var(--primary-text-color)
@@ -74,11 +70,12 @@
 
 .product-list-thumb-info
   color: var(--primary-text-color)
-  padding-top: 24px
+  padding-top: 16px
   font-size: 1.1em
   position: relative
   display: grid
   gap: 4px
+  text-align: center
 
   @media screen and (max-width: $break-large)
     padding-top: 12px
@@ -94,27 +91,17 @@
   +align-items(center)
   +justify-content(center)
   background: var(--status-background-color)
-  font-size: 0.75rem
+  font-size: 0.8rem
   color: var(--button-text-color)
   font-style: normal
   font-weight: 500
-  height: 72px
-  left: 32px
-  line-height: 16px
-  padding: 0 10px
+  left: 16px
+  padding: 6px 12px
   position: absolute
   text-align: center
   text-transform: uppercase
-  top: 32px
-  width: 72px
-  word-break: keep-all
-
-  @media screen and (max-width: $break-small)
-    left: 24px
-    top: 24px
-    height: auto
-    white-space: nowrap
-    padding: 6px 12px
+  top: 16px
+  white-space: nowrap
 
 .no-results
   +flexbox

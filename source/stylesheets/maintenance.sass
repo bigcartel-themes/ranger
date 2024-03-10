@@ -13,33 +13,19 @@
     +flex-direction(column)
     background: var(--content-background-color)
     color: var(--primary-text-color)
-    font-size: 1.25em
     margin: 0 auto
     max-width: 600px
-    padding: 40px
+    padding: 24px 48px 40px
     text-align: center
     width: 100%
+    gap: 40px
 
-    > * + *
-      margin-top: 40px
+    @media screen and (max-width: $break-small)
+      padding-left: 16px
+      padding-right: 16px
 
-    .store-name
-      font-size: 1.75em
-
-    .social-icons
-      +flexbox
-      flex-wrap: wrap
-      align-items: center
-      justify-content: center
-      list-style: none
-      gap: 24px
-
-      a
-        +flexbox
-        outline-offset: 4px
-
-        svg
-          display: block
-          fill: currentColor
-          height: 24px
-          width: 24px
+    h1.store-name
+      font-size: 2em
+      margin: 0 0 16px 0
+      height: auto
+      padding: 0
