@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "images": [
     {
       "variable": "logo",
@@ -350,7 +350,7 @@
       "variable": "collections",
       "label": "Enable collections",
       "type": "boolean",
-      "default": true,
+      "default": false,
       "description": "Use category collections instead of the traditional product listing page"
     },
     {
