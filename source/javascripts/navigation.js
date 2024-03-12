@@ -38,9 +38,6 @@ document.addEventListener('click', function(e) {
   }
 });
 
-
-// Mobile nav should slide in from the left and make sure it's the appropriate height, and displayed after the header height
-
 function setHeaderBottomPosition() {
   const headerBottomPosition = document.querySelector('header').getBoundingClientRect().bottom;
   document.documentElement.style.setProperty('--header-bottom-position', `${headerBottomPosition}px`);

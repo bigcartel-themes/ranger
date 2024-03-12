@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "1.8.5",
+  "version": "1.8.6",
   "images": [
     {
       "variable": "logo",
@@ -453,10 +453,10 @@
     },
     {
       "variable": "share_buttons",
-      "label": "Show product share buttons",
+      "label": "Show product share button",
       "type": "boolean",
       "default": true,
-      "description": "Adds Facebook, Twitter, and Pinterest buttons to Product pages"
+      "description": "Adds a Share button to your Product page after the description"
     },
     {
       "variable": "money_format",
