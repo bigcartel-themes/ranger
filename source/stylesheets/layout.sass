@@ -438,8 +438,9 @@ footer
     color: var(--link-hover-color)
 
 .blur-up
-  +transition(filter .2s ease)
+  transition: filter .2s
   filter: blur(5px)
+  transform: translate3d(0, 0, 0)
 
   &.lazyloaded
     filter: blur(0)
