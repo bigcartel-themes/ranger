@@ -1,4 +1,4 @@
-<h1 class="page-title hide-mobile">{{ page.name }}</h1>
+<h1 class="page-title">{{ page.name }}</h1>
 <div class="page-content contact-page">
   {% if errors != blank %}
     <ul class="errors">
@@ -12,34 +12,26 @@
   {% else %}
     <form method="post" action="/contact" class="contact-form">
       <div class="contact-form-block contact-name">
-        <label for="name-input">Name</label>
-        <div class="input-holder">
-          <input id="name-input" name="name" type="text">
-        </div>
+        <label for="name">Name</label>
+        {{ contact | contact_input: 'name' }}
       </div>
       <div class="contact-form-block contact-email">
-        <label for="email-input">Email</label>
-        <div class="input-holder">
-          <input id="email-input" name="email" type="email">
-        </div>
+        <label for="email">Email</label>
+        {{ contact | contact_input: 'email' }}
       </div>
       <div class="contact-form-block contact-subject">
-        <label for="subject-input">Subject</label>
-        <div class="input-holder">
-          <input id="subject-input" name="subject" type="text">
-        </div>
+        <label for="subject">Subject</label>
+        {{ contact | contact_input: 'subject' }}
       </div>
       <div class="contact-form-block contact-message">
-        <label for="message-textarea">Message</label>
-        <div class="input-holder">
-          <textarea id="message-textarea" name="message"></textarea>
-          <div class="recaptcha-note">{{ contact.recaptcha }}</div>
-        </div>
+        <label for="message">Message</label>
+        {{ contact | contact_input: 'message' }}
       </div>
-
-
       <div class="contact-form-block contact-send">
         <button class="button" type="submit" name="submit">Send message</button>
+      </div>
+      <div class="contact-form-block contact-recaptcha">
+        <div class="recaptcha-note">{{ contact.recaptcha }}</div>
       </div>
     </form>
   {% endif %}

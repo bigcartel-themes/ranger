@@ -1,8 +1,15 @@
-@import 'variables'
+
 
 section.content
   .cart-page
-    max-width: 828px
+    max-width: 960px
+    padding: var(--large-padding)
+
+    @media screen and (max-width: $break-large)
+      padding: var(--med-padding)
+
+    @media screen and (max-width: $break-small)
+      padding: var(--small-padding)
 
     &.empty-cart
       height: 240px
@@ -19,189 +26,202 @@ section.content
     .empty-cart-message
       +flexbox
 
-.cart-form
+.cart-empty
+  display: flex
+  flex-direction: column
+  gap: 32px
+  max-width: 600px
+  align-items: center
   margin: 0 auto
   width: 100%
 
-  @media screen and (max-width: $break-small)
-    padding-bottom: 184px
+  div
+    text-align: center
 
-.cart-items
-  list-style: none
-  margin: 0
-  padding: 0
-  width: 100%
+  a.button
+    max-width: 360px
 
-  @media screen and (max-width: $break-small)
-    border-top: none
-
-  .cart-item
-    +flexbox
-    +align-items(center)
-    border-bottom: 2px solid $background-color
-    font-size: 18px
-    padding: 16px
-    position: relative
-    text-transform: uppercase
-
-    @media (max-width: $break-small)
-      align-items: start
-      display: grid
-      grid-template: repeat(2,auto) / repeat(4,1fr)
-      padding-right: 16px
-
-  .item-image-link
-    height: 160px
-    width: 160px
-
-    @media (max-width: $break-small)
-      height: 100px
-      grid-row: 1 / 2
-      width: auto
-
-  .item-image
-    display: block
-    height: 100%
-    object-fit: cover
-    width: 100%
-
-  .item-details
-    +flexbox
-    +align-items(center)
-    font-family: $primary-font
-    font-size: 1em
-    line-height: 1.5
-    padding: 0 48px 0 16px
-
-    @media (max-width: $break-small)
-      grid-column: 2 / 4
-      font-size: .975em
-      padding-right: 16px
-
-  .item-product-link
-    color: $primary-text-color
-    display: block
-
-  .item-details-option
-    color: $primary-text-color
-    display: block
-    font-family: $secondary-font
-    font-size: .825em
-    margin-top: 6px
-
-  .item-details-price
-    color: $secondary-text-color
-    display: block
-    font-family: $secondary-font
-    margin-bottom: 10px
-
-  .item-quantity-holder
-    +flexbox
-    +align-items(center)
-    +flex-direction(column)
-    font-size: .925em
-    margin-left: auto
-
-    @media (max-width: $break-small)
-      grid-column: 4/4
-      margin: 0
-
-  .item-quantity-inner
-    +flexbox
-    +align-items(center)
-    border: 2px solid $background-color
-    padding: 16px
-
-    @media (max-width: $break-small)
-      +flex-direction(column)
-      padding: 8px 16px
-
-    label
-      display: block
-      padding: 8px
-
-    input
-      +appearance(none)
-      background: none
-      border: 0
-      margin-left: auto
-      padding: 8px
-      text-align: center
-      outline: none
-      width: 64px
-
-    &:hover, &:focus, &:focus-within
-      outline: 2px auto
-      border-radius: 0
-
-  .item-delete
-    +appearance(none)
-    background: none
-    color: $secondary-text-color
-    cursor: pointer
-    font-size: 14px
-    padding: 8px
-    text-decoration: underline
-    margin-top: 8px
-
-.cart-footer
-  +flexbox
-  +justify-content(center)
-  background: $accent-background-color
-  color: $accent-text-color
-  padding: 48px 32px
-  position: relative
-  width: 100%
-
-  &.fixed-cart-footer
-    @media screen and (max-width: $break-small)
-      bottom: 64px
-      padding: 32px
-      position: fixed
-      width: 100%
-
-  .cart-total
-    color: $accent-text-color
-    font-size: 22px
-    text-transform: uppercase
-
-    @media screen and (max-width: $break-medium)
-      font-size: 18px
-
-  .cart-amount
-    display: inline-block
-    text-align: right
-    width: 200px
-
-    @media screen and (max-width: $break-medium)
-      float: right
-      width: auto
-
-  button, .button
-    max-width: 100%
-
-    @media screen and (max-width: $break-medium)
-      display: none
-      font-size: 16px
-
-    @media screen and (max-width: $break-small)
-      font-size: 18px
-
-.cart-footer-buttons
-  +flexbox
-
-a.continue-shopping, .checkout-btn
-  text-align: center
-  text-transform: uppercase
-  width: 50%
+.cart-columns
+  display: grid
+  align-items: flex-start
+  grid-template-columns: 1fr
+  column-gap: 64px
 
   @media screen and (max-width: $break-medium)
-    display: none
+    grid-template-columns: 1fr
 
-a.continue-shopping
-  background: $accent-background-color
-  color: $accent-text-color
-  opacity: .8
+.cart-header
+  display: flex
+  align-items: flex-end
+  justify-content: flex-start
+  margin-bottom: 32px
 
-  &:hover, &:focus
-    opacity: 1 !important
+  .page-title
+    margin-bottom: 0
+
+.cart-items
+  border-bottom: 2px solid var(--border-color)
+
+.cart-item
+  display: grid
+  grid-template-columns: auto 1fr 148px auto
+  justify-content: flex-start
+  align-items: flex-start
+  border-top: 2px solid var(--border-color)
+  padding: 24px 0
+  gap: 16px
+
+  @media (max-width: $break-medium)
+    grid-template-columns: auto 1fr auto
+    grid-template-rows: repeat(2, auto)
+
+  .cart-item-image-holder
+    @media screen and (max-width: $break-medium)
+      grid-area: 1 / 1 / 3 / 2
+
+  .cart-item-image-link
+    display: block
+    height: 90px
+    overflow: hidden
+    width: 90px
+
+    @media screen and (max-width: $break-small)
+      height: 64px
+      width: 64px
+
+    img
+      border-radius: var(--border-radius)
+      height: 100%
+      object-fit: cover
+      width: 100%
+
+  .cart-item-detail
+    max-width: 400px
+    padding-right: 24px
+
+    @media (max-width: $break-medium)
+      grid-area: 1 / 2 / 2 / 3
+      padding-right: 0
+
+  .product-name
+    font-weight: 500
+    font-size: 1.1em
+    word-break: break-word
+
+  .option-name
+    font-size: 1em
+    margin-top: 4px
+
+  input
+    border: none
+    height: 100%
+    padding: 8px
+    text-align: center
+    width: 48px
+
+    &::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+      display: none
+
+  .cart-qty
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-direction: column
+    width: 148px
+    gap: 8px
+
+    @media (max-width: $break-medium)
+      align-items: center
+      grid-area: 2 / 2 / 3 / 4
+      justify-content: flex-start
+      flex-direction: row
+      width: 100%
+      gap: 24px
+
+  .qty-holder
+    display: flex
+    align-items: center
+    border: 2px solid var(--border-color)
+    border-radius: var(--border-radius)
+    gap: 8px
+
+    &.disabled
+      > *
+        opacity: .7
+        cursor: not-allowed
+        user-select: none
+        pointer-events: none
+
+  .qty-button
+    display: flex
+    align-items: center
+    justify-content: center
+    height: 44px
+    width: 36px
+
+    svg
+      width: 14px
+      height: 16px
+
+  .cart-remove-item--link
+    display: inline-block
+    height: auto
+    padding: .5em
+    line-height: 1em
+    font-weight: normal
+    font-size: .925em
+    padding: 8px 16px
+    text-decoration: underline
+    width: auto
+
+    @media (max-width: $break-medium)
+      padding: 4px 0
+      margin-left: auto
+
+  .cart-item-price
+    font-size: 1.1em
+    margin-left: auto
+    min-width: 100px
+    min-height: 42px
+    display: flex
+    justify-content: flex-end
+    text-align: right
+
+    @media screen and (max-width: $break-medium)
+      font-size: 1.2rem
+      min-height: 0
+      min-width: 0
+      grid-area: 1 / 3 / 2 / 4
+      margin-left: 0
+
+.cart-footer
+  display: grid
+  place-items: center
+  gap: 2rem
+  margin-top: 24px
+  margin-left: auto
+  width: 100%
+  max-width: 300px
+
+  @media screen and (max-width: $break-small)
+    max-width: 100%
+
+.cart-subtotal
+  display: flex
+  gap: 16px
+  font-size: 1.5rem
+  align-items: flex-start
+  width: 100%
+
+  &__amount
+    margin-left: auto
+
+.cart-submit
+  display: flex
+  flex-direction: column
+  gap: 8px
+  width: 100%
+
+  .button
+    max-width: 100%
+    width: 100%

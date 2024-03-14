@@ -1,4 +1,4 @@
-@import 'variables'
+
 
 +keyframes(fade-in-load)
   0%
@@ -8,7 +8,7 @@
     opacity: 1
 
 .welcome-text
-  color: $accent-text-color
+  color: var(--accent-text-color)
   letter-spacing: 2px
   margin: 0 auto
   max-width: 1600px
@@ -19,18 +19,18 @@
   z-index: 2
 
 h1.welcome-header
-  color: $accent-text-color
+  color: var(--accent-text-color)
   font-size: 60px
   line-height: 1.4em
   margin: 0 0 32px
   text-align: center
 
   @media screen and (max-width: $break-small)
-    color: $accent-text-color
+    color: var(--accent-text-color)
     font-size: 9vw
 
 h2.welcome-subheader
-  color: $accent-text-color
+  color: var(--accent-text-color)
   font-size: 18px
   line-height: 1.4em
   text-align: center
@@ -38,21 +38,35 @@ h2.welcome-subheader
   &:after
     display: block
     content: ''
-    background: $accent-text-color
+    background: var(--accent-text-color)
     height: 2px
     margin: 36px auto 0
     width: 100px
 
 section.content .home-page
-  background: none
   margin-top: 80px
   max-width: 1600px
+  padding: var(--large-padding)
+
+  @media screen and (max-width: $break-medium)
+    padding: var(--med-padding)
 
   @media screen and (max-width: $break-small)
     margin-top: 0
+    padding: var(--small-padding)
 
   &.has-welcome
     margin-top: -80px
 
     @media screen and (max-width: $break-small)
       margin-top: 0
+
+section.content .products-page
+  max-width: 1600px
+  padding: var(--large-padding)
+
+  @media screen and (max-width: $break-medium)
+    padding: var(--med-padding)
+
+  @media screen and (max-width: $break-small)
+    padding: var(--small-padding)

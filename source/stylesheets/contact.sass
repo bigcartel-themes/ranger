@@ -1,27 +1,28 @@
-@import 'variables'
+
 
 section.content
   .contact-page
     max-width: 768px
+    padding: 48px
+
+    @media screen and (max-width: $break-medium)
+      padding: 32px
+
+    @media screen and (max-width: $break-small)
+      padding: 16px
+
+.contact-form
+  display: flex
+  gap: 24px
+  flex-direction: column
 
 .contact-form-block
-  border-bottom: 4px solid $background-color
-  padding: 32px 48px
   position: relative
   text-align: left
 
-  @media screen and (max-width: $break-medium)
-    padding: 32px
-
-  @media screen and (max-width: $break-small)
-    border-bottom: 0
-    padding-bottom: 0
-
   label
     display: block
-    font-size: 16px
-    margin-bottom: 12px
-    text-transform: uppercase
+    margin-bottom: 8px
     width: 100%
 
   .input-holder
@@ -31,18 +32,18 @@ section.content
     height: 56px
 
   textarea
-    height: 140px
+    height: 220px
     resize: vertical
 
   input, textarea
-    background: $content-background-color
-    border: 2px solid $primary-text-color
+    background: var(--content-background-color)
+    border: 2px solid var(--primary-text-color)
     width: 100%
 
   .recaptcha-note
-    font-size: 14px
-    line-height: 1.5em
+    font-size: .925em
     margin-top: 10px
+    text-align: center
 
     a
       text-decoration: underline
@@ -56,7 +57,6 @@ section.content
 
 .message-sent
   display: block
-  font-size: 14px
-  line-height: 22px
-  padding: 64px
+  line-height: 1.5em
+  padding: 64px 0
   text-align: center

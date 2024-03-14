@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "1.8.0",
+  "version": "2.0.0",
   "images": [
     {
       "variable": "logo",
@@ -41,7 +41,7 @@
               "button_text_color": "#FFFFFF",
               "button_background_color": "#0B639A",
               "status_background_color": "#C43F06",
-              "links_color": "#FF642A",
+              "link_hover_color": "#FF642A",
               "announcement_text_color": "#FFFFFF",
               "announcement_background_color": "#000000"
             }
@@ -63,7 +63,7 @@
               "button_text_color": "#141415",
               "button_background_color": "#F8F8F8",
               "status_background_color": "#F8F8F8",
-              "links_color": "#AEAEAE",
+              "link_hover_color": "#AEAEAE",
               "announcement_text_color": "#141415",
               "announcement_background_color": "#F8F8F8"
             }
@@ -85,7 +85,7 @@
               "button_text_color": "#FFFFFF",
               "button_background_color": "#2A2A2C",
               "status_background_color": "#203BE1",
-              "links_color": "#203BE1",
+              "link_hover_color": "#203BE1",
               "announcement_text_color": "#2A2A2C",
               "announcement_background_color": "#E3E4EA"
             }
@@ -112,7 +112,7 @@
               "button_text_color": "#F5F4EE",
               "button_background_color": "#8A4942",
               "status_background_color": "#898952",
-              "links_color": "#8A4942",
+              "link_hover_color": "#8A4942",
               "announcement_text_color": "#262522",
               "announcement_background_color": "#F1DBCE"
             }
@@ -134,7 +134,7 @@
               "button_text_color": "#FFFDFC",
               "button_background_color": "#584B53",
               "status_background_color": "#9D5C63",
-              "links_color": "#9D5C63",
+              "link_hover_color": "#9D5C63",
               "announcement_text_color": "#584B53",
               "announcement_background_color": "#D6E3F8"
             }
@@ -161,7 +161,7 @@
               "button_text_color": "#F6F7F2",
               "button_background_color": "#C90304",
               "status_background_color": "#F35900",
-              "links_color": "#C90304",
+              "link_hover_color": "#C90304",
               "announcement_text_color": "#F6F7F2",
               "announcement_background_color": "#F35900"
             }
@@ -183,7 +183,7 @@
               "button_text_color": "#FFFFFF",
               "button_background_color": "#0000FF",
               "status_background_color": "#FF0000",
-              "links_color": "#0000FF",
+              "link_hover_color": "#0000FF",
               "announcement_text_color": "#FFFFFF",
               "announcement_background_color": "#0000FF"
             }
@@ -205,7 +205,7 @@
               "button_text_color": "#243588",
               "button_background_color": "#ECD8FF",
               "status_background_color": "#FFFA8D",
-              "links_color": "#F6248C",
+              "link_hover_color": "#F6248C",
               "announcement_text_color": "#243588",
               "announcement_background_color": "#FFFA8D"
             }
@@ -278,7 +278,7 @@
       "default": "#C43F06"
     },
     {
-      "variable": "links_color",
+      "variable": "link_hover_color",
       "label": "Link hover color",
       "default": "#FF642A"
     },
@@ -343,7 +343,7 @@
       "variable": "show_search",
       "label": "Show search",
       "type": "boolean",
-      "default": false,
+      "default": true,
       "description": "Shows a search field"
     },
     {
@@ -354,19 +354,11 @@
       "description": "Use category collections instead of the traditional product listing page"
     },
     {
-      "variable": "show_sold_out_product_options",
-      "label": "Show sold out product options",
-      "type": "boolean",
-      "default": true,
-      "description": "Shows sold out product options in the Product page dropdowns",
-      "requires": "inventory"
-    },
-    {
       "variable": "nav_items",
       "label": "Navigation items",
       "type": "select",
-      "options": "0..2",
-      "default": 1,
+      "options": "0..3",
+      "default": 2,
       "description": "The number of custom page links show in the main navigation."
     },
     {
@@ -386,6 +378,22 @@
       "description": "The number of items featured on the Home page"
     },
     {
+      "variable": "max_products_per_row",
+      "label": "Maximum products per row",
+      "type": "select",
+      "options": "1..4",
+      "default": 3,
+      "description": "The maximum number of products displayed per row on larger screens"
+    },
+    {
+      "variable": "max_products_per_row_mobile",
+      "label": "Maximum products per row (mobile)",
+      "type": "select",
+      "options": "1..2",
+      "default": 2,
+      "description": "The number of products displayed per row on smaller screens"
+    },
+    {
       "variable": "grid_image_style",
       "label": "Product grid image style",
       "type": "select",
@@ -403,6 +411,52 @@
       "options": "1..100",
       "default": 48,
       "description": "The number of products shown per page"
+    },
+    {
+      "variable": "product_image_zoom",
+      "label": "Enable product image zoom",
+      "type": "boolean",
+      "default": true,
+      "description": "Click to open a larger version of the Product page image"
+    },
+    {
+      "variable": "desktop_product_page_images",
+      "label": "Desktop product page images",
+      "type": "select",
+      "options": [
+        ["Thumbnails", "thumbnails"],
+        ["Carousel", "carousel"],
+        ["Stacked 2 column", "two-column"],
+        ["Stacked full width", "stacked"]
+      ],
+      "default": "carousel",
+      "description": "Sets the display of the Product page gallery"
+    },
+    {
+      "variable": "mobile_product_page_images",
+      "label": "Mobile product page image carousel",
+      "type": "select",
+      "options": [
+        ["Show thumbnails", "show-thumbnails"],
+        ["Hide thumbnails", "hide-thumbnails"]
+      ],
+      "default": "show-thumbnails",
+      "description": "Choose to hide or show thumbnails on the mobile Product page carousel"
+    },
+    {
+      "variable": "share_buttons",
+      "label": "Show product share button",
+      "type": "boolean",
+      "default": false,
+      "description": "Adds a Share button to your Product page after the description"
+    },
+    {
+      "variable": "show_sold_out_product_options",
+      "label": "Show sold out product options",
+      "type": "boolean",
+      "default": true,
+      "description": "Shows sold out product options in the Product page dropdowns",
+      "requires": "inventory"
     },
     {
       "variable": "money_format",
@@ -523,7 +577,7 @@
     "button_hover_background_color": "opacify({{ button_background_color }}, 0.8)",
     "button_text_transform": "none",
     "link_color": "{{ secondary_text_color }}",
-    "link_hover_color": "{{ links_color }}",
+    "link_hover_color": "{{ link_hover_color }}",
     "step_header_color": "{{ primary_text_color }}",
     "step_header_font_size": "18px",
     "summary_color": "{{ primary_text_color }}",

@@ -1,85 +1,48 @@
-@import 'variables'
-
 .product-list-container
   margin: 0 auto
   max-width: 1600px
 
 .product-list
-  +flexbox
-  +flex-wrap(wrap)
-  +justify-content(flex-start)
+  --gap: var(--large-padding)
+  --row-gap: 48px
+  --columns: #{"{{ theme.max_products_per_row }}"}
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
   margin: 0
+  gap: var(--gap)
+  row-gap: var(--row-gap)
 
   &.justify-center
-    +justify-content(center)
+    justify-content: center
+
+  @media screen and (max-width: $break-large)
+    --gap: var(--med-padding)
+    --columns: calc(#{"{{ theme.max_products_per_row }}"} - 1)
+
+  @media screen and (max-width: $break-small)
+    --columns: #{"{{ theme.max_products_per_row_mobile }}"}
+    --gap: var(--small-padding)
+    justify-content: flex-start
+    row-gap: 24px
 
 .product-list-thumb
-  background: $content-background-color
-  border: 1px solid $background-color
-  color: $primary-text-color
-  display: block
-  font-size: 0
-  padding: 1px
   position: relative
-  text-align: center
-  vertical-align: middle
-  width: calc(100% / 3)
-  word-break: break-word
-
-  @media screen and (max-width: $break-large)
-    padding: 16px 16px
-    width: calc(100% / 2)
-
-  @media screen and (max-width: $break-small)
-    width: 100%
-
-_:-ms-fullscreen, :root .product-list-thumb
-  width: calc(100% / 3 - .1px)
-
-  @media screen and (max-width: $break-large)
-    width: calc(100% / 2 - .1px)
-
-  @media screen and (max-width: $break-small)
-    padding: 16px
-    width: 100%
-
-.hover-message
-  +transform(translateY(-50%) translateX(-50%))
-  +transition(opacity .25s linear, visibility .25s linear)
-  background: $button-background-color
-  color: $button-text-color
-  font-size: 14px
-  opacity: 0
-  padding: 24px 32px
-  position: absolute
-  text-transform: uppercase
-  top: 50%
-  left: 50%
-  text-align: center
-  visibility: hidden
-  white-space: nowrap
+  text-decoration: none
+  width: calc((100% / var(--columns)) - var(--gap) + (var(--gap) / var(--columns)))
 
 .product-list-link
-  color: $primary-text-color
-  background: $content-background-color
+  color: var(--primary-text-color)
+  background: var(--content-background-color)
   display: block
-  padding: 48px
   text-decoration: none
 
-  @media screen and (max-width: $break-large)
-    padding: 24px
-
   &:hover, &:focus
-    color: $primary-text-color
+    color: var(--primary-text-color)
     text-decoration: none
 
-    .product-list-thumb-name, .product-list-thumb-price
-      color: $primary-text-color
-
-    @media (hover: hover)
-      .hover-message
-        opacity: 1
-        visibility: visible
+    .product-list-thumb-name
+      text-decoration: underline
 
 .product-list-image-container
   overflow: hidden
@@ -107,59 +70,45 @@ _:-ms-fullscreen, :root .product-list-thumb
     object-fit: contain
 
 .product-list-thumb-info
-  color: $primary-text-color
-  font-size: 16px
-  line-height: 1.25em
-  padding: 32px 16px 0
+  color: var(--primary-text-color)
+  padding: 16px 0
+  font-size: 1.1em
   position: relative
-  text-transform: uppercase
+  display: grid
+  gap: 4px
+  text-align: center
+
+  @media screen and (max-width: $break-large)
+    padding: 12px 0
+    font-size: 1em
 
 .product-list-thumb-name
-  +transition(color .2s ease)
+  font-weight: 500
   overflow-wrap: break-word
   position: relative
-
-.product-list-thumb-price
-  +transition(color .2s ease)
-  font-size: 20px
-  position: relative
-
-  &:after
-    display: block
-    content: ''
-    background: $background-color
-    height: 2px
-    margin: 12px auto
-    width: 26px
 
 .product-list-thumb-status
   +flexbox
   +align-items(center)
   +justify-content(center)
-  background: $status-background-color
-  font-size: 0.75rem
-  color: $button-text-color
+  background: var(--status-background-color)
+  font-size: 0.8rem
+  color: var(--button-text-color)
   font-style: normal
-  height: 72px
-  left: 32px
-  line-height: 16px
-  padding: 0 10px
+  font-weight: 500
+  left: 16px
+  padding: 6px 12px
   position: absolute
   text-align: center
   text-transform: uppercase
-  top: 32px
-  width: 72px
-  word-break: keep-all
-
-  @media screen and (max-width: $break-small)
-    left: 16px
-    top: 16px
+  top: 16px
+  white-space: nowrap
 
 .no-results
   +flexbox
   +align-items(center)
   +justify-content(center)
-  background: $content-background-color
+  background: var(--content-background-color)
   text-align: center
   line-height: 1.5em
   min-height: 240px
@@ -176,7 +125,6 @@ _:-ms-fullscreen, :root .product-list-thumb
   +flex-direction(row)
   +align-items(center)
   margin-top: 48px
-  text-transform: uppercase
 
   @media screen and (max-width: $break-small)
     margin-bottom: 48px
@@ -186,32 +134,33 @@ _:-ms-fullscreen, :root .product-list-thumb
   +flexbox
   +align-items(center)
   +justify-content(center)
-  background: $button-background-color
+  background: var(--button-background-color)
   text-align: center
-  height: 64px
+  height: 48px
   padding: 0
   position: relative
   text-decoration: none
-  width: 64px
+  width: 48px
 
   &:not(.disabled):hover, &:not(.disabled):focus
-    background: $button-background-color
+    background: var(--button-background-color)
 
     svg
-      fill: $button-text-color
+      fill: var(--button-text-color)
 
   &.next-page-link
     margin-left: 2px
 
   &.disabled
     cursor: not-allowed
-    opacity: .7
+    opacity: .8
 
   svg
     display: block
-    fill: $button-text-color
+    fill: var(--button-text-color)
     height: 16px
     width: 16px
 
 .pagination-caption
+  font-size: 1.1em
   margin-left: 32px
