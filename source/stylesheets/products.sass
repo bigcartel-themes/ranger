@@ -24,6 +24,7 @@
     --columns: #{"{{ theme.max_products_per_row_mobile }}"}
     --gap: var(--small-padding)
     justify-content: flex-start
+    row-gap: 24px
 
 .product-list-thumb
   position: relative
@@ -70,7 +71,7 @@
 
 .product-list-thumb-info
   color: var(--primary-text-color)
-  padding-top: 16px
+  padding: 16px 0
   font-size: 1.1em
   position: relative
   display: grid
@@ -78,7 +79,7 @@
   text-align: center
 
   @media screen and (max-width: $break-large)
-    padding-top: 12px
+    padding: 12px 0
     font-size: 1em
 
 .product-list-thumb-name
