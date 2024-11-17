@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "images": [
     {
       "variable": "logo",
@@ -40,7 +40,10 @@
               "secondary_text_color": "#0B639A",
               "button_text_color": "#FFFFFF",
               "button_background_color": "#0B639A",
-              "status_background_color": "#C43F06",
+              "badge_text_color_primary": "#FFFFFF",
+              "badge_background_color_primary": "#C43F06",
+              "badge_text_color_secondary": "#222222",
+              "badge_background_color_secondary": "#B7B7B7",
               "link_hover_color": "#FF642A",
               "announcement_text_color": "#FFFFFF",
               "announcement_background_color": "#000000"
@@ -62,7 +65,10 @@
               "secondary_text_color": "#F8F8F8",
               "button_text_color": "#141415",
               "button_background_color": "#F8F8F8",
-              "status_background_color": "#F8F8F8",
+              "badge_text_color_primary": "#222222",
+              "badge_background_color_primary": "#ffc65c",
+              "badge_text_color_secondary": "#222222",
+              "badge_background_color_secondary": "#B7B7B7",
               "link_hover_color": "#AEAEAE",
               "announcement_text_color": "#141415",
               "announcement_background_color": "#F8F8F8"
@@ -84,7 +90,10 @@
               "secondary_text_color": "#2A2A2C",
               "button_text_color": "#FFFFFF",
               "button_background_color": "#2A2A2C",
-              "status_background_color": "#203BE1",
+              "badge_text_color_primary": "#FFFFFF",
+              "badge_background_color_primary": "#203BE1",
+              "badge_text_color_secondary": "#222222",
+              "badge_background_color_secondary": "#B7B7B7",
               "link_hover_color": "#203BE1",
               "announcement_text_color": "#2A2A2C",
               "announcement_background_color": "#E3E4EA"
@@ -111,7 +120,10 @@
               "secondary_text_color": "#8A4942",
               "button_text_color": "#F5F4EE",
               "button_background_color": "#8A4942",
-              "status_background_color": "#898952",
+              "badge_text_color_primary": "#FFFFFF",
+              "badge_background_color_primary": "#9a9a32",
+              "badge_text_color_secondary": "#262522",
+              "badge_background_color_secondary": "#B7B7B7",
               "link_hover_color": "#8A4942",
               "announcement_text_color": "#262522",
               "announcement_background_color": "#F1DBCE"
@@ -133,7 +145,10 @@
               "secondary_text_color": "#584B53",
               "button_text_color": "#FFFDFC",
               "button_background_color": "#584B53",
-              "status_background_color": "#9D5C63",
+              "badge_text_color_primary": "#FFFFFF",
+              "badge_background_color_primary": "#9D5C63",
+              "badge_text_color_secondary": "#262522",
+              "badge_background_color_secondary": "#B7B7B7",
               "link_hover_color": "#9D5C63",
               "announcement_text_color": "#584B53",
               "announcement_background_color": "#D6E3F8"
@@ -159,9 +174,12 @@
               "primary_text_color": "#262626",
               "secondary_text_color": "#262626",
               "button_text_color": "#F6F7F2",
-              "button_background_color": "#C90304",
-              "status_background_color": "#F35900",
-              "link_hover_color": "#C90304",
+              "button_background_color": "#F35900",
+              "badge_text_color_primary": "#EFEFEF",
+              "badge_background_color_primary": "#F35900",
+              "badge_text_color_secondary": "#262626",
+              "badge_background_color_secondary": "#B7B7B7",
+              "link_hover_color": "#F35900",
               "announcement_text_color": "#F6F7F2",
               "announcement_background_color": "#F35900"
             }
@@ -175,14 +193,17 @@
             "colors": {
               "background_color": "#FFFFFF",
               "content_background_color": "#FFFFFF",
-              "accent_background_color": "#FFE500",
+              "accent_background_color": "#FFF795",
               "accent_text_color": "#0000FF",
               "accent_pattern_color": "#FFFFFF",
               "primary_text_color": "#0000FF",
               "secondary_text_color": "#0000FF",
               "button_text_color": "#FFFFFF",
               "button_background_color": "#0000FF",
-              "status_background_color": "#FF0000",
+              "badge_text_color_primary": "#0000FF",
+              "badge_background_color_primary": "#FFD700",
+              "badge_text_color_secondary": "#262626",
+              "badge_background_color_secondary": "#B7B7B7",
               "link_hover_color": "#0000FF",
               "announcement_text_color": "#FFFFFF",
               "announcement_background_color": "#0000FF"
@@ -204,7 +225,10 @@
               "secondary_text_color": "#243588",
               "button_text_color": "#243588",
               "button_background_color": "#ECD8FF",
-              "status_background_color": "#FFFA8D",
+              "badge_text_color_primary": "#243588",
+              "badge_background_color_primary": "#FFB4D9",
+              "badge_text_color_secondary": "#262626",
+              "badge_background_color_secondary": "#B7B7B7",
               "link_hover_color": "#F6248C",
               "announcement_text_color": "#243588",
               "announcement_background_color": "#FFFA8D"
@@ -259,27 +283,42 @@
     },
     {
       "variable": "secondary_text_color",
-      "label": "Secondary text color",
+      "label": "Secondary text",
       "default": "#0b639a"
     },
     {
       "variable": "button_text_color",
-      "label": "Button & status text color",
+      "label": "Button & status text",
       "default": "#FFFFFF"
     },
     {
       "variable": "button_background_color",
-      "label": "Button background color",
+      "label": "Button background",
       "default": "#0b639a"
     },
     {
-      "variable": "status_background_color",
-      "label": "Product status background color",
+      "variable": "badge_text_color_primary",
+      "label": "Badge text (primary)",
+      "default": "#FFFFFF"
+    },
+    {
+      "variable": "badge_background_color_primary",
+      "label": "Badge background (primary)",
       "default": "#C43F06"
     },
     {
+      "variable": "badge_text_color_secondary",
+      "label": "Badge text (secondary)",
+      "default": "#222222"
+    },
+    {
+      "variable": "badge_background_color_secondary",
+      "label": "Badge background (secondary)",
+      "default": "#B7B7B7"
+    },
+    {
       "variable": "link_hover_color",
-      "label": "Link hover color",
+      "label": "Link hover",
       "default": "#FF642A"
     },
     {
@@ -294,7 +333,7 @@
     }
   ],
   "options": [
-   {
+    {
       "variable": "maintenance_message",
       "label": "Maintenance mode message",
       "type": "text",
