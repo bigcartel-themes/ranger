@@ -124,6 +124,9 @@
                 </div>
               {% endfor %}
             </div>
+            {% if paginate.pages > 1 %}
+              {% if theme.all_products_button_text != blank %}<a class="button secondary-button centered-button all-products-button" href="/products">{{ theme.all_products_button_text }}</a>{% endif %}
+            {% endif %}
         {% else %}
           <p class="no-results">No products found.</p>
         {% endif %}
