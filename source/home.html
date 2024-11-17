@@ -92,9 +92,9 @@
                     image-square
                   {% endif %}
                 {% endcapture %}
-                <div class="product-list-thumb {{ product.css_class }}">
+                <div class="product-list-thumb {{ product.css_class }}" data-bc-hook="product-entry" data-bc-product-id="{{ product.id }}">
                   <a class="product-list-link" href="{{ product.url }}" title="View {{ product.name | escape }}">
-                    <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}">
+                    <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}" data-bc-hook="product-thumbnail">
                       <img
                         alt=""
                         class="blur-up product-list-image lazyload grid-{{ theme.grid_image_style }}"
@@ -113,9 +113,9 @@
                         data-sizes="auto"
                       >
                     </div>
-                    <div class="product-list-thumb-info">
-                      <div class="product-list-thumb-name">{{ product.name }}</div>
-                      <div class="product-list-thumb-price">{{ product.default_price | money: theme.money_format }}</div>
+                    <div class="product-list-thumb-info" data-bc-hook="product-summary">
+                      <div class="product-list-thumb-name" data-bc-hook="product-title">{{ product.name }}</div>
+                      <div class="product-list-thumb-price" data-bc-hook="product-price">{{ product.default_price | money: theme.money_format }}</div>
                     </div>
                     {% if product_status != blank %}
                       <div class="product-list-thumb-status">{{ product_status }}</div>

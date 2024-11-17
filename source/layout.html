@@ -28,7 +28,7 @@
       </div>
     {% endif %}
 
-    <header class="header">
+    <header class="header" data-bc-hook="header">
       <div class="wrapper">
 
         <div class="header-mobile-nav">
@@ -157,18 +157,18 @@
         {% endif %}
         <canvas id="repeating-pattern"></canvas>
       </div>
-      <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' %} hide-featured{% endif %}">
+      <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' %} hide-featured{% endif %}" data-bc-hook="main">
         {% if page.category == 'custom' %}
           <h1 class="page-title">{{ page.name }}</h1>
           <div class="page-content custom-page">
             {{ page_content | paragraphs }}
           </div>
-        {% else %}
+        {% else %}>
           {{ page_content }}
         {% endif %}
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" data-bc-hook="footer">
       <div class="wrapper">
         <nav class="footernav" aria-label="Browse categories">
           <div class="footer-nav-title">
