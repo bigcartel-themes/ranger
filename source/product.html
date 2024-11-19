@@ -7,7 +7,7 @@
 	{% when 'coming-soon' %}
 		{% assign product_status = 'Coming soon' %}
 {% endcase %}
-<div class="page-content product-page">
+<div class="page-content product-page" data-bc-hook="product-info">
   <nav class="product-breadcrumb" role="navigation" aria-label="breadcrumbs">
     {% if product.categories != blank %}
       <a href="/">{{ pages.home.name }}</a>
@@ -23,7 +23,7 @@
   </nav>
 
   <div class="product-container">
-    <div class="product-images desktop-{{ theme.desktop_product_page_images }} mobile-{{ theme.mobile_product_page_images }}" data-total-images="{{ product.images.size }}">
+    <div class="product-images desktop-{{ theme.desktop_product_page_images }} mobile-{{ theme.mobile_product_page_images }}" data-total-images="{{ product.images.size }}" data-bc-hook="product-gallery">
       {% if product.images.size > 1 %}
         <div class="splide product-carousel" role="group" aria-label="{{ product.name | escape }} images">
           <div class="splide__track">
@@ -135,8 +135,8 @@
             {{ product.default_price | money: theme.money_format }}
           {% endif %}
         {% endcapture %}
-        <h1 class="page-title page-title--left product-detail__title">{{ product.name }}</h1>
-        <div class="product-detail__pricing"><span>{{ product_pricing }}</span> {% if product_status != blank %}<div class="product-detail__status">&mdash; {{ product_status }}</div>{% endif %}</div>
+        <h1 class="page-title page-title--left product-detail__title" data-bc-hook="product-title">{{ product.name }}</h1>
+        <div class="product-detail__pricing" data-bc-hook="product-price"><span>{{ product_pricing }}</span> {% if product_status != blank %}<div class="product-detail__status">&mdash; {{ product_status }}</div>{% endif %}</div>
       </div>
       {% if product.status == 'active' %}
         <form method="post" class="product-form {% if theme.show_sold_out_product_options %}show-sold-out{% else %}hide-sold-out{% endif %}" action="/cart" accept-charset="utf8">
@@ -183,7 +183,7 @@
         </form>
       {% endif %}
       {% if product.description != blank %}
-        <div class="product-detail__description">{{ product.description | paragraphs }}</div>
+        <div class="product-detail__description" data-bc-hook="product-description">{{ product.description | paragraphs }}</div>
       {% endif %}
       {% if theme.share_buttons %}
         <div class="product-detail__share">
