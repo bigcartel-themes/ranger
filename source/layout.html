@@ -15,7 +15,7 @@
     <style>.preloader * { opacity: 0; }.transition-preloader * { transition: none !important }</style>
     {{ head_content }}
   </head>
-  <body id="{{ page.permalink }}" class="{{ page.category }} preloader transition-preloader">
+  <body id="{{ page.permalink }}" class="{{ page.category }} preloader transition-preloader" data-bc-page-type="{% if page.category == 'custom' %}custom{% else %}{{ page.permalink }}{% endif %}">
     <a class="skip-link" href="#main">Skip to main content</a>
     {% if theme.announcement_message_text != blank %}
       <div aria-label="Announcement message" class="announcement-message">
@@ -28,7 +28,7 @@
       </div>
     {% endif %}
 
-    <header class="header">
+    <header class="header" data-bc-hook="header">
       <div class="wrapper">
 
         <div class="header-mobile-nav">
@@ -168,7 +168,7 @@
         {% endif %}
       </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" data-bc-hook="footer">
       <div class="wrapper">
         <nav class="footernav" aria-label="Browse categories">
           <div class="footer-nav-title">
