@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "images": [
     {
       "variable": "logo",
@@ -36,14 +36,17 @@
               "accent_background_color": "#000000",
               "accent_text_color": "#FFFFFF",
               "accent_pattern_color": "#555555",
+              "header_text_color": "#222222",
               "primary_text_color": "#222222",
               "secondary_text_color": "#0B639A",
               "button_text_color": "#FFFFFF",
               "button_background_color": "#0B639A",
+              "button_hover_background_color": "#3C82AE",
               "badge_text_color_primary": "#FFFFFF",
               "badge_background_color_primary": "#C43F06",
               "badge_text_color_secondary": "#222222",
               "badge_background_color_secondary": "#B7B7B7",
+              "link_text_color": "#222222",
               "link_hover_color": "#FF642A",
               "announcement_text_color": "#FFFFFF",
               "announcement_background_color": "#000000"
@@ -61,14 +64,17 @@
               "accent_background_color": "#141415",
               "accent_text_color": "#F8F8F8",
               "accent_pattern_color": "#4A4A4E",
+              "header_text_color": "#F8F8F8",
               "primary_text_color": "#F8F8F8",
               "secondary_text_color": "#F8F8F8",
               "button_text_color": "#141415",
               "button_background_color": "#F8F8F8",
+              "button_hover_background_color": "#C6C6C6",
               "badge_text_color_primary": "#222222",
               "badge_background_color_primary": "#ffc65c",
               "badge_text_color_secondary": "#222222",
               "badge_background_color_secondary": "#B7B7B7",
+              "link_text_color": "#F8F8F8",
               "link_hover_color": "#AEAEAE",
               "announcement_text_color": "#141415",
               "announcement_background_color": "#F8F8F8"
@@ -86,14 +92,17 @@
               "accent_background_color": "#F8F8FA",
               "accent_text_color": "#2A2A2C",
               "accent_pattern_color": "#E3E4EA",
+              "header_text_color": "#2A2A2C",
               "primary_text_color": "#2A2A2C",
               "secondary_text_color": "#2A2A2C",
               "button_text_color": "#FFFFFF",
               "button_background_color": "#2A2A2C",
+              "button_hover_background_color": "#3E3E40",
               "badge_text_color_primary": "#FFFFFF",
               "badge_background_color_primary": "#203BE1",
               "badge_text_color_secondary": "#222222",
               "badge_background_color_secondary": "#B7B7B7",
+              "link_text_color": "#2A2A2C",
               "link_hover_color": "#203BE1",
               "announcement_text_color": "#2A2A2C",
               "announcement_background_color": "#E3E4EA"
@@ -116,14 +125,17 @@
               "accent_background_color": "#F5F4EE",
               "accent_text_color": "#262522",
               "accent_pattern_color": "#C3BE98",
+              "header_text_color": "#262522",
               "primary_text_color": "#262522",
               "secondary_text_color": "#8A4942",
               "button_text_color": "#F5F4EE",
               "button_background_color": "#8A4942",
+              "button_hover_background_color": "#A76561",
               "badge_text_color_primary": "#FFFFFF",
               "badge_background_color_primary": "#9a9a32",
               "badge_text_color_secondary": "#262522",
               "badge_background_color_secondary": "#B7B7B7",
+              "link_text_color": "#262522",
               "link_hover_color": "#8A4942",
               "announcement_text_color": "#262522",
               "announcement_background_color": "#F1DBCE"
@@ -141,14 +153,17 @@
               "accent_background_color": "#FEF5EF",
               "accent_text_color": "#584B53",
               "accent_pattern_color": "#E4BB97",
+              "header_text_color": "#584B53",
               "primary_text_color": "#584B53",
               "secondary_text_color": "#584B53",
               "button_text_color": "#FFFDFC",
               "button_background_color": "#584B53",
+              "button_hover_background_color": "#74686C",
               "badge_text_color_primary": "#FFFFFF",
               "badge_background_color_primary": "#9D5C63",
               "badge_text_color_secondary": "#262522",
               "badge_background_color_secondary": "#B7B7B7",
+              "link_text_color": "#584B53",
               "link_hover_color": "#9D5C63",
               "announcement_text_color": "#584B53",
               "announcement_background_color": "#D6E3F8"
@@ -171,14 +186,17 @@
               "accent_background_color": "#E2E8CE",
               "accent_text_color": "#262626",
               "accent_pattern_color": "#ACBFA4",
+              "header_text_color": "#262626",
               "primary_text_color": "#262626",
               "secondary_text_color": "#262626",
               "button_text_color": "#F6F7F2",
               "button_background_color": "#F35900",
+              "button_hover_background_color": "#FF814D",
               "badge_text_color_primary": "#EFEFEF",
               "badge_background_color_primary": "#F35900",
               "badge_text_color_secondary": "#262626",
               "badge_background_color_secondary": "#B7B7B7",
+              "link_text_color": "#262626",
               "link_hover_color": "#F35900",
               "announcement_text_color": "#F6F7F2",
               "announcement_background_color": "#F35900"
@@ -196,14 +214,17 @@
               "accent_background_color": "#FFF795",
               "accent_text_color": "#0000FF",
               "accent_pattern_color": "#FFFFFF",
+              "header_text_color": "#0000FF",
               "primary_text_color": "#0000FF",
               "secondary_text_color": "#0000FF",
               "button_text_color": "#FFFFFF",
               "button_background_color": "#0000FF",
+              "button_hover_background_color": "#3333FF",
               "badge_text_color_primary": "#0000FF",
               "badge_background_color_primary": "#FFD700",
               "badge_text_color_secondary": "#262626",
               "badge_background_color_secondary": "#B7B7B7",
+              "link_text_color": "#0000FF",
               "link_hover_color": "#0000FF",
               "announcement_text_color": "#FFFFFF",
               "announcement_background_color": "#0000FF"
@@ -221,14 +242,17 @@
               "accent_background_color": "#FFB4D9",
               "accent_text_color": "#243588",
               "accent_pattern_color": "#FFE9F4",
+              "header_text_color": "#243588",
               "primary_text_color": "#243588",
               "secondary_text_color": "#243588",
               "button_text_color": "#243588",
               "button_background_color": "#ECD8FF",
+              "button_hover_background_color": "#F4E6FF",
               "badge_text_color_primary": "#243588",
               "badge_background_color_primary": "#FFB4D9",
               "badge_text_color_secondary": "#262626",
               "badge_background_color_secondary": "#B7B7B7",
+              "link_text_color": "#243588",
               "link_hover_color": "#F6248C",
               "announcement_text_color": "#243588",
               "announcement_background_color": "#FFFA8D"
@@ -268,23 +292,28 @@
     },
     {
       "variable": "accent_text_color",
-      "label": "Accent text color",
+      "label": "Accent text",
       "default": "#FFFFFF"
     },
     {
       "variable": "accent_pattern_color",
-      "label": "Accent pattern color",
+      "label": "Accent pattern",
       "default": "#555555"
     },
     {
+      "variable": "header_text_color",
+      "label": "Header text",
+      "default": "#222222"
+    },
+    {
       "variable": "primary_text_color",
-      "label": "Primary text color",
+      "label": "Primary text",
       "default": "#222222"
     },
     {
       "variable": "secondary_text_color",
       "label": "Secondary text",
-      "default": "#0b639a"
+      "default": "#0B639A"
     },
     {
       "variable": "button_text_color",
@@ -294,7 +323,12 @@
     {
       "variable": "button_background_color",
       "label": "Button background",
-      "default": "#0b639a"
+      "default": "#0B639A"
+    },
+    {
+      "variable": "button_hover_background_color",
+      "label": "Button background",
+      "default": "#3C82AE"
     },
     {
       "variable": "badge_text_color_primary",
@@ -315,6 +349,11 @@
       "variable": "badge_background_color_secondary",
       "label": "Badge background (secondary)",
       "default": "#B7B7B7"
+    },
+    {
+      "variable": "link_text_color",
+      "label": "Links",
+      "default": "#222222"
     },
     {
       "variable": "link_hover_color",
@@ -397,7 +436,7 @@
       "label": "Navigation items",
       "type": "select",
       "options": "0..3",
-      "default": 2,
+      "default": 1,
       "description": "The number of custom page links show in the main navigation."
     },
     {
@@ -590,7 +629,7 @@
     "title_font": "{{ primary_font }}",
     "title_font_weight": "normal",
     "title_font_size": "22px",
-    "title_color": "{{ primary_text_color }}",
+    "title_color": "{{ header_text_color }}",
     "title_background_color": "{{ content_background_color }}",
     "title_vertical_padding": "27px",
     "background_color": "{{ background_color }}",
@@ -633,9 +672,9 @@
     "button_font": "{{ secondary_font }}",
     "button_hover_color": "{{ button_text_color }}",
     "button_background_color": "{{ button_background_color }}",
-    "button_hover_background_color": "opacify({{ button_background_color }}, 0.8)",
+    "button_hover_background_color": "{{ button_hover_background_color }}",
     "button_text_transform": "none",
-    "link_color": "{{ secondary_text_color }}",
+    "link_color": "{{ link_text_color }}",
     "link_hover_color": "{{ link_hover_color }}",
     "step_header_color": "{{ primary_text_color }}",
     "step_header_font_size": "18px",

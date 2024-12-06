@@ -150,6 +150,7 @@ header
 
   a
     display: flex
+    color: var(--header-text-color)
     line-height: 1.25em
     align-items: center
     width: auto
@@ -178,6 +179,7 @@ header
     gap: 4px
 
 .header-mobile-nav
+  color: var(--header-text-color)
   display: none
 
   .menu-bars
@@ -217,12 +219,13 @@ header
   .header-page-link
     a, .category-nav-heading
       display: flex
+      color: var(--header-text-color)
       padding: 4px 0
       position: relative
       outline-offset: 4px
       border-radius: 0
 
-      &:hover
+      &:hover, &:focus
         color: var(--link-hover-color)
 
     a:hover
@@ -231,6 +234,7 @@ header
         text-decoration-thickness: 2px
 
 .open-search
+  color: var(--header-text-color)
   height: 36px
   width: 36px
   display: flex
@@ -251,11 +255,16 @@ header
       height: 20px
 
 .cart-link
+  color: var(--header-text-color)
   height: 36px
   width: 36px
   display: flex
   align-items: center
   justify-content: center
+  transition: color .1s linear
+
+  &:hover, &:focus
+    color: var(--link-hover-color)
 
   svg
     fill: currentColor
