@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "images": [
     {
       "variable": "logo",
@@ -327,7 +327,7 @@
     },
     {
       "variable": "button_hover_background_color",
-      "label": "Button background",
+      "label": "Button hover background",
       "default": "#3C82AE"
     },
     {
