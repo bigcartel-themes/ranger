@@ -5,18 +5,16 @@ section.content
     max-width: 960px
     padding: var(--large-padding)
 
+    &.empty-cart
+      display: flex
+      align-items: center
+      justify-content: center
+
     @media screen and (max-width: $break-large)
       padding: var(--med-padding)
 
     @media screen and (max-width: $break-small)
       padding: var(--small-padding)
-
-    &.empty-cart
-      height: 240px
-
-      @media screen and (max-width: $break-small)
-        height: 120px
-        min-height: 120px
 
 .cart-page
   .empty-cart-message
@@ -30,6 +28,7 @@ section.content
   display: flex
   flex-direction: column
   gap: 32px
+  min-width: 300px
   max-width: 600px
   align-items: center
   margin: 0 auto
@@ -49,15 +48,6 @@ section.content
 
   @media screen and (max-width: $break-medium)
     grid-template-columns: 1fr
-
-.cart-header
-  display: flex
-  align-items: flex-end
-  justify-content: flex-start
-  margin-bottom: 32px
-
-  .page-title
-    margin-bottom: 0
 
 .cart-items
   border-bottom: 2px solid var(--border-color)
@@ -171,7 +161,7 @@ section.content
     font-weight: normal
     font-size: .925em
     padding: 8px 16px
-    text-decoration: underline
+    text-decoration: none
     width: auto
 
     @media (max-width: $break-medium)
@@ -193,6 +183,14 @@ section.content
       min-width: 0
       grid-area: 1 / 3 / 2 / 4
       margin-left: 0
+
+.cart-header
+  display: grid
+  justify-content: flex-end
+  margin-bottom: 0
+
+  .button
+    padding-right: 0
 
 .cart-footer
   display: grid
@@ -222,6 +220,12 @@ section.content
   gap: 8px
   width: 100%
 
+  button
+    margin-bottom: 20px
+
   .button
     max-width: 100%
     width: 100%
+  
+  a.button
+    padding: 8px

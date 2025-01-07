@@ -128,15 +128,16 @@ h1, h2, h3, h4, h5, h6
     border: none
     height: auto
     min-height: 0
-    text-decoration: underline
-    transition: color .1s linear
-    text-underline-offset: 4px
+    text-decoration: none
 
     &:not(:disabled):hover, &:not(:disabled):active
       box-shadow: none
       background: none
       color: var(--link-hover-color)
       opacity: 1
+      text-decoration: underline
+      transition: color .1s linear
+      text-underline-offset: 4px
 
   &:disabled, &.disabled
     cursor: not-allowed
