@@ -362,12 +362,12 @@
     },
     {
       "variable": "announcement_text_color",
-      "label": "Announcement Message Text",
+      "label": "Announcement message text",
       "default": "#FFFFFF"
     },
     {
       "variable": "announcement_background_color",
-      "label": "Announcement Message Background",
+      "label": "Announcement message background",
       "default": "#000000"
     }
   ],
@@ -376,6 +376,7 @@
       "variable": "maintenance_message",
       "label": "Maintenance mode message",
       "type": "text",
+      "max_length": 2048,
       "description": "A message visitors see when your shop is in Maintenance Mode",
       "default": "We're working on our shop right now.<br /><br />Please check back soon."
     },
@@ -383,6 +384,7 @@
       "variable": "announcement_message_text",
       "label": "Announcement text",
       "type": "text",
+      "max_length": 500,
       "description": "Displays an announcement message on the top of every page"
     },
     {
@@ -572,16 +574,20 @@
       "label": "Show sold out product variants",
       "type": "boolean",
       "default": true,
-      "description": "Shows sold out product variants in the Product page dropdowns",
-      "requires": "inventory"
+      "description": "Show sold out variants in product dropdowns. Best for shops that generally restock items; consider hiding if most sold out items won't return",
+      "requires": [
+        "inventory"
+      ]
     },
     {
       "variable": "show_sold_out_product_prices",
       "label": "Show prices for sold out products",
       "type": "boolean",
       "default": true,
-      "description": "Show the price of sold out products on product grids and product pages",
-      "requires": "inventory"
+      "description": "Show the price of sold out products on product grids and Product pages",
+      "requires": [
+        "inventory"
+      ]
     },
     {
       "variable": "money_format",
