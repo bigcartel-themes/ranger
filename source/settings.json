@@ -437,7 +437,7 @@
       ]
     },
     {
-      "variable": "related_items",
+      "variable": "related_products",
       "label": "Related products",
       "type": "select",
       "options": "1..8",
