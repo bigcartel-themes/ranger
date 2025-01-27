@@ -169,15 +169,22 @@
       </section>
     </main>
     <footer class="footer" data-bc-hook="footer">
+      {% if theme.footer_text != blank and theme.footer_text_position == "start" %}
+        <div class="footer-custom-content">{{ theme.footer_text }} </div>
+      {% endif %}
       <div class="wrapper">
         <nav class="footernav" aria-label="Browse categories">
           <div class="footer-nav-title">
-            <a href="/products">{% if theme.collections %}Collections{% else %}{{ pages.products.name }}{% endif %}</a>
+            Shop
           </div>
           <ul>
-            {% for category in categories.active %}
-              <li>{{ category | link_to }}</li>
-            {% endfor %}
+            <li><a href="/">{{ pages.home.name }}</a></li>
+            <li><a href="/products">{% if theme.collections %}Collections{% else %}{{ pages.products.name }}{% endif %}</a></li>
+            {% if theme.show_categories_in_footer %}
+              {% for category in categories.active %}
+                <li>{{ category | link_to }}</li>
+              {% endfor %}
+            {% endif %}
           </ul>
         </nav>
         <nav class="footernav" aria-label="Pages">
@@ -264,8 +271,12 @@
             </ul>
           </nav>
         {% endif %}
-        <div class="credit-container">{{ powered_by_big_cartel }}</div>
+        <div class="credit-container credit-container--primary">{{ powered_by_big_cartel }}</div>
       </div>
+      {% if theme.footer_text != blank and theme.footer_text_position == "end" %}
+        <div class="footer-custom-content">{{ theme.footer_text }} </div>
+      {% endif %}
+      <div class="credit-container credit-container--secondary">{{ powered_by_big_cartel }}</div>
     </footer>
     {% if theme.show_search %}
       <div id="search-modal" class="search-modal" role="dialog" aria-modal="true" aria-hidden="true">
@@ -308,9 +319,6 @@
                 <li>{{ page | link_to }}</li>
               {% endfor %}
               <li><a href="/contact">{{ pages.contact.name }}</a></li>
-              {% if store.website != blank %}
-                <li><a href="{{ store.website }}">Back to site</a></li>
-              {% endif %}
             </ul>
           </nav>
 
