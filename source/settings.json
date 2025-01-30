@@ -71,7 +71,7 @@
               "button_background_color": "#F8F8F8",
               "button_hover_background_color": "#C6C6C6",
               "badge_text_color_primary": "#222222",
-              "badge_background_color_primary": "#ffc65c",
+              "badge_background_color_primary": "#FFC65C",
               "badge_text_color_secondary": "#222222",
               "badge_background_color_secondary": "#B7B7B7",
               "link_text_color": "#F8F8F8",
@@ -132,7 +132,7 @@
               "button_background_color": "#8A4942",
               "button_hover_background_color": "#A76561",
               "badge_text_color_primary": "#FFFFFF",
-              "badge_background_color_primary": "#9a9a32",
+              "badge_background_color_primary": "#9A9A32",
               "badge_text_color_secondary": "#262522",
               "badge_background_color_secondary": "#B7B7B7",
               "link_text_color": "#262522",
@@ -547,7 +547,7 @@
     },
     {
       "variable": "desktop_product_page_images",
-      "label": "Desktop product page images",
+      "label": "Desktop Product page images",
       "type": "select",
       "options": [
         ["Thumbnails", "thumbnails"],
@@ -560,7 +560,7 @@
     },
     {
       "variable": "mobile_product_page_images",
-      "label": "Mobile product page image carousel",
+      "label": "Mobile Product page image carousel",
       "type": "select",
       "options": [
         ["Show thumbnails", "show-thumbnails"],
