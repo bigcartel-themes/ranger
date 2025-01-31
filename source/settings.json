@@ -56,122 +56,151 @@
           {
             "style_name": "Classic #2",
             "fonts": {
-              "primary_font": "Chivo",
-              "secondary_font": "Chivo"
+              "primary_font": "PT Serif",
+              "secondary_font": "Source Sans Pro"
             },
             "colors": {
-              "background_color": "#141415",
-              "content_background_color": "#141415",
-              "accent_background_color": "#141415",
-              "accent_text_color": "#F8F8F8",
-              "accent_pattern_color": "#4A4A4E",
-              "header_text_color": "#F8F8F8",
-              "primary_text_color": "#F8F8F8",
-              "secondary_text_color": "#F8F8F8",
-              "button_text_color": "#141415",
-              "button_background_color": "#F8F8F8",
-              "button_hover_background_color": "#C6C6C6",
-              "badge_text_color_primary": "#222222",
-              "badge_background_color_primary": "#FFC65C",
-              "badge_text_color_secondary": "#222222",
-              "badge_background_color_secondary": "#B7B7B7",
-              "inventory_status_text_color": "#FFC65C",
-              "link_text_color": "#F8F8F8",
-              "link_hover_color": "#AEAEAE",
-              "announcement_text_color": "#141415",
-              "announcement_background_color": "#F8F8F8"
+              "background_color": "#1F2937",
+              "content_background_color": "#293548",
+              "accent_background_color": "#1F2937",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#3D4B5F",
+              "header_text_color": "#FFFFFF",
+              "primary_text_color": "#FFFFFF",
+              "secondary_text_color": "#B4C2D3",
+              "button_text_color": "#1F2937",
+              "button_background_color": "#93B5E5",
+              "button_hover_background_color": "#7A9FD3",
+              "badge_text_color_primary": "#1F2937",
+              "badge_background_color_primary": "#93B5E5",
+              "badge_text_color_secondary": "#FFFFFF",
+              "badge_background_color_secondary": "#3D4B5F",
+              "inventory_status_text_color": "#93B5E5",
+              "link_text_color": "#FFFFFF",
+              "link_hover_color": "#93B5E5",
+              "announcement_text_color": "#1F2937",
+              "announcement_background_color": "#93B5E5"
             }
           },
           {
             "style_name": "Classic #3",
             "fonts": {
-              "primary_font": "Cabin",
-              "secondary_font": "Cabin"
+              "primary_font": "Libre Baskerville",
+              "secondary_font": "Work Sans"
             },
             "colors": {
-              "background_color": "#F8F8FA",
-              "content_background_color": "#FCFCFC",
-              "accent_background_color": "#F8F8FA",
-              "accent_text_color": "#2A2A2C",
-              "accent_pattern_color": "#E3E4EA",
-              "header_text_color": "#2A2A2C",
-              "primary_text_color": "#2A2A2C",
-              "secondary_text_color": "#2A2A2C",
+              "background_color": "#F8F9FA",
+              "content_background_color": "#FFFFFF",
+              "accent_background_color": "#1B4965",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#E2E8F0",
+              "header_text_color": "#1B4965",
+              "primary_text_color": "#1B4965",
+              "secondary_text_color": "#5C7A8C",
               "button_text_color": "#FFFFFF",
-              "button_background_color": "#2A2A2C",
-              "button_hover_background_color": "#3E3E40",
+              "button_background_color": "#487A9B",
+              "button_hover_background_color": "#386480",
               "badge_text_color_primary": "#FFFFFF",
-              "badge_background_color_primary": "#203BE1",
-              "badge_text_color_secondary": "#222222",
-              "badge_background_color_secondary": "#B7B7B7",
-              "inventory_status_text_color": "#203BE1",
-              "link_text_color": "#2A2A2C",
-              "link_hover_color": "#203BE1",
-              "announcement_text_color": "#2A2A2C",
-              "announcement_background_color": "#E3E4EA"
+              "badge_background_color_primary": "#D95030",
+              "badge_text_color_secondary": "#1B4965",
+              "badge_background_color_secondary": "#E2E8F0",
+              "inventory_status_text_color": "#D95030",
+              "link_text_color": "#1B4965",
+              "link_hover_color": "#487A9B",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#487A9B"
             }
           }
         ]
       },
       {
-        "group_name": "Natural",
+        "group_name": "Bold",
         "styles": [
           {
-            "style_name": "Natural #1",
+            "style_name": "Bold #1",
             "fonts": {
-              "primary_font": "Lato",
-              "secondary_font": "Lato"
+              "primary_font": "Inknut Antiqua",
+              "secondary_font": "Source Sans Pro"
             },
             "colors": {
-              "background_color": "#F5F4EE",
-              "content_background_color": "#FDFDF8",
-              "accent_background_color": "#F5F4EE",
-              "accent_text_color": "#262522",
-              "accent_pattern_color": "#C3BE98",
-              "header_text_color": "#262522",
-              "primary_text_color": "#262522",
-              "secondary_text_color": "#8A4942",
-              "button_text_color": "#F5F4EE",
-              "button_background_color": "#8A4942",
-              "button_hover_background_color": "#A76561",
-              "badge_text_color_primary": "#FFFFFF",
-              "badge_background_color_primary": "#9A9A32",
-              "badge_text_color_secondary": "#262522",
-              "badge_background_color_secondary": "#B7B7B7",
-              "inventory_status_text_color": "#9A9A32",
-              "link_text_color": "#262522",
-              "link_hover_color": "#8A4942",
-              "announcement_text_color": "#262522",
-              "announcement_background_color": "#F1DBCE"
+              "background_color": "#5F0F40",
+              "content_background_color": "#741352",
+              "accent_background_color": "#5F0F40",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#8B1E60",
+              "header_text_color": "#FFFFFF",
+              "primary_text_color": "#FFFFFF",
+              "secondary_text_color": "#FFB8D9",
+              "button_text_color": "#5F0F40",
+              "button_background_color": "#00F5D4",
+              "button_hover_background_color": "#00D6B9",
+              "badge_text_color_primary": "#5F0F40",
+              "badge_background_color_primary": "#00F5D4",
+              "badge_text_color_secondary": "#FFFFFF",
+              "badge_background_color_secondary": "#8B1E60",
+              "inventory_status_text_color": "#00F5D4",
+              "link_text_color": "#FFFFFF",
+              "link_hover_color": "#00F5D4",
+              "announcement_text_color": "#5F0F40",
+              "announcement_background_color": "#00F5D4"
             }
           },
           {
-            "style_name": "Natural #2",
+            "style_name": "Bold #2",
             "fonts": {
-              "primary_font": "Cutive Mono",
-              "secondary_font": "Cutive Mono"
+              "primary_font": "Chivo",
+              "secondary_font": "Sora"
             },
             "colors": {
-              "background_color": "#FEF5EF",
-              "content_background_color": "#FFFDFC",
-              "accent_background_color": "#FEF5EF",
-              "accent_text_color": "#584B53",
-              "accent_pattern_color": "#E4BB97",
-              "header_text_color": "#584B53",
-              "primary_text_color": "#584B53",
-              "secondary_text_color": "#584B53",
-              "button_text_color": "#FFFDFC",
-              "button_background_color": "#584B53",
-              "button_hover_background_color": "#74686C",
+              "background_color": "#F7B538",
+              "content_background_color": "#E5A932",
+              "accent_background_color": "#F7B538",
+              "accent_text_color": "#000000",
+              "accent_pattern_color": "#FFE0A1",
+              "header_text_color": "#000000",
+              "primary_text_color": "#000000",
+              "secondary_text_color": "#734800",
+              "button_text_color": "#FFFFFF",
+              "button_background_color": "#DB2763",
+              "button_hover_background_color": "#C11E54",
               "badge_text_color_primary": "#FFFFFF",
-              "badge_background_color_primary": "#9D5C63",
-              "badge_text_color_secondary": "#262522",
-              "badge_background_color_secondary": "#B7B7B7",
-              "inventory_status_text_color": "#9D5C63",
-              "link_text_color": "#584B53",
-              "link_hover_color": "#9D5C63",
-              "announcement_text_color": "#584B53",
-              "announcement_background_color": "#D6E3F8"
+              "badge_background_color_primary": "#DB2763",
+              "badge_text_color_secondary": "#000000",
+              "badge_background_color_secondary": "#F9C55F",
+              "inventory_status_text_color": "#DB2763",
+              "link_text_color": "#000000",
+              "link_hover_color": "#DB2763",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#DB2763"
+            }
+          },
+          {
+            "style_name": "Bold #3",
+            "fonts": {
+              "primary_font": "Signika",
+              "secondary_font": "Signika"
+            },
+            "colors": {
+              "background_color": "#080808",
+              "content_background_color": "#141414",
+              "accent_background_color": "#080808",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#2B2B2B",
+              "header_text_color": "#FFFFFF",
+              "primary_text_color": "#FFFFFF",
+              "secondary_text_color": "#999999",
+              "button_text_color": "#000000",
+              "button_background_color": "#3DEC00",
+              "button_hover_background_color": "#35C900",
+              "badge_text_color_primary": "#000000",
+              "badge_background_color_primary": "#3DEC00",
+              "badge_text_color_secondary": "#FFFFFF",
+              "badge_background_color_secondary": "#2B2B2B",
+              "inventory_status_text_color": "#3DEC00",
+              "link_text_color": "#FFFFFF",
+              "link_hover_color": "#3DEC00",
+              "announcement_text_color": "#000000",
+              "announcement_background_color": "#3DEC00"
             }
           }
         ]
@@ -182,88 +211,272 @@
           {
             "style_name": "Playful #1",
             "fonts": {
-              "primary_font": "Arvo",
-              "secondary_font": "Courier New"
+              "primary_font": "Quicksand",
+              "secondary_font": "BioRhyme"
             },
             "colors": {
-              "background_color": "#E2E8CE",
-              "content_background_color": "#F6F7F2",
-              "accent_background_color": "#E2E8CE",
-              "accent_text_color": "#262626",
-              "accent_pattern_color": "#ACBFA4",
-              "header_text_color": "#262626",
-              "primary_text_color": "#262626",
-              "secondary_text_color": "#262626",
-              "button_text_color": "#F6F7F2",
-              "button_background_color": "#F35900",
-              "button_hover_background_color": "#FF814D",
-              "badge_text_color_primary": "#EFEFEF",
-              "badge_background_color_primary": "#F35900",
-              "badge_text_color_secondary": "#262626",
-              "badge_background_color_secondary": "#B7B7B7",
-              "inventory_status_text_color": "#F35900",
-              "link_text_color": "#262626",
-              "link_hover_color": "#F35900",
-              "announcement_text_color": "#F6F7F2",
-              "announcement_background_color": "#F35900"
+              "background_color": "#FF7171",
+              "content_background_color": "#FF8989",
+              "accent_background_color": "#FF7171",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#FFD6D6",
+              "header_text_color": "#FFFFFF",
+              "primary_text_color": "#FFFFFF",
+              "secondary_text_color": "#FFD6D6",
+              "button_text_color": "#FF7171",
+              "button_background_color": "#4ECDC4",
+              "button_hover_background_color": "#44B5AE",
+              "badge_text_color_primary": "#FF7171",
+              "badge_background_color_primary": "#4ECDC4",
+              "badge_text_color_secondary": "#FFFFFF",
+              "badge_background_color_secondary": "#FFA1A1",
+              "inventory_status_text_color": "#4ECDC4",
+              "link_text_color": "#FFFFFF",
+              "link_hover_color": "#4ECDC4",
+              "announcement_text_color": "#FF7171",
+              "announcement_background_color": "#4ECDC4"
             }
           },
           {
             "style_name": "Playful #2",
             "fonts": {
-              "primary_font": "Syne",
-              "secondary_font": "Inter"
+              "primary_font": "Overlock",
+              "secondary_font": "Karla"
             },
             "colors": {
-              "background_color": "#FFFFFF",
-              "content_background_color": "#FFFFFF",
-              "accent_background_color": "#FFF795",
-              "accent_text_color": "#0000FF",
-              "accent_pattern_color": "#FFFFFF",
-              "header_text_color": "#0000FF",
-              "primary_text_color": "#0000FF",
-              "secondary_text_color": "#0000FF",
-              "button_text_color": "#FFFFFF",
-              "button_background_color": "#0000FF",
-              "button_hover_background_color": "#3333FF",
-              "badge_text_color_primary": "#0000FF",
-              "badge_background_color_primary": "#FFD700",
-              "badge_text_color_secondary": "#262626",
-              "badge_background_color_secondary": "#B7B7B7",
-              "inventory_status_text_color": "#0000FF",
-              "link_text_color": "#0000FF",
-              "link_hover_color": "#0000FF",
-              "announcement_text_color": "#FFFFFF",
-              "announcement_background_color": "#0000FF"
+              "background_color": "#00C1B5",
+              "content_background_color": "#00D5C8",
+              "accent_background_color": "#00C1B5",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#7CEEE7",
+              "header_text_color": "#FFFFFF",
+              "primary_text_color": "#FFFFFF",
+              "secondary_text_color": "#B3FFF9",
+              "button_text_color": "#00C1B5",
+              "button_background_color": "#FFE66D",
+              "button_hover_background_color": "#FFE147",
+              "badge_text_color_primary": "#00C1B5",
+              "badge_background_color_primary": "#FFE66D",
+              "badge_text_color_secondary": "#FFFFFF",
+              "badge_background_color_secondary": "#26D6CC",
+              "inventory_status_text_color": "#FFE66D",
+              "link_text_color": "#FFFFFF",
+              "link_hover_color": "#FFE66D",
+              "announcement_text_color": "#00C1B5",
+              "announcement_background_color": "#FFE66D"
             }
           },
           {
             "style_name": "Playful #3",
             "fonts": {
-              "primary_font": "Quicksand",
+              "primary_font": "Chewy",
+              "secondary_font": "DM Sans"
+            },
+            "colors": {
+              "background_color": "#6B4CF5",
+              "content_background_color": "#7B61F7",
+              "accent_background_color": "#6B4CF5",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#CFC4FF",
+              "header_text_color": "#FFFFFF",
+              "primary_text_color": "#FFFFFF",
+              "secondary_text_color": "#E0D6FF",
+              "button_text_color": "#6B4CF5",
+              "button_background_color": "#FFB2E6",
+              "button_hover_background_color": "#FF99DD",
+              "badge_text_color_primary": "#6B4CF5",
+              "badge_background_color_primary": "#FFB2E6",
+              "badge_text_color_secondary": "#FFFFFF",
+              "badge_background_color_secondary": "#8B75F8",
+              "inventory_status_text_color": "#FFB2E6",
+              "link_text_color": "#FFFFFF",
+              "link_hover_color": "#FFB2E6",
+              "announcement_text_color": "#6B4CF5",
+              "announcement_background_color": "#FFB2E6"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Earthy",
+        "styles": [
+          {
+            "style_name": "Earthy #1",
+            "fonts": {
+              "primary_font": "Rokkitt",
+              "secondary_font": "Source Sans Pro"
+            },
+            "colors": {
+              "background_color": "#E3D5CA",
+              "content_background_color": "#EDDED5",
+              "accent_background_color": "#967259",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#D4BFB2",
+              "header_text_color": "#553A2D",
+              "primary_text_color": "#553A2D",
+              "secondary_text_color": "#7D604E",
+              "button_text_color": "#FFFFFF",
+              "button_background_color": "#967259",
+              "button_hover_background_color": "#876349",
+              "badge_text_color_primary": "#FFFFFF",
+              "badge_background_color_primary": "#D35F29",
+              "badge_text_color_secondary": "#553A2D",
+              "badge_background_color_secondary": "#D4BFB2",
+              "inventory_status_text_color": "#D35F29",
+              "link_text_color": "#553A2D",
+              "link_hover_color": "#D35F29",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#967259"
+            }
+          },
+          {
+            "style_name": "Earthy #2",
+            "fonts": {
+              "primary_font": "Enriqueta",
+              "secondary_font": "Enriqueta"
+            },
+            "colors": {
+              "background_color": "#4A6741",
+              "content_background_color": "#557A4B",
+              "accent_background_color": "#4A6741",
+              "accent_text_color": "#F4ECD3",
+              "accent_pattern_color": "#5F8353",
+              "header_text_color": "#F4ECD3",
+              "primary_text_color": "#F4ECD3",
+              "secondary_text_color": "#C5DBC0",
+              "button_text_color": "#4A6741",
+              "button_background_color": "#E7B355",
+              "button_hover_background_color": "#D9A13D",
+              "badge_text_color_primary": "#4A6741",
+              "badge_background_color_primary": "#E7B355",
+              "badge_text_color_secondary": "#F4ECD3",
+              "badge_background_color_secondary": "#5F8353",
+              "inventory_status_text_color": "#E7B355",
+              "link_text_color": "#F4ECD3",
+              "link_hover_color": "#E7B355",
+              "announcement_text_color": "#4A6741",
+              "announcement_background_color": "#E7B355"
+            }
+          },
+          {
+            "style_name": "Earthy #3",
+            "fonts": {
+              "primary_font": "Andada Pro",
+              "secondary_font": "Work Sans"
+            },
+            "colors": {
+              "background_color": "#D7BBA8",
+              "content_background_color": "#E4CFC1",
+              "accent_background_color": "#A15429",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#C4A08E",
+              "header_text_color": "#422112",
+              "primary_text_color": "#422112",
+              "secondary_text_color": "#744F3A",
+              "button_text_color": "#FFFFFF",
+              "button_background_color": "#A15429",
+              "button_hover_background_color": "#8B4823",
+              "badge_text_color_primary": "#FFFFFF",
+              "badge_background_color_primary": "#744F3A",
+              "badge_text_color_secondary": "#422112",
+              "badge_background_color_secondary": "#C4A08E",
+              "inventory_status_text_color": "#A15429",
+              "link_text_color": "#422112",
+              "link_hover_color": "#A15429",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#A15429"
+            }
+          }
+        ]
+      },
+      {
+        "group_name": "Dreamy",
+        "styles": [
+          {
+            "style_name": "Dreamy #1",
+            "fonts": {
+              "primary_font": "Cormorant",
               "secondary_font": "Quicksand"
             },
             "colors": {
-              "background_color": "#FFE9F4",
-              "content_background_color": "#FFFBFD",
-              "accent_background_color": "#FFB4D9",
-              "accent_text_color": "#243588",
-              "accent_pattern_color": "#FFE9F4",
-              "header_text_color": "#243588",
-              "primary_text_color": "#243588",
-              "secondary_text_color": "#243588",
-              "button_text_color": "#243588",
-              "button_background_color": "#ECD8FF",
-              "button_hover_background_color": "#F4E6FF",
-              "badge_text_color_primary": "#243588",
-              "badge_background_color_primary": "#FFB4D9",
-              "badge_text_color_secondary": "#262626",
-              "badge_background_color_secondary": "#B7B7B7",
-              "inventory_status_text_color": "#243588",
-              "link_text_color": "#243588",
-              "link_hover_color": "#F6248C",
-              "announcement_text_color": "#243588",
-              "announcement_background_color": "#FFFA8D"
+              "background_color": "#E0F4FF",
+              "content_background_color": "#ECF8FF",
+              "accent_background_color": "#7EB2DD",
+              "accent_text_color": "#1A4971",
+              "accent_pattern_color": "#C5E4FF",
+              "header_text_color": "#1A4971",
+              "primary_text_color": "#1A4971",
+              "secondary_text_color": "#4A789B",
+              "button_text_color": "#FFFFFF",
+              "button_background_color": "#7EB2DD",
+              "button_hover_background_color": "#619AC9",
+              "badge_text_color_primary": "#FFFFFF",
+              "badge_background_color_primary": "#FF9EAA",
+              "badge_text_color_secondary": "#1A4971",
+              "badge_background_color_secondary": "#C5E4FF",
+              "inventory_status_text_color": "#FF9EAA",
+              "link_text_color": "#1A4971",
+              "link_hover_color": "#7EB2DD",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#7EB2DD"
+            }
+          },
+          {
+            "style_name": "Dreamy #2",
+            "fonts": {
+              "primary_font": "Spectral",
+              "secondary_font": "Quicksand"
+            },
+            "colors": {
+              "background_color": "#F5EBF7",
+              "content_background_color": "#F9F2FB",
+              "accent_background_color": "#B893B2",
+              "accent_text_color": "#805B7B",
+              "accent_pattern_color": "#E8D6E5",
+              "header_text_color": "#805B7B",
+              "primary_text_color": "#805B7B",
+              "secondary_text_color": "#A68BA2",
+              "button_text_color": "#FFFFFF",
+              "button_background_color": "#B893B2",
+              "button_hover_background_color": "#9B7994",
+              "badge_text_color_primary": "#FFFFFF",
+              "badge_background_color_primary": "#C9A4C4",
+              "badge_text_color_secondary": "#805B7B",
+              "badge_background_color_secondary": "#E8D6E5",
+              "inventory_status_text_color": "#C9A4C4",
+              "link_text_color": "#805B7B",
+              "link_hover_color": "#B893B2",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#B893B2"
+            }
+          },
+          {
+            "style_name": "Dreamy #3",
+            "fonts": {
+              "primary_font": "Fraunces",
+              "secondary_font": "DM Sans"
+            },
+            "colors": {
+              "background_color": "#F9F2FF",
+              "content_background_color": "#FDF9FF",
+              "accent_background_color": "#9C89B8",
+              "accent_text_color": "#FFFFFF",
+              "accent_pattern_color": "#E8DDFF",
+              "header_text_color": "#4A3B5E",
+              "primary_text_color": "#4A3B5E",
+              "secondary_text_color": "#786A8E",
+              "button_text_color": "#FFFFFF",
+              "button_background_color": "#9C89B8",
+              "button_hover_background_color": "#8A75A8",
+              "badge_text_color_primary": "#FFFFFF",
+              "badge_background_color_primary": "#F0A6CA",
+              "badge_text_color_secondary": "#4A3B5E",
+              "badge_background_color_secondary": "#E8DDFF",
+              "inventory_status_text_color": "#F0A6CA",
+              "link_text_color": "#4A3B5E",
+              "link_hover_color": "#9C89B8",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#9C89B8"
             }
           }
         ]
