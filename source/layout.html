@@ -49,7 +49,7 @@
                   <div class="category-dropdown" id="header-dropdown" aria-hidden="true">
                     {% if categories.active != blank or artists.active != blank %}
                       <ul class="dropdown-list categories-list">
-                        <li><a href="/products">{% if theme.collections %}All Collections{% else %}All Products{% endif %}</a></li>
+                        <li><a href="/products">{% if theme.collections %}Collections{% else %}{{ pages.products.name }}{% endif %}</a></li>
                         {% for category in categories.active %}
                           <li>{{ category | link_to }}</li>
                         {% endfor %}
@@ -306,7 +306,7 @@
         <div class="mobile-navigation__body">
           <nav aria-label="Browse products">
             <ul class="mobile-navigation__links">
-              <li><a href="/products">{% if theme.collections %}All Collections{% else %}All Products{% endif %}</a></li>
+              <li><a href="/products">{% if theme.collections %}Collections{% else %}{{ pages.products.name }}{% endif %}</a></li>
               {% for category in categories.active %}
                 <li>{{ category | link_to }}</li>
               {% endfor %}
