@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "2.4.0",
+  "version": "2.4.1",
   "images": [
     {
       "variable": "logo",
@@ -867,7 +867,7 @@
       "label": "Show categories in footer",
       "type": "boolean",
       "default": true,
-      "description": "Show categories in the footer"
+      "description": "Display product category links at the bottom of every page"
     },
     {
       "variable": "footer_text",

@@ -49,7 +49,7 @@
                   <div class="category-dropdown" id="header-dropdown" aria-hidden="true">
                     {% if categories.active != blank or artists.active != blank %}
                       <ul class="dropdown-list categories-list">
-                        <li><a href="/products">{% if theme.collections %}All Collections{% else %}All Products{% endif %}</a></li>
+                        <li><a href="/products">{% if theme.collections %}Collections{% else %}{{ pages.products.name }}{% endif %}</a></li>
                         {% for category in categories.active %}
                           <li>{{ category | link_to }}</li>
                         {% endfor %}
@@ -306,7 +306,7 @@
         <div class="mobile-navigation__body">
           <nav aria-label="Browse products">
             <ul class="mobile-navigation__links">
-              <li><a href="/products">{% if theme.collections %}All Collections{% else %}All Products{% endif %}</a></li>
+              <li><a href="/products">{% if theme.collections %}Collections{% else %}{{ pages.products.name }}{% endif %}</a></li>
               {% for category in categories.active %}
                 <li>{{ category | link_to }}</li>
               {% endfor %}
@@ -413,8 +413,8 @@
       const themeOptions = {
         showSoldOutOptions: {{ theme.show_sold_out_product_options }},
         showLowInventoryMessages: {{ theme.show_low_inventory_messages }},
-        lowInventoryMessage: '{{ theme.low_inventory_message }}',
-        almostSoldOutMessage: '{{ theme.almost_sold_out_message }}',
+        lowInventoryMessage: "{{ theme.low_inventory_message | replace: '"', '\"' | replace: "'", "\\'" }}",
+        almostSoldOutMessage: "{{ theme.almost_sold_out_message | replace: '"', '\"' | replace: "'", "\\'" }}",
         desktopProductPageImages: '{{ theme.desktop_product_page_images }}',
         mobileProductPageImages: '{{ theme.mobile_product_page_images }}',
         productImageZoom: {{ theme.product_image_zoom }},
