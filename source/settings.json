@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "2.4.1",
+  "version": "2.5.0",
   "images": [
     {
       "variable": "logo",
@@ -612,6 +612,13 @@
       "type": "text",
       "max_length": 500,
       "description": "Displays an announcement message on the top of every page"
+    },
+    {
+      "variable": "contact_text",
+      "label": "Contact page text",
+      "type": "text",
+      "max_length": 1024,
+      "description": "Displays a message within your contact page"
     },
     {
       "variable": "welcome_header",
