@@ -346,8 +346,15 @@ footer
         width: 86px
 
 .footer-custom-content
+  display: grid
+  grid-template-columns: 1fr
+  justify-content: center
   text-align: center
   padding: 10px 16px 40px 16px
+  gap: 20px
+
+  > *
+    justify-self: center
 
 .footernav
   display: flex
