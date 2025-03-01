@@ -6,7 +6,7 @@
   </ul>
 {% endif %}
 
-<div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank or theme.image_sets.slideshow.size == 0 %} has-welcome{% endif %}">
+<div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} has-welcome{% endif %}">
 
   {% if theme.image_sets.slideshow.size > 0 %}
     <div class="{% if theme.image_sets.slideshow.size > 1 %}splide{% endif %} home-slideshow">

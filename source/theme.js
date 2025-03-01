@@ -2,8 +2,9 @@
 //= require javascripts/functions
 //= require javascripts/product
 //= require javascripts/store
-//= require javascripts/navigation.js
-//= require javascripts/product-option-groups.js
-//= require javascripts/product-carousel.js
+//= require javascripts/navigation
+//= require javascripts/product-option-groups
+//= require javascripts/product-carousel
+//= require javascripts/home-carousel
 //= require javascripts/cart
 //= require javascripts/search
