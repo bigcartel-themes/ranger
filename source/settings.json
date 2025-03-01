@@ -41,7 +41,7 @@
               "background_color": "#EEEEEE",
               "content_background_color": "#FFFFFF",
               "accent_background_color": "#000000",
-              "accent_text_color": "#FFFFFF",
+              "accent_text_color": "#EEEEEE",
               "accent_pattern_color": "#555555",
               "header_text_color": "#222222",
               "primary_text_color": "#222222",
@@ -521,7 +521,7 @@
     {
       "variable": "accent_text_color",
       "label": "Accent text",
-      "default": "#FFFFFF"
+      "default": "#EEEEEE"
     },
     {
       "variable": "accent_pattern_color",
