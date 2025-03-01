@@ -6,7 +6,26 @@
   </ul>
 {% endif %}
 
-<div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} has-welcome{% endif %}">
+<div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank or theme.image_sets.slideshow.size == 0 %} has-welcome{% endif %}">
+
+  {% if theme.image_sets.slideshow.size > 0 %}
+    <div class="{% if theme.image_sets.slideshow.size > 1 %}splide{% endif %} home-slideshow">
+      <div class="splide__track">
+        <div class="splide__list">
+          {% for image in theme.image_sets.slideshow %}
+            <div class="splide__slide">
+              <img
+                alt="Slideshow image {{ forloop.index }}"
+                {% if forloop.index == 1 %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                class="slideshow-image"
+                srcset="{{ image.url | constrain: 1068 }}, {{ image.url | constrain: 2136 }} 2x"
+                src="{{ image.url | constrain: 1068 }}">
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
   {% if theme.featured_header != blank and theme.featured_items > 0 %}
     <h1 class="featured-title">{{ theme.featured_header }}</h1>
   {% endif %}

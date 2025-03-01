@@ -13,6 +13,13 @@
       "description": "1200px by 800px images recommended"
     }
   ],
+  "image_sets": [
+    {
+      "variable": "slideshow",
+      "label": "Slideshow",
+      "description": "Adds slideshow to the homepage"
+    }
+  ],
   "preset_styles": {
     "preview": {
       "title_font": "primary_font",
@@ -653,50 +660,28 @@
       "description": "Pattern style for the accent background"
     },
     {
-      "variable": "show_related_products",
-      "label": "Show related products",
+      "variable": "homepage_slideshow_autoplay",
+      "label": "Auto-play homepage slideshow",
       "type": "boolean",
       "default": true,
-      "description": "Displays related products on the Product page"
+      "description": "Automatically advances slides in the homepage slideshow"
     },
     {
-      "variable": "related_products_header",
-      "label": "Related products header",
-      "type": "text",
-      "description": "Displays above related products on Products pages",
-      "default": "You might also like",
-      "requires": [
-        "show_related_products eq true"
-      ]
-    },
-    {
-      "variable": "related_products",
-      "label": "Related products",
+      "variable": "homepage_slideshow_speed",
+      "label": "Slideshow speed",
       "type": "select",
-      "options": "1..8",
-      "default": 3,
-      "description": "The maximum number of related products to show on Product pages",
+      "options": [
+        ["Slowest", 6000],
+        ["Slower", 5000],
+        ["Normal", 4000],
+        ["Faster", 3500],
+        ["Fastest", 3000]
+      ],
+      "default": 4000,
+      "description": "Controls how quickly slides advance in the auto-playing slideshow",
       "requires": [
-        "show_related_products eq true"
+        "homepage_slideshow_autoplay eq true"
       ]
-    },
-    {
-      "variable": "related_products_order",
-      "label": "Related products order",
-      "type": "select",
-      "options": "product_orders",
-      "default": "sales",
-      "description": "The order of related products on the Product pages",
-      "requires": [
-        "show_related_products eq true"
-      ]
-    },
-    {
-      "variable": "show_search",
-      "label": "Show search",
-      "type": "boolean",
-      "default": true,
-      "description": "Shows a search field"
     },
     {
       "variable": "collections",
@@ -745,6 +730,52 @@
       "type": "text",
       "description": "Displays underneath featured products and links to your Products Page",
       "default": "View all products"
+    },
+    {
+      "variable": "show_related_products",
+      "label": "Show related products",
+      "type": "boolean",
+      "default": true,
+      "description": "Displays related products on the Product page"
+    },
+    {
+      "variable": "related_products_header",
+      "label": "Related products header",
+      "type": "text",
+      "description": "Displays above related products on Products pages",
+      "default": "You might also like",
+      "requires": [
+        "show_related_products eq true"
+      ]
+    },
+    {
+      "variable": "related_products",
+      "label": "Related products",
+      "type": "select",
+      "options": "1..8",
+      "default": 3,
+      "description": "The maximum number of related products to show on Product pages",
+      "requires": [
+        "show_related_products eq true"
+      ]
+    },
+    {
+      "variable": "related_products_order",
+      "label": "Related products order",
+      "type": "select",
+      "options": "product_orders",
+      "default": "sales",
+      "description": "The order of related products on the Product pages",
+      "requires": [
+        "show_related_products eq true"
+      ]
+    },
+    {
+      "variable": "show_search",
+      "label": "Show search",
+      "type": "boolean",
+      "default": true,
+      "description": "Shows a search field"
     },
     {
       "variable": "max_products_per_row",

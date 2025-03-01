@@ -122,7 +122,7 @@
             {% if theme.welcome_image != blank %}
               welcome-image
             {% endif %}
-            {% if theme.featured_items == 0 %}
+            {% if theme.featured_items == 0 and theme.image_sets.slideshow.size == 0 %}
               hide-featured
             {% endif %}
           {% endif %}
@@ -157,7 +157,7 @@
         {% endif %}
         <canvas id="repeating-pattern"></canvas>
       </div>
-      <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' %} hide-featured{% endif %}">
+      <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' and theme.image_sets.slideshow.size == 0 %} hide-featured{% endif %}">
         {% if page.category == 'custom' %}
           <h1 class="page-title">{{ page.name }}</h1>
           <div class="page-content custom-page">
@@ -421,6 +421,8 @@
         pattern_style: "{{ theme.pattern_style }}",
         store_name: "{{ store.name | escape }}",
         page: "{{ page.permalink }}",
+        homepageSlideshowAutoplay: {{ theme.homepage_slideshow_autoplay }},
+        homepageSlideshowSpeed: {{ theme.homepage_slideshow_speed }},
       }
     </script>
     {% if theme.announcement_message_text != blank %}

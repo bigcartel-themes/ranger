@@ -1,4 +1,7 @@
-
+\:root
+  --pagination-background: transparent
+  --pagination-page-background: var(--primary-text-color)
+  --pagination-active-page: var(--primary-text-color)
 
 +keyframes(fade-in-load)
   0%
@@ -6,6 +9,48 @@
 
   100%
     opacity: 1
+
+.home-slideshow
+  margin-bottom: 48px
+
+  .slideshow-image
+    border-radius: var(--border-radius)
+    width: 100%
+
+  .splide__arrow
+    border-radius: var(--border-radius)
+    width: 2em
+    height: 3em
+
+  .splide__pagination
+    z-index: 1
+    background: var(--pagination-background)
+    border-radius: 18px
+    display: inline-flex
+    position: relative
+    margin-top: 8px
+    bottom: auto
+    align-items: center
+    justify-content: center
+    transform: translateX(-50%)
+    left: 50%
+    padding: 4px 8px
+    gap: 2px
+    right: auto
+
+    li
+      display: flex
+
+    .splide__pagination__page
+      opacity: 1
+      background: none
+      border: 1px solid var(--pagination-page-background)
+      height: 10px
+      width: 10px
+
+      &.is-active
+        background: var(--pagination-active-page)
+        transform: scale(1.1)
 
 .welcome-text
   color: var(--accent-text-color)
