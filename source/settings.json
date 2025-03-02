@@ -450,7 +450,7 @@
               "badge_background_color_primary": "#C9A4C4",
               "badge_text_color_secondary": "#805B7B",
               "badge_background_color_secondary": "#E8D6E5",
-              "inventory_status_text_color": "#C9A4C4",
+              "inventory_status_text_color": "#805B7B",
               "link_text_color": "#805B7B",
               "link_hover_color": "#B893B2",
               "announcement_text_color": "#FFFFFF",
