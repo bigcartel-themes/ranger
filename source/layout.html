@@ -67,7 +67,9 @@
             {% for page in pages.all limit: theme.nav_items %}
               <li class="header-page-link">{{ page | link_to }}</li>
             {% endfor %}
-            <li class="header-page-link"><a href="/contact">{{ pages.contact.name }}</a></li>
+            {% unless pages.all.size > 0 %}
+              <li class="header-page-link"><a href="/contact">{{ pages.contact.name }}</a></li>
+            {% endunless %}
           </ul>
         </nav>
 
@@ -122,7 +124,7 @@
             {% if theme.welcome_image != blank %}
               welcome-image
             {% endif %}
-            {% if theme.featured_items == 0 %}
+            {% if theme.featured_items == 0 and theme.image_sets.slideshow.size == 0 %}
               hide-featured
             {% endif %}
           {% endif %}
@@ -157,7 +159,7 @@
         {% endif %}
         <canvas id="repeating-pattern"></canvas>
       </div>
-      <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' %} hide-featured{% endif %}">
+      <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' and theme.image_sets.slideshow.size == 0 %} hide-featured{% endif %}">
         {% if page.category == 'custom' %}
           <h1 class="page-title">{{ page.name }}</h1>
           <div class="page-content custom-page">
@@ -400,6 +402,15 @@
       </div>
     </div>
     <script>
+      {% comment %}
+        Manual array construction needed for Liquid 3.0.6 since standard JSON filters 
+        (json, jsonify) don't work properly. This ensures proper JavaScript array 
+        formatting with quoted elements and commas.
+      {% endcomment %}
+      const themeFeatures = {
+        optIns: [{% if theme.features.opt_ins %}{% for opt in theme.features.opt_ins %}"{{ opt }}"{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}],
+        optOuts: [{% if theme.features.opt_outs %}{% for opt in theme.features.opt_outs %}"{{ opt }}"{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}],
+      };
       const themeColors = {
         backgroundColor: '{{ theme.background_color }}',
         buttonBackgroundColor: '{{ theme.button_background_color }}',
@@ -409,7 +420,7 @@
         accentBackgroundColor: '{{ theme.accent_background_color }}',
         accentTextColor: '{{ theme.accent_text_color }}',
         accentPatternColor: '{{ theme.accent_pattern_color }}',
-      }
+      };
       const themeOptions = {
         showSoldOutOptions: {{ theme.show_sold_out_product_options }},
         showLowInventoryMessages: {{ theme.show_low_inventory_messages }},
@@ -421,7 +432,10 @@
         pattern_style: "{{ theme.pattern_style }}",
         store_name: "{{ store.name | escape }}",
         page: "{{ page.permalink }}",
-      }
+        homepageSlideshowAutoplay: {{ theme.homepage_slideshow_autoplay }},
+        homepageSlideshowSpeed: {{ theme.homepage_slideshow_speed }},
+        showBnplMessaging: {{ theme.show_bnpl_messaging }} && !themeFeatures.optOuts.includes("theme_bnpl_messaging"),
+      };
     </script>
     {% if theme.announcement_message_text != blank %}
       <script>

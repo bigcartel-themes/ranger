@@ -12,7 +12,7 @@ section.content
       padding: var(--med-padding) var(--small-padding)
 
 .product-breadcrumb
-  margin-bottom: 16px
+  margin-bottom: 24px
   display: flex
   align-items: center
   justify-content: flex-start
@@ -123,8 +123,15 @@ section.content
       &:hover, &:focus
         color: var(--link-hover-color)
 
+    img
+      display: inline-block
+      max-width: 100%
+      margin: 0 auto
+      padding-bottom: 16px
+
   h1.page-title
     color: var(--primary-text-color)
+    font-size: 1.75em
     margin: 0
     text-align: left
 
@@ -154,3 +161,36 @@ section.content
   text-align: center
   padding: 8px 0
   font-weight: 500
+
+#payment-processor-messaging
+  margin: 20px 0 0
+  width: 100%
+  display: block
+  
+  body[data-bc-page-type="cart"] &
+    margin-bottom: 40px
+
+  &.display-flex
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    &.dual-messaging
+      gap: 15x
+
+  &.display-grid
+    display: grid
+  
+  &.hidden
+    position: absolute
+    left: -9999px
+    top: -9999px
+
+  > div
+    margin-bottom: 0
+  
+  // Only apply the margin for non-flex layouts when dual messaging is present
+  &:not(.display-flex)
+    &.dual-messaging > div.visible:first-of-type
+      margin-bottom: 15px

@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "images": [
     {
       "variable": "logo",
@@ -11,6 +11,13 @@
       "variable": "welcome_image",
       "label": "Welcome image",
       "description": "1200px by 800px images recommended"
+    }
+  ],
+  "image_sets": [
+    {
+      "variable": "slideshow",
+      "label": "Slideshow",
+      "description": "Adds slideshow to the homepage"
     }
   ],
   "preset_styles": {
@@ -34,7 +41,7 @@
               "background_color": "#EEEEEE",
               "content_background_color": "#FFFFFF",
               "accent_background_color": "#000000",
-              "accent_text_color": "#FFFFFF",
+              "accent_text_color": "#EEEEEE",
               "accent_pattern_color": "#555555",
               "header_text_color": "#222222",
               "primary_text_color": "#222222",
@@ -119,8 +126,8 @@
           {
             "style_name": "Bold #1",
             "fonts": {
-              "primary_font": "Inknut Antiqua",
-              "secondary_font": "Source Sans Pro"
+              "primary_font": "Impact",
+              "secondary_font": "Work Sans"
             },
             "colors": {
               "background_color": "#5F0F40",
@@ -148,8 +155,8 @@
           {
             "style_name": "Bold #2",
             "fonts": {
-              "primary_font": "Chivo",
-              "secondary_font": "Sora"
+              "primary_font": "Rubik Dirt",
+              "secondary_font": "Open Sans"
             },
             "colors": {
               "background_color": "#F7B538",
@@ -177,8 +184,8 @@
           {
             "style_name": "Bold #3",
             "fonts": {
-              "primary_font": "Signika",
-              "secondary_font": "Signika"
+              "primary_font": "Doto",
+              "secondary_font": "Source Code Pro"
             },
             "colors": {
               "background_color": "#080808",
@@ -211,30 +218,30 @@
           {
             "style_name": "Playful #1",
             "fonts": {
-              "primary_font": "Quicksand",
-              "secondary_font": "BioRhyme"
+              "primary_font": "Over the Rainbow",
+              "secondary_font": "Open Sans"
             },
             "colors": {
-              "background_color": "#FF7171",
-              "content_background_color": "#FF8989",
-              "accent_background_color": "#FF7171",
-              "accent_text_color": "#FFFFFF",
-              "accent_pattern_color": "#FFD6D6",
-              "header_text_color": "#FFFFFF",
-              "primary_text_color": "#FFFFFF",
-              "secondary_text_color": "#FFD6D6",
-              "button_text_color": "#FF7171",
-              "button_background_color": "#4ECDC4",
-              "button_hover_background_color": "#44B5AE",
-              "badge_text_color_primary": "#FF7171",
-              "badge_background_color_primary": "#4ECDC4",
-              "badge_text_color_secondary": "#FFFFFF",
-              "badge_background_color_secondary": "#FFA1A1",
-              "inventory_status_text_color": "#4ECDC4",
-              "link_text_color": "#FFFFFF",
-              "link_hover_color": "#4ECDC4",
-              "announcement_text_color": "#FF7171",
-              "announcement_background_color": "#4ECDC4"
+              "background_color": "#FFECEF",
+              "content_background_color": "#FFF5F7",
+              "accent_background_color": "#FFECEF",
+              "accent_text_color": "#222222",
+              "accent_pattern_color": "#FFDCE1",
+              "header_text_color": "#222222",
+              "primary_text_color": "#222222",
+              "secondary_text_color": "#555555",
+              "button_text_color": "#FFFFFF",
+              "button_background_color": "#FF6B8B",
+              "button_hover_background_color": "#FF4D73",
+              "badge_text_color_primary": "#FFFFFF",
+              "badge_background_color_primary": "#FF6B8B",
+              "badge_text_color_secondary": "#222222",
+              "badge_background_color_secondary": "#CDCDCD",
+              "inventory_status_text_color": "#FF4D73",
+              "link_text_color": "#222222",
+              "link_hover_color": "#FF6B8B",
+              "announcement_text_color": "#FFFFFF",
+              "announcement_background_color": "#FF6B8B"
             }
           },
           {
@@ -361,8 +368,8 @@
           {
             "style_name": "Earthy #3",
             "fonts": {
-              "primary_font": "Andada Pro",
-              "secondary_font": "Work Sans"
+              "primary_font": "Inconsolata",
+              "secondary_font": "Inconsolata"
             },
             "colors": {
               "background_color": "#D7BBA8",
@@ -443,7 +450,7 @@
               "badge_background_color_primary": "#C9A4C4",
               "badge_text_color_secondary": "#805B7B",
               "badge_background_color_secondary": "#E8D6E5",
-              "inventory_status_text_color": "#C9A4C4",
+              "inventory_status_text_color": "#805B7B",
               "link_text_color": "#805B7B",
               "link_hover_color": "#B893B2",
               "announcement_text_color": "#FFFFFF",
@@ -514,7 +521,7 @@
     {
       "variable": "accent_text_color",
       "label": "Accent text",
-      "default": "#FFFFFF"
+      "default": "#EEEEEE"
     },
     {
       "variable": "accent_pattern_color",
@@ -653,50 +660,28 @@
       "description": "Pattern style for the accent background"
     },
     {
-      "variable": "show_related_products",
-      "label": "Show related products",
+      "variable": "homepage_slideshow_autoplay",
+      "label": "Auto-play homepage slideshow",
       "type": "boolean",
       "default": true,
-      "description": "Displays related products on the Product page"
+      "description": "Automatically advances slides in the homepage slideshow"
     },
     {
-      "variable": "related_products_header",
-      "label": "Related products header",
-      "type": "text",
-      "description": "Displays above related products on Products pages",
-      "default": "You might also like",
-      "requires": [
-        "show_related_products eq true"
-      ]
-    },
-    {
-      "variable": "related_products",
-      "label": "Related products",
+      "variable": "homepage_slideshow_speed",
+      "label": "Slideshow speed",
       "type": "select",
-      "options": "1..8",
-      "default": 3,
-      "description": "The maximum number of related products to show on Product pages",
+      "options": [
+        ["Slowest", 6000],
+        ["Slower", 5000],
+        ["Normal", 4000],
+        ["Faster", 3500],
+        ["Fastest", 3000]
+      ],
+      "default": 4000,
+      "description": "Controls how quickly slides advance in the auto-playing slideshow",
       "requires": [
-        "show_related_products eq true"
+        "homepage_slideshow_autoplay eq true"
       ]
-    },
-    {
-      "variable": "related_products_order",
-      "label": "Related products order",
-      "type": "select",
-      "options": "product_orders",
-      "default": "sales",
-      "description": "The order of related products on the Product pages",
-      "requires": [
-        "show_related_products eq true"
-      ]
-    },
-    {
-      "variable": "show_search",
-      "label": "Show search",
-      "type": "boolean",
-      "default": true,
-      "description": "Shows a search field"
     },
     {
       "variable": "collections",
@@ -730,11 +715,67 @@
       "description": "The number of items featured on the Home page"
     },
     {
+      "variable": "featured_header",
+      "label": "Featured items header",
+      "type": "text",
+      "description": "Displays above featured items on the Home page",
+      "default": "Featured",
+      "requires": [
+        "featured_items gt 0"
+      ]
+    },
+    {
       "variable": "all_products_button_text",
       "label": "All products button text",
       "type": "text",
       "description": "Displays underneath featured products and links to your Products Page",
       "default": "View all products"
+    },
+    {
+      "variable": "show_related_products",
+      "label": "Show related products",
+      "type": "boolean",
+      "default": true,
+      "description": "Displays related products on the Product page"
+    },
+    {
+      "variable": "related_products_header",
+      "label": "Related products header",
+      "type": "text",
+      "description": "Displays above related products on Products pages",
+      "default": "You might also like",
+      "requires": [
+        "show_related_products eq true"
+      ]
+    },
+    {
+      "variable": "related_products",
+      "label": "Related products",
+      "type": "select",
+      "options": "1..8",
+      "default": 6,
+      "description": "The maximum number of related products to show on Product pages",
+      "requires": [
+        "show_related_products eq true"
+      ]
+    },
+    {
+      "variable": "related_products_order",
+      "label": "Related products order",
+      "type": "select",
+      "options": "product_orders",
+      "default": "sales",
+      "description": "The order of related products on the Product pages",
+      "requires": [
+        "show_related_products eq true"
+      ]
+    },
+    {
+      "variable": "show_search",
+      "label": "Show search",
+      "type": "boolean",
+      "default": true,
+      "description": "Shows a search field"
     },
     {
       "variable": "max_products_per_row",
@@ -907,6 +948,13 @@
       ],
       "default": "sign",
       "description": "Sets the display of prices in your shop"
+    },
+    {
+      "variable": "show_bnpl_messaging",
+      "label": "Buy Now, Pay Later Messaging",
+      "type": "boolean",
+      "default": true,
+      "description": "Show payment options prior to checkout on product and cart pages. Requires paid plan."
     },
     {
       "variable": "instagram_url",

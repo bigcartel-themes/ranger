@@ -6,8 +6,29 @@
   </ul>
 {% endif %}
 
-<h1 class="visually-hidden">Featured {{ theme.featured_items_type }}</h1>
 <div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} has-welcome{% endif %}">
+
+  {% if theme.image_sets.slideshow.size > 0 %}
+    <div class="{% if theme.image_sets.slideshow.size > 1 %}splide{% endif %} home-slideshow">
+      <div class="splide__track">
+        <div class="splide__list">
+          {% for image in theme.image_sets.slideshow %}
+            <div class="splide__slide">
+              <img
+                alt="Slideshow image {{ forloop.index }}"
+                {% if forloop.index == 1 %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
+                class="slideshow-image"
+                srcset="{{ image.url | constrain: 1068 }}, {{ image.url | constrain: 2136 }} 2x"
+                src="{{ image.url | constrain: 1068 }}">
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% if theme.featured_header != blank and theme.featured_items > 0 %}
+    <h1 class="featured-title">{{ theme.featured_header }}</h1>
+  {% endif %}
   {% if theme.featured_items_type == 'Categories' %}
     {% if categories.active != blank and theme.featured_items > 0 %}
       <div class="product-list category-list {% if categories.active.size < 4 %} justify-center{% endif %}">
