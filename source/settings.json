@@ -628,6 +628,36 @@
       "description": "Displays a message within your contact page"
     },
     {
+      "variable": "pages_global_nav_style",
+      "label": "How to display pages in your shop's header",
+      "type": "select",
+      "options": [
+        ["Dropdown", "dropdown"],
+        ["Inline", "inline"]
+      ],
+      "default": "dropdown",
+      "description": "Choose how your custom pages appear in your shop's header menu"
+    },
+    {
+      "variable": "pages_global_nav_dropdown_text",
+      "label": "Custom Pages header dropdown text",
+      "type": "text",
+      "default": "More",
+      "max_length": 25,
+      "description": "When using dropdown style in header for pages, what the name of the dropdown should be",
+      "requires": [
+        "pages_global_nav_style eq dropdown"
+      ]
+    },
+    {
+      "variable": "nav_items",
+      "label": "Navigation items",
+      "type": "select",
+      "options": "0..3",
+      "default": 1,
+      "description": "Number of custom page links to show in main navigation. Only applies to inline style."
+    },
+    {
       "variable": "welcome_header",
       "label": "Welcome header",
       "type": "text",
@@ -689,14 +719,6 @@
       "type": "boolean",
       "default": false,
       "description": "Use category collections instead of the traditional product listing page"
-    },
-    {
-      "variable": "nav_items",
-      "label": "Navigation items",
-      "type": "select",
-      "options": "0..3",
-      "default": 1,
-      "description": "The number of custom page links show in the main navigation."
     },
     {
       "variable": "featured_items_type",
