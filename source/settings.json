@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "2.6.1",
+  "version": "2.7.0",
   "images": [
     {
       "variable": "logo",
@@ -629,7 +629,7 @@
     },
     {
       "variable": "pages_global_nav_style",
-      "label": "How to display pages in your shop's header",
+      "label": "Shop header menu style for custom pages in desktop view",
       "type": "select",
       "options": [
         ["Dropdown", "dropdown"],
