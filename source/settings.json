@@ -933,6 +933,13 @@
       ]
     },
     {
+      "variable": "show_coming_soon_product_prices",
+      "label": "Show prices for coming soon products",
+      "type": "boolean",
+      "default": true,
+      "description": "Show the price of coming soon products on product grids and product pages"
+    },
+    {
       "variable": "show_categories_in_footer",
       "label": "Show categories in footer",
       "type": "boolean",

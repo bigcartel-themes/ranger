@@ -138,13 +138,16 @@
         <h1 class="page-title page-title--left product-detail__title">{{ product.name }}</h1>
         <div class="product-detail__pricing">
           {% assign hide_price = false %}
-          {% if theme.show_sold_out_product_prices == false %}
-            {% case product.status %}
-              {% when 'sold-out' %}
-                {% assign hide_price = true %}
-            {% endcase %}
+          {% if product.status == 'sold-out' and theme.show_sold_out_product_prices == false %}
+            {% assign hide_price = true %}
+          {% endif -%}
+          {% if product.status == 'coming-soon' and theme.show_coming_soon_product_prices == false %}
+            {% assign hide_price = true %}
           {% endif %}
-          {% unless hide_price %}<span>{{ product_pricing }}</span>{% endunless %}
+
+          {% unless hide_price %}
+            <span>{{ product_pricing }}</span>
+          {% endunless %}
           {% if hide_price == false and product_status != blank %}<span class="product-detail__separator">&mdash;</span>{% endif %}
           {% if product_status != blank %}<div class="product-detail__status">{{ product_status }}</div>{% endif %}
         </div>
