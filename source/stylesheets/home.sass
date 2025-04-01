@@ -142,3 +142,22 @@ a.all-products-button
 
   &:not(:disabled):hover, &:not(:disabled):active
     border: 2px solid var(--button-hover-background-color)
+
+// Keyframes for fade-in animation
+@keyframes fade-in
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+// Styles for collage image fade-in using animation
+.collage-image
+  opacity: 1
+  // Apply animation when NOT loading
+  animation: fade-in 0.4s ease-in-out forwards
+
+  // Add a 'loading' state for when the image is not yet ready
+  // Start invisible and prevent animation from running initially
+  &.loading
+    opacity: 0
+    animation: none
