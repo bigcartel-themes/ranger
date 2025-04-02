@@ -798,6 +798,17 @@
       "description": "Display featured products or categories on the Home page"
     },
     {
+      "variable": "featured_header",
+      "label": "Featured items header",
+      "section": "homepage",
+      "type": "text",
+      "description": "Displays above featured items on the Home page",
+      "default": "Featured",
+      "requires": [
+        "featured_items gt 0"
+      ]
+    },
+    {
       "variable": "featured_items",
       "label": "Featured items",
       "section": "homepage",
@@ -846,17 +857,6 @@
         "featured_items_type eq Categories",
         "home_page_categories_image_style neq collage",
         "home_page_categories_image_style neq collage_random"
-      ]
-    },
-    {
-      "variable": "featured_header",
-      "label": "Featured items header",
-      "section": "homepage",
-      "type": "text",
-      "description": "Displays above featured items on the Home page",
-      "default": "Featured",
-      "requires": [
-        "featured_items gt 0"
       ]
     },
     {
