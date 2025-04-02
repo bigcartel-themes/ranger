@@ -32,7 +32,7 @@
   {% if theme.featured_items_type == 'Categories' %}
     {% if categories.active != blank and theme.featured_items > 0 %}
       {% assign category_collages_enabled = false %}
-      {% if theme.features.opt_ins contains "theme_category_collages" %}
+      {% if theme.features.has_theme_category_collages %}
         {% assign category_collages_enabled = true %}
       {% endif %}
       <div class="product-list category-list {% if categories.active.size < 4 %} justify-center{% endif %}" data-category-collages-enabled="{{ category_collages_enabled }}">
