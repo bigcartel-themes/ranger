@@ -6,12 +6,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const pageType = document.body.getAttribute('data-bc-page-type');
   switch(pageType) {
     case 'home':
-      setupCategoryCollages({ 
-        collage: { 
-          width: 960, 
-          height: 960 
-        } 
-      });
+      const featuredCategoriesContainerSelector = '.category-list';
+      const featuredCategoriesContainer = document.querySelector(featuredCategoriesContainerSelector);
+      const categoryCollagesEnabled = featuredCategoriesContainer?.dataset.categoryCollagesEnabled === 'true';
+  
+      if (categoryCollagesEnabled) {
+        setupCategoryCollages({ 
+          collage: { 
+            width: 960, 
+            height: 960 
+          } 
+        });
+      }
       break;
     case 'contact':
       let contactFields = document.querySelectorAll(".contact-form input, .contact-form textarea");
