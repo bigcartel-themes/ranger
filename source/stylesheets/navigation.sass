@@ -42,7 +42,7 @@ header
       grid-template-columns: 0.75fr 2.5fr 0.75fr
       padding: 0 16px
 
-.category-nav
+.header-nav
   cursor: pointer
   position: relative
   width: auto
@@ -56,7 +56,7 @@ header
     font-size: 1em
     max-width: 100%
 
-  .category-nav-heading
+  .nav-heading
     +flexbox
     +align-items(center)
     +justify-content(center)
@@ -65,19 +65,19 @@ header
 
     &:hover
       @media (hover: hover)
-        .category-nav-page
+        .nav-page
           text-decoration: underline
           text-decoration-thickness: 2px
 
-  .category-nav-page
+  .nav-page
     text-underline-offset: 4px
 
-  .category-nav-arrow
+  .nav-arrow
     fill: currentColor
     pointer-events: none
     width: 12px
 
-  .category-dropdown
+  .nav-dropdown
     background: var(--content-background-color)
     transition: opacity .2s linear, visibility .2s linear
     border-radius: var(--border-radius)
@@ -221,7 +221,6 @@ header
     a, .category-nav-heading
       display: flex
       color: var(--header-text-color)
-      padding: 4px 0
       position: relative
       outline-offset: 4px
       border-radius: 0

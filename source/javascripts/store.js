@@ -2,10 +2,31 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   document.body.classList.remove("preloader");
-  let contactFields = document.querySelectorAll(".contact-form input, .contact-form textarea");
-  contactFields.forEach(function (contactField) {
-    contactField.removeAttribute("tabindex");
-  });
+  
+  const pageType = document.body.getAttribute('data-bc-page-type');
+  switch(pageType) {
+    case 'home':
+      const featuredCategoriesContainerSelector = '.category-list';
+      const featuredCategoriesContainer = document.querySelector(featuredCategoriesContainerSelector);
+      const categoryCollagesEnabled = featuredCategoriesContainer?.dataset.categoryCollagesEnabled === 'true';
+  
+      if (categoryCollagesEnabled) {
+        setupCategoryCollages({ 
+          collage: { 
+            width: 960, 
+            height: 960 
+          } 
+        });
+      }
+      break;
+    case 'contact':
+      let contactFields = document.querySelectorAll(".contact-form input, .contact-form textarea");
+      contactFields.forEach(function (contactField) {
+        contactField.removeAttribute("tabindex");
+      });
+      break;
+  }
+
   const numShades = 5;
 
   let cssProperties = [];
