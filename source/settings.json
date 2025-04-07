@@ -639,7 +639,10 @@
       "type": "select",
       "options": "0..3",
       "default": 1,
-      "description": "Number of custom page links to show in main navigation"
+      "description": "Number of custom page links to show in main navigation",
+      "requires": [
+        "pages_global_nav_style eq inline"
+      ]
     },
     {
       "variable": "collections",
