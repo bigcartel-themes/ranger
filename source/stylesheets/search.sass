@@ -19,7 +19,7 @@
   &__content
     background-color: var(--content-background-color)
     border-bottom: 2px solid var(--border-color)
-    color: var(--primary-text-color)
+    color: var(--header-text-color)
     text-align: center
     display: grid
     grid-template-rows: 1fr
@@ -49,12 +49,15 @@
     grid-column: 1/1
     border-radius: var(--border-radius)
     background: var(--content-background-color)
-    border: 2px solid var(--primary-text-color)
+    border: 2px solid var(--header-text-color)
     font-weight: normal
     width: 100%
     font-size: 1em
     height: 48px
     padding: 8px
+
+    &:focus
+      outline: none
 
   &__submit
     color: var(--button-text-color)
@@ -81,7 +84,7 @@
     width: 48px
     height: 48px
     margin-left: auto
-    color: var(--primary-text-color)
+    color: var(--header-text-color)
 
     &-icon
       height: 20px

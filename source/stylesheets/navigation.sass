@@ -205,6 +205,8 @@ header
     position: relative
 
 .header-navigation
+  color: var(--header-text-color)
+
   @media screen and (max-width: $break-large)
     display: none
 
@@ -220,10 +222,10 @@ header
   .header-page-link
     a, .category-nav-heading
       display: flex
-      color: var(--header-text-color)
       position: relative
       outline-offset: 4px
       border-radius: 0
+      color: var(--header-text-color)
 
       &:hover, &:focus
         color: var(--link-hover-color)
@@ -341,6 +343,7 @@ header
     li a
       padding: 4px 0
       font-size: 1.1em
+      color: var(--header-text-color)
   
   &__custom-pages
     position: relative
