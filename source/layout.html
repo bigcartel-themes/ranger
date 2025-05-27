@@ -448,7 +448,7 @@
         optOuts: [{% if theme.features.opt_outs %}{% for opt in theme.features.opt_outs %}"{{ opt }}"{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}],
       };
       const themeColors = {
-        backgroundColor: '{{ theme.background_color }}',
+        backgroundColor: '{{ theme.content_background_color }}',
         buttonBackgroundColor: '{{ theme.button_background_color }}',
         contentBackgroundColor: '{{ theme.content_background_color }}',
         primaryColor: '{{ theme.primary_text_color }}',
