@@ -27,7 +27,7 @@
     </div>
   {% endif %}
   {% if theme.featured_header != blank and theme.featured_items > 0 %}
-    <h1 class="featured-title">{{ theme.featured_header }}</h1>
+    <h1 class="featured-title">{{ t['home.featured'] }}</h1>
   {% endif %}
   {% if theme.featured_items_type == 'Categories' %}
     {% if categories.active != blank and theme.featured_items > 0 %}
@@ -38,7 +38,7 @@
       <div class="product-list category-list {% if categories.active.size < 4 %} justify-center{% endif %}" data-category-collages-enabled="{{ category_collages_enabled }}">
         {% for category in categories.active limit:theme.featured_items %}
           <div class="product-list-thumb">
-            <a class="product-list-link category-link" href="{{ category.url }}" title="View {{ category.name | escape }}">
+            <a class="product-list-link category-link" href="{{ category.url }}" title="{{ category.name | escape }}">
               {% comment %}Determine if category collages should be enabled based on feature flag setting{% endcomment %}
               {% if category_collages_enabled == false %}
                 {% for product in category.products limit:1 %}
@@ -48,11 +48,13 @@
                   {% assign product_status = '' %}
                   {% case product.status %}
                     {% when 'active' %}
-                      {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+                      {% if product.on_sale %}
+                        {% assign product_status = t['products.on_sale'] %}
+                      {% endif %}
                     {% when 'sold-out' %}
-                      {% assign product_status = 'Sold out' %}
+                      {% assign product_status = t['products.sold_out'] %}
                     {% when 'coming-soon' %}
-                      {% assign product_status = 'Coming soon' %}
+                      {% assign product_status = t['products.coming_soon'] %}
                   {% endcase %}
                   {% capture image_class %}
                     {% if product.image.height > product.image.width %}
@@ -163,11 +165,13 @@
                 {% assign product_status = '' %}
                 {% case product.status %}
                   {% when 'active' %}
-                    {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+                    {% if product.on_sale %}
+                      {% assign product_status = t['products.on_sale'] %}
+                    {% endif %}
                   {% when 'sold-out' %}
-                    {% assign product_status = 'Sold out' %}
+                    {% assign product_status = t['products.sold_out'] %}
                   {% when 'coming-soon' %}
-                    {% assign product_status = 'Coming soon' %}
+                    {% assign product_status = t['products.coming_soon'] %}
                 {% endcase %}
                 {% capture image_class %}
                   {% if product.image.height > product.image.width %}
@@ -180,7 +184,7 @@
                 {% endcapture %}
                 {% capture product-status-class %}{% if product.status == 'active' and product.on_sale %}status-primary{% else %}status-secondary{% endif %}{% endcapture %}
                 <div class="product-list-thumb {{ product.css_class }}">
-                  <a class="product-list-link" href="{{ product.url }}" title="View {{ product.name | escape }}">
+                  <a class="product-list-link" href="{{ product.url }}" title="{{ product.name | escape }}">
                     <div class="product-list-image-container product-list-image-container-{{ theme.grid_image_style }}">
                       <img
                         alt=""
@@ -225,11 +229,11 @@
             </div>
             {% if paginate.pages > 1 %}
               {% if theme.all_products_button_text != blank %}
-                <a class="button centered-button all-products-button" href="/products">{{ theme.all_products_button_text }}<svg aria-hidden="true" width="16" height="15" viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.445798 0l9.9966372 9.99663714-.0035344.00381736.0035344.0029084L10.445798 20l-1.87436943-1.8743695L15.1964286 11.5H0v-3h15.1964286L8.57142857 1.87436946z" fill-rule="evenodd"></path></svg></a>
+                <a class="button centered-button all-products-button" href="/products">{{ t['home.all_products'] }}<svg aria-hidden="true" width="16" height="15" viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.445798 0l9.9966372 9.99663714-.0035344.00381736.0035344.0029084L10.445798 20l-1.87436943-1.8743695L15.1964286 11.5H0v-3h15.1964286L8.57142857 1.87436946z" fill-rule="evenodd"></path></svg></a>
               {% endif %}
             {% endif %}
         {% else %}
-          <p class="no-results">No products found.</p>
+          <p class="no-results">{{ t['products.no_products'] }}</p>
         {% endif %}
       {% endpaginate %}
     {% endif %}
