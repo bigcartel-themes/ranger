@@ -347,6 +347,7 @@
         <div class="mobile-navigation__body">
           <nav aria-label="Browse products">
             <ul class="mobile-navigation__links">
+              <li><a href="/">{{ t['navigation.home'] }}</a></li>
               <li><a href="/products">{% if theme.collections %}{{ t['navigation.categories'] }}{% else %}{{ t['navigation.all_products'] }}{% endif %}</a></li>
               {% for category in categories.active %}
                 <li>{{ category | link_to }}</li>
