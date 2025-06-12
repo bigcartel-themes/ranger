@@ -108,7 +108,11 @@ section.content
       margin-bottom: 0
 
     ol, ul
-      margin: 1em
+      padding-left: 1.5em
+      margin: 1em 0
+
+      ol, ul
+        margin: 0.5em 0
 
     ul
       list-style: disc
@@ -128,6 +132,12 @@ section.content
       max-width: 100%
       margin: 0 auto
       padding-bottom: 16px
+    
+    iframe
+      display: block
+      margin: 0 auto
+      max-width: 100%
+      margin-bottom: 16px
 
   h1.page-title
     color: var(--primary-text-color)
@@ -142,6 +152,9 @@ section.content
   display: flex
   align-items: center
   margin-bottom: 24px
+
+  @media screen and (max-width: $break-small)
+    display: block
 
   .related-products-view-all-link
     margin-left: auto

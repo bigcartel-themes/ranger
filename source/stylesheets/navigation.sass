@@ -6,7 +6,7 @@ header
   height: var(--header-height)
   font-size: 1.1em
   line-height: 1.2rem
-  font-weight: 500
+  font-weight: normal
   width: 100%
   z-index: 10
 
@@ -126,7 +126,7 @@ header
 
       a
         display: block
-        font-size: .925rem
+        font-size: 1.0rem
         padding: 8px
 
 .store-name
@@ -205,6 +205,8 @@ header
     position: relative
 
 .header-navigation
+  color: var(--header-text-color)
+
   @media screen and (max-width: $break-large)
     display: none
 
@@ -220,10 +222,10 @@ header
   .header-page-link
     a, .category-nav-heading
       display: flex
-      color: var(--header-text-color)
       position: relative
       outline-offset: 4px
       border-radius: 0
+      color: var(--header-text-color)
 
       &:hover, &:focus
         color: var(--link-hover-color)
@@ -341,6 +343,7 @@ header
     li a
       padding: 4px 0
       font-size: 1.1em
+      color: var(--header-text-color)
   
   &__custom-pages
     position: relative
@@ -348,7 +351,6 @@ header
     &::before
       content: ''
       position: absolute
-      left: 16px
       top: -15px
       width: 30px
       height: 1px
