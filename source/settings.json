@@ -877,6 +877,35 @@
       ]
     },
     {
+      "variable": "money_format",
+      "label": "Price display",
+      "section": "product_page",
+      "type": "select",
+      "options": [
+        ["Currency sign", "sign"],
+        ["Currency code", "code"],
+        ["No currency indicator", "none"]
+      ],
+      "default": "sign",
+      "description": "Sets how prices appear in your shop"
+    },
+    {
+      "variable": "show_sold_out_product_prices",
+      "label": "Show prices for sold out products",
+      "section": "product_page",
+      "type": "boolean",
+      "default": true,
+      "description": "Show the price of sold out products on product grids and Product pages"
+    },
+    {
+      "variable": "show_coming_soon_product_prices",
+      "label": "Show prices for coming soon products",
+      "section": "product_page",
+      "type": "boolean",
+      "default": true,
+      "description": "Show the price of coming soon products on product grids and product pages"
+    },
+    {
       "variable": "show_related_products",
       "label": "Show related products",
       "section": "product_page",
@@ -992,35 +1021,6 @@
         "default": false,
         "analytics_label": "BNPL"
       }
-    },
-    {
-      "variable": "show_sold_out_product_prices",
-      "label": "Show prices for sold out products",
-      "section": "general",
-      "type": "boolean",
-      "default": true,
-      "description": "Show the price of sold out products on product grids and Product pages"
-    },
-    {
-      "variable": "show_coming_soon_product_prices",
-      "label": "Show prices for coming soon products",
-      "section": "general",
-      "type": "boolean",
-      "default": true,
-      "description": "Show the price of coming soon products on product grids and product pages"
-    },
-    {
-      "variable": "money_format",
-      "label": "Price display",
-      "section": "general",
-      "type": "select",
-      "options": [
-        ["Currency sign", "sign"],
-        ["Currency code", "code"],
-        ["No currency indicator", "none"]
-      ],
-      "default": "sign",
-      "description": "Sets how prices appear in your shop"
     },
     {
       "variable": "announcement_message_text",
