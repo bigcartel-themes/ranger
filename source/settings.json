@@ -629,8 +629,36 @@
       "default": 1,
       "description": "Number of custom page links to show in main navigation",
       "requires": [
-        "pages_global_nav_style eq inline"
+        "pages_global_nav_style eq inline",
+        "nav_page_display neq none",
+        "nav_page_display neq contact_only"
       ]
+    },
+    {
+      "variable": "nav_text_transform_header",
+      "label": "Transform text in shop header",
+      "section": "global_navigation",
+      "type": "select",
+      "options": [
+        ["Default", "initial"],
+        ["Uppercase", "uppercase"],
+        ["Lowercase", "lowercase"]
+      ],
+      "default": "initial",
+      "description": "Controls the text case styling in your header"
+    },
+    {
+      "variable": "nav_text_transform_footer",
+      "label": "Transform text in shop footer",
+      "section": "global_navigation",
+      "type": "select",
+      "options": [
+        ["Default", "initial"],
+        ["Uppercase", "uppercase"],
+        ["Lowercase", "lowercase"]
+      ],
+      "default": "initial",
+      "description": "Controls the text case styling in your footer"
     },
     {
       "variable": "collections",
