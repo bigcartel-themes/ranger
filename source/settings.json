@@ -1782,8 +1782,8 @@
       "description": "Ex: https://twitch.tv/username"
     },
     {
-      "variable": "twitch_url",
-      "label": "Twitch URL",
+      "variable": "telegram_url",
+      "label": "Telegram URL",
       "section": "social",
       "type": "text",
       "description": "Ex: https://t.me/username"
