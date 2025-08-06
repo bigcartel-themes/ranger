@@ -52,6 +52,7 @@ a.skip-link
   padding: 0 64px
   position: relative
   width: 100%
+  max-width: $break-medium
 
 a
   +transition(color .1s linear)
@@ -294,7 +295,7 @@ footer
     @media screen and (max-width: $break-large)
       padding: 0 32px 50px 32px
 
-    @media screen and (max-width: $break-small)
+    @media screen and (max-width: $break-medium)
       flex-direction: column
       padding-bottom: 30px
 
@@ -366,7 +367,7 @@ footer
   max-width: 300px
   width: 100%
 
-  @media screen and (max-width: $break-small)
+  @media screen and (max-width: $break-medium)
     max-width: fit-content
 
   .footer-nav-title
@@ -386,7 +387,7 @@ footer
     flex-direction: column
     gap: 12px
 
-    @media screen and (max-width: $break-small)
+    @media screen and (max-width: $break-medium)
       display: block
       column-gap: 32px
       column-count: 2
@@ -397,7 +398,7 @@ footer
       align-items: flex-start
       justify-content: flex-start
 
-      @media screen and (max-width: $break-small)
+      @media screen and (max-width: $break-medium)
         padding-bottom: 16px
 
       a
