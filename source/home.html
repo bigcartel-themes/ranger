@@ -9,7 +9,7 @@
 <div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} has-welcome{% endif %}">
 
   {% if theme.image_sets.slideshow.size > 0 %}
-    <div class="{% if theme.image_sets.slideshow.size > 1 %}splide{% endif %} home-slideshow">
+    <div class="{% if theme.image_sets.slideshow.size > 1 %}splide{% endif %} home-slideshow" data-autoplay="{{ theme.homepage_slideshow_autoplay }}">
       <div class="splide__track">
         <div class="splide__list">
           {% for image in theme.image_sets.slideshow %}
