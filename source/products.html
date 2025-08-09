@@ -5,7 +5,7 @@
 {% if page.full_url contains "search=" %}
   {% assign page_title = t['products.search_results'] %}
 {% elsif theme.collections and page.full_url contains '/products' %}
-  {{ assign page_title = t['navigation.categories'] }}
+  {% assign page_title = t['navigation.categories'] %}
 {% elsif page.name != 'Products' %}
   {% assign page_title = page.name %}
 {% endif %}

@@ -207,6 +207,9 @@ header
 .header-navigation
   color: var(--header-text-color)
 
+  *
+    text-transform: #{"{{ theme.nav_text_transform_header }}"}
+
   @media screen and (max-width: $break-large)
     display: none
 
@@ -310,6 +313,9 @@ header
   transition: opacity .1s ease, visibility .1s ease
   overscroll-behavior: contain
 
+  *
+    text-transform: #{"{{ theme.nav_text_transform_header }}"}
+
   @media screen and (max-width: $break-large)
     &[aria-hidden="false"]
       opacity: 1
@@ -355,6 +361,9 @@ header
       width: 30px
       height: 1px
       background-color: var(--border-color)
+
+  &__social-links
+    padding-top: 20px
 
   &__icons
     column-gap: 36px
