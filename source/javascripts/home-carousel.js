@@ -4,7 +4,7 @@ if (homeSlideshowContainer) {
     var splide = new Splide( '.splide.home-slideshow', {
       arrows: true,
       pagination: true, // Always enable pagination
-      type: 'slide',
+      type: themeOptions.homepageSlideshowTransition,
       autoplay: themeOptions.homepageSlideshowAutoplay,
       interval: themeOptions.homepageSlideshowSpeed,
       speed: 1500,

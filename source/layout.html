@@ -577,6 +577,7 @@
         pattern_style: "{{ theme.pattern_style }}",
         store_name: "{{ store.name | escape }}",
         page: "{{ page.permalink }}",
+        homepageSlideshowTransition: "{{ theme.homepage_slideshow_transition }}",
         homepageSlideshowAutoplay: {{ theme.homepage_slideshow_autoplay }},
         homepageSlideshowSpeed: {{ theme.homepage_slideshow_speed }},
         showBnplMessaging: {{ theme.show_bnpl_messaging }} && !themeFeatures.optOuts.includes("theme_bnpl_messaging"),
