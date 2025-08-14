@@ -809,6 +809,14 @@
       "description": "Welcome subheader for homepage"
     },
     {
+      "variable": "welcome_image_link",
+      "label": "Welcome image link",
+      "section": "homepage",
+      "type": "text",
+      "description": "Link destination for welcome image when clicked. Accepts relative paths (/products) or full URLs.",
+      "requires": ["welcome_image present"]
+    },
+    {
       "variable": "pattern_style",
       "label": "Accent Pattern Style",
       "section": "general",
@@ -839,7 +847,10 @@
         ["Fade", "fade"]
       ],
       "default": "slide",
-      "description": "Controls how homepage slideshow transitions between images"
+      "description": "Controls how homepage slideshow transitions between images",
+      "requires": [
+        "slideshow present"
+      ]
     },
     {
       "variable": "homepage_slideshow_autoplay",
@@ -847,7 +858,10 @@
       "section": "homepage",
       "type": "boolean",
       "default": true,
-      "description": "Automatically advances slides in the homepage slideshow"
+      "description": "Automatically advances slides in the homepage slideshow",
+      "requires": [
+        "slideshow present"
+      ]
     },
     {
       "variable": "homepage_slideshow_speed",
@@ -864,8 +878,17 @@
       "default": 4000,
       "description": "Controls how quickly slides advance in the auto-playing slideshow",
       "requires": [
+        "slideshow present",
         "homepage_slideshow_autoplay eq true"
       ]
+    },
+    {
+      "variable": "homepage_slideshow_link",
+      "label": "Slideshow link",
+      "section": "homepage",
+      "type": "text",
+      "description": "Link destination for slideshow when clicked. Accepts relative paths (/products) or full URLs.",
+      "requires": ["slideshow present"]
     },
     {
       "variable": "home_featured_video_url",

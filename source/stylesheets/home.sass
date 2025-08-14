@@ -20,6 +20,10 @@
     border-radius: var(--border-radius)
     width: 100%
 
+  .splide__slide
+    &.hero-clickable
+      cursor: pointer
+
   .splide__arrow
     width: 2.5em
     height: 2.5em
@@ -90,10 +94,11 @@
   margin: 0 auto
   max-width: 1600px
   padding: 0 32px
+  pointer-events: none
   position: absolute
   text-align: center
   text-transform: uppercase
-  z-index: 2
+  z-index: 11
 
 #main
   .featured-title

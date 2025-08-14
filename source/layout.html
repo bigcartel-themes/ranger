@@ -204,6 +204,7 @@
             <img
               alt="Welcome image"
               class="lazyload blur-up"
+              {% if theme.welcome_image_link != blank %}title="{{ theme.welcome_image_link }}"{% endif %}
               src="{{ theme.welcome_image.url | constrain: 900 }}"
               data-srcset="
                 {{ theme.welcome_image.url | constrain: 450 }} 450w,
@@ -546,12 +547,12 @@
         </div>
       </div>
     </div>
+    {% comment %}
+      Manual array construction needed for Liquid 3.0.6 since standard JSON filters 
+      (json, jsonify) don't work properly. This ensures proper JavaScript array 
+      formatting with quoted elements and commas.
+    {% endcomment %}
     <script>
-      {% comment %}
-        Manual array construction needed for Liquid 3.0.6 since standard JSON filters 
-        (json, jsonify) don't work properly. This ensures proper JavaScript array 
-        formatting with quoted elements and commas.
-      {% endcomment %}
       const themeFeatures = {
         optIns: [{% if theme.features.opt_ins %}{% for opt in theme.features.opt_ins %}"{{ opt }}"{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}],
         optOuts: [{% if theme.features.opt_outs %}{% for opt in theme.features.opt_outs %}"{{ opt }}"{% unless forloop.last %}, {% endunless %}{% endfor %}{% endif %}],
@@ -580,6 +581,8 @@
         homepageSlideshowTransition: "{{ theme.homepage_slideshow_transition }}",
         homepageSlideshowAutoplay: {{ theme.homepage_slideshow_autoplay }},
         homepageSlideshowSpeed: {{ theme.homepage_slideshow_speed }},
+        welcomeImageLink: "{{ theme.welcome_image_link }}",
+        homepageSlideshowLink: "{{ theme.homepage_slideshow_link }}",
         showBnplMessaging: {{ theme.show_bnpl_messaging }} && !themeFeatures.optOuts.includes("theme_bnpl_messaging"),
         homeFeaturedVideoUrl: "{{ theme.home_featured_video_url }}",
         homeFeaturedVideoSize: "{{ theme.home_featured_video_size }}",
