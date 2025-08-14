@@ -75,7 +75,20 @@
                       {% endif %}
 
                       {% unless hide_price %}
-                        {{ product.default_price | money: theme.money_format }}
+                        {% if product.variable_pricing %}
+                          {{ product.min_price | money: theme.money_format }} - {{ product.max_price | money: theme.money_format }}
+                        {% else %}
+                          {{ product.default_price | money: theme.money_format }}
+                        {% endif %}
+
+                        {% if product.price_suffix != blank %}
+                          {% if product.variable_pricing %}
+                            {% assign formatted_suffix = '(' | append: product.price_suffix | append: ')' %}
+                          {% else %}
+                            {% assign formatted_suffix = product.price_suffix %}
+                          {% endif %}
+                          <span class="price-suffix">{{ formatted_suffix }}</span>
+                        {% endif %}
                       {% endunless %}
                     </div>
                   </div>
