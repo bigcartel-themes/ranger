@@ -18,6 +18,62 @@ document.addEventListener("DOMContentLoaded", function () {
           } 
         });
       }
+
+      // Handle homepage slideshow link functionality
+      const homepageSlideshowLink = themeOptions.homepageSlideshowLink && themeOptions.homepageSlideshowLink.trim() !== '' ? themeOptions.homepageSlideshowLink : null;
+      if (homepageSlideshowLink) {
+        const slideshow = document.querySelector(".home-slideshow");
+        if (slideshow) {
+          // Use event delegation - single listener on the slideshow container
+          slideshow.addEventListener("click", function(event) {
+            // CRITICAL: Protect carousel controls from triggering navigation
+            if (!event.target.closest('.splide__arrow, .splide__pagination')) {
+              // Check if the click occurred within a slide
+              const clickedSlide = event.target.closest('.splide__slide');
+              if (clickedSlide) {
+                event.preventDefault();
+                event.stopPropagation();
+                if (isExternalLink(homepageSlideshowLink)) {
+                  window.open(homepageSlideshowLink, '_blank', 'noopener,noreferrer');
+                } else {
+                  window.location.href = homepageSlideshowLink;
+                }
+              }
+            }
+          });
+
+          // Add accessibility attributes and visual feedback to all slides
+          const slides = slideshow.querySelectorAll('.splide__slide');
+          slides.forEach(slide => {
+            slide.classList.add('hero-clickable');
+            slide.setAttribute('role', 'button');
+            slide.setAttribute('aria-label', "Navigate to " + homepageSlideshowLink);
+          });
+        }
+      }
+
+      // Handle welcome image link functionality
+      const welcomeImageLink = themeOptions.welcomeImageLink && themeOptions.welcomeImageLink.trim() !== '' ? themeOptions.welcomeImageLink : null;
+      if (welcomeImageLink) {
+        // More robust selector that works with or without pattern
+        const welcomeImage = document.querySelector('#pattern.welcome-image img, #pattern img[alt="Welcome image"]');
+        if (welcomeImage) {
+          welcomeImage.classList.add('hero-clickable');
+          welcomeImage.setAttribute('role', 'button');
+          welcomeImage.setAttribute('aria-label', 'Navigate to ' + welcomeImageLink);
+          welcomeImage.style.position = 'relative';
+          welcomeImage.style.zIndex = '1';
+          welcomeImage.addEventListener("click", function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            if (isExternalLink(welcomeImageLink)) {
+              window.open(welcomeImageLink, '_blank', 'noopener,noreferrer');
+            } else {
+              window.location.href = welcomeImageLink;
+            }
+          });
+        }
+      }
       break;
     case 'contact':
       let contactFields = document.querySelectorAll(".contact-form input, .contact-form textarea");
