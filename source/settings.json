@@ -813,7 +813,7 @@
       "label": "Welcome image link",
       "section": "homepage",
       "type": "text",
-      "description": "Link destination for welcome image when clicked. Accepts relative paths (/products) or full URLs.",
+      "description": "Link destination for welcome image when clicked. Accepts relative paths (e.g. /products) or full URLs.",
       "requires": ["welcome_image present"]
     },
     {
@@ -887,7 +887,7 @@
       "label": "Slideshow link",
       "section": "homepage",
       "type": "text",
-      "description": "Link destination for slideshow when clicked. Accepts relative paths (/products) or full URLs.",
+      "description": "Link destination for slideshow when clicked. Accepts relative paths (e.g. /products) or full URLs.",
       "requires": ["slideshow present"]
     },
     {
