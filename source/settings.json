@@ -668,7 +668,11 @@
       "type": "select",
       "options": "0..100",
       "default": 100,
-      "description": "Maximum number of custom pages shown in your footer"
+      "description": "Maximum number of custom pages shown in your footer",
+      "requires": [
+        "nav_page_display_footer neq contact_only",
+        "nav_page_display_footer neq none"
+      ]
     },
     {
       "variable": "nav_text_transform_header",
