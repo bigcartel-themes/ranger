@@ -52,6 +52,7 @@ a.skip-link
   padding: 0 64px
   position: relative
   width: 100%
+  max-width: $break-medium
 
 a
   +transition(color .1s linear)
@@ -252,6 +253,9 @@ section.content
       object-fit: cover
       width: 100%
       z-index: 1
+      
+      &.hero-clickable
+        cursor: pointer
 
     canvas
       display: none
@@ -277,6 +281,9 @@ footer
   padding: 64px 0
   width: 100%
 
+  *:not(.footer-custom-content)
+    text-transform: #{"{{ theme.nav_text_transform_footer }}"}
+
   @media screen and (max-width: $break-medium)
     padding: 32px 0
 
@@ -291,7 +298,7 @@ footer
     @media screen and (max-width: $break-large)
       padding: 0 32px 50px 32px
 
-    @media screen and (max-width: $break-small)
+    @media screen and (max-width: $break-medium)
       flex-direction: column
       padding-bottom: 30px
 
@@ -346,15 +353,17 @@ footer
         width: 86px
 
 .footer-custom-content
-  display: grid
-  grid-template-columns: 1fr
-  justify-content: center
+  display: block
   text-align: center
   padding: 10px 16px 40px 16px
-  gap: 20px
 
-  > *
-    justify-self: center
+  img
+    display: block
+    margin: 20px auto
+
+  a
+    color: var(--accent-text-color)
+    text-decoration: underline
 
 .footernav
   display: flex
@@ -363,7 +372,7 @@ footer
   max-width: 300px
   width: 100%
 
-  @media screen and (max-width: $break-small)
+  @media screen and (max-width: $break-medium)
     max-width: fit-content
 
   .footer-nav-title
@@ -383,7 +392,7 @@ footer
     flex-direction: column
     gap: 12px
 
-    @media screen and (max-width: $break-small)
+    @media screen and (max-width: $break-medium)
       display: block
       column-gap: 32px
       column-count: 2
@@ -394,7 +403,7 @@ footer
       align-items: flex-start
       justify-content: flex-start
 
-      @media screen and (max-width: $break-small)
+      @media screen and (max-width: $break-medium)
         padding-bottom: 16px
 
       a
@@ -416,9 +425,9 @@ footer
         svg
           flex-shrink: 0
           fill: currentColor
-          height: 16px
+          height: 20px
           position: relative
-          width: 16px
+          width: 20px
 
 .custom-page
   font-size: 16px
@@ -518,5 +527,5 @@ footer
     svg
       display: block
       fill: currentColor
-      height: 24px
-      width: 24px
+      height: 26px
+      width: 26px

@@ -9,11 +9,11 @@
 <div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} has-welcome{% endif %}">
 
   {% if theme.image_sets.slideshow.size > 0 %}
-    <div class="{% if theme.image_sets.slideshow.size > 1 %}splide{% endif %} home-slideshow">
+    <div class="splide home-slideshow" data-autoplay="{{ theme.homepage_slideshow_autoplay }}">
       <div class="splide__track">
         <div class="splide__list">
           {% for image in theme.image_sets.slideshow %}
-            <div class="splide__slide">
+            <div class="splide__slide"{% if theme.homepage_slideshow_link != blank %} title="{{ theme.homepage_slideshow_link }}"{% endif %}>
               <img
                 alt="Slideshow image {{ forloop.index }}"
                 {% if forloop.index == 1 %}fetchpriority="high"{% else %}loading="lazy"{% endif %}
@@ -235,9 +235,30 @@
                         {% endif %}
 
                         {% unless hide_price %}
-                          {{ product.default_price | money: theme.money_format }}
+                          {{ product | product_price: theme.money_format, theme.product_variable_pricing_display_format }}
+
+                          {% if product.price_suffix != blank %}
+                            {% assign variable_price_shown = true %}
+                            {% if theme.product_variable_pricing_display_format == "min_only" or theme.product_variable_pricing_display_format == "max_only" %}
+                              {% assign variable_price_shown = false %}
+                            {% endif %}
+
+                            {% if product.variable_pricing and variable_price_shown %}
+                              {% assign formatted_suffix = '(' | append: product.price_suffix | append: ')' %}
+                            {% else %}
+                              {% assign formatted_suffix = product.price_suffix %}
+                            {% endif %}
+                            <span class="price-suffix">{{ formatted_suffix }}</span>
+                          {% endif %}
                         {% endunless %}
                       </div>
+                      {% unless hide_price %}
+                        {% if product.options.size > 1 and theme.show_product_variant_count_in_grid %}
+                          <div class="product-list-thumb-options-description">
+                            {{ product.options.size }} {{ t['products.variants'] }}
+                          </div>
+                        {% endif %}
+                      {% endunless %}
                     </div>
                     {% if product_status != blank %}
                       <div class="product-list-thumb-status {{ product-status-class }}">{{ product_status }}</div>
@@ -247,9 +268,13 @@
               {% endfor %}
             </div>
             {% if paginate.pages > 1 %}
-              {% assign all_products_button_text = t['home.all_products'] %}
-              {% if all_products_button_text != blank %}
-                <a class="button centered-button all-products-button" href="/products">{{ all_products_button_text }}<svg aria-hidden="true" width="16" height="15" viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.445798 0l9.9966372 9.99663714-.0035344.00381736.0035344.0029084L10.445798 20l-1.87436943-1.8743695L15.1964286 11.5H0v-3h15.1964286L8.57142857 1.87436946z" fill-rule="evenodd"></path></svg></a>
+              {% assign all_items_button_text = t['navigation.all_products'] %}
+              {% if theme.collections %}
+                {% assign all_items_button_text = t['navigation.categories'] %}  
+              {% endif %}
+
+              {% if all_items_button_text != blank %}
+                <a class="button centered-button all-products-button" href="/products">{{ all_items_button_text }}<svg aria-hidden="true" width="16" height="15" viewBox="0 0 21 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.445798 0l9.9966372 9.99663714-.0035344.00381736.0035344.0029084L10.445798 20l-1.87436943-1.8743695L15.1964286 11.5H0v-3h15.1964286L8.57142857 1.87436946z" fill-rule="evenodd"></path></svg></a>
               {% endif %}
             {% endif %}
         {% else %}
