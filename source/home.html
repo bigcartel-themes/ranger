@@ -114,6 +114,11 @@
                   </div>
                   <div class="product-list-thumb-info">
                     <div class="product-list-thumb-name">{{ category.name }}</div>
+                    {% if theme.home_page_categories_product_count_display %}
+                      <div class="product-list-thumb-price category-count">
+                        {{ category.products.size | pluralize: t['products.product'], t['products.products'] }}
+                      </div>
+                    {% endif %}
                   </div>
                 {% endfor %}
               {% else %}
@@ -161,12 +166,12 @@
                     >
                   </div>
                   <div class="product-list-thumb-info">
-                    <div class="product-list-thumb-name">
-                      {{ category.name }}
-                      {% if theme.home_page_categories_product_count_display %}
-                        <span class="category-count">({{ category.products.size }})</span>
-                      {% endif %}
-                    </div>
+                    <div class="product-list-thumb-name">{{ category.name }}</div>
+                    {% if theme.home_page_categories_product_count_display %}
+                      <div class="product-list-thumb-price category-count">
+                        {{ category.products.size | pluralize: t['products.product'], t['products.products'] }}
+                      </div>
+                    {% endif %}
                   </div>
                 {% endif %}
               {% endif %}
