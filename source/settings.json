@@ -953,11 +953,11 @@
     },
     {
       "variable": "homepage_show_all_items_link",
-      "label": "Show link to all products/categories on the Home page",
+      "label": "Show all items link",
       "section": "homepage",
       "type": "boolean",
       "default": true,
-      "description": "Display link to view all products (or categories) when shop has more items than featured on homepage",
+      "description": "Display link to view all products (or categories) when shop has more items than featured on the Home page",
       "requires": [
         "featured_items gt 0"
       ]
