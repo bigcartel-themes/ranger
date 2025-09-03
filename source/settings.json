@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "2.10.1",
+  "version": "2.10.2",
   "images": [
     {
       "variable": "logo",
@@ -740,6 +740,7 @@
       "section": "global_navigation",
       "type": "select",
       "options": [
+        ["Normal", "default"],
         ["Fit to square", "contain"],
         ["Crop to square", "cover"]
       ],
