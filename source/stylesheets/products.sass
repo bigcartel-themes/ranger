@@ -55,6 +55,9 @@
     padding-bottom: 100%
     height: 0
 
+  &-default:before
+    display: none
+
 .product-list-image
   position: absolute
   display: block
@@ -63,10 +66,23 @@
   width: 100%
   height: 100%
 
+  &.grid-default
+    position: relative
+
   &.grid-cover
     object-fit: cover
 
   &.grid-contain
+    object-fit: contain
+
+// Featured Categories: when grid_image_style is default, keep category thumbs square and contained
+// Scope to containers marked with collage data attribute (used by categories)
+[data-category-collages-enabled]
+  .product-list-image-container-default:before
+    display: block
+
+  .product-list-image.grid-default
+    position: absolute
     object-fit: contain
 
 .product-list-thumb-info
@@ -81,19 +97,21 @@
 
   @media screen and (max-width: $break-large)
     padding: 12px 0
-    font-size: 1em
 
 .product-list-thumb-name
   font-weight: normal
   overflow-wrap: break-word
   position: relative
 
+.product-list-thumb-price,
+.product-list-thumb-options-description
+  font-size: 0.9em
+
 .price-suffix
   white-space: nowrap
 
 .product-list-thumb-options-description
   font-style: italic
-  font-size: 0.9em
   margin-top: -8px
 
 .product-list-thumb-status
