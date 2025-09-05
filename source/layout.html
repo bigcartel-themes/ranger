@@ -223,7 +223,7 @@
         {% endif %}
         <canvas id="repeating-pattern"></canvas>
       </div>
-      <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' and theme.image_sets.slideshow.size == 0 %} hide-featured{% endif %}" data-bc-hook="content">
+      <section class="content{% if theme.featured_items == 0 and page.permalink == 'home' and theme.image_sets.slideshow.size == 0 and theme.homepage_featured_text == blank %} hide-featured{% endif %}" data-bc-hook="content">
         {% if page.category == 'custom' %}
           <h1 class="page-title">{{ page.name }}</h1>
           <div class="page-content custom-page">
