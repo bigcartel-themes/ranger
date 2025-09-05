@@ -50,7 +50,9 @@
       <div class="featured-message">{{ featured_text }}</div>
     {% endif %}
     
-    <h1 class="featured-title">{{ featured_header }}</h1>
+    {% if theme.featured_items > 0 %}
+      <h1 class="featured-title">{{ featured_header }}</h1>
+    {% endif %}
     
     {% if featured_text != blank and featured_text_position != "above" %}
       <div class="featured-message">{{ featured_text }}</div>
@@ -145,7 +147,8 @@
                     {% capture image_urls %}
                       [{% for product in category.products limit:4 %}"{{ product.image | product_image_url | constrain: 400 }}"{% unless forloop.last %},{% endunless %}{% endfor %}]
                     {% endcapture %}
-                  {% elsif theme.home_page_categories_image_style == "single" %}
+                  {% else %}
+                    {% comment %} Fallback to single image (first product) {% endcomment %}
                     {% capture image_urls %}
                       ["{{ first_product.image | product_image_url | constrain: 800 }}"]
                     {% endcapture %}
