@@ -50,7 +50,9 @@
       <div class="featured-message">{{ featured_text }}</div>
     {% endif %}
     
-    <h1 class="featured-title">{{ featured_header }}</h1>
+    {% if theme.featured_items > 0 %}
+      <h1 class="featured-title">{{ featured_header }}</h1>
+    {% endif %}
     
     {% if featured_text != blank and featured_text_position != "above" %}
       <div class="featured-message">{{ featured_text }}</div>
