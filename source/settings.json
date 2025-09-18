@@ -6,7 +6,7 @@
       "variable": "logo",
       "label": "Header logo",
       "section": "global_navigation",
-      "description": "Good for an image up to 300 x 100 pixels"
+      "description": "Recommend transparent background. Minimum 300 x 100px for best results."
     },
     {
       "variable": "welcome_image",
