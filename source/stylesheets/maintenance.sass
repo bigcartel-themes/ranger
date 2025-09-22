@@ -15,7 +15,7 @@
     color: var(--primary-text-color)
     margin: 0 auto
     max-width: 720px
-    padding: 24px 48px 40px
+    padding: 48px 40px
     text-align: center
     width: 100%
     gap: 40px
@@ -24,16 +24,34 @@
       padding-left: 16px
       padding-right: 16px
 
+    .maintenance-image
+      display: block
+      margin: 0 auto
+      max-width: 100%
+      height: auto
+
     h1.store-name
       font-family: var(--primary-font)
-      font-size: 2em
+      font-size: 2.2rem
       margin: 0 0 16px 0
       height: auto
       padding: 0
+      line-height: 1.2
 
-    .maintenance-message *
-      text-align: inherit
-    
+      @media screen and (max-width: $break-small)
+        font-size: 1.9rem
+
+    .maintenance-message
+      font-size: 1.125rem
+      line-height: 1.4
+      margin-top: -40px
+
+      @media screen and (max-width: $break-small)
+        font-size: 1rem
+
+      *
+        text-align: inherit
+
     .social-icons
       margin: 0
 
