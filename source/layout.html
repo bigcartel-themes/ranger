@@ -229,6 +229,10 @@
           <div class="page-content custom-page">
             {{ page_content | paragraphs }}
           </div>
+        {% elsif product.has_password_protection %}
+          <div class="page-content product-page--password-protected">
+            {{ page_content }}
+          </div>
         {% else %}
           {{ page_content }}
         {% endif %}
