@@ -4,7 +4,7 @@ header
   background: var(--content-background-color)
   border-bottom: 2px solid var(--header-border-color)
   height: var(--header-height)
-  font-size: 1.1em
+  font-size: calc(1.1rem * var(--header-scale, 1))
   line-height: 1.2rem
   font-weight: normal
   width: 100%
@@ -50,10 +50,10 @@ header
 
   @media screen and (max-width: $break-medium)
     display: none
-    font-size: 1.25em
+    font-size: calc(1.375rem * var(--header-scale, 1))
 
   @media screen and (max-width: $break-small)
-    font-size: 1em
+    font-size: calc(1.1rem * var(--header-scale, 1))
     max-width: 100%
 
   .nav-heading
@@ -126,12 +126,12 @@ header
 
       a
         display: block
-        font-size: 1.0rem
+        font-size: calc(1.0rem * var(--header-scale, 1))
         padding: 8px
 
 .store-name
   font-family: var(--primary-font)
-  font-size: 2em
+  font-size: calc(2.2rem * var(--shop-name-scale, 1) * var(--header-scale, 1))
   display: flex
   height: var(--header-height)
   transition: height .4s
@@ -143,10 +143,10 @@ header
   margin: 0 auto
 
   @media screen and (max-width: $break-medium)
-    font-size: 1.4em
+    font-size: calc(1.54rem * var(--shop-name-scale, 1) * var(--header-scale, 1))
 
   @media screen and (max-width: $break-small)
-    font-size: 1.2em
+    font-size: calc(1.32rem * var(--shop-name-scale, 1) * var(--header-scale, 1))
     padding: 12px
 
   a
@@ -291,7 +291,7 @@ header
   width: 18px
   position: absolute
   text-align: center
-  font-size: 11px
+  font-size: 0.6875rem
   right: -2px
   top: -2px
 
@@ -348,7 +348,7 @@ header
 
     li a
       padding: 4px 0
-      font-size: 1.1em
+      font-size: calc(1.1rem * var(--header-scale, 1))
       color: var(--header-text-color)
   
   &__custom-pages
