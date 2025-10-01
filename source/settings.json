@@ -963,7 +963,7 @@
       "section": "homepage",
       "type": "boolean",
       "default": true,
-      "description": "Display link to view all products (or categories) when shop has more items than featured on the Home page",
+      "description": "Allow the 'All products' button to show on the Home page when eligible",
       "requires": [
         "featured_items gt 0"
       ]
