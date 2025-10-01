@@ -28,12 +28,9 @@
     display: flex
 
   &--scrolling
-    min-height: 64px
     padding: 0
     overflow: hidden
-
-    @media screen and (max-width: $break-small)
-      min-height: 46px
+    min-height: fit-content
 
     &:hover .announcement-message__scroll-content
       animation-play-state: paused
@@ -50,8 +47,11 @@
   &__text
     display: inline-block
 
+    .announcement-message:not(.announcement-message--scrolling) &
+      flex: 0 1 auto
+
     .announcement-message--scrolling &
-      padding: 0 5em
+      padding: 22px 5em
 
   &__close-button
     align-items: center
