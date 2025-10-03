@@ -3,7 +3,7 @@
   "version": "2.11.0",
   "images": [
     {
-      "variable": "logo",
+      "variable": "logo_image",
       "label": "Header logo",
       "section": "global_navigation",
       "description": "Use a PNG file with a transparent background. Your logo should be at least 300 x 100px in size. Wide logos look better than square ones."
@@ -2172,7 +2172,7 @@
     }
   ],
   "checkout": {
-    "header_image": "{{ logo }}",
+    "header_image": "{{ logo_image }}",
     "header_image_max_width": "300px",
     "header_image_max_height": "100px",
     "title_font": "{{ primary_font }}",
