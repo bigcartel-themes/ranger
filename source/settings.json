@@ -828,27 +828,6 @@
       "requires": ["welcome_image present"]
     },
     {
-      "variable": "pattern_style",
-      "label": "Accent Pattern Style",
-      "section": "general",
-      "type": "select",
-      "options": [
-        ["Small Triangles", "small-triangles"],
-        ["Large Triangles", "large-triangles"],
-        ["Autumn", "autumn"],
-        ["Bank Note", "bank-note"],
-        ["Bathroom Floor", "bathroom-floor"],
-        ["Bubbles", "bubbles"],
-        ["Diagonal Lines", "diagonal-lines"],
-        ["Kiwi", "kiwi"],
-        ["Random Shapes", "random-shapes"],
-        ["Wiggle", "wiggle"],
-        ["No Pattern", "no-pattern"]
-      ],
-      "default": "small-triangles",
-      "description": "Pattern style for the accent background"
-    },
-    {
       "variable": "homepage_slideshow_transition",
       "label": "Slideshow type",
       "section": "homepage",
@@ -1428,6 +1407,73 @@
       ],
       "default": "1",
       "description": "Fine-tune product description text size (applies on top of global setting)"
+    },
+    {
+      "variable": "shop_sprinkles_animation",
+      "label": "Shop sprinkles animation",
+      "section": "general",
+      "type": "select",
+      "options": [
+        ["Drift", "shake"],
+        ["Orbit", "orbit"],
+        ["Tumble", "tumble"]
+      ],
+      "default": "shake",
+      "description": "Adjust the falling animation style of the shop sprinkles. You must select an emoji to turn on sprinkles."
+    },
+    {
+      "variable": "shop_sprinkles_size",
+      "label": "Shop sprinkles size",
+      "section": "general",
+      "type": "select",
+      "options": [
+        ["Smallest", "0.75em"],
+        ["Small", "1.25em"],
+        ["Smaller", "1.5em"],
+        ["Default", "2em"],
+        ["Bigger", "2.75em"],
+        ["Big", "3.5em"],
+        ["Biggest", "4.25em"],
+        ["Jumbo", "5em"]
+      ],
+      "default": "2em",
+      "description": "Adjust the size of the shop sprinkles"
+    },
+    {
+      "variable": "shop_sprinkles_density",
+      "label": "Shop sprinkles density",
+      "section": "general",
+      "type": "select",
+      "options": [
+        ["Very subtle", "4"],
+        ["Subtle", "8"],
+        ["Balanced", "14"],
+        ["Festive", "20"],
+        ["Party", "28"]
+      ],
+      "default": "14",
+      "description": "Adjust the density of shop sprinkles"
+    },
+    {
+      "variable": "pattern_style",
+      "label": "Accent Pattern Style",
+      "section": "general",
+      "type": "select",
+      "options": [
+        ["Small Triangles", "small-triangles"],
+        ["Large Triangles", "large-triangles"],
+        ["Autumn", "autumn"],
+        ["Bank Note", "bank-note"],
+        ["Bathroom Floor", "bathroom-floor"],
+        ["Bubbles", "bubbles"],
+        ["Diagonal Lines", "diagonal-lines"],
+        ["Kiwi", "kiwi"],
+        ["Random Shapes", "random-shapes"],
+        ["Wiggle", "wiggle"],
+        ["No Pattern", "no-pattern"]
+      ],
+      "default": "small-triangles",
+      "description": "Pattern style for the accent background"
     },
     {
       "variable": "translation_locale",
