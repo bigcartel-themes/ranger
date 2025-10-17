@@ -6,7 +6,7 @@
   </ul>
 {% endif %}
 
-<div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %} has-welcome{% endif %}">
+<div class="page-content home-page{% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.images.welcome_image != blank %} has-welcome{% endif %}">
 
   {% if theme.image_sets.slideshow.size > 0 %}
     <div class="splide home-slideshow" data-autoplay="{{ theme.homepage_slideshow_autoplay }}">
