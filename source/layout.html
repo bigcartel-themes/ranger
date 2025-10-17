@@ -148,9 +148,9 @@
           </ul>
         </nav>
 
-        <div class="store-name {% if theme.logo_image != blank %}image{% else %}text{% endif %}">
+        <div class="store-name {% if theme.images.logo_image != blank %}image{% else %}text{% endif %}">
           <a href="/" class="store-link" title="{{ store.name | escape }}">
-            {% if theme.logo_image != blank %}
+            {% if theme.images.logo_image != blank %}
               <img
                 class="store-logo"
                 alt="{{ store.name }} Home"
@@ -193,10 +193,10 @@
         class="
           pattern
           {% if page.permalink == 'home' %}
-            {% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.welcome_image != blank %}
+            {% if theme.welcome_header != blank or theme.welcome_subheader != blank or theme.images.welcome_image != blank %}
               welcome-pattern
             {%endif %}
-            {% if theme.welcome_image != blank %}
+            {% if theme.images.welcome_image != blank %}
               welcome-image
             {% endif %}
             {% if theme.featured_items == 0 and theme.image_sets.slideshow.size == 0 %}
@@ -212,22 +212,22 @@
               {% if theme.welcome_subheader != blank %}<h2 class="welcome-subheader">{{ theme.welcome_subheader }}</h2>{% endif %}
             </div>
           {% endif %}
-          {% if theme.welcome_image != blank %}
+          {% if theme.images.welcome_image != blank %}
             <img
               alt="Welcome image"
               class="lazyload blur-up"
               {% if theme.welcome_image_link != blank %}title="{{ theme.welcome_image_link }}"{% endif %}
-              src="{{ theme.welcome_image.url | constrain: 900 }}"
+              src="{{ theme.images.welcome_image.url | constrain: 900 }}"
               data-srcset="
-                {{ theme.welcome_image.url | constrain: 450 }} 450w,
-                {{ theme.welcome_image.url | constrain: 600 }} 600w,
-                {{ theme.welcome_image.url | constrain: 900 }} 900w,
-                {{ theme.welcome_image.url | constrain: 1200 }} 1200w,
-                {{ theme.welcome_image.url | constrain: 1500 }} 1500w,
-                {{ theme.welcome_image.url | constrain: 1900 }} 1800w,
-                {{ theme.welcome_image.url | constrain: 1900 }} 2100w,
-                {{ theme.welcome_image.url | constrain: 1900 }} 2400w,
-                {{ theme.welcome_image.url | constrain: 1900 }} 2700w
+                {{ theme.images.welcome_image.url | constrain: 450 }} 450w,
+                {{ theme.images.welcome_image.url | constrain: 600 }} 600w,
+                {{ theme.images.welcome_image.url | constrain: 900 }} 900w,
+                {{ theme.images.welcome_image.url | constrain: 1200 }} 1200w,
+                {{ theme.images.welcome_image.url | constrain: 1500 }} 1500w,
+                {{ theme.images.welcome_image.url | constrain: 1800 }} 1800w,
+                {{ theme.images.welcome_image.url | constrain: 2100 }} 2100w,
+                {{ theme.images.welcome_image.url | constrain: 2400 }} 2400w,
+                {{ theme.images.welcome_image.url | constrain: 2700 }} 2700w
               "
               data-sizes="auto"
             >
