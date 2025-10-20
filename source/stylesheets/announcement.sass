@@ -76,6 +76,9 @@
 
     .announcement-message--scrolling &
       padding: 22px 5em
+      // Prevent iOS Safari text inflation
+      -webkit-text-size-adjust: 100%
+      text-size-adjust: 100%
 
   &__close-button
     align-items: center
