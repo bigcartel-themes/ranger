@@ -5,7 +5,7 @@
   background-color: var(--announcement-background-color)
   color: var(--announcement-text-color)
   display: none
-  font-size: calc(1rem * var(--header-scale, 1))
+  font-size: calc(1.0rem * var(--header-scale, 1))
   justify-content: center
   line-height: 1.25em
   padding: 22px 120px
@@ -50,7 +50,7 @@
       animation-play-state: paused
 
   &__scroll-wrapper
-    padding: 22px 0
+    padding: 0
     width: 100%
     overflow: hidden
     display: flex
@@ -59,7 +59,7 @@
     isolation: isolate
 
     @media screen and (max-width: $break-small)
-      padding: 14px 0
+      padding: 5px 0
 
   &__scroll-content
     display: inline-flex
@@ -76,6 +76,9 @@
 
     .announcement-message--scrolling &
       padding: 22px 5em
+      // Prevent iOS Safari text inflation
+      -webkit-text-size-adjust: 100%
+      text-size-adjust: 100%
 
   &__close-button
     align-items: center
