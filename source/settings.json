@@ -1,6 +1,6 @@
 {
   "name": "Ranger",
-  "version": "2.11.3",
+  "version": "2.11.4",
   "images": [
     {
       "variable": "logo_image",
