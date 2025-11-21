@@ -21,16 +21,24 @@
 {% if theme.nav_page_display == "contact_only" %}
   {% assign show_more_menu = true %}
   {% assign show_more_menu_footer = true %}
-{% elsif theme.nav_page_display == "all" and pages.custom_pages.size > 0 %}
+{% elsif theme.nav_page_display == "all" and pages.custom_pages.size > 0 and theme.nav_items > 0 %}
   {% assign show_more_menu = true %}
+{% elsif theme.nav_page_display == "pages_only" and pages.custom_pages.size > 0 and theme.nav_items > 0 %}
+  {% assign show_more_menu = true %}
+{% endif %}
+
+{% if theme.nav_page_display_footer == "all" and pages.custom_pages.size > 0 and theme.nav_items_footer > 0 %}
   {% assign show_more_menu_footer = true %}
-{% elsif theme.nav_page_display == "pages_only" and pages.custom_pages.size > 0 %}
+{% elsif theme.nav_page_display_footer == "pages_only" and pages.custom_pages.size > 0 and theme.nav_items_footer > 0 %}
+  {% assign show_more_menu_footer = true %}
+{% endif %}
+
+{% if pages.subscribe_page %}
   {% assign show_more_menu = true %}
   {% assign show_more_menu_footer = true %}
 {% endif %}
 
 {% if store.website != blank %}
-  {% assign show_more_menu = true %}
   {% assign show_more_menu_footer = true %}
 {% endif %}
 
