@@ -74,6 +74,11 @@ section.content
   @media screen and (max-width: $break-large)
     max-width: 100%
 
+  select span, select span option
+    display: none
+    opacity: 0
+    visibility: hidden
+
 .product-selects
   margin-bottom: 20px
 
@@ -105,6 +110,7 @@ section.content
     align-items: center
     font-size: calc(1.25rem * var(--product-title-scale, 1))
     color: var(--primary-text-color)
+    gap: 0.25em
 
   &__description
     font-size: calc(1rem * var(--product-description-scale, 1))
@@ -221,3 +227,6 @@ section.content
 #stripe-messaging-container,
 #paypal-messaging-container
   transition: min-height 0.1s ease-out
+
+.product-detail__description:empty
+  display: none
