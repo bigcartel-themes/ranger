@@ -74,6 +74,11 @@ section.content
   @media screen and (max-width: $break-large)
     max-width: 100%
 
+  select span, select span option
+    display: none
+    opacity: 0
+    visibility: hidden
+
 .product-selects
   margin-bottom: 20px
 
@@ -221,3 +226,6 @@ section.content
 #stripe-messaging-container,
 #paypal-messaging-container
   transition: min-height 0.1s ease-out
+
+.product-detail__description:empty
+  display: none
